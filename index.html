@@ -800,7 +800,7 @@
       <div class="stat-label" data-i18n="stat1Label">Years in IT</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">4</div>
+      <div class="stat-num">5</div>
       <div class="stat-label" data-i18n="stat2Label">AI projects shipped</div>
     </div>
     <div class="stat-item">
@@ -945,6 +945,25 @@
       </div>
     </div>
 
+    <div class="project-card reveal reveal-delay-4">
+      <div class="project-header">
+        <div class="project-icon">🤖</div>
+        <span class="project-type" data-i18n="p5Type">AI / Multi-Agent</span>
+      </div>
+      <div class="project-name" data-i18n="p5Name">Multi-Agent Consulting System</div>
+      <div class="project-desc" data-i18n="p5Desc">
+        Four-agent hierarchical system (orchestrator + researcher + developer + designer) built on Hermes/OpenClaw with Telegram interface. Domain routing engine for 7 business domains, Shared State inter-agent protocol, and OpenRouter multi-model fallback across Claude, Gemini, and GPT.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Hermes</span>
+        <span class="stack-tag">OpenClaw</span>
+        <span class="stack-tag">MCP</span>
+        <span class="stack-tag">OpenRouter</span>
+        <span class="stack-tag">Telegram</span>
+        <span class="stack-tag">systemd</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -960,8 +979,8 @@
       <div class="skill-group-title" data-i18n="sg1">AI / LLM</div>
       <div class="skill-list">
         <div class="skill-item" data-i18n="s1i1">OpenAI GPT-4o / Vision / Embeddings</div>
-        <div class="skill-item" data-i18n="s1i2">Sber GigaChat API</div>
-        <div class="skill-item" data-i18n="s1i3">Anthropic Claude</div>
+        <div class="skill-item" data-i18n="s1i2">Anthropic Claude · Google Gemini 2.5</div>
+        <div class="skill-item" data-i18n="s1i3">OpenRouter · Sber GigaChat</div>
         <div class="skill-item" data-i18n="s1i4">RAG pipelines (ChromaDB, FAISS)</div>
         <div class="skill-item" data-i18n="s1i5">Fine-Tuning: LoRA / PEFT / QLoRA</div>
       </div>
@@ -997,6 +1016,17 @@
         <div class="skill-item" data-i18n="s4i3">Yandex SpeechKit STT/TTS</div>
         <div class="skill-item" data-i18n="s4i4">Notion API</div>
         <div class="skill-item" data-i18n="s4i5">VetIS / Federal registries API</div>
+      </div>
+    </div>
+
+    <div class="skill-group reveal reveal-delay-4">
+      <div class="skill-group-title" data-i18n="sg5">AI Agents</div>
+      <div class="skill-list">
+        <div class="skill-item" data-i18n="s5i1">Hermes (Python agent framework)</div>
+        <div class="skill-item" data-i18n="s5i2">OpenClaw (Node.js gateway)</div>
+        <div class="skill-item" data-i18n="s5i3">MCP (Model Context Protocol)</div>
+        <div class="skill-item" data-i18n="s5i4">Domain routing · Shared State</div>
+        <div class="skill-item" data-i18n="s5i5">systemd services · hot-swap</div>
       </div>
     </div>
 
@@ -1106,7 +1136,9 @@
      anywhere before this script block in index.html:
        window.CHAT_API_URL = 'https://your-backend-domain.com';
      ───────────────────────────────────────────────────────────── */
-  const CHAT_API = window.CHAT_API_URL || 'http://localhost:8000';
+  const CHAT_API_EN = window.CHAT_API_EN || window.CHAT_API_URL || 'http://localhost:8000';
+  const CHAT_API_RU = window.CHAT_API_RU || window.CHAT_API_URL || 'http://localhost:8001';
+  function getChatApi() { return (window.__currentLang === 'ru') ? CHAT_API_RU : CHAT_API_EN; }
 
   /* ── Translations ──────────────────────────────────────────── */
   const T = {
@@ -1117,6 +1149,7 @@
       heroSubtitle: 'I translate business pain into rigorous technical architecture&nbsp;&mdash; from multimodal LLM pipelines to enterprise DWH and end-to-end process automation.',
       heroCta1: 'See my work', heroCta2: 'Get in touch',
       stat1Label: 'Years in IT', stat2Label: 'AI projects shipped', stat3Label: 'Integrations built',
+      stat2Num: '5',
       scrollHint: 'scroll',
       featLabel: 'Featured project',
       featTitle: 'Nebo AI<br />Assistant',
@@ -1142,8 +1175,9 @@
       p4Desc: 'Reads scanned prior-year forms with Tesseract OCR, maps recognized fields to the current-year PDF structure, and programmatically fills the new form — eliminating manual re-entry for annual workflows.',
       skillLabel: 'Expertise', skillTitle: 'Tech stack',
       skillDesc: 'Tools and technologies I work with in production.',
-      sg1: 'AI / LLM', sg2: 'Backend', sg3: 'Data &amp; Automation', sg4: 'Integrations',
-      s1i1: 'OpenAI GPT-4o / Vision / Embeddings', s1i2: 'Sber GigaChat API', s1i3: 'Anthropic Claude',
+      sg1: 'AI / LLM', sg2: 'Backend', sg3: 'Data &amp; Automation', sg4: 'Integrations', sg5: 'AI Agents',
+      s1i1: 'OpenAI GPT-4o / Vision / Embeddings', s1i2: 'Anthropic Claude · Google Gemini 2.5',
+      s1i3: 'OpenRouter · Sber GigaChat',
       s1i4: 'RAG pipelines (ChromaDB, FAISS)', s1i5: 'Fine-Tuning: LoRA / PEFT / QLoRA',
       s2i1: 'Python 3.10+ / FastAPI', s2i2: 'SQLAlchemy 2.0 / Alembic', s2i3: 'PostgreSQL',
       s2i4: 'Docker / Docker Compose', s2i5: 'Async / ASGI design',
@@ -1151,9 +1185,14 @@
       s3i4: 'Pandas / data wrangling', s3i5: 'FAISS / vector search',
       s4i1: 'Telegram Bot API', s4i2: 'Bnovo PMS / Bitrix24 / AmoCRM', s4i3: 'Yandex SpeechKit STT/TTS',
       s4i4: 'Notion API', s4i5: 'VetIS / Federal registries API',
+      s5i1: 'Hermes (Python agent framework)', s5i2: 'OpenClaw (Node.js gateway)',
+      s5i3: 'MCP (Model Context Protocol)', s5i4: 'Domain routing · Shared State',
+      s5i5: 'systemd services · hot-swap',
+      p5Type: 'AI / Multi-Agent', p5Name: 'Multi-Agent Consulting System',
+      p5Desc: 'Four-agent hierarchical system (orchestrator + researcher + developer + designer) built on Hermes/OpenClaw with Telegram interface. Domain routing engine for 7 business domains, Shared State inter-agent protocol, and OpenRouter multi-model fallback across Claude, Gemini, and GPT.',
       aboutLabel: 'Background', aboutTitle: 'About me',
       aboutP1: "I'm a <strong>Senior AI Automation Consultant &amp; IT Architect</strong> with 19 years of hands-on experience. I specialize in production-ready AI systems — from multimodal LLM pipelines and enterprise DWH to end-to-end business process automation.",
-      aboutP2: 'My projects span hospitality tech, fisheries analytics, and maritime intelligence. What they share: messy, domain-specific data that needs to be turned into something genuinely useful for the people doing the work.',
+      aboutP2: 'My projects span hospitality tech, fisheries analytics, maritime intelligence, and multi-agent AI consulting automation. What they share: messy, domain-specific problems that need to be turned into production-ready intelligent systems.',
       aboutP3: 'I architect resilient pipelines that seamlessly connect legacy SaaS/PMS/CRM systems, relational databases, and Large Language Models into a single coherent workflow — with security built in from the start.',
       aboutP4: 'Operating as a registered Sole Proprietor with <strong>Kazakhstan e-Resident status</strong> for seamless international B2B contracting and payments.',
       aboutLocLabel: 'Location', aboutLocVal: 'Available remotely',
@@ -1177,7 +1216,7 @@
       heroEyebrow: 'Senior AI Automation Consultant &amp; IT Architect',
       heroSubtitle: 'Перевожу бизнес-боли в строгую техническую архитектуру&nbsp;&mdash; от мультимодальных LLM-пайплайнов до корпоративных DWH и сквозной автоматизации процессов.',
       heroCta1: 'Смотреть работы', heroCta2: 'Написать',
-      stat1Label: 'Лет в IT', stat2Label: 'Реализованных AI-проекта', stat3Label: 'Интеграций построено',
+      stat1Label: 'Лет в IT', stat2Label: 'AI-проектов реализовано', stat3Label: 'Интеграций построено',
       scrollHint: 'листай',
       featLabel: 'Ключевой проект',
       featTitle: 'Nebo AI<br />Assistant',
@@ -1203,8 +1242,9 @@
       p4Desc: 'Читает отсканированные формы через Tesseract OCR, сопоставляет поля с актуальным PDF и программно заполняет новую форму — устраняет ручной повторный ввод в ежегодных документооборотах.',
       skillLabel: 'Экспертиза', skillTitle: 'Технологический стек',
       skillDesc: 'Инструменты и технологии, с которыми я работаю в продакшне.',
-      sg1: 'AI / LLM', sg2: 'Бэкенд', sg3: 'Данные и автоматизация', sg4: 'Интеграции',
-      s1i1: 'OpenAI GPT-4o / Vision / Embeddings', s1i2: 'Sber GigaChat API', s1i3: 'Anthropic Claude',
+      sg1: 'AI / LLM', sg2: 'Бэкенд', sg3: 'Данные и автоматизация', sg4: 'Интеграции', sg5: 'AI-агенты',
+      s1i1: 'OpenAI GPT-4o / Vision / Embeddings', s1i2: 'Anthropic Claude · Google Gemini 2.5',
+      s1i3: 'OpenRouter · Sber GigaChat',
       s1i4: 'RAG-пайплайны (ChromaDB, FAISS)', s1i5: 'Fine-Tuning: LoRA / PEFT / QLoRA',
       s2i1: 'Python 3.10+ / FastAPI', s2i2: 'SQLAlchemy 2.0 / Alembic', s2i3: 'PostgreSQL',
       s2i4: 'Docker / Docker Compose', s2i5: 'Async / ASGI-архитектура',
@@ -1212,9 +1252,14 @@
       s3i4: 'Pandas / обработка данных', s3i5: 'FAISS / векторный поиск',
       s4i1: 'Telegram Bot API', s4i2: 'Bnovo PMS / Bitrix24 / AmoCRM', s4i3: 'Yandex SpeechKit STT/TTS',
       s4i4: 'Notion API', s4i5: 'VetIS / API госреестров',
+      s5i1: 'Hermes (Python agent framework)', s5i2: 'OpenClaw (Node.js gateway)',
+      s5i3: 'MCP (Model Context Protocol)', s5i4: 'Доменная маршрутизация · Shared State',
+      s5i5: 'systemd services · hot-swap',
+      p5Type: 'AI / Мульти-агент', p5Name: 'Мульти-агентная система для AI-консалтинга',
+      p5Desc: 'Четырёхагентная иерархическая система (оркестратор + исследователь + разработчик + дизайнер) на Hermes/OpenClaw с интерфейсом через Telegram. Доменная маршрутизация (7 доменов), Shared State протокол и мультипровайдерный LLM-роутинг через OpenRouter с fallback между Claude, Gemini и GPT.',
       aboutLabel: 'О себе', aboutTitle: 'Обо мне',
       aboutP1: 'Я — <strong>Senior AI Automation Consultant &amp; IT Architect</strong> с 19-летним практическим опытом. Специализируюсь на production-ready AI-системах: от мультимодальных LLM-пайплайнов и корпоративных DWH до сквозной автоматизации бизнес-процессов.',
-      aboutP2: 'Мои проекты охватывают гостиничный бизнес, аналитику рыбной отрасли и морскую разведку. Их объединяет одно: сложные доменные данные, которые нужно превратить в нечто реально полезное для людей.',
+      aboutP2: 'Мои проекты охватывают гостиничный бизнес, аналитику рыбной отрасли, морскую разведку и мульти-агентную автоматизацию AI-консалтинга. Их объединяет одно: сложные доменные задачи, которые нужно превратить в production-ready интеллектуальные системы.',
       aboutP3: 'Проектирую отказоустойчивые пайплайны, соединяющие унаследованные SaaS/PMS/CRM-системы, реляционные базы данных и LLM в единый слаженный воркфлоу — с безопасностью, заложенной с первого слоя архитектуры.',
       aboutP4: 'Работаю официально как ИП со <strong>статусом eResident Казахстана</strong> — для удобных международных B2B-расчётов и заключения контрактов.',
       aboutLocLabel: 'Местоположение', aboutLocVal: 'Доступна удалённо',
@@ -1311,7 +1356,7 @@
   revealEls.forEach(el => revealObserver.observe(el));
 
   /* ── Stat counters ─────────────────────────────────────────── */
-  const statData = [{ val: 19 }, { val: 4 }, { val: 10 }];
+  const statData = [{ val: 19 }, { val: 5 }, { val: 10 }];
   const statNums = document.querySelectorAll('.stat-num');
   const statObserver = new IntersectionObserver(entries => {
     entries.forEach((entry, i) => {
@@ -1398,7 +1443,7 @@
 
     const lang = window.__currentLang || 'en';
     try {
-      const res = await fetch(`${CHAT_API}/chat`, {
+      const res = await fetch(`${getChatApi()}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text, lang, top_k: 3 }),
