@@ -8,8 +8,9 @@
 ## Технический стек и инструменты
 * **Языки и фреймворки:** Python (FastAPI, SQLAlchemy 2.0, Alembic, pandas).
 * **Базы данных и инфраструктура:** PostgreSQL, ChromaDB, FAISS, Docker, Docker Compose.
-* **Автоматизация и Оркестрация:** n8n, Playwright, Selenium Webdriver (headless-автоматизация с обходом защиты).
-* **Искусственный интеллект и ML:** OpenAI API (GPT-4o/Vision), GigaChat API, Claude, Hugging Face (Transformers, PEFT/LoRA, TRL, BitsAndBytes для квантования), Yandex SpeechKit (STT для нативного OGG OPUS).
+* **Автоматизация и парсинг:** Playwright, Selenium Webdriver (headless-автоматизация с обходом антибот-защиты).
+* **Искусственный интеллект и ML:** OpenAI API (GPT-4o/Vision), Anthropic Claude API, Google Gemini API (2.5 Flash/Pro), Sber GigaChat API, OpenRouter (multi-provider LLM routing с автоматическим fallback), Hugging Face (Transformers, PEFT/LoRA, TRL, BitsAndBytes для квантования), Yandex SpeechKit (STT/TTS).
+* **AI-агенты и оркестрация:** Hermes (Python agent framework), OpenClaw (Node.js gateway), MCP (Model Context Protocol), мульти-агентная доменная маршрутизация, Shared State протоколы, n8n (workflow orchestration).
 * **CRM и учетные системы:** Bnovo PMS, Bitrix24, AmoCRM, Россельхознадзор («Цербер», VetIS.API, ФГИС «Меркурий»).
 
 ## Ключевой опыт и реализованные проекты
@@ -29,6 +30,11 @@
 * **Роль:** Full-Stack AI Engineer.
 * **Задача:** Сбор и структурирование данных международных системных интеграторов судового оборудования связи (VSAT, LEO: Starlink Maritime, OneWeb) для извлечения информации об их сервисных хабах в портах, SLA и партнерских статусах (Elcome, Tototheo, AST).
 * **Решение:** Создано десктопное приложение для macOS на базе PyQt6. Интегрирован runtime-парсер на Selenium в headless-режиме с подменой User-Agent и отключением автоматизации для беспрепятственного скрейпинга интерактивных карт локаций и списков партнеров конкурентов. Данные (включая встроенные PDF-брошюры и скриншоты) отправляются в мультимодальную модель GPT-4o с параметром `temperature=0` и принудительным `response_format={"type": "json_object"}` для исключения галлюцинаций. Приложение выдает строгий JSON-снимок с оценкой рисков, перечнем вендоров и списком портов присутствия инженеров конкурента. Сборка приложения выполнена через PyInstaller в нативный бандл `.app`.
+
+### 5. Мульти-агентная система для автоматизации AI-консалтинга (внутренний R&D)
+* **Роль:** AI Systems Architect & Lead Engineer.
+* **Задача:** Спроектировать и развернуть production-ready мульти-агентную систему для автоматизации задач AI-консалтинга — исследований, разработки, дизайна и стратегического анализа.
+* **Решение:** Реализована четырёхагентная иерархическая архитектура на базе Hermes (Python) и OpenClaw (Node.js) с Telegram как интерфейсом. Агент-оркестратор принимает задачи, определяет бизнес-домен и делегирует специализированным субагентам: исследователь, разработчик, дизайнер. Разработана система доменной маршрутизации (7 бизнес-доменов) и Shared State — структурированный протокол обмена результатами между агентами без прямой связи. Реализован мультипровайдерный LLM-роутинг через OpenRouter с автоматическим fallback между Claude, Gemini и GPT. Агенты развёрнуты как systemd user services с автозапуском и hot-swap конфигурацией без остановки системы.
 
 ### 4. R&D Кейс: Тонкое дообучение стиля общения локальных моделей (Fine-Tuning)
 * **Роль:** AI Research Engineer.

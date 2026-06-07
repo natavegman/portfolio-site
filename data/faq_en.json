@@ -9,11 +9,19 @@
   },
   {
     "question": "What is your primary artificial intelligence and data engineering tech stack?",
-    "answer": "My production stack consists of: Python (FastAPI, SQLAlchemy 2.0, Alembic migrations, pandas dataframes), relational PostgreSQL, and vectorized storage (ChromaDB, FAISS). On the AI/ML layer: OpenAI API (including specialized GPT-4o Vision parameters), Sber GigaChat API, Anthropic Claude, Hugging Face ecosystem frameworks (Transformers, PEFT/LoRA, TRL SFTTrainer, BitsAndBytes for 4-bit quantization), and advanced speech-to-text engines like Yandex SpeechKit."
+    "answer": "My production stack consists of: Python (FastAPI, SQLAlchemy 2.0, Alembic migrations, pandas dataframes), relational PostgreSQL, and vectorized storage (ChromaDB, FAISS). On the AI/ML layer: OpenAI API (including specialized GPT-4o Vision parameters), Anthropic Claude API, Google Gemini API (2.5 Flash/Pro), Sber GigaChat API, OpenRouter (multi-provider LLM routing with automatic fallback), Hugging Face ecosystem frameworks (Transformers, PEFT/LoRA, TRL SFTTrainer, BitsAndBytes for 4-bit quantization), and Yandex SpeechKit (STT/TTS). For agent orchestration: Hermes, OpenClaw, MCP, n8n."
   },
   {
     "question": "Do you build simple conversational chat-bots or complex backend systems?",
     "answer": "I engineer autonomous digital workers and comprehensive backend pipelines. My solutions interact natively with production databases, extract business parameters from unstructured inputs (PDF documents, map layouts, image attachments, or compressed audio logs), compute complex real-time operational metrics (such as occupancy rates, ADR, or logistics trends), and push structured sync alerts straight to your target CRM (Bitrix24, AmoCRM) within secure Docker environments."
+  },
+  {
+    "question": "Can you design and build multi-agent AI systems?",
+    "answer": "Yes. I design and deploy production-ready multi-agent systems where multiple specialized AI agents operate in coordination under a central orchestrator. Each agent has a defined role (researcher, developer, designer), its own model, and its own cognitive context. The orchestrator receives a task, identifies the relevant business domain, assembles the required context, and delegates to the appropriate subagents via a structured inter-agent result exchange protocol (Shared State). This architecture enables complex tasks to be executed in parallel and scales horizontally without rewiring the system."
+  },
+  {
+    "question": "Do you offer AI architecture consulting for businesses?",
+    "answer": "Yes, this is one of my core service offerings. I provide AI architecture consulting: I audit existing business processes, identify where and which AI will deliver measurable ROI, select the optimal technology stack (models, providers, infrastructure), and design the full system with explicit constraints around data security, budget, and scalability. The deliverable is not a generic recommendation deck — it is a concrete architectural blueprint with a justified rationale for every technical decision and a phased implementation roadmap."
   },
   {
     "question": "Do you have practical experience in training or fine-tuning Large Language Models?",

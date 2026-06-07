@@ -8,8 +8,9 @@ Expert at translating high-level business pain points into rigorous technical re
 ## Core Technical Stack & Tools
 * **Languages & Frameworks:** Python (FastAPI, SQLAlchemy 2.0, Alembic, pandas).
 * **Databases & Vector Storage:** PostgreSQL, ChromaDB, FAISS, Docker, Docker Compose.
-* **Automation & Web Scraping:** n8n, Playwright, Selenium Webdriver (headless browser automation with anti-bot bypass capabilities).
-* **AI & Machine Learning:** OpenAI API (GPT-4o/Vision), Sber GigaChat API, Anthropic Claude, Hugging Face ecosystem (Transformers, PEFT/LoRA, TRL, BitsAndBytes for 4-bit quantization), Yandex SpeechKit (STT for native OGG OPUS streaming).
+* **Automation & Web Scraping:** Playwright, Selenium Webdriver (headless browser automation with anti-bot bypass capabilities).
+* **AI & Machine Learning:** OpenAI API (GPT-4o/Vision), Anthropic Claude API, Google Gemini API (2.5 Flash/Pro), Sber GigaChat API, OpenRouter (multi-provider LLM routing with automatic fallback), Hugging Face ecosystem (Transformers, PEFT/LoRA, TRL, BitsAndBytes for 4-bit quantization), Yandex SpeechKit (STT/TTS).
+* **AI Agents & Orchestration:** Hermes (Python agent framework), OpenClaw (Node.js gateway), MCP (Model Context Protocol), multi-agent domain routing, Shared State protocols, n8n (workflow orchestration).
 * **Enterprise SaaS & CRM:** Bnovo PMS, Bitrix24, AmoCRM, Russian Federal Service for Veterinary and Phytosanitary Surveillance registries ("Cerberus", VetIS.API, FGIS "Mercury").
 
 ## Selected Professional Experience & Core Projects
@@ -29,6 +30,11 @@ Expert at translating high-level business pain points into rigorous technical re
 * **Role:** Full-Stack AI Engineer.
 * **Context:** Built an intelligence-gathering application targeting global maritime satcom integrators (VSAT, LEO: Starlink Maritime, OneWeb) to map field engineering hubs, SLAs, and technical equipment distribution networks (e.g., Elcome, Tototheo, AST).
 * **Implementation:** Developed a native desktop application for macOS using PyQt6. Built an automated background crawler using Selenium Webdriver running in a hardened headless Chrome instance (spoofing User-Agents and disabling default automation flags to bypass Cloudflare/bot protections) to scrape competitor partner pages and interactive maps. Ingested raw structural page text, embedded PDF brochures, and layout screenshots directly into OpenAI's GPT-4o model at `temperature=0`, explicitly enforcing a JSON response format (`response_format={"type": "json_object"}`) to prevent hallucination. The pipeline outputs structured intelligence snapshots tracking competitive advantages and regional risks, saved locally in PostgreSQL and outputted as automated snapshots. Maintained and packaged the code via PyInstaller into a clean standalone `.app` bundle.
+
+### 5. Multi-Agent System for AI Consulting Automation (Internal R&D)
+* **Role:** AI Systems Architect & Lead Engineer.
+* **Context:** Designed and deployed a production-ready multi-agent system to automate AI consulting operations — covering research, development, design, and strategic analysis.
+* **Implementation:** Architected a four-agent hierarchical system built on Hermes (Python) and OpenClaw (Node.js), with Telegram as the conversational interface. An orchestrator agent receives tasks, identifies the relevant business domain from a library of 7 domain contexts, and delegates work to specialized subagents: a researcher, a developer, and a designer. Engineered a domain routing engine and a Shared State protocol — a structured inter-agent result exchange that eliminates direct coupling between subagents. Implemented multi-provider LLM routing via OpenRouter with automatic fallback chains across Claude, Gemini, and GPT models. Deployed all agents as persistent systemd user services with autostart and hot-swap configuration capability.
 
 ### 4. R&D Case Study: Local LLM Style Fine-Tuning (Parameter-Efficient Fine-Tuning)
 * **Role:** AI Research Engineer.
