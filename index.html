@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nata Vegman — AI Developer</title>
+  <title>Natalia Vegman — Senior AI Automation Consultant</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -56,7 +56,7 @@
       opacity: .5;
       mix-blend-mode: exclusion;
     }
-    .cursor.hover { transform: scale(2.5); }
+    .cursor.hover  { transform: scale(2.5); }
     .cursor-ring.hover { transform: scale(1.4); opacity: 1; }
 
     /* ─── Grid noise overlay ──────────────────────────────────── */
@@ -79,6 +79,7 @@
       padding: 1.25rem 4rem;
       border-bottom: 1px solid transparent;
       transition: border-color .3s, background .3s, backdrop-filter .3s;
+      gap: 2rem;
     }
     nav.scrolled {
       background: rgba(8,12,16,.85);
@@ -91,8 +92,12 @@
       color: var(--accent);
       letter-spacing: .04em;
       text-decoration: none;
+      flex-shrink: 0;
     }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links {
+      display: flex; gap: 2.5rem; list-style: none;
+      flex: 1; justify-content: center;
+    }
     .nav-links a {
       font-size: .85rem; font-weight: 500;
       color: var(--muted);
@@ -103,6 +108,32 @@
     }
     .nav-links a:hover { color: var(--accent); }
 
+    /* ─── Language Switcher ────────────────────────────────────── */
+    .lang-switcher {
+      display: flex;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      padding: .3rem .65rem;
+      font-size: .72rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: .08em;
+      background: transparent;
+      color: var(--muted);
+      border: none;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: #000;
+    }
+    .lang-btn:not(.active):hover { color: var(--text); }
+
     /* ─── Hero ─────────────────────────────────────────────────── */
     .hero {
       min-height: 100vh;
@@ -112,7 +143,6 @@
       overflow: hidden;
     }
 
-    /* glowing orb bg */
     .hero::after {
       content: '';
       position: absolute;
@@ -138,7 +168,6 @@
       opacity: 0;
       animation: fadeUp .6s .2s forwards;
     }
-
     .hero-name {
       font-size: clamp(3rem, 7vw, 6.5rem);
       font-weight: 700;
@@ -149,17 +178,15 @@
       animation: fadeUp .7s .35s forwards;
     }
     .hero-name span { color: var(--accent); }
-
     .hero-subtitle {
       font-size: clamp(1rem, 2vw, 1.35rem);
       color: var(--muted);
       font-weight: 400;
-      max-width: 560px;
+      max-width: 600px;
       margin-bottom: 3rem;
       opacity: 0;
       animation: fadeUp .7s .5s forwards;
     }
-
     .hero-cta {
       display: flex; gap: 1rem; flex-wrap: wrap;
       opacity: 0;
@@ -174,16 +201,15 @@
       text-decoration: none;
       transition: transform .2s, box-shadow .2s;
       cursor: pointer;
+      border: none;
     }
     .btn:hover { transform: translateY(-2px); }
-
     .btn-primary {
       background: var(--accent);
       color: #000;
       box-shadow: 0 0 0 0 rgba(79,255,176,.4);
     }
     .btn-primary:hover { box-shadow: 0 8px 30px rgba(79,255,176,.35); }
-
     .btn-outline {
       border: 1px solid var(--border);
       color: var(--text);
@@ -215,13 +241,27 @@
       100% { transform: scaleY(0); transform-origin: bottom; }
     }
 
+    /* ─── Stats ────────────────────────────────────────────────── */
+    .stats {
+      display: flex; gap: 3.5rem; margin-top: 4rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp .6s .8s forwards;
+    }
+    .stat-item { display: flex; flex-direction: column; gap: .25rem; }
+    .stat-num {
+      font-size: 2rem; font-weight: 700; color: var(--text);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-label { font-size: .8rem; color: var(--muted); letter-spacing: .05em; }
+
     /* ─── Sections ─────────────────────────────────────────────── */
     section {
       padding: 7rem 4rem;
       position: relative;
       z-index: 1;
     }
-
     .section-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: .72rem;
@@ -245,24 +285,6 @@
       line-height: 1.75;
     }
 
-    /* ─── Stats row ────────────────────────────────────────────── */
-    .stats {
-      display: flex; gap: 3.5rem; margin-top: 4rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp .6s .8s forwards;
-    }
-    .stat-item { display: flex; flex-direction: column; gap: .25rem; }
-    .stat-num {
-      font-size: 2rem; font-weight: 700; color: var(--text);
-      line-height: 1;
-    }
-    .stat-num span { color: var(--accent); }
-    .stat-label {
-      font-size: .8rem; color: var(--muted);
-      letter-spacing: .05em;
-    }
-
     /* ─── Featured project ─────────────────────────────────────── */
     #featured { background: var(--surface); }
 
@@ -281,8 +303,6 @@
       background: linear-gradient(135deg, #0e1822 0%, #131028 50%, #0a1a18 100%);
       border: 1px solid var(--border);
     }
-
-    /* animated fashion mockup */
     .feat-visual-inner {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
@@ -327,10 +347,9 @@
     }
     .phone-bubble.img-bubble {
       background: linear-gradient(135deg, #1a2a3a, #1a1a2e);
-      height: 70px;
+      height: 60px;
       display: flex; align-items: center; justify-content: center;
-      font-size: .55rem; color: var(--muted);
-      gap: .3rem;
+      font-size: .5rem; color: var(--muted);
     }
     .phone-dots {
       display: flex; gap: .25rem; margin-top: auto;
@@ -343,7 +362,6 @@
     }
     .phone-dot.active { background: var(--accent); }
 
-    /* floating labels */
     .feat-tag {
       position: absolute;
       background: rgba(14,20,25,.9);
@@ -356,27 +374,18 @@
       color: var(--accent);
       animation: float 4s ease-in-out infinite;
     }
-    .feat-tag:nth-child(2) { animation-delay: .8s; top: 1.5rem; right: 1.5rem; }
+    .feat-tag:nth-child(2) { animation-delay: .8s;  top: 1.5rem; right: 1.5rem; }
     .feat-tag:nth-child(3) { animation-delay: 1.6s; bottom: 2rem; left: 1.5rem; }
 
     .feat-content { display: flex; flex-direction: column; gap: 1.5rem; }
-
     .feat-title {
       font-size: clamp(1.8rem, 3vw, 2.4rem);
       font-weight: 700;
       letter-spacing: -.02em;
       line-height: 1.15;
     }
-
-    .feat-desc {
-      font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .feat-stack {
-      display: flex; flex-wrap: wrap; gap: .5rem;
-    }
+    .feat-desc { font-size: 1rem; color: var(--muted); line-height: 1.8; }
+    .feat-stack { display: flex; flex-wrap: wrap; gap: .5rem; }
     .tech-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: .72rem;
@@ -387,10 +396,7 @@
       color: var(--accent);
       letter-spacing: .04em;
     }
-
-    .feat-highlights {
-      display: flex; flex-direction: column; gap: .75rem;
-    }
+    .feat-highlights { display: flex; flex-direction: column; gap: .75rem; }
     .highlight-item {
       display: flex; align-items: flex-start; gap: .75rem;
       font-size: .9rem; color: var(--muted);
@@ -408,7 +414,6 @@
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1.5rem;
     }
-
     .project-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -423,7 +428,6 @@
       border-color: rgba(79,255,176,.25);
       box-shadow: 0 20px 60px rgba(0,0,0,.4);
     }
-
     .project-header {
       display: flex; align-items: flex-start; justify-content: space-between;
     }
@@ -442,22 +446,9 @@
       letter-spacing: .12em;
       text-transform: uppercase;
     }
-
-    .project-name {
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: -.01em;
-    }
-    .project-desc {
-      font-size: .875rem;
-      color: var(--muted);
-      line-height: 1.7;
-      flex: 1;
-    }
-    .project-stack {
-      display: flex; flex-wrap: wrap; gap: .4rem;
-      margin-top: auto;
-    }
+    .project-name { font-size: 1.1rem; font-weight: 600; letter-spacing: -.01em; }
+    .project-desc { font-size: .875rem; color: var(--muted); line-height: 1.7; flex: 1; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: auto; }
     .stack-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: .65rem;
@@ -469,13 +460,11 @@
 
     /* ─── Skills ───────────────────────────────────────────────── */
     #skills { background: var(--surface); }
-
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 1.25rem;
     }
-
     .skill-group {
       border: 1px solid var(--border);
       border-radius: 14px;
@@ -484,22 +473,16 @@
       transition: border-color .25s;
     }
     .skill-group:hover { border-color: rgba(79,255,176,.2); }
-
     .skill-group-title {
-      font-size: .78rem;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 1rem;
       font-family: 'JetBrains Mono', monospace;
     }
-    .skill-list {
-      display: flex; flex-direction: column; gap: .5rem;
-    }
+    .skill-list { display: flex; flex-direction: column; gap: .5rem; }
     .skill-item {
-      font-size: .875rem;
-      color: var(--muted);
+      font-size: .875rem; color: var(--muted);
       display: flex; align-items: center; gap: .5rem;
     }
     .skill-item::before {
@@ -518,16 +501,12 @@
       align-items: start;
     }
     .about-text {
-      font-size: 1.05rem;
-      color: var(--muted);
+      font-size: 1.05rem; color: var(--muted);
       line-height: 1.9;
       display: flex; flex-direction: column; gap: 1.25rem;
     }
     .about-text p strong { color: var(--text); }
-
-    .about-aside {
-      display: flex; flex-direction: column; gap: 1.25rem;
-    }
+    .about-aside { display: flex; flex-direction: column; gap: 1.25rem; }
     .about-card {
       border: 1px solid var(--border);
       border-radius: 14px;
@@ -536,17 +515,12 @@
     }
     .about-card-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .68rem;
-      color: var(--accent);
-      letter-spacing: .14em;
-      text-transform: uppercase;
+      font-size: .68rem; color: var(--accent);
+      letter-spacing: .14em; text-transform: uppercase;
       margin-bottom: .6rem;
     }
-    .about-card-value {
-      font-size: .9rem;
-      color: var(--text);
-      line-height: 1.6;
-    }
+    .about-card-value { font-size: .9rem; color: var(--text); line-height: 1.6; }
+    .about-card-value small { color: var(--muted); font-size: .82rem; }
 
     /* ─── Contact ──────────────────────────────────────────────── */
     #contact {
@@ -557,11 +531,8 @@
         var(--bg);
     }
     #contact .section-title { max-width: 640px; margin: 0 auto 1rem; }
-    #contact .section-desc { margin: 0 auto 3rem; }
-
-    .contact-links {
-      display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
-    }
+    #contact .section-desc  { margin: 0 auto 3rem; }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
     /* ─── Footer ───────────────────────────────────────────────── */
     footer {
@@ -574,22 +545,13 @@
     footer a:hover { color: var(--accent); }
     .footer-mono { font-family: 'JetBrains Mono', monospace; }
 
-    /* ─── Divider ──────────────────────────────────────────────── */
-    .divider {
-      width: 100%; height: 1px;
-      background: var(--border);
-    }
-
     /* ─── Reveal animation ─────────────────────────────────────── */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
       transition: opacity .7s ease, transform .7s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .reveal.visible { opacity: 1; transform: none; }
     .reveal-delay-1 { transition-delay: .1s; }
     .reveal-delay-2 { transition-delay: .2s; }
     .reveal-delay-3 { transition-delay: .3s; }
@@ -600,9 +562,182 @@
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: none; }
     }
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    /* ─── Chat Widget ──────────────────────────────────────────── */
+    #chat-launcher {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: #000;
+      box-shadow: 0 4px 24px rgba(79,255,176,.35);
+      z-index: 1000;
+      transition: transform .25s, box-shadow .25s;
     }
+    #chat-launcher:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 36px rgba(79,255,176,.55);
+    }
+    #chat-launcher svg { width: 24px; height: 24px; }
+
+    #chat-panel {
+      position: fixed;
+      bottom: 6.5rem; right: 2rem;
+      width: 380px; height: 530px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      display: flex; flex-direction: column;
+      overflow: hidden;
+      z-index: 999;
+      box-shadow: 0 24px 64px rgba(0,0,0,.65);
+      transform: translateY(24px) scale(.96);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .32s cubic-bezier(.23,1,.32,1), opacity .32s;
+    }
+    #chat-panel.open {
+      transform: none;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .chat-header {
+      display: flex; align-items: center; gap: .85rem;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.02);
+      flex-shrink: 0;
+    }
+    .chat-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(79,255,176,.2), rgba(123,111,240,.2));
+      border: 1px solid rgba(79,255,176,.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .78rem; font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+      position: relative;
+    }
+    .chat-avatar::after {
+      content: '';
+      position: absolute; bottom: 1px; right: 1px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: #4ade80;
+      border: 2px solid var(--surface);
+    }
+    .chat-header-info { flex: 1; min-width: 0; }
+    .chat-title-text {
+      font-size: .9rem; font-weight: 600; color: var(--text); line-height: 1.2;
+    }
+    .chat-subtitle-text {
+      font-size: .7rem; color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    #chat-close {
+      background: none; border: none; color: var(--muted);
+      cursor: pointer; font-size: 1.35rem; line-height: 1;
+      padding: .2rem .4rem; border-radius: 5px;
+      transition: color .2s, background .2s; flex-shrink: 0;
+    }
+    #chat-close:hover { color: var(--text); background: rgba(255,255,255,.06); }
+
+    .chat-messages {
+      flex: 1; overflow-y: auto;
+      padding: 1rem;
+      display: flex; flex-direction: column; gap: .75rem;
+      scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+    }
+    .chat-messages::-webkit-scrollbar { width: 4px; }
+    .chat-messages::-webkit-scrollbar-track { background: transparent; }
+    .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .chat-msg {
+      display: flex; gap: .6rem; max-width: 92%;
+      align-items: flex-end;
+    }
+    .chat-msg.user { align-self: flex-end; flex-direction: row-reverse; }
+    .chat-msg-bubble {
+      padding: .6rem .9rem;
+      border-radius: 14px;
+      font-size: .845rem; line-height: 1.6;
+    }
+    .chat-msg.bot .chat-msg-bubble {
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-bottom-left-radius: 4px;
+    }
+    .chat-msg.user .chat-msg-bubble {
+      background: linear-gradient(135deg, rgba(79,255,176,.18), rgba(123,111,240,.18));
+      border: 1px solid rgba(79,255,176,.22);
+      color: var(--text);
+      border-bottom-right-radius: 4px;
+    }
+
+    .typing-indicator {
+      display: flex; gap: .35rem;
+      padding: .65rem .9rem;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      border-bottom-left-radius: 4px;
+      width: fit-content;
+    }
+    .typing-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--muted);
+      animation: typingBounce 1.2s ease-in-out infinite;
+    }
+    .typing-dot:nth-child(2) { animation-delay: .2s; }
+    .typing-dot:nth-child(3) { animation-delay: .4s; }
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30%            { transform: translateY(-6px); background: var(--accent); }
+    }
+
+    .chat-footer {
+      padding: .75rem 1rem;
+      border-top: 1px solid var(--border);
+      display: flex; gap: .6rem;
+      background: rgba(255,255,255,.02);
+      flex-shrink: 0;
+    }
+    #chat-input {
+      flex: 1;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .55rem .9rem;
+      font-size: .85rem; color: var(--text);
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color .2s;
+    }
+    #chat-input:focus { border-color: rgba(79,255,176,.35); }
+    #chat-input::placeholder { color: var(--muted); }
+    #chat-send {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: var(--accent);
+      border: none; color: #000;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: transform .2s, box-shadow .2s;
+    }
+    #chat-send:hover { transform: scale(1.08); box-shadow: 0 4px 16px rgba(79,255,176,.4); }
+    #chat-send:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+    #chat-send svg { width: 16px; height: 16px; }
 
     /* ─── Responsive ───────────────────────────────────────────── */
     @media (max-width: 900px) {
@@ -615,12 +750,13 @@
       footer { padding: 1.5rem; flex-direction: column; gap: .75rem; text-align: center; }
       #contact { padding: 6rem 1.5rem; }
     }
-
     @media (max-width: 600px) {
       .nav-links { display: none; }
       .hero-name { font-size: 2.8rem; }
       .feat-visual { aspect-ratio: 3/2; }
       .phone-frame { width: 120px; height: 240px; }
+      #chat-panel { width: calc(100vw - 2rem); right: 1rem; bottom: 5.5rem; height: 470px; }
+      #chat-launcher { right: 1rem; bottom: 1rem; }
     }
   </style>
 </head>
@@ -634,54 +770,57 @@
 <nav id="navbar">
   <a href="#" class="nav-logo">nv.dev</a>
   <ul class="nav-links">
-    <li><a href="#featured">Work</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#featured"  data-i18n="navWork">Work</a></li>
+    <li><a href="#projects"  data-i18n="navProjects">Projects</a></li>
+    <li><a href="#skills"    data-i18n="navSkills">Skills</a></li>
+    <li><a href="#about"     data-i18n="navAbout">About</a></li>
+    <li><a href="#contact"   data-i18n="navContact">Contact</a></li>
   </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn"        data-lang="ru">RU</button>
+  </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero" id="home">
-  <p class="hero-eyebrow">AI Developer &amp; Data Engineer</p>
+  <p class="hero-eyebrow" data-i18n="heroEyebrow">Senior AI Automation Consultant &amp; IT Architect</p>
   <h1 class="hero-name">Nata<br /><span>Vegman</span></h1>
-  <p class="hero-subtitle">
-    I build intelligent systems that automate complex workflows&nbsp;—
-    from LLM-powered assistants to data pipelines and computer vision apps.
+  <p class="hero-subtitle" data-i18n-html="heroSubtitle">
+    I translate business pain into rigorous technical architecture&nbsp;— from multimodal LLM pipelines to enterprise DWH and end-to-end process automation.
   </p>
   <div class="hero-cta">
-    <a href="#featured" class="btn btn-primary">See my work</a>
-    <a href="#contact" class="btn btn-outline">Get in touch</a>
+    <a href="#featured" class="btn btn-primary"  data-i18n="heroCta1">See my work</a>
+    <a href="#contact"  class="btn btn-outline"  data-i18n="heroCta2">Get in touch</a>
   </div>
 
   <div class="stats">
     <div class="stat-item">
-      <div class="stat-num">5<span>+</span></div>
-      <div class="stat-label">AI Projects shipped</div>
+      <div class="stat-num">19<span>+</span></div>
+      <div class="stat-label" data-i18n="stat1Label">Years in IT</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">3</div>
-      <div class="stat-label">Industries covered</div>
+      <div class="stat-num">4</div>
+      <div class="stat-label" data-i18n="stat2Label">AI projects shipped</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">10<span>+</span></div>
-      <div class="stat-label">Integrations built</div>
+      <div class="stat-label" data-i18n="stat3Label">Integrations built</div>
     </div>
   </div>
 
   <div class="scroll-hint">
     <div class="scroll-line"></div>
-    <span>scroll</span>
+    <span data-i18n="scrollHint">scroll</span>
   </div>
 </section>
 
 <!-- Featured Project -->
 <section id="featured">
-  <p class="section-label reveal">Featured project</p>
-  <h2 class="section-title reveal reveal-delay-1">AI Stylist<br />with Virtual Try-On</h2>
-  <p class="section-desc reveal reveal-delay-2">
-    A Telegram bot that turns your wardrobe into a smart style advisor — with real-time outfit generation and computer-vision-powered virtual try-on.
+  <p class="section-label reveal"              data-i18n="featLabel">Featured project</p>
+  <h2 class="section-title reveal reveal-delay-1" data-i18n-html="featTitle">Nebo AI<br />Assistant</h2>
+  <p class="section-desc reveal reveal-delay-2"   data-i18n="featDesc">
+    Multimodal AI concierge for a premium apart-hotel network — hybrid RAG helpdesk, Computer Vision defect detection, and native Telegram voice transcription.
   </p>
 
   <div class="featured-card">
@@ -690,12 +829,10 @@
       <div class="feat-visual-inner">
         <div class="phone-frame">
           <div class="phone-screen-top"></div>
-          <div class="phone-bubble bot">👗 Your wardrobe is ready. Send me a photo of what you'd like to try on!</div>
-          <div class="phone-bubble user">I have a dinner tonight, what should I wear?</div>
-          <div class="phone-bubble img-bubble">
-            🪄 Generating outfit…
-          </div>
-          <div class="phone-bubble bot">Here's a look for your evening — the navy blazer pairs perfectly with your wide-leg trousers.</div>
+          <div class="phone-bubble bot"       data-i18n="phoneBotMsg1">Welcome! How can I assist you today?</div>
+          <div class="phone-bubble user"      data-i18n="phoneUserMsg">AC in room 315 is broken 😢</div>
+          <div class="phone-bubble img-bubble" data-i18n="phoneAnalyzing">🔍 Analyzing report…</div>
+          <div class="phone-bubble bot"       data-i18n="phoneBotMsg2">Ticket created. Technician in 20 min.</div>
           <div class="phone-dots">
             <div class="phone-dot active"></div>
             <div class="phone-dot"></div>
@@ -703,34 +840,26 @@
           </div>
         </div>
       </div>
-      <div class="feat-tag">Virtual Try-On</div>
-      <div class="feat-tag">Vision AI</div>
+      <div class="feat-tag" data-i18n="featTag1">RAG + Vision</div>
+      <div class="feat-tag" data-i18n="featTag2">Bnovo PMS</div>
     </div>
 
     <!-- Content -->
     <div class="feat-content reveal reveal-delay-2">
       <div class="feat-stack">
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">Google Gemini Vision</span>
-        <span class="tech-tag">Fal.ai Fashn</span>
-        <span class="tech-tag">PostgreSQL</span>
-        <span class="tech-tag">Telegram Bot API</span>
+        <span class="tech-tag">Python / FastAPI</span>
+        <span class="tech-tag">GigaChat / GPT-4o Vision</span>
+        <span class="tech-tag">ChromaDB / RAG</span>
+        <span class="tech-tag">Bnovo PMS API</span>
+        <span class="tech-tag">Yandex SpeechKit</span>
         <span class="tech-tag">Docker</span>
       </div>
 
       <div class="feat-highlights">
-        <div class="highlight-item">
-          Upload clothing photos once — the bot recognizes each garment, its category, color, and style using Gemini Vision.
-        </div>
-        <div class="highlight-item">
-          Ask for an outfit for any occasion; the bot curates a look from your actual wardrobe, explains the logic, and suggests what to add from Russian marketplaces.
-        </div>
-        <div class="highlight-item">
-          Virtual try-on: superimpose selected garments onto your photo using the Fashn model via Fal.ai — see how the outfit looks on you before getting dressed.
-        </div>
-        <div class="highlight-item">
-          Full async backend with PostgreSQL; images stored locally and served on demand.
-        </div>
+        <div class="highlight-item" data-i18n="featH1">Async FastAPI backend natively integrated with Bnovo PMS API; separate prompt modes for Staff and Guest sessions.</div>
+        <div class="highlight-item" data-i18n="featH2">Computer Vision (GPT-4o / GigaChat Vision) auto-detects equipment defects from photos and creates urgent CRM maintenance tickets.</div>
+        <div class="highlight-item" data-i18n="featH3">Yandex SpeechKit transcribes native OGG OPUS voice messages in-memory — no CPU bottleneck on the server.</div>
+        <div class="highlight-item" data-i18n="featH4">Full security stack: Docker Compose, Row-Level Security, Telegram webhook token validation, MAINTENANCE_MODE kill switch.</div>
       </div>
     </div>
   </div>
@@ -738,82 +867,81 @@
 
 <!-- Other Projects -->
 <section id="projects">
-  <p class="section-label reveal">More projects</p>
-  <h2 class="section-title reveal reveal-delay-1">Things I've built</h2>
-  <p class="section-desc reveal reveal-delay-2">A selection of tools and systems from different domains.</p>
+  <p class="section-label reveal"              data-i18n="projLabel">More projects</p>
+  <h2 class="section-title reveal reveal-delay-1" data-i18n="projTitle">Things I've built</h2>
+  <p class="section-desc reveal reveal-delay-2"   data-i18n="projDesc">A selection of tools and systems across different domains.</p>
 
   <div class="projects-grid">
 
     <div class="project-card reveal">
       <div class="project-header">
-        <div class="project-icon">🤖</div>
-        <span class="project-type">AI / RAG</span>
+        <div class="project-icon">📊</div>
+        <span class="project-type" data-i18n="p1Type">Analytics / ETL</span>
       </div>
-      <div class="project-name">Hospitality AI Assistant</div>
-      <div class="project-desc">
-        A RAG-powered internal chatbot for hospitality staff. Answers questions about check-in procedures, locks, FMS registration, and live booking data — drawing from proprietary docs and a booking API. Separate voice and tone for staff vs. guests.
+      <div class="project-name" data-i18n="p1Name">Fisheries DWH &amp; Analytics Platform</div>
+      <div class="project-desc" data-i18n="p1Desc">
+        Migrated a fragmented Python ETL ecosystem into a centralized PostgreSQL DWH. Engineered complex quota-transfer logic, integrated UN Comtrade API and AMP vessel tracking; n8n orchestration, Notion as read-only dashboard.
       </div>
       <div class="project-stack">
         <span class="stack-tag">Python</span>
-        <span class="stack-tag">LangChain</span>
-        <span class="stack-tag">ChromaDB</span>
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">Telegram</span>
-        <span class="stack-tag">GigaChat</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">SQLAlchemy 2.0</span>
+        <span class="stack-tag">n8n</span>
+        <span class="stack-tag">Notion API</span>
+        <span class="stack-tag">UN Comtrade API</span>
       </div>
     </div>
 
     <div class="project-card reveal reveal-delay-1">
       <div class="project-header">
-        <div class="project-icon">📊</div>
-        <span class="project-type">Analytics / ETL</span>
+        <div class="project-icon">🛰️</div>
+        <span class="project-type" data-i18n="p2Type">AI / Scraping</span>
       </div>
-      <div class="project-name">Industry Quota Analytics</div>
-      <div class="project-desc">
-        End-to-end ETL pipeline that parses government PDF orders, normalizes legal entities by TIN, maps them to corporate groups, and produces a structured quota allocation table. Includes export certification data and a fleet map powered by Global Fishing Watch API.
+      <div class="project-name" data-i18n="p2Name">Competitor Intelligence System</div>
+      <div class="project-desc" data-i18n="p2Desc">
+        macOS desktop app that scrapes maritime satcom integrators using headless Selenium with anti-bot bypass, feeds raw data to GPT-4o at temperature=0, and outputs structured JSON intelligence snapshots with risk assessments.
       </div>
       <div class="project-stack">
-        <span class="stack-tag">Python</span>
-        <span class="stack-tag">Playwright</span>
-        <span class="stack-tag">PDF parsing</span>
-        <span class="stack-tag">Notion API</span>
-        <span class="stack-tag">GFW API</span>
-        <span class="stack-tag">Flask</span>
+        <span class="stack-tag">Python / PyQt6</span>
+        <span class="stack-tag">Selenium headless</span>
+        <span class="stack-tag">GPT-4o</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">PyInstaller</span>
       </div>
     </div>
 
     <div class="project-card reveal reveal-delay-2">
       <div class="project-header">
-        <div class="project-icon">🚢</div>
-        <span class="project-type">Data / Monitoring</span>
+        <div class="project-icon">🧠</div>
+        <span class="project-type" data-i18n="p3Type">AI / R&amp;D</span>
       </div>
-      <div class="project-name">Fleet Intelligence Monitor</div>
-      <div class="project-desc">
-        Automated vessel-tracking pipeline: pulls AIS data from a commercial API, filters by type and destination keywords, enriches each ship via Equasis CLI, and syncs structured records (owner, ISM, inspections) into a Notion fleet database.
+      <div class="project-name" data-i18n="p3Name">LLM Tone-of-Voice Fine-Tuning</div>
+      <div class="project-desc" data-i18n="p3Desc">
+        Fine-tuning pipeline for ruGPT-3 using 4-bit quantization + LoRA adapters on Google Colab T4 GPU, targeting luxury 5-star concierge ToV with full local data isolation.
       </div>
       <div class="project-stack">
-        <span class="stack-tag">Python</span>
-        <span class="stack-tag">Datalastic API</span>
-        <span class="stack-tag">Equasis CLI</span>
-        <span class="stack-tag">Notion API</span>
-        <span class="stack-tag">YAML config</span>
+        <span class="stack-tag">Hugging Face</span>
+        <span class="stack-tag">PEFT / LoRA</span>
+        <span class="stack-tag">BitsAndBytes</span>
+        <span class="stack-tag">TRL / SFTTrainer</span>
+        <span class="stack-tag">Google Colab</span>
       </div>
     </div>
 
     <div class="project-card reveal reveal-delay-3">
       <div class="project-header">
         <div class="project-icon">📄</div>
-        <span class="project-type">Automation / OCR</span>
+        <span class="project-type" data-i18n="p4Type">Automation / OCR</span>
       </div>
-      <div class="project-name">Document Auto-Fill Tool</div>
-      <div class="project-desc">
-        Reads a scanned prior-year form with Tesseract OCR, maps recognized fields to the current-year PDF structure, and programmatically fills the new form — reducing manual data re-entry for annual document workflows.
+      <div class="project-name" data-i18n="p4Name">Document Auto-Fill Tool</div>
+      <div class="project-desc" data-i18n="p4Desc">
+        Reads scanned prior-year forms with Tesseract OCR, maps recognized fields to the current-year PDF structure, and programmatically fills the new form — eliminating manual re-entry for annual workflows.
       </div>
       <div class="project-stack">
         <span class="stack-tag">Python</span>
         <span class="stack-tag">Tesseract OCR</span>
-        <span class="stack-tag">PyPDF</span>
-        <span class="stack-tag">pypdf2</span>
+        <span class="stack-tag">PyPDF2</span>
+        <span class="stack-tag">pypdf</span>
       </div>
     </div>
 
@@ -822,53 +950,53 @@
 
 <!-- Skills -->
 <section id="skills">
-  <p class="section-label reveal">Expertise</p>
-  <h2 class="section-title reveal reveal-delay-1">Tech stack</h2>
-  <p class="section-desc reveal reveal-delay-2">Tools and technologies I work with regularly.</p>
+  <p class="section-label reveal"              data-i18n="skillLabel">Expertise</p>
+  <h2 class="section-title reveal reveal-delay-1" data-i18n="skillTitle">Tech stack</h2>
+  <p class="section-desc reveal reveal-delay-2"   data-i18n="skillDesc">Tools and technologies I work with in production.</p>
 
   <div class="skills-grid">
 
     <div class="skill-group reveal">
-      <div class="skill-group-title">AI / LLM</div>
+      <div class="skill-group-title" data-i18n="sg1">AI / LLM</div>
       <div class="skill-list">
-        <div class="skill-item">LangChain &amp; LangGraph</div>
-        <div class="skill-item">RAG pipelines (ChromaDB)</div>
-        <div class="skill-item">GigaChat / Gemini / Claude</div>
-        <div class="skill-item">Prompt engineering</div>
-        <div class="skill-item">Fal.ai (Fashn VTO)</div>
+        <div class="skill-item" data-i18n="s1i1">OpenAI GPT-4o / Vision / Embeddings</div>
+        <div class="skill-item" data-i18n="s1i2">Sber GigaChat API</div>
+        <div class="skill-item" data-i18n="s1i3">Anthropic Claude</div>
+        <div class="skill-item" data-i18n="s1i4">RAG pipelines (ChromaDB, FAISS)</div>
+        <div class="skill-item" data-i18n="s1i5">Fine-Tuning: LoRA / PEFT / QLoRA</div>
       </div>
     </div>
 
     <div class="skill-group reveal reveal-delay-1">
-      <div class="skill-group-title">Backend</div>
+      <div class="skill-group-title" data-i18n="sg2">Backend</div>
       <div class="skill-list">
-        <div class="skill-item">Python 3.10+</div>
-        <div class="skill-item">FastAPI / Flask</div>
-        <div class="skill-item">PostgreSQL / SQLAlchemy</div>
-        <div class="skill-item">Alembic migrations</div>
-        <div class="skill-item">Docker / Docker Compose</div>
+        <div class="skill-item" data-i18n="s2i1">Python 3.10+ / FastAPI</div>
+        <div class="skill-item" data-i18n="s2i2">SQLAlchemy 2.0 / Alembic</div>
+        <div class="skill-item" data-i18n="s2i3">PostgreSQL</div>
+        <div class="skill-item" data-i18n="s2i4">Docker / Docker Compose</div>
+        <div class="skill-item" data-i18n="s2i5">Async / ASGI design</div>
       </div>
     </div>
 
     <div class="skill-group reveal reveal-delay-2">
-      <div class="skill-group-title">Data</div>
+      <div class="skill-group-title" data-i18n="sg3">Data &amp; Automation</div>
       <div class="skill-list">
-        <div class="skill-item">ETL pipeline design</div>
-        <div class="skill-item">PDF &amp; web scraping</div>
-        <div class="skill-item">Playwright automation</div>
-        <div class="skill-item">Pandas / data wrangling</div>
-        <div class="skill-item">Notion API integration</div>
+        <div class="skill-item" data-i18n="s3i1">ETL pipeline design</div>
+        <div class="skill-item" data-i18n="s3i2">n8n workflow orchestration</div>
+        <div class="skill-item" data-i18n="s3i3">Selenium / Playwright</div>
+        <div class="skill-item" data-i18n="s3i4">Pandas / data wrangling</div>
+        <div class="skill-item" data-i18n="s3i5">FAISS / vector search</div>
       </div>
     </div>
 
     <div class="skill-group reveal reveal-delay-3">
-      <div class="skill-group-title">Integrations</div>
+      <div class="skill-group-title" data-i18n="sg4">Integrations</div>
       <div class="skill-list">
-        <div class="skill-item">Telegram Bot API</div>
-        <div class="skill-item">VK API</div>
-        <div class="skill-item">REST API consumption</div>
-        <div class="skill-item">Webhook &amp; async design</div>
-        <div class="skill-item">Cron / scheduling</div>
+        <div class="skill-item" data-i18n="s4i1">Telegram Bot API</div>
+        <div class="skill-item" data-i18n="s4i2">Bnovo PMS / Bitrix24 / AmoCRM</div>
+        <div class="skill-item" data-i18n="s4i3">Yandex SpeechKit STT/TTS</div>
+        <div class="skill-item" data-i18n="s4i4">Notion API</div>
+        <div class="skill-item" data-i18n="s4i5">VetIS / Federal registries API</div>
       </div>
     </div>
 
@@ -877,41 +1005,41 @@
 
 <!-- About -->
 <section id="about">
-  <p class="section-label reveal">Background</p>
-  <h2 class="section-title reveal reveal-delay-1">About me</h2>
+  <p class="section-label reveal"              data-i18n="aboutLabel">Background</p>
+  <h2 class="section-title reveal reveal-delay-1" data-i18n="aboutTitle">About me</h2>
 
   <div class="about-grid">
     <div class="about-text reveal reveal-delay-2">
-      <p>
-        I'm an <strong>AI developer and automation engineer</strong> with a focus on building practical, production-ready systems — not demos. Most of my work sits at the intersection of LLMs, data engineering, and real-world business workflows.
+      <p data-i18n-html="aboutP1">
+        I'm a <strong>Senior AI Automation Consultant &amp; IT Architect</strong> with 19 years of hands-on experience. I specialize in production-ready AI systems — from multimodal LLM pipelines and enterprise DWH to end-to-end business process automation.
       </p>
-      <p>
-        My projects span hospitality, fashion tech, fisheries analytics, and maritime intelligence. What they share: a need to turn messy, domain-specific data into something useful for the people actually doing the work.
+      <p data-i18n-html="aboutP2">
+        My projects span hospitality tech, fisheries analytics, and maritime intelligence. What they share: messy, domain-specific data that needs to be turned into something genuinely useful for the people doing the work.
       </p>
-      <p>
-        I prefer depth over breadth — understanding a domain well enough to build something that actually replaces manual effort, not just assists with it.
+      <p data-i18n-html="aboutP3">
+        I architect resilient pipelines that seamlessly connect legacy SaaS/PMS/CRM systems, relational databases, and Large Language Models into a single coherent workflow — with security built in from the start.
       </p>
-      <p>
-        Outside of engineering, I'm drawn to problems where <strong>good data is hidden in plain sight</strong> — PDFs, scanned forms, scattered APIs — and automation can unlock it.
+      <p data-i18n-html="aboutP4">
+        Operating as a registered Sole Proprietor with <strong>Kazakhstan e-Resident status</strong> for seamless international B2B contracting and payments.
       </p>
     </div>
 
     <div class="about-aside reveal reveal-delay-3">
       <div class="about-card">
-        <div class="about-card-label">Location</div>
-        <div class="about-card-value">Moscow, Russia<br />Available remotely</div>
+        <div class="about-card-label" data-i18n="aboutLocLabel">Location</div>
+        <div class="about-card-value" data-i18n="aboutLocVal">Available remotely</div>
       </div>
       <div class="about-card">
-        <div class="about-card-label">Primary language</div>
-        <div class="about-card-value">Python<br /><span style="color:var(--muted);font-size:.85rem">also comfortable with SQL, YAML, shell scripts</span></div>
+        <div class="about-card-label" data-i18n="aboutLangLabel">Primary language</div>
+        <div class="about-card-value" data-i18n-html="aboutLangVal">Python<br><small>also comfortable with SQL, YAML, shell scripts</small></div>
       </div>
       <div class="about-card">
-        <div class="about-card-label">Currently exploring</div>
-        <div class="about-card-value">Agentic architectures, multi-agent workflows, RAG evaluation &amp; quality tuning</div>
+        <div class="about-card-label" data-i18n="aboutStatusLabel">Legal status</div>
+        <div class="about-card-value" data-i18n-html="aboutStatusVal">Registered Sole Proprietor<br><small>e-Resident of Kazakhstan</small></div>
       </div>
       <div class="about-card">
-        <div class="about-card-label">Languages</div>
-        <div class="about-card-value">Russian — native<br />English — professional</div>
+        <div class="about-card-label" data-i18n="aboutRateLabel">Consulting rate</div>
+        <div class="about-card-value" data-i18n-html="aboutRateVal">From $25/hr<br><small>Project-based pricing available</small></div>
       </div>
     </div>
   </div>
@@ -919,15 +1047,14 @@
 
 <!-- Contact -->
 <section id="contact">
-  <p class="section-label reveal">Let's talk</p>
-  <h2 class="section-title reveal reveal-delay-1">Have a project in mind?</h2>
-  <p class="section-desc reveal reveal-delay-2">
-    I'm open to freelance projects, consulting, and interesting collaboration. Drop me a message.
+  <p class="section-label reveal"              data-i18n="contactLabel">Let's talk</p>
+  <h2 class="section-title reveal reveal-delay-1" data-i18n="contactTitle">Have a project in mind?</h2>
+  <p class="section-desc reveal reveal-delay-2"   data-i18n="contactDesc">
+    Open to freelance projects, consulting, and interesting collaboration. Drop me a message.
   </p>
-
   <div class="contact-links reveal reveal-delay-3">
     <a href="mailto:vegmannata@gmail.com" class="btn btn-primary">vegmannata@gmail.com</a>
-    <a href="https://t.me/natroot" class="btn btn-outline" target="_blank" rel="noopener">Telegram</a>
+    <a href="https://t.me/natroot"  class="btn btn-outline" target="_blank" rel="noopener">Telegram</a>
     <a href="https://github.com/natavegman" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
   </div>
 </section>
@@ -935,23 +1062,226 @@
 <!-- Footer -->
 <footer>
   <span class="footer-mono" style="color:var(--accent)">nv.dev</span>
-  <span>Nata Vegman &copy; 2025</span>
-  <span>Built with vanilla HTML/CSS/JS</span>
+  <span>Natalia Vegman &copy; 2025</span>
+  <span data-i18n="footerBuilt">Built with vanilla HTML/CSS/JS</span>
 </footer>
 
-<!-- JS -->
+<!-- ─── Chat Widget ───────────────────────────────────────────── -->
+<button id="chat-launcher" aria-label="Open HR Agent chat">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    <circle cx="9"  cy="10" r=".8" fill="currentColor" stroke="none"/>
+    <circle cx="12" cy="10" r=".8" fill="currentColor" stroke="none"/>
+    <circle cx="15" cy="10" r=".8" fill="currentColor" stroke="none"/>
+  </svg>
+</button>
+
+<div id="chat-panel" role="dialog" aria-label="HR Agent chat">
+  <div class="chat-header">
+    <div class="chat-avatar">NV</div>
+    <div class="chat-header-info">
+      <div class="chat-title-text"    data-i18n="chatTitle">Natalia's HR Agent</div>
+      <div class="chat-subtitle-text" data-i18n="chatSubtitle">AI-powered career assistant</div>
+    </div>
+    <button id="chat-close" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-footer">
+    <input type="text" id="chat-input"
+           data-i18n-placeholder="chatPlaceholder"
+           placeholder="Ask about skills, projects, rates…"
+           autocomplete="off" />
+    <button id="chat-send" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- ─── Scripts ──────────────────────────────────────────────── -->
 <script>
-  // ── Custom cursor
+  /* ─────────────────────────────────────────────────────────────
+     Configure the backend API URL for production:
+     <script>window.CHAT_API_URL = 'https://your-backend.com';</script>
+     ───────────────────────────────────────────────────────────── */
+  const CHAT_API = window.CHAT_API_URL || 'http://localhost:8000';
+
+  /* ── Translations ──────────────────────────────────────────── */
+  const T = {
+    en: {
+      navWork: 'Work', navProjects: 'Projects', navSkills: 'Skills',
+      navAbout: 'About', navContact: 'Contact',
+      heroEyebrow: 'Senior AI Automation Consultant &amp; IT Architect',
+      heroSubtitle: 'I translate business pain into rigorous technical architecture&nbsp;&mdash; from multimodal LLM pipelines to enterprise DWH and end-to-end process automation.',
+      heroCta1: 'See my work', heroCta2: 'Get in touch',
+      stat1Label: 'Years in IT', stat2Label: 'AI projects shipped', stat3Label: 'Integrations built',
+      scrollHint: 'scroll',
+      featLabel: 'Featured project',
+      featTitle: 'Nebo AI<br />Assistant',
+      featDesc: 'Multimodal AI concierge for a premium apart-hotel network — hybrid RAG helpdesk, Computer Vision defect detection, and native Telegram voice transcription via Yandex SpeechKit.',
+      phoneBotMsg1: 'Welcome! How can I assist you today?',
+      phoneUserMsg: 'AC in room 315 is broken 😢',
+      phoneAnalyzing: '🔍 Analyzing report…',
+      phoneBotMsg2: 'Ticket created in CRM. Technician arrives in 20 min.',
+      featTag1: 'RAG + Vision', featTag2: 'Bnovo PMS',
+      featH1: 'Async FastAPI backend natively integrated with Bnovo PMS API; separate prompt modes for Staff and Guest sessions.',
+      featH2: 'Computer Vision (GPT-4o / GigaChat Vision) auto-detects equipment defects from photos and creates urgent CRM maintenance tickets.',
+      featH3: 'Yandex SpeechKit transcribes native OGG OPUS voice messages in-memory — no CPU bottleneck on the server.',
+      featH4: 'Full security stack: Docker Compose, Row-Level Security, Telegram webhook token validation, MAINTENANCE_MODE kill switch.',
+      projLabel: 'More projects', projTitle: "Things I've built",
+      projDesc: 'A selection of tools and systems across different domains.',
+      p1Type: 'Analytics / ETL', p1Name: 'Fisheries DWH &amp; Analytics Platform',
+      p1Desc: 'Migrated a fragmented Python ETL ecosystem into a centralized PostgreSQL DWH. Engineered complex quota-transfer logic, integrated UN Comtrade API and AMP vessel tracking; n8n orchestration, Notion as read-only dashboard.',
+      p2Type: 'AI / Scraping', p2Name: 'Competitor Intelligence System',
+      p2Desc: 'macOS desktop app that scrapes maritime satcom integrators using headless Selenium with anti-bot bypass, feeds raw data to GPT-4o at temperature=0, and outputs structured JSON intelligence snapshots with risk assessments.',
+      p3Type: 'AI / R&amp;D', p3Name: 'LLM Tone-of-Voice Fine-Tuning',
+      p3Desc: 'Fine-tuning pipeline for ruGPT-3 using 4-bit quantization + LoRA adapters on Google Colab T4 GPU, targeting luxury 5-star concierge ToV with full local data isolation.',
+      p4Type: 'Automation / OCR', p4Name: 'Document Auto-Fill Tool',
+      p4Desc: 'Reads scanned prior-year forms with Tesseract OCR, maps recognized fields to the current-year PDF structure, and programmatically fills the new form — eliminating manual re-entry for annual workflows.',
+      skillLabel: 'Expertise', skillTitle: 'Tech stack',
+      skillDesc: 'Tools and technologies I work with in production.',
+      sg1: 'AI / LLM', sg2: 'Backend', sg3: 'Data &amp; Automation', sg4: 'Integrations',
+      s1i1: 'OpenAI GPT-4o / Vision / Embeddings', s1i2: 'Sber GigaChat API', s1i3: 'Anthropic Claude',
+      s1i4: 'RAG pipelines (ChromaDB, FAISS)', s1i5: 'Fine-Tuning: LoRA / PEFT / QLoRA',
+      s2i1: 'Python 3.10+ / FastAPI', s2i2: 'SQLAlchemy 2.0 / Alembic', s2i3: 'PostgreSQL',
+      s2i4: 'Docker / Docker Compose', s2i5: 'Async / ASGI design',
+      s3i1: 'ETL pipeline design', s3i2: 'n8n workflow orchestration', s3i3: 'Selenium / Playwright',
+      s3i4: 'Pandas / data wrangling', s3i5: 'FAISS / vector search',
+      s4i1: 'Telegram Bot API', s4i2: 'Bnovo PMS / Bitrix24 / AmoCRM', s4i3: 'Yandex SpeechKit STT/TTS',
+      s4i4: 'Notion API', s4i5: 'VetIS / Federal registries API',
+      aboutLabel: 'Background', aboutTitle: 'About me',
+      aboutP1: "I'm a <strong>Senior AI Automation Consultant &amp; IT Architect</strong> with 19 years of hands-on experience. I specialize in production-ready AI systems — from multimodal LLM pipelines and enterprise DWH to end-to-end business process automation.",
+      aboutP2: 'My projects span hospitality tech, fisheries analytics, and maritime intelligence. What they share: messy, domain-specific data that needs to be turned into something genuinely useful for the people doing the work.',
+      aboutP3: 'I architect resilient pipelines that seamlessly connect legacy SaaS/PMS/CRM systems, relational databases, and Large Language Models into a single coherent workflow — with security built in from the start.',
+      aboutP4: 'Operating as a registered Sole Proprietor with <strong>Kazakhstan e-Resident status</strong> for seamless international B2B contracting and payments.',
+      aboutLocLabel: 'Location', aboutLocVal: 'Available remotely',
+      aboutLangLabel: 'Primary language',
+      aboutLangVal: 'Python<br><small>also comfortable with SQL, YAML, shell scripts</small>',
+      aboutStatusLabel: 'Legal status',
+      aboutStatusVal: 'Registered Sole Proprietor<br><small>e-Resident of Kazakhstan</small>',
+      aboutRateLabel: 'Consulting rate',
+      aboutRateVal: 'From $25 / hr<br><small>Project-based pricing available</small>',
+      contactLabel: "Let's talk", contactTitle: 'Have a project in mind?',
+      contactDesc: 'Open to freelance projects, consulting, and interesting collaboration. Drop me a message.',
+      footerBuilt: 'Built with vanilla HTML/CSS/JS',
+      chatTitle: "Natalia's HR Agent",
+      chatSubtitle: 'AI-powered career assistant',
+      chatPlaceholder: 'Ask about skills, projects, rates…',
+      chatGreeting: "Hi! I’m Natalia’s personal HR agent. Ask me anything about her skills, experience, or collaboration terms — I’ll answer right away! 🚀",
+    },
+    ru: {
+      navWork: 'Работы', navProjects: 'Проекты', navSkills: 'Навыки',
+      navAbout: 'Обо мне', navContact: 'Контакт',
+      heroEyebrow: 'Senior AI Automation Consultant &amp; IT Architect',
+      heroSubtitle: 'Перевожу бизнес-боли в строгую техническую архитектуру&nbsp;&mdash; от мультимодальных LLM-пайплайнов до корпоративных DWH и сквозной автоматизации процессов.',
+      heroCta1: 'Смотреть работы', heroCta2: 'Написать',
+      stat1Label: 'Лет в IT', stat2Label: 'Реализованных AI-проекта', stat3Label: 'Интеграций построено',
+      scrollHint: 'листай',
+      featLabel: 'Ключевой проект',
+      featTitle: 'Nebo AI<br />Assistant',
+      featDesc: 'Мультимодальный AI-консьерж для сети апарт-отелей — гибридный RAG-хелпдеск, Computer Vision для детекции дефектов и нативная транскрипция Telegram-голосовых через Yandex SpeechKit.',
+      phoneBotMsg1: 'Здравствуйте! Чем могу помочь?',
+      phoneUserMsg: 'В номере 315 сломан кондиционер 😢',
+      phoneAnalyzing: '🔍 Обрабатываю заявку…',
+      phoneBotMsg2: 'Тикет в CRM создан. Мастер через 20 мин.',
+      featTag1: 'RAG + Vision', featTag2: 'Bnovo PMS',
+      featH1: 'Асинхронный FastAPI-бэкенд с нативной интеграцией Bnovo PMS API; раздельные промпт-режимы для персонала и гостей.',
+      featH2: 'Computer Vision (GPT-4o / GigaChat Vision) авто-детектирует дефекты оборудования по фото и создаёт тикеты в CRM.',
+      featH3: 'Yandex SpeechKit транскрибирует нативные OGG OPUS сообщения in-memory — без нагрузки на CPU сервера.',
+      featH4: 'Полный стек безопасности: Docker Compose, Row-Level Security, валидация Telegram-токена, Kill Switch MAINTENANCE_MODE.',
+      projLabel: 'Ещё проекты', projTitle: 'Что я построила',
+      projDesc: 'Инструменты и системы из разных предметных областей.',
+      p1Type: 'Аналитика / ETL', p1Name: 'DWH и аналитика рыбной отрасли',
+      p1Desc: 'Мигрировала фрагментированную ETL-экосистему в централизованное PostgreSQL DWH. Разработала сложную логику трансферов квот, интегрировала UN Comtrade API и АМП-парсинг судов; оркестрация через n8n, Notion как read-only дашборд.',
+      p2Type: 'AI / Скрейпинг', p2Name: 'Система конкурентной разведки',
+      p2Desc: 'macOS-десктоп для скрейпинга конкурентов (VSAT/LEO-интеграторы) через headless Selenium с обходом защиты. Данные подаются в GPT-4o при temperature=0 → структурированный JSON-снимок разведки с оценкой рисков.',
+      p3Type: 'AI / R&amp;D', p3Name: 'Fine-Tuning стиля общения LLM',
+      p3Desc: 'Пайплайн дообучения ruGPT-3: 4-битное квантование + LoRA-адаптеры на Google Colab T4 GPU, целевой Tone of Voice — консьерж-сервис 5 звёзд. Полная локальная изоляция конфиденциальных данных.',
+      p4Type: 'Автоматизация / OCR', p4Name: 'Инструмент авто-заполнения документов',
+      p4Desc: 'Читает отсканированные формы через Tesseract OCR, сопоставляет поля с актуальным PDF и программно заполняет новую форму — устраняет ручной повторный ввод в ежегодных документооборотах.',
+      skillLabel: 'Экспертиза', skillTitle: 'Технологический стек',
+      skillDesc: 'Инструменты и технологии, с которыми я работаю в продакшне.',
+      sg1: 'AI / LLM', sg2: 'Бэкенд', sg3: 'Данные и автоматизация', sg4: 'Интеграции',
+      s1i1: 'OpenAI GPT-4o / Vision / Embeddings', s1i2: 'Sber GigaChat API', s1i3: 'Anthropic Claude',
+      s1i4: 'RAG-пайплайны (ChromaDB, FAISS)', s1i5: 'Fine-Tuning: LoRA / PEFT / QLoRA',
+      s2i1: 'Python 3.10+ / FastAPI', s2i2: 'SQLAlchemy 2.0 / Alembic', s2i3: 'PostgreSQL',
+      s2i4: 'Docker / Docker Compose', s2i5: 'Async / ASGI-архитектура',
+      s3i1: 'Проектирование ETL-пайплайнов', s3i2: 'Оркестрация через n8n', s3i3: 'Selenium / Playwright',
+      s3i4: 'Pandas / обработка данных', s3i5: 'FAISS / векторный поиск',
+      s4i1: 'Telegram Bot API', s4i2: 'Bnovo PMS / Bitrix24 / AmoCRM', s4i3: 'Yandex SpeechKit STT/TTS',
+      s4i4: 'Notion API', s4i5: 'VetIS / API госреестров',
+      aboutLabel: 'О себе', aboutTitle: 'Обо мне',
+      aboutP1: 'Я — <strong>Senior AI Automation Consultant &amp; IT Architect</strong> с 19-летним практическим опытом. Специализируюсь на production-ready AI-системах: от мультимодальных LLM-пайплайнов и корпоративных DWH до сквозной автоматизации бизнес-процессов.',
+      aboutP2: 'Мои проекты охватывают гостиничный бизнес, аналитику рыбной отрасли и морскую разведку. Их объединяет одно: сложные доменные данные, которые нужно превратить в нечто реально полезное для людей.',
+      aboutP3: 'Проектирую отказоустойчивые пайплайны, соединяющие унаследованные SaaS/PMS/CRM-системы, реляционные базы данных и LLM в единый слаженный воркфлоу — с безопасностью, заложенной с первого слоя архитектуры.',
+      aboutP4: 'Работаю официально как ИП со <strong>статусом eResident Казахстана</strong> — для удобных международных B2B-расчётов и заключения контрактов.',
+      aboutLocLabel: 'Местоположение', aboutLocVal: 'Доступна удалённо',
+      aboutLangLabel: 'Основной язык',
+      aboutLangVal: 'Python<br><small>также свободно: SQL, YAML, shell-скрипты</small>',
+      aboutStatusLabel: 'Правовой статус',
+      aboutStatusVal: 'ИП, eResident Казахстана<br><small>Официальный договор оказания услуг</small>',
+      aboutRateLabel: 'Ставка консалтинга',
+      aboutRateVal: 'От 2 000 ₽ / час<br><small>Проектная стоимость — по согласованию</small>',
+      contactLabel: 'Давайте пообщаемся', contactTitle: 'Есть проект?',
+      contactDesc: 'Открыта для фриланс-проектов, консалтинга и интересного сотрудничества. Напишите мне.',
+      footerBuilt: 'Сделано на vanilla HTML/CSS/JS',
+      chatTitle: 'HR-агент Натальи',
+      chatSubtitle: 'AI-ассистент по карьере',
+      chatPlaceholder: 'Спросите о навыках, проектах, ставках…',
+      chatGreeting: 'Привет! Я персональный HR-агент Натальи. Спросите о её навыках, опыте или условиях сотрудничества — отвечу сразу! 🚀',
+    }
+  };
+
+  /* ── i18n engine ───────────────────────────────────────────── */
+  function applyLang(lang) {
+    const t = T[lang] || T.en;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = t[el.dataset.i18n];
+      if (v !== undefined) el.textContent = v;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const v = t[el.dataset.i18nHtml];
+      if (v !== undefined) el.innerHTML = v;
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const v = t[el.dataset.i18nPlaceholder];
+      if (v !== undefined) el.placeholder = v;
+    });
+    document.documentElement.lang = lang;
+    localStorage.setItem('preferredLang', lang);
+    window.__currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+
+  function detectLang() {
+    const stored = localStorage.getItem('preferredLang');
+    if (stored && T[stored]) return stored;
+    const nav = (navigator.language || '').toLowerCase();
+    return nav.startsWith('ru') ? 'ru' : 'en';
+  }
+
+  // Init language
+  window.__currentLang = detectLang();
+  applyLang(window.__currentLang);
+
+  // Switcher buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  /* ── Custom cursor ─────────────────────────────────────────── */
   const cursor = document.getElementById('cursor');
   const ring   = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
 
   document.addEventListener('mousemove', e => {
     mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx - 5  + 'px';
-    cursor.style.top  = my - 5  + 'px';
+    cursor.style.left = mx - 5 + 'px';
+    cursor.style.top  = my - 5 + 'px';
   });
-
   function animateRing() {
     rx += (mx - rx - 18) * 0.12;
     ry += (my - ry - 18) * 0.12;
@@ -961,65 +1291,151 @@
   }
   animateRing();
 
-  document.querySelectorAll('a, button, .project-card, .skill-group').forEach(el => {
+  document.querySelectorAll('a, button, .project-card, .skill-group, #chat-launcher').forEach(el => {
     el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); ring.classList.add('hover'); });
     el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); ring.classList.remove('hover'); });
   });
 
-  // ── Navbar scroll
+  /* ── Navbar scroll ─────────────────────────────────────────── */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 40);
   });
 
-  // ── Reveal on scroll
+  /* ── Reveal on scroll ──────────────────────────────────────── */
   const revealEls = document.querySelectorAll('.reveal');
-  const observer  = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => observer.observe(el));
+  revealEls.forEach(el => revealObserver.observe(el));
 
-  // ── Animated stat counters
-  function animateCounter(el, end, duration = 1400) {
-    let start = 0;
-    const step = timestamp => {
-      if (!start) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      el.textContent = Math.floor(progress * end);
-      if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = end;
-    };
-    requestAnimationFrame(step);
-  }
-
+  /* ── Stat counters ─────────────────────────────────────────── */
+  const statData = [{ val: 19 }, { val: 4 }, { val: 10 }];
   const statNums = document.querySelectorAll('.stat-num');
-  const statVals = [5, 3, 10];
   const statObserver = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        const numEl = e.target.querySelector('[data-end]') || e.target;
-        // extract the number and preserve the span
-        const val = statVals[i];
-        const span = e.target.querySelector('span');
-        const suffix = span ? span.textContent : '';
-        animateCounter({ textContent: '' }, val);
-        let s2 = 0;
-        const end = val;
-        const duration = 1400;
-        const step = ts => {
-          if (!s2) s2 = ts;
-          const progress = Math.min((ts - s2) / duration, 1);
-          const cur = Math.floor(progress * end);
-          e.target.childNodes[0].textContent = cur;
-          if (progress < 1) requestAnimationFrame(step);
-          else e.target.childNodes[0].textContent = end;
-        };
-        requestAnimationFrame(step);
-        statObserver.unobserve(e.target);
-      }
+    entries.forEach((entry, i) => {
+      if (!entry.isIntersecting) return;
+      const el  = entry.target;
+      const end = statData[i]?.val ?? 0;
+      const span = el.querySelector('span');
+      let start = null;
+      const step = ts => {
+        if (!start) start = ts;
+        const p   = Math.min((ts - start) / 1400, 1);
+        const cur = Math.floor(p * end);
+        el.childNodes[0].textContent = cur;
+        if (p < 1) requestAnimationFrame(step);
+        else { el.childNodes[0].textContent = end; }
+      };
+      requestAnimationFrame(step);
+      statObserver.unobserve(el);
     });
   }, { threshold: 0.5 });
   statNums.forEach(el => statObserver.observe(el));
+
+  /* ── Chat Widget ───────────────────────────────────────────── */
+  const panel    = document.getElementById('chat-panel');
+  const launcher = document.getElementById('chat-launcher');
+  const closeBtn = document.getElementById('chat-close');
+  const input    = document.getElementById('chat-input');
+  const sendBtn  = document.getElementById('chat-send');
+  const msgsEl   = document.getElementById('chat-messages');
+
+  let chatOpen = false;
+  let greetingShown = false;
+
+  function openChat(open) {
+    chatOpen = open;
+    panel.classList.toggle('open', open);
+    if (open && !greetingShown) {
+      greetingShown = true;
+      addMsg('bot', T[window.__currentLang || 'en'].chatGreeting);
+    }
+    if (open) setTimeout(() => input.focus(), 320);
+  }
+
+  launcher.addEventListener('click', () => openChat(!chatOpen));
+  closeBtn.addEventListener('click', () => openChat(false));
+
+  function addMsg(role, text) {
+    const wrap   = document.createElement('div');
+    wrap.className = `chat-msg ${role}`;
+    const bubble = document.createElement('div');
+    bubble.className = 'chat-msg-bubble';
+    bubble.textContent = text;
+    wrap.appendChild(bubble);
+    msgsEl.appendChild(wrap);
+    msgsEl.scrollTop = msgsEl.scrollHeight;
+    return wrap;
+  }
+
+  function showTyping() {
+    const wrap = document.createElement('div');
+    wrap.className = 'chat-msg bot';
+    wrap.id = '__typing';
+    const ind = document.createElement('div');
+    ind.className = 'typing-indicator';
+    for (let i = 0; i < 3; i++) {
+      const d = document.createElement('div');
+      d.className = 'typing-dot';
+      ind.appendChild(d);
+    }
+    wrap.appendChild(ind);
+    msgsEl.appendChild(wrap);
+    msgsEl.scrollTop = msgsEl.scrollHeight;
+    return wrap;
+  }
+
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    sendBtn.disabled = true;
+
+    addMsg('user', text);
+    const typingEl = showTyping();
+
+    const lang = window.__currentLang || 'en';
+    try {
+      const res = await fetch(`${CHAT_API}/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text, lang, top_k: 3 }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      typingEl.remove();
+      addMsg('bot', data.answer);
+    } catch {
+      typingEl.remove();
+      addMsg('bot',
+        lang === 'ru'
+          ? 'Сервис временно недоступен. Напишите напрямую: vegmannata@gmail.com'
+          : 'Service temporarily unavailable. Contact Natalia: vegmannata@gmail.com'
+      );
+    } finally {
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  }
+
+  sendBtn.addEventListener('click', sendMessage);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  });
+
+  // Re-apply greeting language if user switches lang before opening chat
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update chat title/subtitle live
+      const t = T[btn.dataset.lang];
+      const titleEl    = panel.querySelector('.chat-title-text');
+      const subtitleEl = panel.querySelector('.chat-subtitle-text');
+      if (titleEl)    titleEl.textContent    = t.chatTitle;
+      if (subtitleEl) subtitleEl.textContent = t.chatSubtitle;
+      input.placeholder = t.chatPlaceholder;
+    });
+  });
 </script>
 </body>
 </html>

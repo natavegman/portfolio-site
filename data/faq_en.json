@@ -1,0 +1,30 @@
+[
+  {
+    "question": "Who is Natalia Vegman and what is her core specialization?",
+    "answer": "Natalia is a veteran Systems Analyst, IT Architect, and Senior AI Automation Consultant with 19 years of practical experience in the IT industry. She specializes in designing enterprise-grade AI solutions, deploying multimodal LLM architectures (RAG, Vision, Audio/STT), building relational Data Warehouses (DWH), and orchestrating end-to-end business automation via Python and n8n."
+  },
+  {
+    "question": "In which industries do you possess deep domain expertise?",
+    "answer": "My primary commercial sectors include: 1) Hospitality & Property Management (building asynchronous backends on FastAPI, integrations with Bnovo PMS API, and automated guest RAG helpdesks). 2) Maritime Logistics & Fisheries (designing scalable PostgreSQL DWH platforms to manage natural resource distribution, parsing federal state registries like Cerberus, and automating complex analytics). 3) International B2B Consulting & Competitor Intelligence (building desktop crawlers, headless Selenium automation, and cross-border workflow orchestration via n8n)."
+  },
+  {
+    "question": "What is your primary artificial intelligence and data engineering tech stack?",
+    "answer": "My production stack consists of: Python (FastAPI, SQLAlchemy 2.0, Alembic migrations, pandas dataframes), relational PostgreSQL, and vectorized storage (ChromaDB, FAISS). On the AI/ML layer: OpenAI API (including specialized GPT-4o Vision parameters), Sber GigaChat API, Anthropic Claude, Hugging Face ecosystem frameworks (Transformers, PEFT/LoRA, TRL SFTTrainer, BitsAndBytes for 4-bit quantization), and advanced speech-to-text engines like Yandex SpeechKit."
+  },
+  {
+    "question": "Do you build simple conversational chat-bots or complex backend systems?",
+    "answer": "I engineer autonomous digital workers and comprehensive backend pipelines. My solutions interact natively with production databases, extract business parameters from unstructured inputs (PDF documents, map layouts, image attachments, or compressed audio logs), compute complex real-time operational metrics (such as occupancy rates, ADR, or logistics trends), and push structured sync alerts straight to your target CRM (Bitrix24, AmoCRM) within secure Docker environments."
+  },
+  {
+    "question": "Do you have practical experience in training or fine-tuning Large Language Models?",
+    "answer": "Yes. I possess practical R&D experience in executing Parameter-Efficient Fine-Tuning (PEFT/LoRA) on open-source foundation models (such as Qwen and ruGPT-3 architectures). I am capable of engineering custom instruction datasets, configuring low-rank adapters to modify an LLM's conversational style or Tone of Voice (ToV) to align with strict brand guidelines, and preparing models for local offline deployment (via Ollama/GGUF quantization) to ensure absolute compliance with enterprise data privacy policies."
+  },
+  {
+    "question": "How do you guarantee data security and fault tolerance in your automated systems?",
+    "answer": "Security is integrated at every architectural tier: strict container isolation via Docker, enforcing Row-Level Security (RLS) on relational database clusters, validating third-party webhooks using unique API secret tokens (such as Telegram Secret Token verification), and embedding centralized configuration Feature Flags (Kill Switches) to gracefully deactivate individual microservices during technical incidents without taking down the entire core app."
+  },
+  {
+    "question": "What is your legal status and contract workflow for international clients?",
+    "answer": "I operate fully legally under formal Service Agreements as a registered Sole Proprietor. Additionally, I hold e-Resident status in Kazakhstan, enabling smooth compliance, legal contracting, and multi-currency international B2B invoicing with English-speaking clients worldwide. Project costs are scoped precisely based on architectural blueprint complexity."
+  }
+]

@@ -1,0 +1,15 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Generated FAISS index (rebuild with build_index.py)
+data/faiss_index.bin
+data/faiss_metadata.npy
+
+# macOS
+.DS_Store
