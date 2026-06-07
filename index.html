@@ -1129,15 +1129,16 @@
   </div>
 </div>
 
+<!-- ─── Backend URLs (edit these for production) ──────────────── -->
+<script>
+  window.CHAT_API_EN = 'https://natavegman.duckdns.org';     /* EN server: 65.20.101.241  */
+  window.CHAT_API_RU = 'https://natavegman-ru.duckdns.org';  /* RU server: 147.45.107.99  */
+</script>
+
 <!-- ─── Scripts ──────────────────────────────────────────────── -->
 <script>
-  /* ─────────────────────────────────────────────────────────────
-     To configure the backend URL for production, add this line
-     anywhere before this script block in index.html:
-       window.CHAT_API_URL = 'https://your-backend-domain.com';
-     ───────────────────────────────────────────────────────────── */
-  const CHAT_API_EN = window.CHAT_API_EN || window.CHAT_API_URL || 'http://localhost:8000';
-  const CHAT_API_RU = window.CHAT_API_RU || window.CHAT_API_URL || 'http://localhost:8001';
+  const CHAT_API_EN = window.CHAT_API_EN || 'http://localhost:8000';
+  const CHAT_API_RU = window.CHAT_API_RU || 'http://localhost:8001';
   function getChatApi() { return (window.__currentLang === 'ru') ? CHAT_API_RU : CHAT_API_EN; }
 
   /* ── Translations ──────────────────────────────────────────── */
