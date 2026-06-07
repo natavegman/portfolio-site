@@ -1102,8 +1102,9 @@
 <!-- ─── Scripts ──────────────────────────────────────────────── -->
 <script>
   /* ─────────────────────────────────────────────────────────────
-     Configure the backend API URL for production:
-     <script>window.CHAT_API_URL = 'https://your-backend.com';</script>
+     To configure the backend URL for production, add this line
+     anywhere before this script block in index.html:
+       window.CHAT_API_URL = 'https://your-backend-domain.com';
      ───────────────────────────────────────────────────────────── */
   const CHAT_API = window.CHAT_API_URL || 'http://localhost:8000';
 
