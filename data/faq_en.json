@@ -40,6 +40,10 @@
     "answer": "MyFamilyTree is a personal side project born from a genuine interest in genealogy and family history research. It's a FastAPI backend that imports GEDCOM family-tree files, parses person and family records into a PostgreSQL database via SQLAlchemy, and exposes REST endpoints for searching relatives and attaching archival documents (birth certificates, photos, emigration papers) to individual records. Docker Compose for local development. Source: github.com/natavegman/MyFamilyTree"
   },
   {
+    "question": "What is your educational background?",
+    "answer": "Natalia holds two degrees from Murmansk State Technical University, both with Honours: an Engineering degree in Software of Computing and Automated Systems (specialization: Software of Automated Systems in Science, Production and Business), 1999–2004; and an Economics degree in Finance and Credit (specialization: Financial Management), 2002–2005. This dual technical-financial background is one reason she bridges engineering precision with business thinking. She also completed a 5-month professional Prompt Engineer certification at Zerocoder University, plus dedicated courses in Claude Code (Anthropic) and the Google AI ecosystem (Gemini, NotebookLM, Google Cloud AI)."
+  },
+  {
     "question": "What is your legal status and contract workflow for international clients?",
     "answer": "I operate under formal Service Agreements as a registered Sole Proprietor. I hold e-Resident status in Kazakhstan, enabling smooth legal contracting and multi-currency B2B invoicing with international clients. Project costs are scoped based on architectural blueprint complexity."
   }

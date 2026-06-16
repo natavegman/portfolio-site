@@ -10,6 +10,20 @@ Today she specializes in: multimodal LLM pipelines (RAG, Vision, STT/TTS), enter
 
 A personal interest in genealogy led to the MyFamilyTree side project — a FastAPI backend for importing and querying GEDCOM family-tree archives.
 
+## Education
+
+* **Engineer — Software of Computing and Automated Systems**
+  Specialization: Software of Automated Systems in Science, Production and Business
+  Murmansk State Technical University, 1999–2004. **Diploma with Honours.**
+
+* **Economist — Finance and Credit**
+  Specialization: Financial Management
+  Murmansk State Technical University, 2002–2005. **Diploma with Honours.**
+
+* **Professional Prompt Engineer**
+  Zerocoder University, 5-month professional course.
+  Additional courses: Claude Code (Anthropic), Google AI ecosystem (Gemini, NotebookLM, Google Cloud AI).
+
 ## Core Technical Stack & Tools
 
 * **Languages & Frameworks:** Python (FastAPI, SQLAlchemy 2.0, Alembic, pandas, Flask, PyQt6).
