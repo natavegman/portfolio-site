@@ -458,6 +458,19 @@
       color: var(--muted);
     }
 
+    /* ─── Project GitHub link ─────────────────────────────────── */
+    .project-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: .04em;
+      transition: color .2s;
+      align-self: flex-start;
+      margin-top: .25rem;
+    }
+    .project-link:hover { color: var(--accent); }
+
     /* ─── Skills ───────────────────────────────────────────────── */
     #skills { background: var(--surface); }
     .skills-grid {
@@ -800,8 +813,8 @@
       <div class="stat-label" data-i18n="stat1Label">Years in IT</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">5</div>
-      <div class="stat-label" data-i18n="stat2Label">AI projects shipped</div>
+      <div class="stat-num">9</div>
+      <div class="stat-label" data-i18n="stat2Label">Projects shipped</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">10<span>+</span></div>
@@ -890,6 +903,7 @@
         <span class="stack-tag">Notion API</span>
         <span class="stack-tag">UN Comtrade API</span>
       </div>
+      <a href="https://github.com/natavegman/ships_analytic" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
     </div>
 
     <div class="project-card reveal reveal-delay-1">
@@ -962,6 +976,81 @@
         <span class="stack-tag">Telegram</span>
         <span class="stack-tag">systemd</span>
       </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon">💬</div>
+        <span class="project-type" data-i18n="p6Type">AI / Portfolio</span>
+      </div>
+      <div class="project-name" data-i18n="p6Name">Personal HR Agent (this site)</div>
+      <div class="project-desc" data-i18n="p6Desc">
+        This very site — bilingual AI portfolio with a FastAPI RAG backend, FAISS vector search, and a GPT-4o chat widget that answers questions about Natalia in EN or RU based on the visitor's language.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">FAISS</span>
+        <span class="stack-tag">OpenAI</span>
+        <span class="stack-tag">GitHub Pages</span>
+        <span class="stack-tag">nginx</span>
+      </div>
+      <a href="https://github.com/natavegman/portfolio-site" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
+    </div>
+
+    <div class="project-card reveal reveal-delay-1">
+      <div class="project-header">
+        <div class="project-icon">👗</div>
+        <span class="project-type" data-i18n="p7Type">AI / Fashion</span>
+      </div>
+      <div class="project-name" data-i18n="p7Name">Smart Style Bot</div>
+      <div class="project-desc" data-i18n="p7Desc">
+        Telegram AI-stylist: analyzes your wardrobe via Gemini Vision, picks outfits for any occasion, and applies Virtual Try-On (Fashn / fal.ai) to show how clothes look on your photo. Recommends purchases from Russian marketplaces.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Gemini Vision</span>
+        <span class="stack-tag">fal.ai VTO</span>
+        <span class="stack-tag">Telegram</span>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">PostgreSQL</span>
+      </div>
+      <a href="https://github.com/natavegman/Smart-Style-Bot" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
+    </div>
+
+    <div class="project-card reveal reveal-delay-2">
+      <div class="project-header">
+        <div class="project-icon">📷</div>
+        <span class="project-type" data-i18n="p8Type">Web / Creative</span>
+      </div>
+      <div class="project-name" data-i18n="p8Name">Birthday Photo Album</div>
+      <div class="project-desc" data-i18n="p8Desc">
+        Interactive web photo album for a 70th-birthday celebration — five life chapters (Childhood → Today), animated portrait cards, background music, and ~200 photos auto-imported from iCloud. Pure vanilla JS, zero frameworks.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Vanilla JS</span>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">iCloud</span>
+        <span class="stack-tag">GitHub Pages</span>
+      </div>
+      <a href="https://github.com/natavegman/svetlana70-album" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
+    </div>
+
+    <div class="project-card reveal reveal-delay-3">
+      <div class="project-header">
+        <div class="project-icon">✍️</div>
+        <span class="project-type" data-i18n="p9Type">AI / Content</span>
+      </div>
+      <div class="project-name" data-i18n="p9Name">VK Post Generator</div>
+      <div class="project-desc" data-i18n="p9Desc">
+        Flask web app that generates branded VK posts in the voice of "Maya" — an AI biohacking coach persona. GigaChat matches a strict Tone of Voice, scrapes reference content from URLs, and saves editorial favorites.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Flask</span>
+        <span class="stack-tag">GigaChat</span>
+        <span class="stack-tag">BeautifulSoup</span>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">VK</span>
+      </div>
+      <a href="https://github.com/natavegman/site-generation-post" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
     </div>
 
   </div>
@@ -1149,8 +1238,7 @@
       heroEyebrow: 'Senior AI Automation Consultant &amp; IT Architect',
       heroSubtitle: 'I translate business pain into rigorous technical architecture&nbsp;&mdash; from multimodal LLM pipelines to enterprise DWH and end-to-end process automation.',
       heroCta1: 'See my work', heroCta2: 'Get in touch',
-      stat1Label: 'Years in IT', stat2Label: 'AI projects shipped', stat3Label: 'Integrations built',
-      stat2Num: '5',
+      stat1Label: 'Years in IT', stat2Label: 'Projects shipped', stat3Label: 'Integrations built',
       scrollHint: 'scroll',
       featLabel: 'Featured project',
       featTitle: 'Nebo AI<br />Assistant',
@@ -1206,6 +1294,14 @@
       contactLabel: "Let's talk", contactTitle: 'Have a project in mind?',
       contactDesc: 'Open to freelance projects, consulting, and interesting collaboration. Drop me a message.',
       footerBuilt: 'Built with vanilla HTML/CSS/JS',
+      p6Type: 'AI / Portfolio', p6Name: 'Personal HR Agent (this site)',
+      p6Desc: 'This very site — bilingual AI portfolio with a FastAPI RAG backend, FAISS vector search, and a GPT-4o chat widget that answers questions about Natalia in EN or RU based on the visitor\'s language. Static frontend on GitHub Pages, API on a custom VPS.',
+      p7Type: 'AI / Fashion', p7Name: 'Smart Style Bot',
+      p7Desc: 'Telegram AI-stylist: analyzes your wardrobe via Gemini Vision, picks outfits for any occasion, and applies Virtual Try-On (Fashn / fal.ai) to show how clothes look on your photo. Recommends purchases from Russian marketplaces.',
+      p8Type: 'Web / Creative', p8Name: 'Birthday Photo Album',
+      p8Desc: 'Interactive web photo album for a 70th-birthday celebration — five life chapters (Childhood → Today), animated portrait cards, background music, and ~200 photos auto-imported from iCloud and compressed with Python. Pure vanilla JS, zero frameworks.',
+      p9Type: 'AI / Content', p9Name: 'VK Post Generator',
+      p9Desc: 'Flask web app that generates branded VK community posts in the voice of "Maya" — an AI biohacking coach persona. GigaChat matches a strict Tone of Voice, scrapes reference content from URLs, and saves editorial favorites.',
       chatTitle: "Natalia's HR Agent",
       chatSubtitle: 'AI-powered career assistant',
       chatPlaceholder: 'Ask about skills, projects, rates…',
@@ -1217,7 +1313,7 @@
       heroEyebrow: 'Senior AI Automation Consultant &amp; IT Architect',
       heroSubtitle: 'Перевожу бизнес-боли в строгую техническую архитектуру&nbsp;&mdash; от мультимодальных LLM-пайплайнов до корпоративных DWH и сквозной автоматизации процессов.',
       heroCta1: 'Смотреть работы', heroCta2: 'Написать',
-      stat1Label: 'Лет в IT', stat2Label: 'AI-проектов реализовано', stat3Label: 'Интеграций построено',
+      stat1Label: 'Лет в IT', stat2Label: 'Проектов реализовано', stat3Label: 'Интеграций построено',
       scrollHint: 'листай',
       featLabel: 'Ключевой проект',
       featTitle: 'Nebo AI<br />Assistant',
@@ -1273,6 +1369,14 @@
       contactLabel: 'Давайте пообщаемся', contactTitle: 'Есть проект?',
       contactDesc: 'Открыта для фриланс-проектов, консалтинга и интересного сотрудничества. Напишите мне.',
       footerBuilt: 'Сделано на vanilla HTML/CSS/JS',
+      p6Type: 'AI / Портфолио', p6Name: 'Персональный HR-агент (этот сайт)',
+      p6Desc: 'Этот сайт — двуязычное AI-портфолио с FastAPI RAG-бэкендом, FAISS-поиском и GPT-4o чат-виджетом, отвечающим на EN или RU в зависимости от языка посетителя. Статический фронтенд на GitHub Pages, API на собственном VPS.',
+      p7Type: 'AI / Мода', p7Name: 'Smart Style Bot',
+      p7Desc: 'Telegram AI-стилист: анализирует гардероб через Gemini Vision, подбирает образы под любой повод и применяет Virtual Try-On (Fashn / fal.ai) — показывает вещи на твоём фото. Рекомендует покупки с российских маркетплейсов.',
+      p8Type: 'Web / Творческое', p8Name: 'Фотоальбом к юбилею',
+      p8Desc: 'Интерактивный веб-фотоальбом к 70-летию — пять глав жизни (Детство → Сегодня), анимированные портреты, фоновая музыка и ~200 фото, автоматически импортированных из iCloud и сжатых Python-скриптом. Чистый vanilla JS, без фреймворков.',
+      p9Type: 'AI / Контент', p9Name: 'Генератор постов ВКонтакте',
+      p9Desc: 'Flask-приложение для генерации брендированных постов VK-сообщества в голосе «Майи» — AI-наставника по биохакингу. GigaChat соблюдает строгий Tone of Voice, парсит референсные URL и сохраняет избранные посты.',
       chatTitle: 'HR-агент Натальи',
       chatSubtitle: 'AI-ассистент по карьере',
       chatPlaceholder: 'Спросите о навыках, проектах, ставках…',
@@ -1357,7 +1461,7 @@
   revealEls.forEach(el => revealObserver.observe(el));
 
   /* ── Stat counters ─────────────────────────────────────────── */
-  const statData = [{ val: 19 }, { val: 5 }, { val: 10 }];
+  const statData = [{ val: 19 }, { val: 9 }, { val: 10 }];
   const statNums = document.querySelectorAll('.stat-num');
   const statObserver = new IntersectionObserver(entries => {
     entries.forEach((entry, i) => {
