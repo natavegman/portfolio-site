@@ -15,7 +15,7 @@
 * **Языки и фреймворки:** Python (FastAPI, SQLAlchemy 2.0, Alembic, pandas, Flask, PyQt6).
 * **Базы данных и инфраструктура:** PostgreSQL, ChromaDB, FAISS, Docker, Docker Compose.
 * **Автоматизация и парсинг:** Playwright, Selenium Webdriver (headless с обходом антибот-защиты), BeautifulSoup.
-* **Искусственный интеллект и ML:** OpenAI API (GPT-4o/Vision), Anthropic Claude API, Google Gemini API (2.5 Flash/Pro), Sber GigaChat API, OpenRouter (мультипровайдерный LLM-роутинг с автоматическим fallback), Hugging Face (Transformers, PEFT/LoRA, TRL, BitsAndBytes для 4-битного квантования), Yandex SpeechKit (STT/TTS), fal.ai (Virtual Try-On / генерация изображений).
+* **Искусственный интеллект и ML:** OpenAI API (GPT-4o/Vision), Anthropic Claude API, Google Gemini API (2.5 Flash/Pro), Sber GigaChat API, OpenRouter (multi-provider LLM routing с автоматическим fallback), Hugging Face (Transformers, PEFT/LoRA, TRL, BitsAndBytes для 4-битного квантования), Yandex SpeechKit (STT/TTS), fal.ai (Virtual Try-On / генерация изображений).
 * **AI-агенты и оркестрация:** Hermes (Python agent framework), OpenClaw (Node.js gateway), MCP (Model Context Protocol), мульти-агентная доменная маршрутизация, Shared State протоколы, n8n (workflow orchestration).
 * **CRM и учётные системы:** Bnovo PMS, Bitrix24, AmoCRM, Россельхознадзор («Цербер», VetIS.API, ФГИС «Меркурий»), SAP, 1С, Company Media.
 * **Генеалогия и стандарты:** формат GEDCOM, моделирование графа семейных связей.
@@ -37,17 +37,17 @@
 ### 3. Система мониторинга конкурентов (рыбная отрасль)
 * **Роль:** Full-Stack AI Engineer.
 * **Задача:** Сбор и структурирование данных о компаниях рыбной отрасли — картографирование операционного присутствия, сервисных возможностей и партнёрских сетей конкурентов.
-* **Решение:** Нативное десктопное приложение для macOS на PyQt6. Headless Selenium с подменой User-Agent и отключением флагов автоматизации для обхода защиты при скрейпинге страниц и интерактивных карт. Данные (текст страниц, PDF-брошюры, скриншоты) подаются в GPT-4o при temperature=0 с принудительным response_format JSON. Структурированные снимки конкурентов с оценкой рисков сохраняются в PostgreSQL. Сборка через PyInstaller в нативный .app-бандл.
+* **Решение:** Нативное десктопное приложение для macOS на PyQt6. Headless Selenium с подменой User-Agent и отключением флагов автоматизации для обхода защиты при scraping страниц и интерактивных карт. Данные (текст страниц, PDF-брошюры, скриншоты) подаются в GPT-4o при temperature=0 с принудительным response_format JSON. Структурированные снимки конкурентов с оценкой рисков сохраняются в PostgreSQL. Сборка через PyInstaller в нативный .app-бандл.
 
 ### 4. R&D: Тонкое дообучение стиля общения локальных моделей (LoRA / PEFT)
 * **Роль:** AI Research Engineer.
 * **Задача:** Отработать сценарий полной изоляции переписок VIP-гостей при кастомизации Tone of Voice под стандарты пятизвёздочного консьерж-сервиса.
-* **Решение:** Пайплайн Fine-Tuning в Google Colab на T4 GPU. Базовая русскоязычная модель Сбера (rugpt3large_based_on_gpt2) с 4-битным квантованием (BitsAndBytesConfig). LoRA-адаптер (r=8, alpha=16) на слоях внимания (c_attn). Обучение через trl SFTTrainer + SFTConfig на кастомном датасете отеля. Адаптер сохранён и подключён через PeftModel для локального инференса. Post-mortem анализ эффектов underfitting.
+* **Решение:** Пайплайн Fine-Tuning в Google Colab на T4 GPU. Базовая русскоязычная модель Сбера (rugpt3large_based_on_gpt2) с 4-битным квантованием (BitsAndBytesConfig). LoRA-адаптер (r=8, alpha=16) на слоях внимания (c_attn). Обучение через trl SFTTrainer + SFTConfig на кастомном dataset отеля. Адаптер сохранён и подключён через PeftModel для локального inference. Post-mortem анализ эффектов underfitting.
 
 ### 5. Мульти-агентная система для AI-консалтинга (внутренний R&D)
 * **Роль:** AI Systems Architect & Lead Engineer.
 * **Задача:** Спроектировать и развернуть production-ready мульти-агентную систему для автоматизации задач AI-консалтинга.
-* **Решение:** Четырёхагентная иерархическая архитектура на Hermes (Python) + OpenClaw (Node.js) с Telegram-интерфейсом. Агент-оркестратор определяет бизнес-домен из библиотеки 7 доменов и делегирует субагентам: исследователь, разработчик, дизайнер. Движок доменной маршрутизации + протокол Shared State для обмена результатами без прямой связи между агентами. Мультипровайдерный LLM-роутинг через OpenRouter с автоматическим fallback между Claude, Gemini и GPT. Агенты развёрнуты как systemd-сервисы с автозапуском и hot-swap конфигурацией.
+* **Решение:** Четырёхагентная иерархическая архитектура на Hermes (Python) + OpenClaw (Node.js) с Telegram-интерфейсом. Агент-оркестратор определяет бизнес-домен из библиотеки 7 доменов и делегирует субагентам: исследователь, разработчик, дизайнер. Движок domain routing + протокол Shared State для обмена результатами без прямой связи между агентами. Multi-provider LLM routing через OpenRouter с автоматическим fallback между Claude, Gemini и GPT. Агенты развёрнуты как systemd-сервисы с автозапуском и hot-swap конфигурацией.
 
 ### 6. Персональный HR-агент — этот портфолио-сайт
 * **Роль:** Full-Stack AI Engineer.

@@ -5,11 +5,11 @@
   },
   {
     "question": "В каких нишах и отраслях у вас есть глубокая практическая экспертиза?",
-    "answer": "Основные направления: 1) Отельный бизнес — автоматизация через FastAPI, интеграция с Bnovo PMS API, RAG-системы поддержки гостей. 2) Рыбная и логистическая отрасль — аналитика квот, PostgreSQL DWH, интеграция с реестрами Россельхознадзора («Цербер», ФГИС «Меркурий»), АМП-парсинг судов. 3) Мониторинг конкурентов в рыбной отрасли — десктопные краулеры, headless Selenium, структурированный анализ через GPT-4o. 4) Fashion & Style Tech — анализ гардероба через Gemini Vision, Virtual Try-On на fal.ai. 5) Контент и автоматизация постинга — генерация постов в Tone-of-Voice бренда через GigaChat. 6) Генеалогия — платформы на базе GEDCOM-архивов."
+    "answer": "Основные направления: 1) Отельный бизнес — автоматизация через FastAPI, интеграция с Bnovo PMS API, RAG-системы поддержки гостей. 2) Рыбная и логистическая отрасль — аналитика квот, PostgreSQL DWH, интеграция с реестрами Россельхознадзора («Цербер», ФГИС «Меркурий»), АМП-парсинг судов. 3) Мониторинг конкурентов в рыбной отрасли — desktop crawlers, headless Selenium, структурированный анализ через GPT-4o. 4) Fashion & Style Tech — анализ гардероба через Gemini Vision, Virtual Try-On на fal.ai. 5) Контент и автоматизация постинга — генерация постов в Tone-of-Voice бренда через GigaChat. 6) Генеалогия — платформы на базе GEDCOM-архивов."
   },
   {
     "question": "С каким технологическим стеком вы работаете?",
-    "answer": "Мой production-стек: Python (FastAPI, SQLAlchemy 2.0, Alembic, pandas, Flask), PostgreSQL, ChromaDB, FAISS. AI/ML: OpenAI (GPT-4o/Vision), Anthropic Claude, Google Gemini 2.5 (Flash/Pro), Sber GigaChat, OpenRouter (мультипровайдерный LLM-роутинг с fallback), Hugging Face (Transformers, PEFT/LoRA, TRL SFTTrainer, BitsAndBytes для 4-битного квантования), Yandex SpeechKit (STT/TTS), fal.ai (Virtual Try-On). Оркестрация агентов: Hermes, OpenClaw, MCP, n8n. Инфраструктура: Docker, nginx, systemd, certbot, GitHub Pages."
+    "answer": "Мой production-стек: Python (FastAPI, SQLAlchemy 2.0, Alembic, pandas, Flask), PostgreSQL, ChromaDB, FAISS. AI/ML: OpenAI (GPT-4o/Vision), Anthropic Claude, Google Gemini 2.5 (Flash/Pro), Sber GigaChat, OpenRouter (multi-provider LLM routing с fallback), Hugging Face (Transformers, PEFT/LoRA, TRL SFTTrainer, BitsAndBytes для 4-битного квантования), Yandex SpeechKit (STT/TTS), fal.ai (Virtual Try-On). Оркестрация агентов: Hermes, OpenClaw, MCP, n8n. Инфраструктура: Docker, nginx, systemd, certbot, GitHub Pages."
   },
   {
     "question": "Вы создаёте простых чат-ботов или сложные корпоративные системы?",
@@ -25,11 +25,11 @@
   },
   {
     "question": "Умеете ли вы дообучать (Fine-Tune) языковые модели под задачи бизнеса?",
-    "answer": "Да. У меня есть подтверждённый R&D-опыт дообучения открытых LLM (модели Сбера и Qwen) методом PEFT/LoRA. Умею собирать специализированные датасеты, настраивать LoRA-адаптеры для точечного изменения Tone of Voice под требования бренда и запускать модели локально на GPU/CPU (через Ollama/GGUF) — без передачи конфиденциальной информации во внешние облачные сервисы."
+    "answer": "Да. У меня есть подтверждённый R&D-опыт дообучения открытых LLM (модели Сбера и Qwen) методом PEFT/LoRA. Умею собирать специализированные datasets, настраивать LoRA-адаптеры для точечного изменения Tone of Voice под требования бренда и запускать модели локально на GPU/CPU (через Ollama/GGUF) — без передачи конфиденциальной информации во внешние облачные сервисы."
   },
   {
     "question": "Как обеспечивается безопасность данных в ваших AI-решениях?",
-    "answer": "Безопасность закладывается на уровне архитектуры: контейнеризация Docker, Row-Level Security (RLS) на реляционных базах данных, валидация вебхуков через секретные токены (Telegram X-Telegram-Bot-Api-Secret-Token), Feature Flags / Kill Switch для мгновенного безопасного отключения модулей в случае инцидента, HTTPS с Let's Encrypt на всех публичных эндпоинтах. Для чувствительных данных — опция локального LLM-инференса (полностью офлайн)."
+    "answer": "Безопасность закладывается на уровне архитектуры: контейнеризация Docker, Row-Level Security (RLS) на реляционных базах данных, валидация вебхуков через секретные токены (Telegram X-Telegram-Bot-Api-Secret-Token), Feature Flags / Kill Switch для мгновенного безопасного отключения модулей в случае инцидента, HTTPS с Let's Encrypt на всех публичных эндпоинтах. Для чувствительных данных — опция локального LLM inference (полностью офлайн)."
   },
   {
     "question": "Расскажите про персонального HR-агента на этом сайте.",
