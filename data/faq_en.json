@@ -1,38 +1,46 @@
 [
   {
-    "question": "Who is Natalia Vegman and what is her core specialization?",
-    "answer": "Natalia is a veteran Systems Analyst, IT Architect, and Senior AI Automation Consultant with 19 years of practical experience in the IT industry. She specializes in designing enterprise-grade AI solutions, deploying multimodal LLM architectures (RAG, Vision, Audio/STT), building relational Data Warehouses (DWH), and orchestrating end-to-end business automation via Python and n8n."
+    "question": "Who is Natalia Vegman and what is her background?",
+    "answer": "Natalia is a software engineer by education who spent 14 years at Murmansk Shipping Company — one of Russia's largest maritime transport enterprises — rising from engineer to Head of the entire IT & Telecommunications Service, managing a team of ~40 people. The team built a proprietary ERP, implemented SAP, 1C, and Company Media, and administered an on-premises data center. Seven years ago she relocated to Saint Petersburg and transitioned into AI consulting, applying the same systems-thinking discipline to production-ready intelligent systems. She now has 19 years of total IT experience and specializes in multimodal LLM architectures, enterprise DWH design, and end-to-end AI automation."
   },
   {
-    "question": "In which industries do you possess deep domain expertise?",
-    "answer": "My primary commercial sectors include: 1) Hospitality & Property Management (building asynchronous backends on FastAPI, integrations with Bnovo PMS API, and automated guest RAG helpdesks). 2) Maritime Logistics & Fisheries (designing scalable PostgreSQL DWH platforms to manage natural resource distribution, parsing federal state registries like Cerberus, and automating complex analytics). 3) International B2B Consulting & Competitor Intelligence (building desktop crawlers, headless Selenium automation, and cross-border workflow orchestration via n8n)."
+    "question": "In which industries do you have deep domain expertise?",
+    "answer": "My primary commercial sectors are: 1) Hospitality & Property Management — async FastAPI backends, Bnovo PMS API integration, RAG-powered guest helpdesks. 2) Maritime Logistics & Fisheries — scalable PostgreSQL DWH for quota management, parsing federal registries (Cerberus, FGIS Mercury), AMP vessel tracking. 3) Fishing Industry Competitor Monitoring — desktop crawlers, headless Selenium, GPT-4o structured analysis. 4) Fashion & Style Tech — Gemini Vision wardrobe analysis, Virtual Try-On with fal.ai. 5) Content & Social Media Automation — GigaChat-powered Tone-of-Voice post generation for VK. 6) Genealogy — GEDCOM-based family-tree platforms."
   },
   {
-    "question": "What is your primary artificial intelligence and data engineering tech stack?",
-    "answer": "My production stack consists of: Python (FastAPI, SQLAlchemy 2.0, Alembic migrations, pandas dataframes), relational PostgreSQL, and vectorized storage (ChromaDB, FAISS). On the AI/ML layer: OpenAI API (including specialized GPT-4o Vision parameters), Anthropic Claude API, Google Gemini API (2.5 Flash/Pro), Sber GigaChat API, OpenRouter (multi-provider LLM routing with automatic fallback), Hugging Face ecosystem frameworks (Transformers, PEFT/LoRA, TRL SFTTrainer, BitsAndBytes for 4-bit quantization), and Yandex SpeechKit (STT/TTS). For agent orchestration: Hermes, OpenClaw, MCP, n8n."
+    "question": "What is your core AI and data engineering tech stack?",
+    "answer": "My production stack: Python (FastAPI, SQLAlchemy 2.0, Alembic, pandas, Flask), PostgreSQL, ChromaDB, FAISS. AI/ML layer: OpenAI (GPT-4o/Vision), Anthropic Claude, Google Gemini 2.5 (Flash/Pro), Sber GigaChat, OpenRouter (multi-provider LLM routing with fallback), Hugging Face (Transformers, PEFT/LoRA, TRL SFTTrainer, BitsAndBytes 4-bit quantization), Yandex SpeechKit (STT/TTS), fal.ai (Virtual Try-On). Agent orchestration: Hermes, OpenClaw, MCP, n8n. Infra: Docker, nginx, systemd, certbot, GitHub Pages."
   },
   {
-    "question": "Do you build simple conversational chat-bots or complex backend systems?",
-    "answer": "I engineer autonomous digital workers and comprehensive backend pipelines. My solutions interact natively with production databases, extract business parameters from unstructured inputs (PDF documents, map layouts, image attachments, or compressed audio logs), compute complex real-time operational metrics (such as occupancy rates, ADR, or logistics trends), and push structured sync alerts straight to your target CRM (Bitrix24, AmoCRM) within secure Docker environments."
+    "question": "Do you build simple chatbots or complex backend systems?",
+    "answer": "I engineer autonomous digital workers and comprehensive AI pipelines. My systems interact with production databases, extract business parameters from unstructured inputs (PDF documents, map layouts, image attachments, voice messages), compute complex real-time metrics (occupancy rates, ADR, quota balances, logistics trends), and push structured sync alerts to CRM (Bitrix24, AmoCRM) — all within secure, containerized Docker environments."
   },
   {
     "question": "Can you design and build multi-agent AI systems?",
-    "answer": "Yes. I design and deploy production-ready multi-agent systems where multiple specialized AI agents operate in coordination under a central orchestrator. Each agent has a defined role (researcher, developer, designer), its own model, and its own cognitive context. The orchestrator receives a task, identifies the relevant business domain, assembles the required context, and delegates to the appropriate subagents via a structured inter-agent result exchange protocol (Shared State). This architecture enables complex tasks to be executed in parallel and scales horizontally without rewiring the system."
+    "answer": "Yes. I design production-ready multi-agent systems where specialized AI agents operate under a central orchestrator. Each agent has a defined role (researcher, developer, designer), its own model, and its own cognitive context. The orchestrator receives a task, identifies the relevant business domain from a library of 7 domains, and delegates to appropriate subagents via a structured Shared State protocol — eliminating direct coupling between agents. Supports parallel task execution and horizontal scaling without rewiring the system."
   },
   {
     "question": "Do you offer AI architecture consulting for businesses?",
-    "answer": "Yes, this is one of my core service offerings. I provide AI architecture consulting: I audit existing business processes, identify where and which AI will deliver measurable ROI, select the optimal technology stack (models, providers, infrastructure), and design the full system with explicit constraints around data security, budget, and scalability. The deliverable is not a generic recommendation deck — it is a concrete architectural blueprint with a justified rationale for every technical decision and a phased implementation roadmap."
+    "answer": "Yes, this is one of my core service offerings. I audit existing business processes, identify where AI delivers measurable ROI, select the optimal technology stack (models, providers, infrastructure), and design the full system with explicit constraints around data security, budget, and scalability. The deliverable is not a generic recommendation deck — it is a concrete architectural blueprint with justified rationale for every technical decision and a phased implementation roadmap."
   },
   {
-    "question": "Do you have practical experience in training or fine-tuning Large Language Models?",
-    "answer": "Yes. I possess practical R&D experience in executing Parameter-Efficient Fine-Tuning (PEFT/LoRA) on open-source foundation models (such as Qwen and ruGPT-3 architectures). I am capable of engineering custom instruction datasets, configuring low-rank adapters to modify an LLM's conversational style or Tone of Voice (ToV) to align with strict brand guidelines, and preparing models for local offline deployment (via Ollama/GGUF quantization) to ensure absolute compliance with enterprise data privacy policies."
+    "question": "Do you have experience fine-tuning Large Language Models?",
+    "answer": "Yes. I have practical R&D experience in Parameter-Efficient Fine-Tuning (PEFT/LoRA) on open-source foundation models (ruGPT-3, Qwen architectures). I can engineer custom instruction datasets, configure LoRA adapters to modify an LLM's Tone of Voice to match brand guidelines, and prepare models for local offline deployment (Ollama/GGUF) to ensure absolute data privacy compliance."
   },
   {
-    "question": "How do you guarantee data security and fault tolerance in your automated systems?",
-    "answer": "Security is integrated at every architectural tier: strict container isolation via Docker, enforcing Row-Level Security (RLS) on relational database clusters, validating third-party webhooks using unique API secret tokens (such as Telegram Secret Token verification), and embedding centralized configuration Feature Flags (Kill Switches) to gracefully deactivate individual microservices during technical incidents without taking down the entire core app."
+    "question": "How do you ensure data security in your AI systems?",
+    "answer": "Security is built into the architecture from the start: Docker container isolation, Row-Level Security (RLS) on relational databases, webhook validation using secret API tokens (Telegram X-Telegram-Bot-Api-Secret-Token), Feature Flags / Kill Switches to gracefully deactivate individual microservices during incidents, and HTTPS with Let's Encrypt on all public endpoints. For sensitive data, local LLM deployment (offline inference) is available as an option."
+  },
+  {
+    "question": "Tell me about the personal HR agent on this website.",
+    "answer": "This very site is one of my projects. It's a bilingual (EN/RU) AI portfolio with a FastAPI RAG backend, FAISS vector search over my CV and FAQ documents, and a GPT-4o chat widget. The language is auto-detected from the visitor's browser and passed to the backend, which switches both the system prompt (HR agent persona) and the FAISS retrieval filter. The static frontend is hosted on GitHub Pages at vegman.dev, the API runs on a VPS behind nginx + Let's Encrypt. Source: github.com/natavegman/portfolio-site"
+  },
+  {
+    "question": "What is the MyFamilyTree project?",
+    "answer": "MyFamilyTree is a personal side project born from a genuine interest in genealogy and family history research. It's a FastAPI backend that imports GEDCOM family-tree files, parses person and family records into a PostgreSQL database via SQLAlchemy, and exposes REST endpoints for searching relatives and attaching archival documents (birth certificates, photos, emigration papers) to individual records. Docker Compose for local development. Source: github.com/natavegman/MyFamilyTree"
   },
   {
     "question": "What is your legal status and contract workflow for international clients?",
-    "answer": "I operate fully legally under formal Service Agreements as a registered Sole Proprietor. Additionally, I hold e-Resident status in Kazakhstan, enabling smooth compliance, legal contracting, and multi-currency international B2B invoicing with English-speaking clients worldwide. Project costs are scoped precisely based on architectural blueprint complexity."
+    "answer": "I operate under formal Service Agreements as a registered Sole Proprietor. I hold e-Resident status in Kazakhstan, enabling smooth legal contracting and multi-currency B2B invoicing with international clients. Project costs are scoped based on architectural blueprint complexity."
   }
 ]
