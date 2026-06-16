@@ -1,4 +1,4 @@
-# Natalia Vegman — Senior AI Automation Consultant & IT Architect
+# Natalia Vegman — AI Automation Consultant & IT Architect
 
 ## Professional Summary
 

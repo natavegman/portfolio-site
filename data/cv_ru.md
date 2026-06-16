@@ -1,4 +1,4 @@
-# Наталья Вегман — Senior AI Automation Consultant & IT Architect
+# Наталья Вегман — AI Automation Consultant & IT Architect
 
 ## Обо мне
 
