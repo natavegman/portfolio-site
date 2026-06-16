@@ -813,7 +813,7 @@
       <div class="stat-label" data-i18n="stat1Label">Years in IT</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">9</div>
+      <div class="stat-num">10</div>
       <div class="stat-label" data-i18n="stat2Label">Projects shipped</div>
     </div>
     <div class="stat-item">
@@ -1053,6 +1053,25 @@
       <a href="https://github.com/natavegman/site-generation-post" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
     </div>
 
+    <div class="project-card reveal reveal-delay-4">
+      <div class="project-header">
+        <div class="project-icon">🌳</div>
+        <span class="project-type" data-i18n="p10Type">Genealogy / API</span>
+      </div>
+      <div class="project-name" data-i18n="p10Name">MyFamilyTree</div>
+      <div class="project-desc" data-i18n="p10Desc">
+        FastAPI backend for a personal genealogy platform. Imports GEDCOM family-tree files, stores relationships in PostgreSQL via SQLAlchemy, and serves REST endpoints for searching people and attaching archival documents to family records.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">SQLAlchemy</span>
+        <span class="stack-tag">GEDCOM</span>
+        <span class="stack-tag">Docker</span>
+      </div>
+      <a href="https://github.com/natavegman/MyFamilyTree" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
+    </div>
+
   </div>
 </section>
 
@@ -1254,7 +1273,7 @@
       featH4: 'Full security stack: Docker Compose, Row-Level Security, Telegram webhook token validation, MAINTENANCE_MODE kill switch.',
       projLabel: 'More projects', projTitle: "Things I've built",
       projDesc: 'A selection of tools and systems across different domains.',
-      p1Type: 'Analytics / ETL', p1Name: 'Fisheries DWH &amp; Analytics Platform',
+      p1Type: 'Analytics / ETL', p1Name: 'Fisheries DWH & Analytics Platform',
       p1Desc: 'Migrated a fragmented Python ETL ecosystem into a centralized PostgreSQL DWH. Engineered complex quota-transfer logic, integrated UN Comtrade API and AMP vessel tracking; n8n orchestration, Notion as read-only dashboard.',
       p2Type: 'AI / Scraping', p2Name: 'Competitor Intelligence System',
       p2Desc: 'macOS desktop app that scrapes fishing industry companies using headless Selenium with anti-bot bypass, feeds raw data to GPT-4o at temperature=0, and outputs structured JSON competitor snapshots with risk assessments.',
@@ -1302,6 +1321,8 @@
       p8Desc: 'Interactive web photo album for a 70th-birthday celebration — five life chapters (Childhood → Today), animated portrait cards, background music, and ~200 photos auto-imported from iCloud and compressed with Python. Pure vanilla JS, zero frameworks.',
       p9Type: 'AI / Content', p9Name: 'VK Post Generator',
       p9Desc: 'Flask web app that generates branded VK community posts in the voice of "Maya" — an AI biohacking coach persona. GigaChat matches a strict Tone of Voice, scrapes reference content from URLs, and saves editorial favorites.',
+      p10Type: 'Genealogy / API', p10Name: 'MyFamilyTree',
+      p10Desc: 'FastAPI backend for a personal genealogy platform. Imports GEDCOM family-tree files, stores relationships in PostgreSQL via SQLAlchemy, and serves REST endpoints for searching people and attaching archival documents to family records.',
       chatTitle: "Natalia's HR Agent",
       chatSubtitle: 'AI-powered career assistant',
       chatPlaceholder: 'Ask about skills, projects, rates…',
@@ -1377,6 +1398,8 @@
       p8Desc: 'Интерактивный веб-фотоальбом к 70-летию — пять глав жизни (Детство → Сегодня), анимированные портреты, фоновая музыка и ~200 фото, автоматически импортированных из iCloud и сжатых Python-скриптом. Чистый vanilla JS, без фреймворков.',
       p9Type: 'AI / Контент', p9Name: 'Генератор постов ВКонтакте',
       p9Desc: 'Flask-приложение для генерации брендированных постов VK-сообщества в голосе «Майи» — AI-наставника по биохакингу. GigaChat соблюдает строгий Tone of Voice, парсит референсные URL и сохраняет избранные посты.',
+      p10Type: 'Генеалогия / API', p10Name: 'MyFamilyTree',
+      p10Desc: 'FastAPI-бэкенд для личной генеалогической платформы. Импортирует GEDCOM-файлы семейных деревьев, хранит связи в PostgreSQL через SQLAlchemy, REST-эндпоинты для поиска людей и прикрепления архивных документов к записям.',
       chatTitle: 'HR-агент Натальи',
       chatSubtitle: 'AI-ассистент по карьере',
       chatPlaceholder: 'Спросите о навыках, проектах, ставках…',
@@ -1461,7 +1484,7 @@
   revealEls.forEach(el => revealObserver.observe(el));
 
   /* ── Stat counters ─────────────────────────────────────────── */
-  const statData = [{ val: 19 }, { val: 9 }, { val: 10 }];
+  const statData = [{ val: 19 }, { val: 10 }, { val: 10 }];
   const statNums = document.querySelectorAll('.stat-num');
   const statObserver = new IntersectionObserver(entries => {
     entries.forEach((entry, i) => {
