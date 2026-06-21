@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 14mm 15mm 13mm 15mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    color: #1e1e1e;
+    background: #fff;
+    line-height: 1.5;
+    width: 180mm;
+  }
+
+  /* ── Page break ── */
+  .page-break {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 11px;
+    border-bottom: 3px solid #1a7a5e;
+    margin-bottom: 13px;
+  }
+
+  .photo {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 2.5px solid #1a7a5e;
+    flex-shrink: 0;
+  }
+
+  .header-text { flex: 1; }
+
+  .name {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -.3px;
+    line-height: 1;
+  }
+
+  .h-title {
+    font-size: 10.5pt;
+    color: #1a7a5e;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 14px;
+    margin-top: 6px;
+    font-size: 8pt;
+    color: #555;
+  }
+
+  .contacts a { color: #1a7a5e; text-decoration: none; }
+
+  /* ── Section title ── */
+  .sec-title {
+    font-size: 7.8pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a7a5e;
+    border-bottom: 1.5px solid #1a7a5e;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    margin-top: 13px;
+  }
+
+  /* ── Summary ── */
+  .summary { font-size: 8.7pt; color: #333; line-height: 1.6; }
+
+  /* ── Experience timeline ── */
+  .exp { display: flex; gap: 10px; margin-bottom: 13px; }
+
+  .exp-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12px;
+    flex-shrink: 0;
+  }
+
+  .exp-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #1a7a5e;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .exp-line {
+    width: 1.5px;
+    background: #c8e6dd;
+    flex: 1;
+    margin-top: 5px;
+  }
+
+  .exp-right { flex: 1; }
+
+  .exp-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .exp-role {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.2;
+  }
+
+  .exp-date {
+    font-size: 7.8pt;
+    color: #1a7a5e;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .exp-company {
+    font-size: 8.3pt;
+    color: #1a7a5e;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .exp-bullets {
+    margin-top: 5px;
+    padding-left: 13px;
+  }
+
+  .exp-bullets li {
+    font-size: 8.3pt;
+    color: #333;
+    margin-bottom: 3px;
+    line-height: 1.5;
+  }
+
+  /* ── Skills 2-col ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px 20px;
+  }
+
+  .skill-label { font-weight: 700; font-size: 8pt; color: #111; margin-bottom: 2px; }
+  .skill-text  { font-size: 7.8pt; color: #444; line-height: 1.5; }
+
+  /* ── Projects 2-col ── */
+  .proj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+  }
+
+  .proj-name { font-weight: 700; font-size: 8.3pt; color: #111; }
+  .proj-desc { font-size: 7.8pt; color: #444; line-height: 1.45; margin-top: 2px; }
+  .proj-link { font-size: 7.3pt; }
+  .proj-link a { color: #1a7a5e; text-decoration: none; }
+
+  /* ── Education 3-col ── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 7px 14px;
+  }
+
+  .edu-deg  { font-weight: 700; font-size: 8pt; color: #111; line-height: 1.3; }
+  .edu-sub  { font-size: 7.6pt; color: #555; line-height: 1.4; margin-top: 2px; }
+  .edu-year { font-size: 7.3pt; color: #1a7a5e; font-weight: 700; margin-top: 2px; }
+
+  /* ── Languages ── */
+  .lang-row { display: inline-flex; gap: 3px; margin-right: 18px; font-size: 8.3pt; }
+  .lang-level { color: #777; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 ═══════════════ -->
+
+  <div class="header">
+    <img class="photo" src="photo.png" alt="Natalia">
+    <div class="header-text">
+      <div class="name">Natalia Rosliakova</div>
+      <div class="h-title">AI Automation Consultant &amp; IT Architect</div>
+      <div class="contacts">
+        <a href="mailto:vegmannata@gmail.com">vegmannata@gmail.com</a>
+        <span>Telegram: <a href="https://t.me/natroot">@natroot</a></span>
+        <a href="https://vegman.dev">vegman.dev</a>
+        <a href="https://github.com/natavegman">github.com/natavegman</a>
+        <span>From $80 / hr &nbsp;·&nbsp; IP / e-Resident Kazakhstan</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:0">Professional Summary</div>
+  <div class="summary">
+    Systems Analyst and IT Architect with 19 years of experience managing complex IT infrastructures, now specializing in AI engineering and business process automation. Expert in designing decoupled architectures, orchestrating ML pipelines (Python, FastAPI, n8n), and deploying RAG-based LLM applications and agentic systems that solve concrete business challenges. Proven track record of automating financial analytics, customer support, and B2B dispatching systems.
+  </div>
+
+  <div class="sec-title">Experience</div>
+
+  <!-- AI Consultant -->
+  <div class="exp">
+    <div class="exp-connector">
+      <div class="exp-dot"></div>
+      <div class="exp-line"></div>
+    </div>
+    <div class="exp-right">
+      <div class="exp-row">
+        <div class="exp-role">AI Automation Consultant</div>
+        <div class="exp-date">Dec 2025 – Present</div>
+      </div>
+      <div class="exp-company">Freelance / Consulting</div>
+      <ul class="exp-bullets">
+        <li><b>Hotel AI Assistant (multi-modal + RAG):</b> FastAPI backend combining LLM, Yandex SpeechKit (STT/TTS), and Vision API with a Telegram bot interface. RAG pipeline over internal knowledge base serves two audiences: guest-facing customer care Q&amp;A and staff-facing admin instructions. Automated financial reporting pipeline pulls live Bnovo PMS data → structured daily/weekly reports → Bitrix24, saving 6–10 hours of manual work per week.</li>
+        <li><b>RAG FAQ Assistant:</b> LangChain + FAISS pipeline; A/B testing with Ragas evaluation metrics; deployed web chat widget on production.</li>
+        <li><b>Agentic Workflows:</b> Autonomous routing pipelines with Hermes / OpenClaw; instruction-tuned open-source LLMs (Llama, Mistral) for dynamic intent routing and tool selection.</li>
+        <li><b>B2B AI Dispatcher (Tripseller):</b> Refactored travel platform — routing logic moved from monolith to n8n orchestrator; automated contractor matching with Telegram API fallback logic.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- B2B Sales -->
+  <div class="exp">
+    <div class="exp-connector">
+      <div class="exp-dot"></div>
+      <div class="exp-line"></div>
+    </div>
+    <div class="exp-right">
+      <div class="exp-row">
+        <div class="exp-role">B2B Sales &amp; IT Consulting Manager</div>
+        <div class="exp-date">2018 – Present</div>
+      </div>
+      <div class="exp-company">Saint Petersburg</div>
+      <ul class="exp-bullets">
+        <li>Single point of contact between business clients and external technical teams across IT and automation projects.</li>
+        <li>Requirements gathering with C-level stakeholders, vendor coordination, project management, and delivery oversight.</li>
+        <li>Managed end-to-end project lifecycles for internal and client-facing initiatives, bridging technical and business language.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Lead IT -->
+  <div class="exp">
+    <div class="exp-connector">
+      <div class="exp-dot"></div>
+    </div>
+    <div class="exp-right">
+      <div class="exp-row">
+        <div class="exp-role">Lead IT Professional &amp; Systems Engineer</div>
+        <div class="exp-date">2004 – 2018</div>
+      </div>
+      <div class="exp-company">Murmansk Shipping Company · Murmansk</div>
+      <ul class="exp-bullets">
+        <li>Grew from software engineer to Head of IT &amp; Telecommunications Service, managing ~40 specialists.</li>
+        <li>Led development of a proprietary ERP; implemented SAP, 1C, and Company Media across the enterprise.</li>
+        <li>Administered on-premises data center (servers, networking, disaster recovery) for one of Russia's largest maritime transport companies.</li>
+        <li>Managed complex IT projects end-to-end: architecture, implementation, post-release monitoring.</li>
+      </ul>
+    </div>
+  </div>
+
+<div class="page-break"></div>
+
+<!-- ═══════════════ PAGE 2 ═══════════════ -->
+
+  <div class="sec-title" style="margin-top:0">Technical Skills</div>
+  <div class="skills-grid">
+    <div>
+      <div class="skill-label">AI &amp; Machine Learning</div>
+      <div class="skill-text">Prompt Engineering, RAG Architecture (LangChain, FAISS), Output Evaluation (Ragas), A/B Testing, Agentic Systems (OpenClaw, Hermes), Computer Vision, OCR, LoRA / PEFT Fine-Tuning</div>
+    </div>
+    <div>
+      <div class="skill-label">LLMs &amp; APIs</div>
+      <div class="skill-text">OpenAI GPT-4o / Vision, Anthropic Claude, Google Gemini 2.5, GigaChat, Yandex SpeechKit, OpenRouter, fal.ai, open-source (Llama, Mistral, Hermes, ruGPT)</div>
+    </div>
+    <div>
+      <div class="skill-label">Languages &amp; Frameworks</div>
+      <div class="skill-text">Python (FastAPI, SQLAlchemy 2.0, Alembic, pandas, Flask, PyQt6), JavaScript, HTML / CSS</div>
+    </div>
+    <div>
+      <div class="skill-label">Automation &amp; DevOps</div>
+      <div class="skill-text">n8n, Webhooks, REST API, Selenium, Playwright, Docker, nginx, Linux, systemd, Git, GitHub Pages, VPS Hosting</div>
+    </div>
+    <div>
+      <div class="skill-label">Databases &amp; Vector Storage</div>
+      <div class="skill-text">PostgreSQL, ChromaDB, FAISS, SQLite, Docker Compose</div>
+    </div>
+    <div>
+      <div class="skill-label">Methodologies</div>
+      <div class="skill-text">Decoupled Architecture, End-to-end Software Lifecycle, System Analysis, Data Engineering, Agile / PLM</div>
+    </div>
+  </div>
+
+  <div class="sec-title">Hobby ML Projects &amp; Prototypes</div>
+  <div class="proj-grid">
+    <div>
+      <div class="proj-name">🐟 Maritime Analytics Pipeline</div>
+      <div class="proj-desc">NLP + data engineering pipeline to parse and enrich maritime regulatory orders and fleet registries; calculates fishing quotas; cross-references UN Comtrade API, tax records, and vessel tracking data.</div>
+      <div class="proj-link"><a href="https://github.com/natavegman/ships_analytic">github.com/natavegman/ships_analytic</a></div>
+    </div>
+    <div>
+      <div class="proj-name">🌳 AI Genealogy &amp; OCR Pipeline</div>
+      <div class="proj-desc">OCR + LLM entity extraction from unstructured historical archival documents; identifies genealogical relationships and validates data consistency.</div>
+      <div class="proj-link"><a href="https://github.com/natavegman/MyFamilyTree">github.com/natavegman/MyFamilyTree</a></div>
+    </div>
+    <div>
+      <div class="proj-name">👗 AI Personal Stylist (Computer Vision)</div>
+      <div class="proj-desc">Gemini Vision for wardrobe analysis and outfit recommendations; fal.ai Virtual Try-On to visualize clothing on user's photo; Telegram bot interface.</div>
+      <div class="proj-link"><a href="https://github.com/natavegman/Smart-Style-Bot">github.com/natavegman/Smart-Style-Bot</a></div>
+    </div>
+    <div>
+      <div class="proj-name">💬 Personal HR Agent (this portfolio)</div>
+      <div class="proj-desc">Bilingual FastAPI RAG backend (FAISS + OpenAI embeddings); GPT-4o chat widget; auto language detection; deployed on VPS with nginx + Let's Encrypt.</div>
+      <div class="proj-link">
+        <a href="https://vegman.dev">vegman.dev</a> ·
+        <a href="https://github.com/natavegman/portfolio-site">github.com/natavegman/portfolio-site</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title">Education</div>
+  <div class="edu-grid">
+    <div>
+      <div class="edu-deg">Engineer — Software Engineering</div>
+      <div class="edu-sub">Automated Systems in Science, Production &amp; Business</div>
+      <div class="edu-sub">Murmansk State Technical University</div>
+      <div class="edu-year">1999–2004 · Honours</div>
+    </div>
+    <div>
+      <div class="edu-deg">Economist — Finance &amp; Credit</div>
+      <div class="edu-sub">Financial Management</div>
+      <div class="edu-sub">Murmansk State Technical University</div>
+      <div class="edu-year">2002–2005 · Honours</div>
+    </div>
+    <div>
+      <div class="edu-deg">Professional Prompt Engineer</div>
+      <div class="edu-sub">Zerocoder University · 5-month course</div>
+      <div class="edu-sub">+ Claude Code (Anthropic) · Google AI ecosystem</div>
+      <div class="edu-year">2025</div>
+    </div>
+  </div>
+
+  <div class="sec-title">Languages</div>
+  <div>
+    <span class="lang-row"><span>Russian</span>&nbsp;<span class="lang-level">— Native</span></span>
+    <span class="lang-row"><span>English</span>&nbsp;<span class="lang-level">— Professional Working Proficiency (B1+)</span></span>
+  </div>
+
+</body>
+</html>

@@ -13,3 +13,7 @@ data/faiss_metadata.npy
 
 # macOS
 .DS_Store
+
+# Targeted CVs — never push to public repo
+cv_bancoplata.html
+Natalia_CV_BancoPlata.pdf
