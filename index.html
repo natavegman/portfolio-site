@@ -809,7 +809,7 @@
   <div class="hero-cta">
     <a href="#featured" class="btn btn-primary"  data-i18n="heroCta1">See my work</a>
     <a href="#contact"  class="btn btn-outline"  data-i18n="heroCta2">Get in touch</a>
-    <a href="Natalia_CV.pdf" class="btn btn-outline" download data-i18n="heroCta3">Download CV</a>
+    <a href="Natalia_CV.pdf" class="btn btn-outline lang-en-only" download data-i18n="heroCta3">Download CV</a>
   </div>
 
   <div class="stats">
@@ -1434,6 +1434,9 @@
     window.__currentLang = lang;
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    document.querySelectorAll('.lang-en-only').forEach(el => {
+      el.style.display = lang === 'en' ? '' : 'none';
     });
   }
 
