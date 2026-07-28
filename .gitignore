@@ -10,6 +10,8 @@ venv/
 # Generated FAISS index (rebuild with build_index.py)
 data/faiss_index.bin
 data/faiss_metadata.npy
+data/faiss_info.json
+data/*.bak
 
 # macOS
 .DS_Store

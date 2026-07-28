@@ -1601,19 +1601,28 @@
       const res = await fetch(`${getChatApi()}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, lang, top_k: 3 }),
+        /* top_k is the server's call — it tunes retrieval alongside the cost caps */
+        body: JSON.stringify({ message: text.slice(0, 500), lang }),
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) {
+        /* The API explains itself in the visitor's language (quota, daily limit,
+           …). Show that instead of a blanket "unavailable" that hides the reason. */
+        let detail = '';
+        try { detail = (await res.json()).detail; } catch { /* non-JSON error body */ }
+        throw new Error(detail || `HTTP ${res.status}`);
+      }
       const data = await res.json();
       typingEl.remove();
       addMsg('bot', data.answer);
-    } catch {
+    } catch (err) {
       typingEl.remove();
-      addMsg('bot',
-        lang === 'ru'
-          ? 'Сервис временно недоступен. Напишите напрямую: vegmannata@gmail.com'
-          : 'Service temporarily unavailable. Contact Natalia: vegmannata@gmail.com'
-      );
+      const fallback = lang === 'ru'
+        ? 'Сервис временно недоступен. Напишите напрямую: vegmannata@gmail.com'
+        : 'Service temporarily unavailable. Contact Natalia: vegmannata@gmail.com';
+      const msg = err && err.message && !/^HTTP \d+$/.test(err.message)
+        ? err.message
+        : fallback;
+      addMsg('bot', msg);
     } finally {
       sendBtn.disabled = false;
       input.focus();

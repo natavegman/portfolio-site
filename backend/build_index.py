@@ -3,18 +3,20 @@ Build the FAISS vector index from FAQ and CV data files.
 Run once before starting the backend:
     python backend/build_index.py
 """
-import os, json, re
+import os, sys, json, re
 import numpy as np
 import faiss
-from openai import OpenAI
 from dotenv import load_dotenv
 
 load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+
+sys.path.insert(0, os.path.dirname(__file__))
+import embeddings
 
 DATA_DIR   = os.path.join(os.path.dirname(__file__), '..', 'data')
 INDEX_PATH = os.path.join(DATA_DIR, 'faiss_index.bin')
 META_PATH  = os.path.join(DATA_DIR, 'faiss_metadata.npy')
+INFO_PATH  = os.path.join(DATA_DIR, 'faiss_info.json')
 
 
 def load_faq(filename, lang):
@@ -48,8 +50,7 @@ def load_cv_chunks(filename, lang):
 
 
 def embed_batch(texts):
-    resp = client.embeddings.create(input=texts, model="text-embedding-3-small")
-    return [d.embedding for d in resp.data]
+    return embeddings.embed_texts(texts)
 
 
 def main():
@@ -59,19 +60,32 @@ def main():
         load_cv_chunks('cv_en.md', 'en') +
         load_cv_chunks('cv_ru.md', 'ru')
     )
-    print(f"Loaded {len(items)} items total")
+    # Every item is indexed twice: once as question+answer (good context for the
+    # LLM) and once as the bare question. The question-only vector is what makes
+    # the FAQ shortcut possible — matching a visitor's short question against a
+    # long question+answer chunk tops out around 0.4 similarity, far too low to
+    # separate a real hit from a near miss.
+    items = [it | {"vector_kind": "full"} for it in items] + [
+        it | {"vector_kind": "question"} for it in items if it["source"] == "faq"
+    ]
+    print(f"Loaded {len(items)} vectors "
+          f"({sum(1 for i in items if i['vector_kind'] == 'question')} question-only)")
 
-    texts = [f"{it['question']}\n\n{it['answer']}" for it in items]
+    texts = [
+        it["question"] if it["vector_kind"] == "question"
+        else f"{it['question']}\n\n{it['answer']}"
+        for it in items
+    ]
 
-    all_embeddings = []
+    batches = []
     batch_size = 50
     for i in range(0, len(texts), batch_size):
         batch = texts[i:i + batch_size]
         print(f"  Embedding {i+1}–{i+len(batch)}...")
-        all_embeddings.extend(embed_batch(batch))
+        batches.append(embed_batch(batch))
 
-    dim = len(all_embeddings[0])
-    mat = np.array(all_embeddings, dtype=np.float32)
+    mat = np.vstack(batches).astype(np.float32)
+    dim = mat.shape[1]
 
     idx = faiss.IndexFlatL2(dim)
     idx.add(mat)
@@ -79,9 +93,16 @@ def main():
     faiss.write_index(idx, INDEX_PATH)
     np.save(META_PATH, np.array(items, dtype=object))
 
-    print(f"\nDone! {len(items)} vectors, dim={dim}")
+    # Lets the API refuse to serve an index built by a different embedder —
+    # mismatched vectors would silently return nonsense instead of failing.
+    info = embeddings.describe() | {"dim": dim, "vectors": len(items)}
+    with open(INFO_PATH, 'w', encoding='utf-8') as f:
+        json.dump(info, f, ensure_ascii=False, indent=2)
+
+    print(f"\nDone! {len(items)} vectors, dim={dim}, backend={info['backend']} ({info['model']})")
     print(f"  Index → {INDEX_PATH}")
     print(f"  Meta  → {META_PATH}")
+    print(f"  Info  → {INFO_PATH}")
 
 
 if __name__ == '__main__':
