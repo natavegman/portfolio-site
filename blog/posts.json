@@ -1,1 +1,47 @@
-[]
+[
+ {
+  "slug": "gde-zakanchivaetsya-chat-repetitor",
+  "date": "2026-08-25",
+  "title_ru": "Пять месяцев с ИИ-репетитором: где заканчивается чат и начинается агент",
+  "title_en": "Five Months in One Chat: Where a Chat Model Helps and Where It Starts to Fail",
+  "excerpt_ru": "18 мая 2026 года я полчаса доказывала своему репетитору, что модели, с которыми я работаю каждый день, существуют. Репетитором был Gemini, спор шёл про Claude Sonnet 4.5 и Opus 4.6…",
+  "excerpt_en": "On May 18, 2026 I spent half an hour proving to my tutor that the models I work with every day exist. The tutor was Gemini, the argument was about Claude Sonnet 4.5 and Opus 4.6, a…",
+  "page_id": "3c756113-c26d-8105-8229-f625a81d4fd4"
+ },
+ {
+  "slug": "45-protsentov-byudzheta-na-holostoy-hod-agenta",
+  "date": "2026-07-31",
+  "title_ru": "45% бюджета уходило на то, что агент спрашивал «нет ли для меня работы»",
+  "title_en": "45% of My Model Spend Went to One Question the Agent Asked Itself",
+  "excerpt_ru": "Лид (обновлённый): Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей …",
+  "excerpt_en": "I opened my bill for language models and saw a number bigger than usual. Over that same period not a single new user had shown up, I hadn't shipped any new features, and load hadn'…",
+  "page_id": "3c556113-c26d-81c0-b35b-d171e2f11d24"
+ },
+ {
+  "slug": "ot-roya-agentov-k-discipline",
+  "date": "2026-07-20",
+  "title_ru": "От роя к дисциплине: 129 вызовов, которые научили меня считать",
+  "title_en": "Five Rules Cost Less Than Five Agents",
+  "excerpt_ru": "Я открыла биллинг и увидела ноль. Не «мало осталось», а ровно ноль. Виноват был не сложный сценарий и не наплыв пользователей: один агент на расписании отработал сам с собой около …",
+  "excerpt_en": "I opened the billing page and saw zero. Not \"running low\" — exactly zero. The culprit wasn't some complicated scenario or a flood of users: one scheduled agent spent about 14 hours…",
+  "page_id": "3c656113-c26d-819a-8f98-c2ddc9af3c73"
+ },
+ {
+  "slug": "chem-agent-otlichaetsya-ot-chat-bota",
+  "date": "2026-02-26",
+  "title_ru": "Чем агент отличается от чат-бота — и почему обвязка важнее модели",
+  "title_en": "Chatbot or Agent: The Difference Is the Harness, Not the Model",
+  "excerpt_ru": "Сидишь на демо, тебе показывают «нашего AI-ассистента». Ты говоришь: «Забронируй столик на двоих на семь вечера». Он отвечает вежливо и грамотно, уточняет — у окна или в общем зале…",
+  "excerpt_en": "You write to a bot: \"Book a table for two at seven this evening.\" It replies politely and correctly, asks whether you'd like a window seat or the main room, wishes you a pleasant e…",
+  "page_id": "3c556113-c26d-812c-9cb3-c7c3f2300773"
+ },
+ {
+  "slug": "rag-prostymi-slovami-i-kogda-on-ne-nuzhen",
+  "date": "2026-02-18",
+  "title_ru": "RAG простыми словами — и когда он вам не нужен",
+  "title_en": "RAG in Practice: What It Actually Is, and When You Don't Need It",
+  "excerpt_ru": "Полночь, ресепшен, заезжает гость с иностранным паспортом. Администратор на третьей смене в своей жизни открывает внутреннего ассистента и спрашивает: «как оформить регистрацию ино…",
+  "excerpt_en": "Midnight, the front desk, a guest walks in with a foreign passport. The receptionist — third shift of their life — opens the internal assistant and asks: \"how do I register a forei…",
+  "page_id": "3c556113-c26d-81c7-a889-c3fa7dd83e0c"
+ }
+]

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Чем агент отличается от чат-бота — и почему обвязка важнее модели</title>
+<meta name="description" content="Сидишь на демо, тебе показывают «нашего AI-ассистента». Ты говоришь: «Забронируй столик на двоих на семь вечера». Он отвечает вежливо и грамотно, уточняет — у окна или в общем зале…">
+<link rel="canonical" href="https://vegman.dev/blog/chem-agent-otlichaetsya-ot-chat-bota/">
+<meta property="og:title" content="Чем агент отличается от чат-бота — и почему обвязка важнее модели">
+<meta property="og:description" content="Сидишь на демо, тебе показывают «нашего AI-ассистента». Ты говоришь: «Забронируй столик на двоих на семь вечера». Он отвечает вежливо и грамотно, уточняет — у окна или в общем зале…">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vegman.dev/blog/chem-agent-otlichaetsya-ot-chat-bota/">
+<meta property="og:image" content="https://vegman.dev/blog/img/chem-agent-otlichaetsya-ot-chat-bota/cover.jpg"><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({startOnLoad:true,theme:'dark',securityLevel:'strict',
+  themeVariables:{background:'#0d1218',primaryColor:'#121820',primaryTextColor:'#e8eef5',
+  primaryBorderColor:'#4fffb0',lineColor:'#8aa0b5',fontFamily:"Inter,sans-serif"}});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080c10;--surface:#0e1419;--border:rgba(255,255,255,.07);
+--accent:#4fffb0;--accent2:#7b6ff0;--text:#e8eaed;--muted:#7a8394;
+--card-bg:rgba(255,255,255,.03)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);
+color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#000}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;z-index:50;background:rgba(8,12,16,.85);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;
+gap:16px;height:64px;max-width:1100px}
+.brand{font-weight:600;letter-spacing:-.01em;color:var(--text)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+nav.top-nav{display:flex;align-items:center;gap:20px;font-size:14px}
+nav.top-nav a{color:var(--muted)}
+nav.top-nav a:hover{color:var(--text);text-decoration:none}
+.lang-switch{display:flex;gap:4px;border:1px solid var(--border);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:0;color:var(--muted);font:500 12px/1 'Inter',sans-serif;
+padding:6px 10px;border-radius:5px;cursor:pointer;font-family:inherit}
+.lang-btn.active{background:var(--accent);color:#000}
+main{padding:56px 0 96px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.2;letter-spacing:-.02em;margin:0 0 16px}
+h2{font-size:24px;letter-spacing:-.01em;margin:40px 0 12px}
+.meta{color:var(--muted);font-size:14px;font-family:'JetBrains Mono',ui-monospace,monospace;
+margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{border:1px solid var(--border);border-radius:99px;padding:3px 10px;font-size:12px}
+.cover{width:100%;border-radius:14px;border:1px solid var(--border);margin:0 0 36px;display:block}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
+article p{margin:0 0 20px}
+article ul{margin:0 0 20px;padding-left:22px}
+article li{margin:0 0 8px}
+article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
+background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto}
+.lead{font-size:18px;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.post-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;
+padding:24px;transition:border-color .2s,transform .2s}
+.post-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.post-card a{color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em}
+.post-card a:hover{color:var(--accent);text-decoration:none}
+.post-card .excerpt{color:var(--muted);margin:10px 0 0;font-size:15px}
+.back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+.empty{color:var(--muted);text-align:center;padding:64px 0}
+@media(max-width:600px){nav.top-nav{gap:12px;font-size:13px}main{padding:36px 0 64px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://vegman.dev/">Natalia&nbsp;Vegman</a>
+  <nav class="top-nav">
+    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ru" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" type="button">EN</button>
+    </div>
+  </nav>
+</div></header>
+<main><div class="wrap">
+<div data-lang-block="ru">
+  <a class="back" href="https://vegman.dev/blog/">← Все статьи</a>
+  <h1>Чем агент отличается от чат-бота — и почему обвязка важнее модели</h1>
+  <div class="meta"><span>2026-02-26</span><span class="tag">Case study</span></div>
+  <img class="cover" src="https://vegman.dev/blog/img/chem-agent-otlichaetsya-ot-chat-bota/cover.jpg" alt="">
+  <article><p>Сидишь на демо, тебе показывают «нашего AI-ассистента». Ты говоришь: «Забронируй столик на двоих на семь вечера». Он отвечает вежливо и грамотно, уточняет — у окна или в общем зале — и желает приятного вечера.</p>
+<p>А столик при этом никто не забронировал.</p>
+<p>Через неделю тебе показывают другую систему и говорят: «Вот это уже агент». Ты открываешь — внутри тот же самый разговор, только ответы длиннее.</p>
+<p>Я долго наблюдаю эту путаницу и вижу одну и ту же причину: разницу пытаются искать в модели. А она — почти всегда — в коде вокруг модели.</p>
+<p>Ниже — простой способ перестать путать чат-бота с агентом, и чек-лист, на что смотреть в «обвязке» (harness), прежде чем спорить про «какая модель лучше».</p>
+<h2>Простое различие: отвечать и делать</h2>
+<p>Чат-бот отвечает текстом. Пришёл вопрос → ушёл ответ. Он может отвечать блестяще, с примерами и кодом, но продукт его работы остаётся буквами на экране. Дальше действует человек.</p>
+<p>Агент выполняет шаги. Это звучит просто, но внутри — конкретная механика:</p>
+<ul><li>выбирает инструмент — функцию, которую ему разрешили вызывать (поиск по базе, отправка письма, запись файла, запрос во внешний сервис)</li><li>вызывает его — не описывает вызов словами, а действительно запускает</li><li>читает результат — включая ошибку, если инструмент упал</li><li>решает, что дальше — повторить шаг, взять другой инструмент, спросить человека</li><li>останавливается по критерию — по заранее заданному условию, при котором задача считается выполненной (или безнадёжной).</li></ul>
+<p>Тест на любую «агентность» на демо: спроси, что происходит между вопросом пользователя и ответом системы. Если между ними только генерация текста — перед тобой чат-бот, как бы его ни назвали в презентации. Если между ними есть вызовы инструментов, чтение результатов и явное условие остановки — это агент.</p>
+<figure><pre class="mermaid">flowchart TB
+  subgraph CB[&quot;Чат-бот&quot;]
+    C1[&quot;Вопрос&quot;] --&gt; C2[&quot;Генерация текста&quot;] --&gt; C3[&quot;Ответ&quot;]
+  end
+  subgraph AG[&quot;Агент&quot;]
+    A1[&quot;Вопрос&quot;] --&gt; A2[&quot;Модель: что сделать сейчас&quot;]
+    A2 --&gt; A3[&quot;Вызов инструмента&quot;]
+    A3 --&gt; A4[&quot;Чтение результата&quot;]
+    A4 --&gt; A5{&quot;Условие остановки&quot;}
+    A5 --&gt;|&quot;нет&quot;| A2
+    A5 --&gt;|&quot;да&quot;| A6[&quot;Ответ&quot;]
+  end</pre><figcaption>Граница проходит не по модели, а по тому, что происходит между вопросом и ответом</figcaption></figure>
+<h2>Что такое «обвязка» и из чего она собрана</h2>
+<p>Обвязка (англ. harness) — это программный слой вокруг модели. В этой конструкции модель делает выбор только в одном месте: что сказать сейчас или какой инструмент вызвать сейчас. Всё остальное — ответственность обвязки.</p>
+<p>Вот ключевые элементы, без которых агент превращается обратно в красивый чат:</p>
+<ul><li>Память и состояние. Что агент помнит на текущем шаге, что ему подкладывают заново, что выбрасывают как лишнее. Модель почти никогда не видит «всю историю задачи» — она видит ровно тот кусок, который собрали для неё на этот шаг.</li><li>Набор инструментов. Перечень действий с ясными описаниями «что делает» и «когда применять». Инструментов не бывает «в целом»: агент умеет ровно то, что ему дали.</li><li>Изоляция выполнения. Песочница, где команды агента не достают до боевых данных и не ломают ничего за своими пределами.</li><li>Подтверждения действий. Точки, где выполнение останавливается и ждёт человека.</li><li>Поток событий (лог). Каждый шаг — событие: вызвал инструмент, получил ответ, наткнулся на ошибку, пошёл дальше. Это то, по чему потом реально дебажат систему.</li><li>Продолжение задачи между шагами. Механика, которая не даёт агенту «начинать с нуля» после каждого ответа и держит нить: что уже сделано и что осталось.</li></ul>
+<p>Почти всё, что потом приходится чинить в работающей системе, живёт в этом списке — а не в модели.</p>
+<h2>Почему обвязка решает больше, чем модель</h2>
+<p>Я люблю примеры, где спор закрывается цифрами.</p>
+<p>В задачах, где одного ответа недостаточно и нужно действовать последовательно (интерактивные reasoning-задачи вроде ARC-AGI-3), качество может отличаться кратно на одной и той же модели — просто потому, что у одного решения нормальная обвязка, а у другого нет.</p>
+<p>Мой практический вывод из агентных пайплайнов такой: когда система упирается в потолок качества, первое желание команды — «давайте сменим модель». Это часто самая дорогая и самая частая ошибка.</p>
+<p>Перед тем как платить за миграцию, я бы проверила три вещи:</p>
+<ul><li>контекст-менеджмент: что именно модель видит на проблемном шаге и что ей мешает</li><li>как агент выбирает и вызывает инструменты: попадает ли в нужный инструмент, как выходит из ошибок, не зацикливается ли</li><li>есть ли слой самопроверки: компонент, который смотрит на результат до того, как его отдадут наружу.</li></ul>
+<figure><pre class="mermaid">flowchart LR
+  A[&quot;Решение агента&quot;] --&gt; B{&quot;Есть последствия&lt;br/&gt;за пределами агента?&quot;}
+  B --&gt;|&quot;нет: чтение, поиск,&lt;br/&gt;черновик&quot;| C[&quot;Выполняет сам&quot;]
+  B --&gt;|&quot;да: запись файлов,&lt;br/&gt;отправка, команды&quot;| D[&quot;Останов&lt;br/&gt;и запрос подтверждения&quot;]
+  D --&gt; E[&quot;Человек&quot;]
+  E --&gt;|&quot;да&quot;| F[&quot;Действие выполнено&quot;]
+  E --&gt;|&quot;нет&quot;| G[&quot;Действие не выполнено,&lt;br/&gt;причина записана&quot;]</pre><figcaption>Точка подтверждения: всё, что пишет, отправляет или запускает, ждёт человеческого действия</figcaption></figure>
+<h2>Где человек должен остаться в цикле</h2>
+<p>Есть класс действий, которые нельзя отдавать агенту «молча»: запись файлов, отправка сообщений, команды в системах, которые влияют на реальный мир. Всё, у чего есть последствия за пределами агента, должно требовать подтверждения человека.</p>
+<p>В своих контентных пайплайнах я держу это правило железно: ничего не публикуется без явного действия человека, и статус в базе меняю только я. Агент может собрать материал, написать черновик, проверить его и положить на стол. Кнопку жму я.</p>
+<h2>Что проверить в существующей системе (чек-лист)</h2>
+<p>Если у тебя уже есть система, которую называют агентом, пройдись по ней так:</p>
+<ul><li>Возьми один реальный запрос и попроси показать, что система делала между вопросом и ответом. Если показать нечего — это чат-бот.</li><li>Найди список инструментов. Описания должны быть конкретными. Внятность описания = предсказуемость выбора.</li><li>Спроси, что происходит при ошибке инструмента. Хороший ответ: «читаем ошибку и решаем, что дальше». Плохой: «не знаем».</li><li>Выясни, какие действия идут без подтверждения. Всё, что пишет/отправляет/запускает, должно проходить через человека.</li><li>Попроси лог одного прогона целиком. Без лога нечем дебажить.</li><li>Перед спором про модель задай вопрос: что именно модель видит на шаге, где всё ломается. Очень часто оказывается, что нужного куска просто нет в контексте.</li></ul>
+<h2>Как понять, что всё сделано правильно</h2>
+<p>Два критерия:</p>
+<ul><li>Возьми один провалившийся прогон и попробуй объяснить, почему он провалился, по логу — не спрашивая разработчиков. Если можешь назвать конкретный шаг, конкретный вызов инструмента и конкретный результат, который повернул систему не туда — значит, обвязка есть, и её можно чинить точечно.</li></ul>
+<ul><li>Попробуй перечислить по памяти шесть частей обвязки: память, инструменты, изоляция, подтверждения, события, продолжение задачи. Те пункты, на которых ты запнёшься, — обычно и есть места, где «агент» ближе к чат-боту, чем хотелось бы.</li></ul>
+<h3>Источник</h3>
+<ul><li><a href="https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/" rel="nofollow">https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/</a></li></ul></article>
+</div>
+<div data-lang-block="en">
+  <a class="back" href="https://vegman.dev/blog/">← All posts</a>
+  <h1>Chatbot or Agent: The Difference Is the Harness, Not the Model</h1>
+  <div class="meta"><span>2026-02-26</span><span class="tag">Case study</span></div>
+  <img class="cover" src="https://vegman.dev/blog/img/chem-agent-otlichaetsya-ot-chat-bota/cover.jpg" alt="">
+  <article><p>You write to a bot: "Book a table for two at seven this evening." It replies politely and correctly, asks whether you'd like a window seat or the main room, wishes you a pleasant evening. Meanwhile nobody has booked anything: not a single call, not a single entry in the restaurant's system. A week later someone shows you a different system and tells you that this one is an "agent." You open it — inside is the same conversation, only the answers are longer.</p>
+<p>The difference between these two things is not in the model. It's in the code around the model. By the end of this article you'll stop confusing a chatbot with an agent, you'll understand what that code is made of, and you'll learn to look at it before you look at the list of available models.</p>
+<h2>A simple distinction: answering versus doing</h2>
+<p>A chatbot answers with text. That's its whole cycle: a question comes in, an answer goes out. It can answer brilliantly, with examples and code, but the product of its work always stays as letters on a screen. What happens next is up to a human.</p>
+<p>An agent executes steps. That short phrase hides all the mechanics, so let me unpack it:</p>
+<ul><li>picks a tool — a function it's been allowed to call: a database search, sending an email, writing a file, a request to an external service</li><li>calls it — doesn't describe the call in words, actually runs it</li><li>reads the result — including the error, if the tool failed</li><li>decides what's next — retry, reach for a different tool, ask a human</li><li>stops on a criterion — a condition set in advance, at which the task counts as done or as hopeless</li></ul>
+<p>From this comes a simple test for any meeting where you're being shown "our AI assistant": ask what happens between the user's question and the system's answer. If all that's in between is text generation, you're looking at a chatbot, whatever the slide calls it. If what's in between is tool calls, reading results, and an explicit stopping condition — that's an agent.</p>
+<figure><pre class="mermaid">flowchart TB
+  subgraph CB[&quot;Чат-бот&quot;]
+    C1[&quot;Вопрос&quot;] --&gt; C2[&quot;Генерация текста&quot;] --&gt; C3[&quot;Ответ&quot;]
+  end
+  subgraph AG[&quot;Агент&quot;]
+    A1[&quot;Вопрос&quot;] --&gt; A2[&quot;Модель: что сделать сейчас&quot;]
+    A2 --&gt; A3[&quot;Вызов инструмента&quot;]
+    A3 --&gt; A4[&quot;Чтение результата&quot;]
+    A4 --&gt; A5{&quot;Условие остановки&quot;}
+    A5 --&gt;|&quot;нет&quot;| A2
+    A5 --&gt;|&quot;да&quot;| A6[&quot;Ответ&quot;]
+  end</pre><figcaption>Граница проходит не по модели, а по тому, что происходит между вопросом и ответом</figcaption></figure>
+<h2>What a harness is and what it's made of</h2>
+<p>A harness is the software layer around the model. The model itself, in this arrangement, makes a decision at only one step: what to say or which tool to call right now. Everything else is done by the harness. Here's what it's made of:</p>
+<ul><li>Memory and conversation state management. What the agent remembers at the current step, what gets fed back in, what gets thrown out as excess. The model never sees the whole history of the task — it sees exactly the slice that was assembled for it.</li><li>The tool set. A list of actions with descriptions of what each one does and when to use it. There are no tools "in general": an agent can do exactly what you gave it.</li><li>An isolated execution environment. A separate environment — a sandbox — where the agent's commands can't reach production data and can't break anything outside their own boundaries.</li><li>Action confirmations. Points where execution stops and waits for a human.</li><li>The event stream. Every step the agent takes is an event: called a tool, got a response, hit an error, moved on. This is what you'll be reading when you sit down to work out why everything went wrong.</li><li>Task continuation across steps. The machinery that keeps the agent from starting over from scratch after every action and instead holds the thread: what's already done, what's left.</li></ul>
+<p>Almost everything you'll later be fixing in a working system lives in that list, not in the model.</p>
+<h2>Why the harness decides more than the model does</h2>
+<p>There's a recent and unusually clear-cut argument for this. On August 21, 2026, Nvidia published results on the ARC-AGI-3 benchmark — a set of interactive reasoning tasks where you can't get by with a single reply: you have to act in sequence and adapt to what came out of the previous step.</p>
+<p>The same model with no special harness scored 30 percent. The same model with a custom harness scored 100 percent. The model wasn't changed: no fine-tuning, no move to a bigger version. Only the layer around it changed.</p>
+<p>Two things produced the difference: careful handling of memory, and an overseeing component — a supervisor that directs the agent's steps and checks them.</p>
+<p>My practical takeaway from working with agent pipelines matches this exactly. When an agent hits a quality ceiling, the team's first impulse is to swap the model. That's the most expensive and most common mistake: you pay for the migration, rewrite the prompts, rebuild the tests, and the gain turns out to be within the noise. Look at three things first:</p>
+<ul><li>context management — what exactly the model sees at each step and what's getting in its way</li><li>how the agent reaches for tools — whether it picks the right one, what it does with an error, whether it loops</li><li>the presence of a self-check layer — a component that looks at the result before it goes out the door</li></ul>
+<figure><pre class="mermaid">flowchart LR
+  A[&quot;Решение агента&quot;] --&gt; B{&quot;Есть последствия&lt;br/&gt;за пределами агента?&quot;}
+  B --&gt;|&quot;нет: чтение, поиск,&lt;br/&gt;черновик&quot;| C[&quot;Выполняет сам&quot;]
+  B --&gt;|&quot;да: запись файлов,&lt;br/&gt;отправка, команды&quot;| D[&quot;Останов&lt;br/&gt;и запрос подтверждения&quot;]
+  D --&gt; E[&quot;Человек&quot;]
+  E --&gt;|&quot;да&quot;| F[&quot;Действие выполнено&quot;]
+  E --&gt;|&quot;нет&quot;| G[&quot;Действие не выполнено,&lt;br/&gt;причина записана&quot;]</pre><figcaption>Точка подтверждения: всё, что пишет, отправляет или запускает, ждёт человеческого действия</figcaption></figure>
+<h2>Where the human has to stay in the loop</h2>
+<p>There's a class of actions you can't hand to an agent unasked: writing files, sending messages, running commands on a system. Anything with consequences beyond the agent itself should require a human confirmation. An autonomous run in this design doesn't perform the action itself — it puts a request in a queue, and a human works through that queue.</p>
+<p>I have this rule wired into all my content pipelines: no text gets published without an explicit human action, and I'm the only one who changes status in the database. The agent can gather the material, write the draft, check it, and put it on the desk. I press the button.</p>
+<p>The second mark of a mature agent is reproducibility. Every run leaves a full trace of what it did: which tools it called, what it got back, why it turned where it turned. Without that trace there is literally nothing to debug with: you look at a bad result and guess which of twenty steps went off the rails. With it, you open the log and see the step where the agent read the wrong document.</p>
+<h2>What to check in practice</h2>
+<p>If you already have a system that gets called an agent, walk through it with this list.</p>
+<ul><li>Take one real request and ask to be shown what the system did between the question and the answer. If there's nothing to show — it's a chatbot.</li><li>Find the tool list. Read the descriptions: they should make it clear when each tool applies. If a description is vague, the agent will be choosing at random.</li><li>Ask what happens when a tool errors. A good answer is "it reads the error and decides what's next." A bad one is "we don't know."</li><li>Find out which actions run without confirmation. Anything that writes, sends, or launches should go through a human.</li><li>Ask for the full log of a single run. If there isn't one, or it's patchy, the system has no reproducibility.</li><li>Before discussing a model swap, ask this question: what exactly does the model see at the step that's failing. Often it turns out the piece it needed simply wasn't in the context.</li></ul>
+<h2>How to know you got it right</h2>
+<p>The criterion is simple and testable: take one failed run and try to explain why it failed — from the log, without asking any of the developers.</p>
+<p>If you can name a specific step, a specific tool call, and a specific result that sent the agent the wrong way, then you have a harness, and it can be fixed precisely. If the only explanation you can produce is "the model probably didn't understand," there's nothing to fix yet, and switching models won't help here: you'll just replace one opaque box with another, more expensive one.</p>
+<p>The second criterion: try to list from memory the six parts of the harness for your own system — memory, tools, isolation, confirmations, events, task continuation. The items you stumble on are exactly the places where your agent is closer to a chatbot than you'd like.</p>
+<h3>Sources</h3>
+<ul><li><a href="https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/">TechCrunch on Nvidia's results: the real hero is the harness, not the model</a></li></ul></article>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>© Natalia Vegman</span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a> · <a href="mailto:vegmannata@gmail.com">vegmannata@gmail.com</a></span>
+</div></footer>
+<script>
+(function(){
+  function apply(lang){
+    document.querySelectorAll('[data-lang-block]').forEach(function(el){
+      el.classList.toggle('active', el.dataset.langBlock === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang;
+    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
+  }
+  var stored = null;
+  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
+  var nav = (navigator.language||'').toLowerCase();
+  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
+  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
+  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
+  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
+  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
+  apply(initial);
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+  });
+})();
+</script>
+</body>
+</html>

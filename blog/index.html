@@ -46,11 +46,19 @@ h2{font-size:24px;letter-spacing:-.01em;margin:40px 0 12px}
 margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .tag{border:1px solid var(--border);border-radius:99px;padding:3px 10px;font-size:12px}
 .cover{width:100%;border-radius:14px;border:1px solid var(--border);margin:0 0 36px;display:block}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
 article p{margin:0 0 20px}
 article ul{margin:0 0 20px;padding-left:22px}
 article li{margin:0 0 8px}
 article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
 background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto}
 .lead{font-size:18px;color:var(--muted)}
 .post-list{list-style:none;padding:0;margin:0;display:grid;gap:16px}
 .post-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;
@@ -85,13 +93,61 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   <h1>Блог</h1>
   <p class="lead">Инженерные заметки о внедрении ИИ в бизнес-процессы: архитектура, агенты, интеграции, стоимость решений.</p>
   <div style="height:32px"></div>
-  <p class="empty">Пока ни одной статьи. Скоро появятся.</p>
+  <ul class="post-list"><li class="post-card">
+    <a href="https://vegman.dev/blog/gde-zakanchivaetsya-chat-repetitor/">Пять месяцев с ИИ-репетитором: где заканчивается чат и начинается агент</a>
+    <p class="excerpt">18 мая 2026 года я полчаса доказывала своему репетитору, что модели, с которыми я работаю каждый день, существуют. Репетитором был Gemini, спор шёл про Claude Sonnet 4.5 и Opus 4.6…</p>
+    <div class="meta" style="margin:12px 0 0"><span>2026-08-25</span></div>
+  </li>
+<li class="post-card">
+    <a href="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">45% бюджета уходило на то, что агент спрашивал «нет ли для меня работы»</a>
+    <p class="excerpt">Лид (обновлённый): Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей …</p>
+    <div class="meta" style="margin:12px 0 0"><span>2026-07-31</span></div>
+  </li>
+<li class="post-card">
+    <a href="https://vegman.dev/blog/ot-roya-agentov-k-discipline/">От роя к дисциплине: 129 вызовов, которые научили меня считать</a>
+    <p class="excerpt">Я открыла биллинг и увидела ноль. Не «мало осталось», а ровно ноль. Виноват был не сложный сценарий и не наплыв пользователей: один агент на расписании отработал сам с собой около …</p>
+    <div class="meta" style="margin:12px 0 0"><span>2026-07-20</span></div>
+  </li>
+<li class="post-card">
+    <a href="https://vegman.dev/blog/chem-agent-otlichaetsya-ot-chat-bota/">Чем агент отличается от чат-бота — и почему обвязка важнее модели</a>
+    <p class="excerpt">Сидишь на демо, тебе показывают «нашего AI-ассистента». Ты говоришь: «Забронируй столик на двоих на семь вечера». Он отвечает вежливо и грамотно, уточняет — у окна или в общем зале…</p>
+    <div class="meta" style="margin:12px 0 0"><span>2026-02-26</span></div>
+  </li>
+<li class="post-card">
+    <a href="https://vegman.dev/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/">RAG простыми словами — и когда он вам не нужен</a>
+    <p class="excerpt">Полночь, ресепшен, заезжает гость с иностранным паспортом. Администратор на третьей смене в своей жизни открывает внутреннего ассистента и спрашивает: «как оформить регистрацию ино…</p>
+    <div class="meta" style="margin:12px 0 0"><span>2026-02-18</span></div>
+  </li></ul>
 </div>
 <div data-lang-block="en">
   <h1>Blog</h1>
   <p class="lead">An architect's notes on putting AI into business processes: architecture, agents, integrations, and the cost of each decision.</p>
   <div style="height:32px"></div>
-  <p class="empty">No posts yet. Coming soon.</p>
+  <ul class="post-list"><li class="post-card">
+    <a href="https://vegman.dev/blog/gde-zakanchivaetsya-chat-repetitor/">Five Months in One Chat: Where a Chat Model Helps and Where It Starts to Fail</a>
+    <p class="excerpt">On May 18, 2026 I spent half an hour proving to my tutor that the models I work with every day exist. The tutor was Gemini, the argument was about Claude Sonnet 4.5 and Opus 4.6, a…</p>
+    <div class="meta" style="margin:12px 0 0"><span>2026-08-25</span></div>
+  </li>
+<li class="post-card">
+    <a href="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">45% of My Model Spend Went to One Question the Agent Asked Itself</a>
+    <p class="excerpt">I opened my bill for language models and saw a number bigger than usual. Over that same period not a single new user had shown up, I hadn&#x27;t shipped any new features, and load hadn&#x27;…</p>
+    <div class="meta" style="margin:12px 0 0"><span>2026-07-31</span></div>
+  </li>
+<li class="post-card">
+    <a href="https://vegman.dev/blog/ot-roya-agentov-k-discipline/">Five Rules Cost Less Than Five Agents</a>
+    <p class="excerpt">I opened the billing page and saw zero. Not &quot;running low&quot; — exactly zero. The culprit wasn&#x27;t some complicated scenario or a flood of users: one scheduled agent spent about 14 hours…</p>
+    <div class="meta" style="margin:12px 0 0"><span>2026-07-20</span></div>
+  </li>
+<li class="post-card">
+    <a href="https://vegman.dev/blog/chem-agent-otlichaetsya-ot-chat-bota/">Chatbot or Agent: The Difference Is the Harness, Not the Model</a>
+    <p class="excerpt">You write to a bot: &quot;Book a table for two at seven this evening.&quot; It replies politely and correctly, asks whether you&#x27;d like a window seat or the main room, wishes you a pleasant e…</p>
+    <div class="meta" style="margin:12px 0 0"><span>2026-02-26</span></div>
+  </li>
+<li class="post-card">
+    <a href="https://vegman.dev/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/">RAG in Practice: What It Actually Is, and When You Don&#x27;t Need It</a>
+    <p class="excerpt">Midnight, the front desk, a guest walks in with a foreign passport. The receptionist — third shift of their life — opens the internal assistant and asks: &quot;how do I register a forei…</p>
+    <div class="meta" style="margin:12px 0 0"><span>2026-02-18</span></div>
+  </li></ul>
 </div>
 </div></main>
 <footer><div class="wrap">
@@ -114,7 +170,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
   var nav = (navigator.language||'').toLowerCase();
   var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
-  if(!document.querySelector('[data-lang-block="'+initial+'"]')) initial = 'ru';
+  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
+  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
+  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
+  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
   apply(initial);
   document.querySelectorAll('.lang-btn').forEach(function(b){
     b.addEventListener('click', function(){ apply(b.dataset.lang); });

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAG простыми словами — и когда он вам не нужен</title>
+<meta name="description" content="Полночь, ресепшен, заезжает гость с иностранным паспортом. Администратор на третьей смене в своей жизни открывает внутреннего ассистента и спрашивает: «как оформить регистрацию ино…">
+<link rel="canonical" href="https://vegman.dev/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/">
+<meta property="og:title" content="RAG простыми словами — и когда он вам не нужен">
+<meta property="og:description" content="Полночь, ресепшен, заезжает гость с иностранным паспортом. Администратор на третьей смене в своей жизни открывает внутреннего ассистента и спрашивает: «как оформить регистрацию ино…">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vegman.dev/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/">
+<meta property="og:image" content="https://vegman.dev/blog/img/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/cover.jpg"><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({startOnLoad:true,theme:'dark',securityLevel:'strict',
+  themeVariables:{background:'#0d1218',primaryColor:'#121820',primaryTextColor:'#e8eef5',
+  primaryBorderColor:'#4fffb0',lineColor:'#8aa0b5',fontFamily:"Inter,sans-serif"}});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080c10;--surface:#0e1419;--border:rgba(255,255,255,.07);
+--accent:#4fffb0;--accent2:#7b6ff0;--text:#e8eaed;--muted:#7a8394;
+--card-bg:rgba(255,255,255,.03)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);
+color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#000}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;z-index:50;background:rgba(8,12,16,.85);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;
+gap:16px;height:64px;max-width:1100px}
+.brand{font-weight:600;letter-spacing:-.01em;color:var(--text)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+nav.top-nav{display:flex;align-items:center;gap:20px;font-size:14px}
+nav.top-nav a{color:var(--muted)}
+nav.top-nav a:hover{color:var(--text);text-decoration:none}
+.lang-switch{display:flex;gap:4px;border:1px solid var(--border);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:0;color:var(--muted);font:500 12px/1 'Inter',sans-serif;
+padding:6px 10px;border-radius:5px;cursor:pointer;font-family:inherit}
+.lang-btn.active{background:var(--accent);color:#000}
+main{padding:56px 0 96px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.2;letter-spacing:-.02em;margin:0 0 16px}
+h2{font-size:24px;letter-spacing:-.01em;margin:40px 0 12px}
+.meta{color:var(--muted);font-size:14px;font-family:'JetBrains Mono',ui-monospace,monospace;
+margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{border:1px solid var(--border);border-radius:99px;padding:3px 10px;font-size:12px}
+.cover{width:100%;border-radius:14px;border:1px solid var(--border);margin:0 0 36px;display:block}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
+article p{margin:0 0 20px}
+article ul{margin:0 0 20px;padding-left:22px}
+article li{margin:0 0 8px}
+article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
+background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto}
+.lead{font-size:18px;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.post-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;
+padding:24px;transition:border-color .2s,transform .2s}
+.post-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.post-card a{color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em}
+.post-card a:hover{color:var(--accent);text-decoration:none}
+.post-card .excerpt{color:var(--muted);margin:10px 0 0;font-size:15px}
+.back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+.empty{color:var(--muted);text-align:center;padding:64px 0}
+@media(max-width:600px){nav.top-nav{gap:12px;font-size:13px}main{padding:36px 0 64px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://vegman.dev/">Natalia&nbsp;Vegman</a>
+  <nav class="top-nav">
+    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ru" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" type="button">EN</button>
+    </div>
+  </nav>
+</div></header>
+<main><div class="wrap">
+<div data-lang-block="ru">
+  <a class="back" href="https://vegman.dev/blog/">← Все статьи</a>
+  <h1>RAG простыми словами — и когда он вам не нужен</h1>
+  <div class="meta"><span>2026-02-18</span><span class="tag">Case study</span></div>
+  <img class="cover" src="https://vegman.dev/blog/img/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/cover.jpg" alt="">
+  <article><p>Полночь, ресепшен, заезжает гость с иностранным паспортом. Администратор на третьей смене в своей жизни открывает внутреннего ассистента и спрашивает: «как оформить регистрацию иностранного гостя». Ассистент отвечает подробно, уверенно и неправильно — он нашёл в базе фрагмент регламента про граждан РФ и аккуратно его пересказал.</p>
+<p>Это не выдуманная сцена. Я разбирала такой сбой в ассистенте для отельной автоматизации: он отвечает сотрудникам по базе внутренних инструкций и регламентов. Под капотом у него RAG — схема, про которую часто пишут, что она «избавляет от галлюцинаций». Она от них не избавляет. Она их перемещает: из головы модели в ваш поиск.</p>
+<p>К концу статьи вы будете понимать, что такое RAG, из каких деталей он собран, и — это важнее — как отличить задачу, где он действительно нужен, от задачи, где он только добавит вам три новых способа ошибиться.</p>
+<h2>Что такое RAG на пальцах: поиск + генерация</h2>
+<p>Языковая модель знает то, что было в её обучающих данных. Ваших внутренних регламентов там не было. Спросите её про вашу процедуру заселения — она либо честно скажет, что не знает, либо придумает правдоподобный ответ. Второе случается чаще.</p>
+<p>Вариантов, по сути, два.</p>
+<ul><li>Дообучить модель на своих документах: дорого, долго, и при каждом изменении регламента процедуру надо повторять.</li><li>Модель не трогать вообще, а перед вопросом найти в своих документах подходящий кусок текста и положить его прямо в запрос: «вот выдержка из инструкции, ответь строго по ней».</li></ul>
+<p>Это и есть RAG (retrieval‑augmented generation — «генерация с опорой на найденное»).</p>
+<p>Важно с самого начала держать в голове, что RAG — это две независимые ступени:</p>
+<ul><li>Поиск (retrieval). По вопросу пользователя достать из базы несколько наиболее подходящих фрагментов текста.</li><li>Генерация. Отдать модели вопрос вместе с этими фрагментами и попросить сформулировать ответ.</li></ul>
+<p>Отсюда главный вывод для новичка, который экономит недели: модель в RAG ничего не «знает» о вашей базе. Она читает только то, что ей положили в запрос прямо сейчас. Если поиск принёс мусор — модель уверенно и красиво перескажет мусор.</p>
+<p>Поэтому, когда ассистент отвечает неверно, первый вопрос всегда не «какая у нас модель», а «что нашёл поиск».</p>
+<figure><pre class="mermaid">flowchart LR
+  Q[&quot;Вопрос&quot;] --&gt; S[&quot;Поиск по базе&quot;]
+  S --&gt; CH[&quot;Найденные чанки&quot;]
+  CH --&gt; PR[&quot;Промпт: вопрос + чанки&quot;]
+  PR --&gt; M[&quot;Модель&quot;]
+  M --&gt; A[&quot;Ответ&quot;]
+  KB[(&quot;База знаний&quot;)] --- S
+  KB -.-&gt;|&quot;модель её&lt;br/&gt;не видит&quot;| M
+  S -.-&gt;|&quot;нашёл мусор&quot;| A2[&quot;Модель уверенно&lt;br/&gt;перескажет мусор&quot;]</pre><figcaption>Модель не знает вашей базы — она читает только то, что поиск положил в запрос прямо сейчас</figcaption></figure>
+<h2>Из чего он собран на самом деле</h2>
+<p>Теперь по деталям — на примере той самой отельной базы знаний.</p>
+<p>Чанки. Документы нельзя искать целиком: инструкция на двадцать страниц не влезет в запрос к модели, да и большая её часть к вопросу не относится. Поэтому тексты режут на фрагменты — их называют чанками. В нашей базе таких фрагментов около полутора тысяч. Чанк — это и единица поиска, и единица, которую в итоге прочитает модель.</p>
+<p>Эмбеддинги. Чтобы искать по смыслу, а не по буквам, каждый чанк превращают в набор чисел — вектор. Это делает отдельная модель‑векторизатор; у нас это GigaEmbeddings. Смысл превращения в том, что тексты, похожие по содержанию, получают близкие наборы чисел, даже если написаны разными словами. Вопрос пользователя прогоняют через ту же модель и ищут чанки, чьи числа оказались ближе всего.</p>
+<p>Векторная база. Место, где эти векторы лежат и где по ним быстро ищут. У нас — ChromaDB. По сути это специализированное хранилище, умеющее отвечать на запрос «дай мне k самых близких векторов к вот этому».</p>
+<p>Обратите внимание на важную деталь, которую новички почти всегда склеивают: векторизация и генерация — это разные модели и разные этапы. GigaEmbeddings превращает тексты в числа на этапе поиска. GigaChat пишет ответ на этапе генерации. Они не взаимозаменяемы, и менять их можно независимо: смена модели‑генератора не улучшит поиск, а смена векторизатора требует пересчитать всю базу заново.</p>
+<p>Порог похожести. Поиск по векторам возвращает результат всегда — даже если в базе нет ничего по теме, вам вернут «наименее непохожее». Поэтому нужен порог: насколько близко должно быть, чтобы фрагмент вообще считался найденным.</p>
+<p>У нас фрагменты с оценкой ниже 0.11 отбрасываются совсем, а до модели доходят только те, что выше 0.3. Эти числа подобраны эмпирически, под конкретную базу и конкретный векторизатор. Не переносите их к себе: у вас будут свои.</p>
+<p>Гибридный поиск. Изначально поиск был только семантическим — по векторам. Он промахивался на специфических терминах: узкое слово из отраслевого регламента размывается в векторе и теряется среди похожих по общему смыслу текстов. Пришлось добавить обычный поиск по вхождению слова и объединить результаты. Звучит скучно и старомодно, но именно это чинит целый класс ошибок.</p>
+<h2>Первая честная проблема: похожие тексты не значит правильные</h2>
+<p>Векторный поиск отвечает на вопрос «что здесь похоже?». А пользователю нужен ответ на вопрос «что здесь правильно?». Это не одно и то же, и вся практическая работа над RAG живёт в этом зазоре.</p>
+<p>Два сбоя из реальной эксплуатации.</p>
+<p>Сбой первый: ноль фрагментов по целому разделу. По теме регистрации иностранных гостей поиск не возвращал вообще ничего. Не «плохо», а ноль: фильтр по домену документов отсекал нужные фрагменты до того, как до них доходило дело.</p>
+<p>Ассистент при этом не молчал — он отвечал общими словами, и со стороны это выглядело как «модель плоховата». Лечилось не моделью, а подстраховкой: если по теме не нашлось ничего, включается запасной поиск без ограничивающего фильтра. И отдельно — регулярной проверкой, что ни один раздел базы не даёт пустоту.</p>
+<p>Сбой второй: чанк без контекста врёт. Все фрагменты одного раздела трактовались как относящиеся к иностранцам, хотя часть из них была про граждан РФ. Причина простая: при нарезке фрагмент теряет то, что было понятно из заголовка и соседнего абзаца. Внутри самого куска текста может не быть ни слова о том, к какой категории гостей он относится.</p>
+<p>Поиск честно находит похожее, модель честно пересказывает найденное, а ответ неверный. Пришлось при нарезке помечать фрагменты категориями и добавлять к ним поясняющую преамбулу — короткий текст, который возвращает чанку потерянный контекст.</p>
+<p>Из двух этих историй складывается вывод, который я считаю главным практическим итогом: качество ответа чаще упирается не в модель, а в то, как нарезаны и размечены документы. Соблазн решать проблему сменой модели огромен — это одна строчка в конфиге. Но починка почти всегда лежит на этапе подготовки данных.</p>
+<figure><pre class="mermaid">flowchart TB
+  T[&quot;Задача&quot;] --&gt; C1{&quot;Ответ содержится&lt;br/&gt;в связном тексте?&quot;}
+  C1 --&gt;|&quot;нет: цифры, таблицы&quot;| N1[&quot;Запрос к данным,&lt;br/&gt;а не RAG&quot;]
+  C1 --&gt;|&quot;да&quot;| C2{&quot;Текста много?&quot;}
+  C2 --&gt;|&quot;нет&quot;| N2[&quot;Положить текст&lt;br/&gt;прямо в промпт&quot;]
+  C2 --&gt;|&quot;да&quot;| C3{&quot;Неизвестно заранее,&lt;br/&gt;где лежит нужное?&quot;}
+  C3 --&gt;|&quot;нет&quot;| N3[&quot;Обычный поиск&lt;br/&gt;по разделу&quot;]
+  C3 --&gt;|&quot;да&quot;| YES[&quot;Это случай для RAG&quot;]</pre><figcaption>RAG нужен при трёх условиях сразу; если хоть одно не выполняется, задача решается проще</figcaption></figure>
+<h2>Когда RAG не нужен</h2>
+<p>Теперь то, ради чего всё затевалось. RAG — инструмент для одной конкретной ситуации: ответ содержится в связном тексте, текста много, и заранее неизвестно, в каком именно месте лежит нужное.</p>
+<p>Если хотя бы одно из этих условий не выполняется, вы строите сложную конструкцию там, где хватило бы простой.</p>
+<ul><li>Таблицы. Самый частый и самый дорогой промах. Когда на входе таблица, а не текст, RAG работает плохо. Вопросы к таблицам — это «сколько», «у кого больше», «покажи все за период». Такие вопросы решаются фильтрами и группировками, то есть маленькими операциями над данными, а не поиском по смыслу. Векторный поиск найдёт «похожие строки» — но похожие строки не складываются в правильную сумму.</li><li>Точные справочники. Если у сущности есть код, артикул или идентификатор, ищите по нему напрямую. Точное совпадение и быстрее, и надёжнее, и его не надо настраивать порогами.</li><li>Короткие регламенты. Если весь свод правил — несколько страниц, его можно целиком положить модели в запрос. Никакой векторной базы, никакой нарезки, никаких порогов. Меньше деталей — меньше мест, где сломается.</li><li>Один документ на один вопрос. Когда пользователь и так знает, в какой инструкции ответ, вы решаете задачу навигации, а не поиска.</li></ul>
+<p>Правило, к которому я пришла: RAG стоит заводить тогда, когда вы уже пробовали обойтись без него и упёрлись. Не наоборот.</p>
+<h2>Что проверить на практике</h2>
+<p>Если у вас уже есть RAG или вы только собираетесь его делать — вот что реально стоит сделать руками.</p>
+<ul><li>Соберите двадцать настоящих вопросов от тех, кто будет этим пользоваться. Не придуманных вами — настоящих, с их формулировками и опечатками.</li><li>Прогоните их и смотрите не на ответы, а на найденные фрагменты. Выведите их себе в лог вместе с оценками похожести. Пока вы этого не видите, вы чините вслепую.</li><li>Отдельно проверьте каждый раздел базы на пустоту: задайте по вопросу из каждой темы и убедитесь, что ни по одной не возвращается ноль фрагментов. Это ловит сбои фильтрации, которые иначе всплывут через месяц у пользователя.</li><li>Возьмите несколько узких отраслевых терминов и проверьте, находятся ли они. Если нет — вам нужен не другой векторизатор, а добавленный поиск по вхождению слова.</li><li>Покрутите порог в обе стороны и посмотрите, что меняется: при слишком низком к модели поедет шум, при слишком высоком начнутся ответы «не знаю» там, где ответ есть.</li><li>Откройте пять случайных чанков и прочитайте их так, будто вы видите текст впервые и без заголовка. Если непонятно, к чему они относятся, — модели тоже будет непонятно. Это сигнал добавить категорию и преамбулу.</li><li>Найдите в своём списке вопрос, который на самом деле про таблицу («сколько», «сравни», «за период»). Решите его отдельно — фильтром, а не поиском.</li></ul>
+<h2>Как понять, что получилось</h2>
+<p>Критерий не «ответы стали красивее». Красиво они звучали и раньше — в этом и опасность.</p>
+<p>Проверяйте так:</p>
+<ul><li>Для каждого контрольного вопроса нужный фрагмент попадает в найденное. Это измеряется отдельно от качества ответа и чинится отдельными средствами. Если фрагмент не найден, разговор про формулировки бессмысленен.</li><li>Ни один раздел базы не даёт ноль. Пустой результат должен быть событием, о котором вы узнаёте из логов, а не из жалобы сотрудника.</li><li>Ответ проверяем по источнику. Возьмите ответ и найдите в процитированных фрагментах ту самую фразу. Если её там нет — модель дописала от себя, и это лечится инструкцией отвечать строго по контексту.</li><li>Вы можете назвать виновника любой ошибки. Вот это главный признак зрелости системы: глядя на неверный ответ, вы за минуту говорите — «поиск не нашёл» или «нашёл верно, но модель переврала». Пока эти два случая для вас неразличимы, вы не отлаживаете систему, а гадаете.</li></ul>
+<p>И последнее. Если после всех проверок выяснится, что ваша задача — про таблицы, точные коды или три страницы правил, самый ценный результат этой статьи в том, что вы не станете строить RAG. Это не поражение, это сэкономленные месяцы.</p></article>
+</div>
+<div data-lang-block="en">
+  <a class="back" href="https://vegman.dev/blog/">← All posts</a>
+  <h1>RAG in Practice: What It Actually Is, and When You Don&#x27;t Need It</h1>
+  <div class="meta"><span>2026-02-18</span><span class="tag">Case study</span></div>
+  <img class="cover" src="https://vegman.dev/blog/img/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/cover.jpg" alt="">
+  <article><p>Midnight, the front desk, a guest walks in with a foreign passport. The receptionist — third shift of their life — opens the internal assistant and asks: "how do I register a foreign guest." The assistant answers in detail, confidently, and incorrectly — it found a fragment of the regulations about Russian citizens in the knowledge base and neatly paraphrased it.</p>
+<p>This isn't a made-up scene. I debugged exactly this failure in an assistant for hotel automation: it answers staff questions from a base of internal instructions and regulations. Under the hood it uses RAG — the setup people often describe as the thing that "gets rid of hallucinations." It does not get rid of them. It relocates them: out of the model's head and into your search.</p>
+<p>By the end of this article you'll understand what RAG is, what parts it's assembled from, and — more importantly — how to tell a task where you genuinely need it from a task where it will only give you three new ways to get things wrong.</p>
+<h2>RAG in plain terms: search + generation</h2>
+<p>A language model knows what was in its training data. Your internal regulations were not in there. Ask it about your check-in procedure and it will either honestly say it doesn't know, or invent a plausible answer. The second happens more often.</p>
+<p>There are essentially two options. The first is to fine-tune the model on your documents: expensive, slow, and every time a regulation changes you have to repeat the whole procedure. The second is to leave the model alone entirely and, before asking it a question, find a suitable piece of text in your own documents and put it directly into the prompt: "here's an excerpt from the instructions, answer strictly based on it." That is <b>RAG</b> (retrieval-augmented generation — "generation grounded in what was found").</p>
+<p>So RAG is two separate stages, and it's useful to keep them apart in your head from the very beginning:</p>
+<ul><li><b>Retrieval.</b> Given the user's question, pull several of the most relevant text fragments out of the base.</li><li><b>Generation.</b> Hand the model the question along with those fragments and ask it to formulate an answer.</li></ul>
+<p>From this follows the key insight for a beginner, the one that saves weeks: <i>the model in a RAG system doesn't "know" anything about your knowledge base</i>. It reads only what was placed into the prompt right now. If retrieval brought back garbage, the model will confidently and elegantly paraphrase garbage. So when the assistant answers incorrectly, the first question is never "which model are we on," it's "what did retrieval find."</p>
+<figure><pre class="mermaid">flowchart LR
+  Q[&quot;Вопрос&quot;] --&gt; S[&quot;Поиск по базе&quot;]
+  S --&gt; CH[&quot;Найденные чанки&quot;]
+  CH --&gt; PR[&quot;Промпт: вопрос + чанки&quot;]
+  PR --&gt; M[&quot;Модель&quot;]
+  M --&gt; A[&quot;Ответ&quot;]
+  KB[(&quot;База знаний&quot;)] --- S
+  KB -.-&gt;|&quot;модель её&lt;br/&gt;не видит&quot;| M
+  S -.-&gt;|&quot;нашёл мусор&quot;| A2[&quot;Модель уверенно&lt;br/&gt;перескажет мусор&quot;]</pre><figcaption>Модель не знает вашей базы — она читает только то, что поиск положил в запрос прямо сейчас</figcaption></figure>
+<h2>What it's actually made of</h2>
+<p>Now the details — using that same hotel knowledge base as the example.</p>
+<p><b>Chunks.</b> You can't search over whole documents: a twenty-page instruction won't fit into a prompt, and most of it isn't relevant to the question anyway. So texts get cut into fragments — these are called chunks. Our base has about fifteen hundred of them. A chunk is both the unit of search and the unit the model will ultimately read.</p>
+<p><b>Embeddings.</b> To search by meaning rather than by letters, each chunk is turned into a set of numbers — a vector. A separate vectorizer model does this; ours is GigaEmbeddings. The point of the conversion is that texts similar in content get similar sets of numbers, even if they're written in different words. The user's question is run through the same model, and you look for the chunks whose numbers came out closest.</p>
+<p><b>Vector database.</b> The place where these vectors live and where you search them quickly. In our case, ChromaDB. Essentially it's a specialized store that can answer the request "give me the <code>k</code> vectors closest to this one."</p>
+<p>Note an important detail that beginners almost always conflate: <b>vectorization and generation are different models and different stages</b>. GigaEmbeddings turns texts into numbers at the retrieval stage. GigaChat writes the answer at the generation stage. They are not interchangeable, and they can be swapped independently: changing the generator model won't improve retrieval, and changing the vectorizer requires recomputing the entire base from scratch.</p>
+<p><b>Similarity threshold.</b> Vector search always returns a result — even if there's nothing on the topic in the base, you'll get back the "least dissimilar" thing. So you need a threshold: how close does something have to be before a fragment counts as found at all. In our setup, fragments scoring below 0.11 are discarded entirely, and only those above 0.3 reach the model. These numbers were tuned empirically, for a specific base and a specific vectorizer. Don't carry them over to your own system: yours will be different.</p>
+<p><b>Hybrid search.</b> Initially retrieval was purely semantic — vectors only. It missed on specialized terminology: a narrow term from an industry regulation gets smeared out in the vector and lost among texts that are similar in general meaning. We had to add plain keyword matching and merge the results. It sounds boring and old-fashioned, but that's exactly what fixes an entire class of errors.</p>
+<h2>The first honest problem: similar texts aren't the same as correct ones</h2>
+<p>Vector search answers the question "what here is similar?" But the user needs an answer to "what here is correct?" These are not the same thing, and all the practical work on RAG lives in that gap. Two failures from real operation.</p>
+<p><b>Failure one: zero fragments for an entire section.</b> On the topic of registering foreign guests, retrieval returned nothing at all. Not "poor results" — zero: a document-domain filter was cutting off the needed fragments before they were ever considered. The assistant didn't stay silent, though — it answered in generalities, and from the outside it looked like "the model is a bit weak." The fix wasn't the model, it was a fallback: if nothing is found on a topic, a backup search kicks in without the restricting filter. And separately — a regular check that no section of the base returns emptiness.</p>
+<p><b>Failure two: a chunk without context lies.</b> All fragments in one section were being treated as relating to foreigners, even though some of them were about Russian citizens. The reason is simple: during chunking, a fragment loses what was obvious from the heading and the neighboring paragraph. Inside the piece of text itself there may not be a single word about which category of guests it applies to. Retrieval honestly finds something similar, the model honestly paraphrases what was found, and the answer is wrong. We had to tag fragments with categories during chunking and add an explanatory preamble to them — a short text that gives the chunk back its lost context.</p>
+<p>These two stories add up to the conclusion I consider the main practical takeaway: <i>answer quality more often comes down not to the model, but to how the documents are chunked and labeled</i>. The temptation to solve the problem by swapping models is enormous — it's one line in a config. But the fix almost always lies at the data preparation stage.</p>
+<figure><pre class="mermaid">flowchart TB
+  T[&quot;Задача&quot;] --&gt; C1{&quot;Ответ содержится&lt;br/&gt;в связном тексте?&quot;}
+  C1 --&gt;|&quot;нет: цифры, таблицы&quot;| N1[&quot;Запрос к данным,&lt;br/&gt;а не RAG&quot;]
+  C1 --&gt;|&quot;да&quot;| C2{&quot;Текста много?&quot;}
+  C2 --&gt;|&quot;нет&quot;| N2[&quot;Положить текст&lt;br/&gt;прямо в промпт&quot;]
+  C2 --&gt;|&quot;да&quot;| C3{&quot;Неизвестно заранее,&lt;br/&gt;где лежит нужное?&quot;}
+  C3 --&gt;|&quot;нет&quot;| N3[&quot;Обычный поиск&lt;br/&gt;по разделу&quot;]
+  C3 --&gt;|&quot;да&quot;| YES[&quot;Это случай для RAG&quot;]</pre><figcaption>RAG нужен при трёх условиях сразу; если хоть одно не выполняется, задача решается проще</figcaption></figure>
+<h2>When you don't need RAG</h2>
+<p>Now for the part all of this was leading up to. RAG is a tool for one specific situation: <b>the answer is contained in connected prose, there's a lot of that prose, and you don't know in advance where exactly the needed part sits</b>. If even one of those conditions doesn't hold, you're building an elaborate construction where something simple would have done.</p>
+<ul><li><b>Tables.</b> This is the most common and most expensive mistake. When the input is a table rather than text, RAG works badly. Questions about tables are "how many," "who has more," "show me everything for this period." Such questions are solved with filters and groupings — small operations over data, not search by meaning. Vector search will find you "similar rows" — but similar rows don't add up to a correct total.</li><li><b>Exact reference data.</b> If an entity has a code, a SKU, or an identifier, look it up directly. An exact match is faster, more reliable, and doesn't need thresholds tuned.</li><li><b>Short regulations.</b> If the entire set of rules is a few pages, you can put all of it into the model's prompt. No vector database, no chunking, no thresholds. Fewer parts means fewer places to break.</li><li><b>One document per question.</b> When the user already knows which instruction holds the answer, you're solving a navigation problem, not a search problem.</li></ul>
+<p>The rule I've arrived at: it's worth setting up RAG once you've already tried to get by without it and hit a wall. Not the other way around.</p>
+<h2>What to check in practice</h2>
+<p>If you already have a RAG system, or you're just about to build one — here's what's actually worth doing by hand.</p>
+<ul><li>Collect twenty real questions from the people who will be using it. Not ones you made up — real ones, with their phrasing and their typos.</li><li>Run them and look <b>not at the answers, but at the retrieved fragments</b>. Dump them to a log along with similarity scores. Until you can see this, you're fixing things blind.</li><li>Separately, check every section of the base for emptiness: ask one question from each topic and make sure none of them returns zero fragments. This catches filtering failures that would otherwise surface a month later, on a user.</li><li>Take a few narrow industry terms and check whether they're found. If not — what you need isn't a different vectorizer, it's added keyword matching.</li><li>Turn the threshold both ways and see what changes: too low and noise flows to the model, too high and you start getting "I don't know" where the answer exists.</li><li>Open five random chunks and read them as if you were seeing the text for the first time and without a heading. If it's unclear what they relate to, it will be unclear to the model too. That's your signal to add a category and a preamble.</li><li>Find the question in your list that is really about a table ("how many," "compare," "for this period"). Solve it separately — with a filter, not with search.</li></ul>
+<h2>How to tell whether it worked</h2>
+<p>The criterion is not "the answers got prettier." They sounded pretty before, too — that's exactly the danger. Check it like this:</p>
+<ul><li><b>For every control question, the needed fragment shows up in the retrieved set.</b> This is measured separately from answer quality and fixed with separate means. If the fragment wasn't found, discussing phrasing is pointless.</li><li><b>No section of the base returns zero.</b> An empty result should be an event you learn about from logs, not from a staff complaint.</li><li><b>The answer is verifiable against its source.</b> Take the answer and find that exact phrase in the quoted fragments. If it isn't there, the model filled in the gap on its own, and that's cured by an instruction to answer strictly from the context.</li><li><b>You can name the culprit behind any error.</b> This, I'd say, is the main sign of a mature system: looking at a wrong answer, within a minute you can say — "retrieval didn't find it" or "it found the right thing, but the model garbled it." As long as those two cases are indistinguishable to you, you aren't debugging a system, you're guessing.</li></ul>
+<p>And one last thing. If after all these checks it turns out that your task is about tables, exact codes, or three pages of rules, the most valuable outcome of this article is that you won't build a RAG system. That's not a defeat, it's months saved.</p></article>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>© Natalia Vegman</span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a> · <a href="mailto:vegmannata@gmail.com">vegmannata@gmail.com</a></span>
+</div></footer>
+<script>
+(function(){
+  function apply(lang){
+    document.querySelectorAll('[data-lang-block]').forEach(function(el){
+      el.classList.toggle('active', el.dataset.langBlock === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang;
+    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
+  }
+  var stored = null;
+  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
+  var nav = (navigator.language||'').toLowerCase();
+  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
+  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
+  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
+  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
+  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
+  apply(initial);
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>45% бюджета уходило на то, что агент спрашивал «нет ли для меня работы»</title>
+<meta name="description" content="Лид (обновлённый): Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей …">
+<link rel="canonical" href="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">
+<meta property="og:title" content="45% бюджета уходило на то, что агент спрашивал «нет ли для меня работы»">
+<meta property="og:description" content="Лид (обновлённый): Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей …">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">
+<meta property="og:image" content="https://vegman.dev/blog/img/45-protsentov-byudzheta-na-holostoy-hod-agenta/cover.jpg"><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({startOnLoad:true,theme:'dark',securityLevel:'strict',
+  themeVariables:{background:'#0d1218',primaryColor:'#121820',primaryTextColor:'#e8eef5',
+  primaryBorderColor:'#4fffb0',lineColor:'#8aa0b5',fontFamily:"Inter,sans-serif"}});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080c10;--surface:#0e1419;--border:rgba(255,255,255,.07);
+--accent:#4fffb0;--accent2:#7b6ff0;--text:#e8eaed;--muted:#7a8394;
+--card-bg:rgba(255,255,255,.03)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);
+color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#000}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;z-index:50;background:rgba(8,12,16,.85);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;
+gap:16px;height:64px;max-width:1100px}
+.brand{font-weight:600;letter-spacing:-.01em;color:var(--text)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+nav.top-nav{display:flex;align-items:center;gap:20px;font-size:14px}
+nav.top-nav a{color:var(--muted)}
+nav.top-nav a:hover{color:var(--text);text-decoration:none}
+.lang-switch{display:flex;gap:4px;border:1px solid var(--border);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:0;color:var(--muted);font:500 12px/1 'Inter',sans-serif;
+padding:6px 10px;border-radius:5px;cursor:pointer;font-family:inherit}
+.lang-btn.active{background:var(--accent);color:#000}
+main{padding:56px 0 96px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.2;letter-spacing:-.02em;margin:0 0 16px}
+h2{font-size:24px;letter-spacing:-.01em;margin:40px 0 12px}
+.meta{color:var(--muted);font-size:14px;font-family:'JetBrains Mono',ui-monospace,monospace;
+margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{border:1px solid var(--border);border-radius:99px;padding:3px 10px;font-size:12px}
+.cover{width:100%;border-radius:14px;border:1px solid var(--border);margin:0 0 36px;display:block}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
+article p{margin:0 0 20px}
+article ul{margin:0 0 20px;padding-left:22px}
+article li{margin:0 0 8px}
+article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
+background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto}
+.lead{font-size:18px;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.post-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;
+padding:24px;transition:border-color .2s,transform .2s}
+.post-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.post-card a{color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em}
+.post-card a:hover{color:var(--accent);text-decoration:none}
+.post-card .excerpt{color:var(--muted);margin:10px 0 0;font-size:15px}
+.back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+.empty{color:var(--muted);text-align:center;padding:64px 0}
+@media(max-width:600px){nav.top-nav{gap:12px;font-size:13px}main{padding:36px 0 64px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://vegman.dev/">Natalia&nbsp;Vegman</a>
+  <nav class="top-nav">
+    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ru" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" type="button">EN</button>
+    </div>
+  </nav>
+</div></header>
+<main><div class="wrap">
+<div data-lang-block="ru">
+  <a class="back" href="https://vegman.dev/blog/">← Все статьи</a>
+  <h1>45% бюджета уходило на то, что агент спрашивал «нет ли для меня работы»</h1>
+  <div class="meta"><span>2026-07-31</span><span class="tag">Article</span></div>
+  <img class="cover" src="https://vegman.dev/blog/img/45-protsentov-byudzheta-na-holostoy-hod-agenta/cover.jpg" alt="">
+  <article><p>Лид (обновлённый):</p>
+<p>Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей жизнью» и списывала деньги.</p>
+<p>Это история про мою агентную систему (не клиентский проект). Агент здесь — программа, которая по расписанию или событию сама решает, что делать дальше, и на каждом шаге обращается к языковой модели. У такой системы есть неприятная черта: она задаёт вопросы даже тогда, когда отвечать не на что.</p>
+<p>Когда я докопалась до причин, выяснилось неожиданное: 45% всех моих расходов на модели за всё время ушло на один вопрос, который агент задавал сам себе: «нет ли для меня работы?». Не на работу — на вопрос о работе.</p>
+<p>Ниже — почему в агентных системах главная статья расхода часто не полезное действие, а холостой ход, и какие метрики/учёт нужны, чтобы отвечать на «куда ушло», а не только на «сколько осталось».</p>
+<p>---</p>
+<p>Дальше — текст статьи (оставила как есть по смыслу, выровняла под сайт):</p>
+<h2>Симптом: счёт вырос, а пользователей больше не стало</h2>
+<p>Обычная реакция на выросший счёт — искать причину в нагрузке: кто-то много писал агенту, кто-то загрузил большой документ, где-то пошёл ретрай. Но нагрузки не было: пользователей столько же, задач столько же, функциональность та же.</p>
+<p>Второй симптом я заметила почти случайно: контекст, который агент отправлял в модель, рос сам по себе. За два с половиной часа наблюдения размер входа увеличился с 29 643 до 29 707 токенов. Токены — это то, за что в итоге выставляют счёт.</p>
+<p>64 токена за пару часов — мелочь. Важна не величина, а знак. Система дорожала в простое. А система, которая дорожает в простое, будет дорожать всегда — рост встроен в её поведение.</p>
+<h2>Одиннадцать дней вслепую: почему причина не находилась</h2>
+<p>Между «счёт вырос» и «вот причина» прошло 11 дней. Деньги были видны идеально — в долларах. Но причины были невидимы полностью.</p>
+<p>Потому что мой мониторинг отвечал на вопрос «сколько осталось»: остаток лимита, потрачено за период, приближаемся ли к порогу. Это честно предупреждает, что деньги кончаются — и не говорит вообще ничего про то, за что они кончаются.</p>
+<p>Мне нужен был другой вопрос: «куда ушло» — разбивка по проектам, моделям, агентам и дням.</p>
+<p>И ещё хуже: учёт жил в двух слоях, которые не видели друг друга. Разбор был по одному слою, а деньги горели в другом. Пока эти слои не сведены в одну таблицу, любой анализ превращается в уверенное гадание: объясняешь ту часть, которая у тебя под руками, и не подозреваешь, что есть ещё одна.</p>
+<figure><pre class="mermaid">flowchart LR
+  A[&quot;Счёт провайдера&quot;] --&gt; D[&quot;Одна таблица:&lt;br/&gt;проект × модель × агент × день&quot;]
+  B[&quot;Логи агентов&quot;] --&gt; D
+  C[&quot;Выгрузка по проектам&quot;] --&gt; D
+  D --&gt; Q[&quot;Вопрос «какой агент&lt;br/&gt;съел эти деньги»&quot;]
+  A -.-&gt;|&quot;поодиночке&quot;| X[&quot;Объяснима только&lt;br/&gt;часть счёта&quot;]
+  B -.-&gt; X
+  C -.-&gt; X</pre><figcaption>Пока слои учёта лежат врозь, каждый отвечает на свой вопрос — и ни один не отвечает на «куда ушло»</figcaption></figure>
+<h2>Что показал разбор: цена вопроса «мне есть чем заняться?»</h2>
+<p>Когда я наконец свела всё в одну таблицу, крупнейшая строка расходов оказалась не работой, а опросом.</p>
+<ul><li>1007 вызовов</li><li>$13.83</li><li>45% всех расходов на модели за всё время жизни системы</li></ul>
+<p>Механика простая: опрос шёл каждые 30 минут, круглосуточно, при пустом списке задач. 48 раз в сутки система будила агента и спрашивала, нет ли для него работы. Работы не было ни разу.</p>
+<p>Самое интересное — соотношение внутри вызова. Каждый такой запрос — около 29 700 входных токенов при ответе примерно в 90 токенов.</p>
+<p>То есть каждые полчаса в модель уезжал полный контекст агента: системные инструкции, описания инструментов, накопленное состояние — всё ради фразы «мне нечего делать».</p>
+<p>И отсюда главный вывод, который я теперь держу в голове, когда проектирую агента: в агентных системах вы платите в основном за вход, а не за выход. Ответ почти всегда короткий. Дорогой — контекст, который приходится отправлять целиком при каждом вызове. Даже когда решение заранее известно и равно «ничего не делать».</p>
+<h2>Ловушка промежуточной оптимизации</h2>
+<p>До того как я нашла причину, я сделала ровно то, что делают все: перевела вызов на модель подешевле. Экономия получилась красивой — в 7 раз на той же операции.</p>
+<p>Только я удешевила то, что надо было отключить.</p>
+<p>Семикратная экономия на бесполезном действии — это всё равно трата, просто «аккуратнее». И есть ещё один неприятный эффект: такая оптимизация психологически закрывает вопрос. График пошёл вниз — значит, «я сделала работу» — и можно идти дальше. А расход остаётся, просто перестаёт раздражать.</p>
+<p>Порядок действий должен быть обратным:</p>
+<ul><li>«нужен ли этот вызов вообще?»</li><li>«какая модель должна его делать?»</li></ul>
+<p>Оптимизировать модель, не проверив нужность самого вызова, — это реально экономить на спичках.</p>
+<h2>Документация описывает намерение, а не поведение</h2>
+<p>Следующая попытка была «по-честному» выключить опрос.</p>
+<p>У платформы есть служебный файл со списком периодических задач, и документация обещала: держите файл пустым — вызовов не будет.</p>
+<p>Я оставила в файле только комментарии. Опрос отработал снова — ровно по расписанию.</p>
+<p>Фактический вывод: polling включён на уровне платформы и не гасится содержимым этого файла.</p>
+<p>Методический вывод важнее: документация часто описывает намерение авторов, а не поведение системы. Это не обязательно обман. Просто текст мог быть верным «на момент замысла», а потом поведение разъехалось, и никто не вернулся переписать абзац.</p>
+<p>Практическое следствие: выключение считается выключением только после того, как вы посмотрели в логи или в счёт и убедились, что вызовов действительно нет. Проверка по документации — это проверка чужих намерений. А платите вы всегда за поведение.</p>
+<figure><pre class="mermaid">flowchart LR
+  subgraph BEFORE[&quot;До разбора&quot;]
+    B1[&quot;Опрос каждые 30 минут,&lt;br/&gt;круглосуточно&quot;] --&gt; B2[&quot;1007 вызовов&quot;] --&gt; B3[&quot;13,83 $ — 45%&lt;br/&gt;всех расходов&quot;]
+  end
+  subgraph AFTER[&quot;После выключения&quot;]
+    A1[&quot;Опроса нет&quot;] --&gt; A2[&quot;0 вызовов&quot;] --&gt; A3[&quot;0 $&quot;]
+  end
+  BEFORE ==&gt;|&quot;проверено по счёту,&lt;br/&gt;а не по документации&quot;| AFTER</pre><figcaption>45% всех расходов на модели — это опрос «нет ли для меня работы» при пустом списке задач</figcaption></figure>
+<h2>Как считать по‑честному: инструмент разбора</h2>
+<p>Чтобы не повторять эти 11 дней вслепую, я написала скрипт, который сводит все слои учёта в одну таблицу: проект → модель → агент → день.</p>
+<p>Одна плоская таблица, в которой можно спросить: «какой агент, в какой модели и в какой день съел эти деньги?»</p>
+<p>Три вещи, которые для такого инструмента принципиальны:</p>
+<ul><li>Ноль вызовов модели. Инструмент разбора расходов не должен сам расходовать. Это чистый парсинг логов, без ИИ внутри.</li><li>Быстро. У меня — около 3 секунд на 125 МБ логов. Если анализ долго — вы запустите его раз в месяц. А нужно — в момент, когда «что-то не так».</li><li>Сходимость с биллингом. У меня расхождение 4%. Если не сходится со счётом провайдера, вы объясняете не тот расход.</li></ul>
+<p>И три принципа из практики наблюдаемости:</p>
+<ul><li>Цифра от провайдера важнее пересчёта токенайзером.</li><li>Пересчитывать токенайзером только там, где провайдер цифру не вернул (это заплатка, не источник истины).</li><li>Где цены нет — писать «без цены», а не ноль. Ноль молча складывается и даёт правдоподобную, но неправильную сумму.</li></ul>
+<h2>Что проверить у себя (короткий чек‑лист)</h2>
+<ul><li>Найдите вызовы, которые происходят строго по расписанию, а не в ответ на человека/событие. Сортируйте по количеству — самая частая строка часто и самая дорогая.</li><li>Посмотрите отношение входных токенов к выходным. Соотношение в сотни раз — сигнал, что вы возите «полный контекст» ради односложного ответа.</li><li>Посчитайте долю счёта, которая уходит на вызовы, после которых система ничего не сделала. Это цена холостого хода.</li><li>Проверьте, сколько у вас «слоёв учёта», и видят ли они друг друга. Если разбор идёт по одному источнику, а счёт приходит по другому — сведите в одну таблицу.</li><li>Выключите один периодический вызов тем способом, который обещает документация, и дождитесь следующего расписания. Смотрите не в конфиг, а в логи.</li><li>Прежде чем менять модель на более дешёвую, ответьте письменно: что сломается, если этот вызов не делать вообще? Если ответ «ничего» — удешевлять нечего, надо удалять.</li></ul>
+<h2>Как понять, что получилось</h2>
+<p>Критерий не «счёт стал меньше». Счёт может уменьшиться просто потому, что вы перевели мусор на дешёвую модель.</p>
+<p>Считайте, что вы реально закрыли проблему, если выполняются три условия:</p>
+<ul><li>За минуту, не открывая консоль провайдера, вы можете назвать три самые дорогие строки расхода за неделю — с точностью до агента и дня.</li><li>Ваш разбор сходится со счётом с понятной вам погрешностью.</li><li>В счёте не осталось строк, за которыми не стоит ни одного действия. Каждый периодический вызов либо приводит к работе, либо выключен — и это проверено по логам.</li></ul>
+<p>Пока эти три вещи не выполняются, «сколько осталось» будет продолжать заслонять «куда ушло», а холостой ход будет выдавать себя только медленно растущей цифрой.</p></article>
+</div>
+<div data-lang-block="en">
+  <a class="back" href="https://vegman.dev/blog/">← All posts</a>
+  <h1>45% of My Model Spend Went to One Question the Agent Asked Itself</h1>
+  <div class="meta"><span>2026-07-31</span><span class="tag">Article</span></div>
+  <img class="cover" src="https://vegman.dev/blog/img/45-protsentov-byudzheta-na-holostoy-hod-agenta/cover.jpg" alt="">
+  <article><p>I opened my bill for language models and saw a number bigger than usual. Over that same period not a single new user had shown up, I hadn't shipped any new features, and load hadn't grown. The system was sitting there servicing itself — and that cost money.</p>
+<p>This is about my own agent system, not a client project. An <i>agent</i> here is a program that decides on its own what to do next, on a schedule or in response to an event, and calls a language model at every step. Such a program has an unpleasant property: it asks questions even when there's nothing to answer.</p>
+<p>When I finished the analysis, it turned out that 45% of everything I had ever spent on models went to one single question the agent asked itself: "is there any work for me?" Not on the work — on the question about the work.</p>
+<p>By the end of this article you'll understand why the main cost line in agent systems is idling rather than useful action, and how to build accounting that answers "where did it go" instead of only "how much is left."</p>
+<h2>The symptom: the bill grew, the user count didn't</h2>
+<p>The usual reaction to a bigger bill is to look for the cause in load. Somebody wrote a lot to the agent, somebody uploaded a big document, a retry loop kicked in somewhere. But there was no load: same number of users, same number of tasks, same functionality.</p>
+<p>I noticed the second symptom almost by accident. The context the agent was sending to the model was growing on its own. Over two and a half hours of observation, the input size went from 29,643 to 29,707 tokens. A <i>token</i> is a chunk of text — model input and output are counted in tokens, and that's what the provider bills you for.</p>
+<p>Sixty-four tokens over two and a half hours is trivial in itself. What matters isn't the size, it's the sign. Spend was growing without a single new user. A system that gets more expensive while idle will keep getting more expensive: the growth mechanism is built in, and it doesn't depend on whether anyone is using it.</p>
+<h2>Eleven days blind: why the cause stayed hidden</h2>
+<p>Eleven days passed between "the bill grew" and "here's the cause." The whole time, the spend was perfectly visible in dollars and completely invisible in causes. I knew the amount and didn't know what it was for.</p>
+<p>The reason is annoying. My monitoring answered the question "how much is left": remaining limit, spent this period, are we approaching the threshold. That kind of monitoring honestly warns you that the money is running out and says nothing at all about where exactly it's going. What I needed was a different question — "where did it go": a breakdown by project, model, agent, and day.</p>
+<p>The other half of the problem was that accounting lived in two layers that can't see each other. My analysis ran over one layer while the money was burning in the other. Until those layers are pulled into a single table, any analysis turns into guesswork: you confidently explain the part of the spend that happened to land in your hands, and you don't suspect the rest exists. For eleven days I was explaining the smaller half of the bill to myself.</p>
+<figure><pre class="mermaid">flowchart LR
+  A[&quot;Счёт провайдера&quot;] --&gt; D[&quot;Одна таблица:&lt;br/&gt;проект × модель × агент × день&quot;]
+  B[&quot;Логи агентов&quot;] --&gt; D
+  C[&quot;Выгрузка по проектам&quot;] --&gt; D
+  D --&gt; Q[&quot;Вопрос «какой агент&lt;br/&gt;съел эти деньги»&quot;]
+  A -.-&gt;|&quot;поодиночке&quot;| X[&quot;Объяснима только&lt;br/&gt;часть счёта&quot;]
+  B -.-&gt; X
+  C -.-&gt; X</pre><figcaption>Пока слои учёта лежат врозь, каждый отвечает на свой вопрос — и ни один не отвечает на «куда ушло»</figcaption></figure>
+<h2>What the analysis showed: the price of "do I have anything to do?"</h2>
+<p>When I finally pulled everything into one table, the largest cost line turned out to be not work but polling. 1007 calls, $13.83 — 45% of all model spend over the entire life of the system.</p>
+<p>The mechanics are simple. The poll ran every 30 minutes, around the clock, against an empty task list. Forty-eight times a day the system woke the agent and asked whether there was any work for it. There never was.</p>
+<p>The most interesting part is the ratio inside each call. Every such request was roughly 29,700 input tokens against a response of about 90 tokens. That is, every half hour the agent's full context went off to the model: system instructions, tool descriptions, accumulated state — all for the phrase "I have nothing to do." The input is hundreds of times bigger than the answer.</p>
+<p>Which leads to a conclusion worth taking away separately from my story. In agent systems you pay mostly for input, not output. The answer is short, while the context the agent needs to make a decision is long, and it gets sent in full on every call — including the ones where the decision is known in advance and equals "do nothing."</p>
+<h2>The intermediate-optimization trap</h2>
+<p>Before I found the cause, I did exactly what everyone does: I moved the call to a cheaper model. The savings came to 7x on that same call. A pretty number; it would have made a great report.</p>
+<p>Except I made cheaper what I should have turned off. A sevenfold savings on a useless action is still spending, just tidier. Worse, that kind of optimization closes the question psychologically: the chart went down, so you did your job, so you can move on to something else. The spend stayed, but it stopped being irritating — and therefore stopped being investigated.</p>
+<p>The order of operations should be the reverse. First "is this call needed at all," then "which model makes it." Optimizing the model without checking whether the call is necessary is penny-pinching.</p>
+<h2>Documentation describes intent, not behavior</h2>
+<p>Next came an attempt to turn the polling off the honest way. The platform has a service file listing periodic tasks, and the documentation flatly promised: keep the file empty and there will be no calls.</p>
+<p>I reduced the file to nothing but comments. The poll ran again, right on schedule.</p>
+<p>The factual conclusion: polling is enabled at the platform level and isn't suppressed by the contents of that file. The methodological conclusion matters more. The documentation described the authors' intent, not the system's behavior. That's not deception and usually not even a mistake: it was written that way when that was the plan, then the behavior drifted away from the text, and the text stayed.</p>
+<p>The practical implication for you: turning something off counts as turned off only after you've looked at the logs or the bill and confirmed the calls really aren't happening. Checking against the documentation is checking someone else's intentions — and what you pay for is behavior.</p>
+<figure><pre class="mermaid">flowchart LR
+  subgraph BEFORE[&quot;До разбора&quot;]
+    B1[&quot;Опрос каждые 30 минут,&lt;br/&gt;круглосуточно&quot;] --&gt; B2[&quot;1007 вызовов&quot;] --&gt; B3[&quot;13,83 $ — 45%&lt;br/&gt;всех расходов&quot;]
+  end
+  subgraph AFTER[&quot;После выключения&quot;]
+    A1[&quot;Опроса нет&quot;] --&gt; A2[&quot;0 вызовов&quot;] --&gt; A3[&quot;0 $&quot;]
+  end
+  BEFORE ==&gt;|&quot;проверено по счёту,&lt;br/&gt;а не по документации&quot;| AFTER</pre><figcaption>45% всех расходов на модели — это опрос «нет ли для меня работы» при пустом списке задач</figcaption></figure>
+<h2>How to count honestly: the analysis tool</h2>
+<p>To avoid repeating eleven days of blindness, I wrote a script that pulls every accounting layer into one table: project by model by agent by day. One flat table you can query with "which agent, in which model, on which day ate this money."</p>
+<p>The characteristics that are essential for a tool like this:</p>
+<ul><li>Zero model calls. A spend-analysis tool shouldn't spend anything itself. This is pure log parsing, with no AI inside.</li><li>About 3 seconds for 125 megabytes of logs. If the analysis takes a long time, you'll run it once a month, when what you need is to run it the moment the question comes up.</li><li>4% divergence from the provider's billing. <i>Billing</i> is the bill the model provider issues. If your analysis doesn't reconcile with the bill, you're explaining the wrong spend.</li></ul>
+<p>And three principles from observability practice — that is, from the practice of structuring logs so they can answer a question you didn't ask in advance:</p>
+<ul><li>The provider's number beats a tokenizer recount. A <i>tokenizer</i> is a library that splits text into tokens the same way the model does. It gives you a similar number, but that's not what you're billed on.</li><li>Recount with a tokenizer only where the provider didn't return a number. That's a patch over a hole in the data, not a source of truth.</li><li>Where there's no price, write "no price," not zero. Zero silently adds into the total and makes the report wrong but plausible. "No price" is visible to the eye, and it forces you to go figure it out.</li></ul>
+<h2>What to check in practice</h2>
+<ul><li>Find the calls in your logs that happen strictly on a schedule rather than in response to a human action or an event. Sort them by count, not by cost — the most frequent line is usually also the most expensive one.</li><li>For each periodic call, look at the ratio of input tokens to output tokens. A ratio in the hundreds is a sign that you're hauling the full context around for a one-word answer.</li><li>Calculate what share of your bill consists of calls after which the system did nothing. That's the price of idling.</li><li>Check how many accounting layers you have and whether they can see each other. If your analysis runs on one source and the bill comes from another, pull them into a single table of the form project — model — agent — day.</li><li>Turn off one periodic call using the method the documentation promises, and wait for the next scheduled firing. Look at the logs, not at the config.</li><li>Before switching to a cheaper model, answer in writing: what breaks if this call isn't made at all. If the answer is "nothing," there's nothing to make cheaper — it needs to be deleted.</li></ul>
+<h2>How to know it worked</h2>
+<p>The criterion isn't "the bill got smaller." The bill can shrink just because you moved garbage onto a cheap model.</p>
+<p>It worked if three things are true.</p>
+<p>First: within a minute, without opening the provider's console, you can name the three most expensive lines of your spend for the past week — down to the agent and the day. Not the total, the composition.</p>
+<p>Second: your analysis reconciles with the provider's bill within a margin you understand. Mine is 4%, and I know what it's made of. If the divergence is unknown, you're still looking at part of the picture.</p>
+<p>Third: there are no lines left in your bill with not a single action behind them. Every periodic call either leads to work, or is turned off and verified against the logs as actually turned off.</p>
+<p>Until those three things are true, "how much is left" will keep blocking the view of "where did it go" — and idling won't give itself away by anything except a slowly growing number.</p></article>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>© Natalia Vegman</span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a> · <a href="mailto:vegmannata@gmail.com">vegmannata@gmail.com</a></span>
+</div></footer>
+<script>
+(function(){
+  function apply(lang){
+    document.querySelectorAll('[data-lang-block]').forEach(function(el){
+      el.classList.toggle('active', el.dataset.langBlock === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang;
+    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
+  }
+  var stored = null;
+  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
+  var nav = (navigator.language||'').toLowerCase();
+  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
+  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
+  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
+  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
+  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
+  apply(initial);
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+  });
+})();
+</script>
+</body>
+</html>

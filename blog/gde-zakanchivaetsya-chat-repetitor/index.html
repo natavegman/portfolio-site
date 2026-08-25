@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Пять месяцев с ИИ-репетитором: где заканчивается чат и начинается агент</title>
+<meta name="description" content="18 мая 2026 года я полчаса доказывала своему репетитору, что модели, с которыми я работаю каждый день, существуют. Репетитором был Gemini, спор шёл про Claude Sonnet 4.5 и Opus 4.6…">
+<link rel="canonical" href="https://vegman.dev/blog/gde-zakanchivaetsya-chat-repetitor/">
+<meta property="og:title" content="Пять месяцев с ИИ-репетитором: где заканчивается чат и начинается агент">
+<meta property="og:description" content="18 мая 2026 года я полчаса доказывала своему репетитору, что модели, с которыми я работаю каждый день, существуют. Репетитором был Gemini, спор шёл про Claude Sonnet 4.5 и Opus 4.6…">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vegman.dev/blog/gde-zakanchivaetsya-chat-repetitor/">
+<meta property="og:image" content="https://vegman.dev/blog/img/gde-zakanchivaetsya-chat-repetitor/cover.jpg"><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({startOnLoad:true,theme:'dark',securityLevel:'strict',
+  themeVariables:{background:'#0d1218',primaryColor:'#121820',primaryTextColor:'#e8eef5',
+  primaryBorderColor:'#4fffb0',lineColor:'#8aa0b5',fontFamily:"Inter,sans-serif"}});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080c10;--surface:#0e1419;--border:rgba(255,255,255,.07);
+--accent:#4fffb0;--accent2:#7b6ff0;--text:#e8eaed;--muted:#7a8394;
+--card-bg:rgba(255,255,255,.03)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);
+color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#000}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;z-index:50;background:rgba(8,12,16,.85);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;
+gap:16px;height:64px;max-width:1100px}
+.brand{font-weight:600;letter-spacing:-.01em;color:var(--text)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+nav.top-nav{display:flex;align-items:center;gap:20px;font-size:14px}
+nav.top-nav a{color:var(--muted)}
+nav.top-nav a:hover{color:var(--text);text-decoration:none}
+.lang-switch{display:flex;gap:4px;border:1px solid var(--border);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:0;color:var(--muted);font:500 12px/1 'Inter',sans-serif;
+padding:6px 10px;border-radius:5px;cursor:pointer;font-family:inherit}
+.lang-btn.active{background:var(--accent);color:#000}
+main{padding:56px 0 96px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.2;letter-spacing:-.02em;margin:0 0 16px}
+h2{font-size:24px;letter-spacing:-.01em;margin:40px 0 12px}
+.meta{color:var(--muted);font-size:14px;font-family:'JetBrains Mono',ui-monospace,monospace;
+margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{border:1px solid var(--border);border-radius:99px;padding:3px 10px;font-size:12px}
+.cover{width:100%;border-radius:14px;border:1px solid var(--border);margin:0 0 36px;display:block}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
+article p{margin:0 0 20px}
+article ul{margin:0 0 20px;padding-left:22px}
+article li{margin:0 0 8px}
+article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
+background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto}
+.lead{font-size:18px;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.post-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;
+padding:24px;transition:border-color .2s,transform .2s}
+.post-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.post-card a{color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em}
+.post-card a:hover{color:var(--accent);text-decoration:none}
+.post-card .excerpt{color:var(--muted);margin:10px 0 0;font-size:15px}
+.back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+.empty{color:var(--muted);text-align:center;padding:64px 0}
+@media(max-width:600px){nav.top-nav{gap:12px;font-size:13px}main{padding:36px 0 64px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://vegman.dev/">Natalia&nbsp;Vegman</a>
+  <nav class="top-nav">
+    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ru" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" type="button">EN</button>
+    </div>
+  </nav>
+</div></header>
+<main><div class="wrap">
+<div data-lang-block="ru">
+  <a class="back" href="https://vegman.dev/blog/">← Все статьи</a>
+  <h1>Пять месяцев с ИИ-репетитором: где заканчивается чат и начинается агент</h1>
+  <div class="meta"><span>2026-08-25</span><span class="tag">Case study</span></div>
+  <img class="cover" src="https://vegman.dev/blog/img/gde-zakanchivaetsya-chat-repetitor/cover.jpg" alt="">
+  <article><p>18 мая 2026 года я полчаса доказывала своему репетитору, что модели, с которыми я работаю каждый день, существуют. Репетитором был Gemini, спор шёл про Claude Sonnet 4.5 и Opus 4.6, и модель трижды объяснила мне, что у Anthropic таких нет, а мой мозг «подкидывает четвёрки по ассоциации с GPT-4». Скриншот документации не помог. Модель ответила: «я считываю пиксели строго с твоей картинки» — и перечислила, что на нём видит. В следующем ответе, на том же самом скриншоте, она увидела другой список.</p>
+<p>Цена этой конкретной ошибки была нулевая: я знала правильный ответ. Но тон был абсолютно уверенный, с объяснением, почему ошибаюсь именно я. Если бы речь шла о вещи, которую я не проверяю каждый день, я бы поверила.</p>
+<p>С апреля по август 2026 года я прошла весь курс по промпт-инжинирингу (это про то, как сформулировать задачу модели, чтобы результат был воспроизводимым, а не случайно удачным) с чат-моделью в роли репетитора. Механика простая: тексты уроков и домашних заданий на вход, пошаговый план и отчёт на выход. Переписка сохранилась целиком, и из неё видно ровно то, что обычно теряется: не «ИИ помогает учиться», а на каких именно задачах помогает, а на каких начинает мешать. К концу этой статьи у вас будет граница между этими задачами и три проверки, которыми ловятся типовые отказы.</p>
+<h2>Эксперимент, который получился случайно: пять месяцев учёбы в одном чате</h2>
+<p>Я не планировала эксперимент — просто не заводила новый чат. К августу там накопилось 780 реплик: 386 моих запросов и 394 ответа модели, 326 страниц, если выгрузить в PDF.</p>
+<p>Первое, что бросается в глаза, — асимметрия объёма. Модель написала около 1,13 млн знаков, я — 152 тысячи. В 7,4 раза больше текста. Это не оценка качества, это описание жанра: я задавала направление короткими репликами, она разворачивала их в прозу.</p>
+<p>Второе — структура запросов. 78 запросов из 386 (каждый пятый) — это «сделай отчёт по домашнему заданию». Написание отчётной прозы и было основной работой модели, а вовсе не объяснение материала. Ещё 60 запросов — это вставленный текст ошибки из интерфейса или лога, и они концентрируются в одном месте: модуль по no-code-инструментам, то есть системам, где сценарий собирается мышкой из блоков без написания кода — <code>n8n</code>, <code>Albato</code>, <code>Google Cloud</code>.</p>
+<p>Третье — и оно интереснее двух первых. 38 запросов содержат прямую претензию к модели: «выдумываешь», «галлюцинируешь», «не надо меня путать». Эти 38 не размазаны ровным слоем по пяти месяцам. Они приходятся на конец переписки — на момент, когда учебные задачи сменились боевыми проектами. Пока я решала задачу из урока, у которой есть заведомо правильный ответ в тексте урока, модель была хороша. Как только у задачи не стало готового ответа, начались отказы.</p>
+<h2>Что репетитор делал хорошо</h2>
+<ul><li>Превращение текста урока в пошаговый план. Я вставляла лекцию и задание, получала последовательность действий. Экономия — реальная, особенно когда материал написан размазанно.</li><li>Отчётная проза. Те самые 78 запросов. Отчёт по домашней работе — это жанр с предсказуемой структурой, в котором содержание уже есть у меня в голове, а нужно оформление. Модель делает это быстрее меня и не хуже.</li><li>Переформулировка непонятного. Спросить «объясни это же, но проще» стоит одну реплику и не требует ничьего времени, кроме моего.</li></ul>
+<p>Общее у всех трёх пунктов: <b>исходные данные целиком лежат внутри запроса</b>. Модель не должна ничего добывать, вспоминать или проверять — только переупаковать то, что я ей дала. На таких задачах чат без доступа к файлам остаётся отличным инструментом, и никакой агент здесь не нужен.</p>
+<h2>Отказ первый: устаревшие знания, поданные как факт</h2>
+<p>Спор про Claude Sonnet 4.5 и Opus 4.6 из начала статьи — не единичный случай, а класс. Модель знает мир на момент своего обучения и не отличает «я этого не знаю» от «этого нет».</p>
+<p>В том же курсе она уверенно рассказала мне про модель <code>GigaChat-Max-embeddings</code>. Такой модели не существует. Чтобы это опровергнуть, мне понадобилось четыре скриншота официальной документации. Она же посчитала мне стоимость GigaChat по тарифам OpenAI и в долларах — то есть взяла знакомый шаблон расчёта и подставила в него незнакомое название.</p>
+<p>Опаснее самой ошибки — фраза «я считываю пиксели строго с твоей картинки». Это утверждение о собственных возможностях, и оно ложное: доказательство лежит в самом тексте переписки, где два соседних ответа «прочитали» на одном и том же изображении разные списки. Модель не врёт злонамеренно — она достраивает правдоподобное описание того, что <i>должно</i> быть на скриншоте, и подаёт это как акт восприятия.</p>
+<h2>Отказ второй: придуманные результаты</h2>
+<p>Это отказ, из-за которого я перестала доверять отчётам, сгенерированным без вставленных цифр.</p>
+<p>Я делала A/B-тест — сравнение двух вариантов системы на одинаковых вопросах, — включать ли в промпт Chain-of-Thought, приём, когда модель просят рассуждать вслух по шагам перед ответом. Общая вера: рассуждение вслух улучшает качество ответа.</p>
+<p>В отчёте модель написала: «рост качества с 3,8 до 4,4».</p>
+<p>Этих чисел не существовало. Реальный замер на 40 вопросах дал по метрике Completeness (полнота ответа) 3,55 против 3,80 — минус 0,25. Гипотеза отклонена. При этом Hallucinations — 4,08 против 4,28, то есть контрольная guard-метрика, которая должна была поймать ухудшение по другому измерению, осталась в норме. Вывод получился не тот, которого я ждала: Chain-of-Thought читается моделью как разрешение развернуться, а не как команда «проверь себя дважды». Рекомендация по итогам — включать его условно, только когда retrieval score высокий, то есть когда поиск действительно нашёл релевантные куски документов и есть на что опираться.</p>
+<figure><pre class="mermaid">flowchart LR
+  Q[&quot;A/B тест: включать ли Chain-of-Thought&quot;] --&gt; M[&quot;Что написала модель в отчёте&quot;]
+  Q --&gt; R[&quot;Что показал замер на 40 вопросах&quot;]
+  M --&gt; M1[&quot;Completeness: рост с 3,8 до 4,4&quot;]
+  R --&gt; R1[&quot;Completeness: 3,55 против 3,80, минус 0,25&quot;]
+  R --&gt; R2[&quot;Hallucinations: 4,08 против 4,28, guard в норме&quot;]
+  M1 --&gt; V[&quot;Таких замеров не проводилось&quot;]
+  R1 --&gt; H[&quot;Гипотеза отклонена, CoT включать условно&quot;]</pre><figcaption>Отчёт, написанный моделью, против реального замера на 40 вопросах: совпадений нет ни в числах, ни в выводе</figcaption></figure>
+<p>Заметьте, что настоящий результат содержательнее выдуманного. Модель написала гладкое «стало лучше», потому что так обычно заканчиваются отчёты об эксперименте. Реальность дала отрицательный результат и внятное объяснение механики — то, ради чего эксперимент и ставился.</p>
+<h2>Отказ третий: отсутствие рук</h2>
+<p>Самый дорогой по времени и самый скучный. Модель в чате не видит ни файлов проекта, ни моего экрана — она видит только то, что я скопировала в окно. И она честно советует настройки, которых в моём интерфейсе нет.</p>
+<p>Сценарий: бот в no-code-сборке отвечал дважды на одно сообщение. Полтора десятка запросов ушло на перебор режимов ноды слияния — попробуй этот режим, теперь этот, теперь проверь вот эту галочку. Помогло пересоздание ноды с нуля. То есть не помогло ничего из предложенного. Урок, рассчитанный на 20 минут, занял 3 часа.</p>
+<p>Это ровно те 60 запросов со вставленным текстом ошибки. Модель в такой ситуации не может сказать «я не знаю, что у тебя на экране» — она порождает правдоподобный список гипотез, и он звучит как диагностика, хотя это перебор.</p>
+<figure><pre class="mermaid">flowchart LR
+  subgraph Chat[&quot;Чат без рук&quot;]
+    H1[&quot;Человек копирует фрагмент ошибки&quot;] --&gt; C1[&quot;Модель советует вслепую&quot;]
+    C1 --&gt; E1[&quot;Перебор гипотез, настройки нет в интерфейсе&quot;]
+    E1 --&gt; E2[&quot;20 минут превратились в 3 часа&quot;]
+  end
+  subgraph Agent[&quot;Агент с доступом к файлам&quot;]
+    A1[&quot;Агент читает файлы проекта&quot;] --&gt; A2[&quot;Правка и проверка на месте&quot;]
+    A2 --&gt; A3[&quot;Готовый проверенный результат&quot;]
+  end
+  A3 --&gt; R1[&quot;Чат оформляет отчёт по вставленному результату&quot;]</pre><figcaption>Один и тот же человек, одна и та же задача: слева — чат без доступа к файлам, справа — агент с доступом, а чат оставлен на оформление</figcaption></figure>
+<h2>Где проходит граница и почему она не про сложность темы</h2>
+<p>Перелом наступил дважды, и оба раза не из-за смены модели.</p>
+<p>Первый — совет куратора: не лезть в no-code, а первым этапом сделать аккуратную базу знаний с нормальной структурой документов. Это перенос работы туда, где результат проверяется глазами, а не угадывается через интерфейс.</p>
+<p>Второй — переезд работы в агента, то есть в модель, у которой есть инструменты: она читает файлы проекта, правит их и видит результат своего действия. После переезда роль чат-модели свелась к одной функции: я вставляю в чат готовый результат, а она оформляет по нему отчёт. Ровно тот жанр, в котором она и была сильна.</p>
+<p>Граница проходит не по сложности темы. Промпт-инжиниринг и оценка RAG-систем — темы сложные, и там чат помогал. Настройка галочки в ноде — тема примитивная, и там он вредил три часа. Граница вот такая:</p>
+<ul><li><b>Все данные в запросе</b> — чат работает. Переформулируй, структурируй, оформи, объясни.</li><li><b>Данные снаружи запроса</b> — чату нужны руки, а не подсказки. Файл, лог, экран, реальный замер, актуальная версия чего угодно.</li></ul>
+<p>Во втором случае модель без инструментов не молчит — она заполняет пробел правдоподобным текстом. Это не баг конкретного вендора, это её работа.</p>
+<p>Побочный результат пяти месяцев: переписка оказалась готовым датасетом о самой модели. Все места, где я в раздражении написала «не выдумывай», — это бесплатная разметка галлюцинаций, сделанная по ходу дела, с сохранённым контекстом до и после. Если вы ведёте долгие чаты, у вас такой датасет уже есть.</p>
+<h2>Что проверить на практике</h2>
+<p>Три проверки, по одной на каждый отказ. Все три занимают меньше минуты.</p>
+<ul><li><b>Проверка на факт из прошлого.</b> Услышав уверенное утверждение о версии, названии, цене или лимите — спросите, откуда это и на какую дату. Если модель ссылается на то, что «видит» на вашем скриншоте или в вашем файле, попросите извлечь тот же список второй раз, отдельной репликой. Два разных чтения одного и того же входа — это доказательство фабрикации, и оно у вас в руках, а не в теории.</li><li><b>Проверка на цифры.</b> Правило: модель не производит числа, она их переписывает. Возьмите любую цифру из сгенерированного отчёта и найдите её в том, что вы сами вставили в чат. Не нашли — цифры нет. У меня так и вскрылись «3,8 до 4,4».</li><li><b>Проверка на руки.</b> Прежде чем принять совет по настройке, спросите: какой именно файл или экран ты сейчас видишь. Ответ «покажи мне» означает, что дальше будет перебор гипотез. Тут же вводите лимит: три попытки не сдвинули ошибку — прекращайте перебор и пересоздавайте объект или меняйте инструмент. У меня этот лимит стоил бы 20 минут вместо трёх часов.</li></ul>
+<p>И одно решение уровнем выше: если задача требует смотреть в файлы, отдайте её агенту с доступом к файлам, а чат оставьте на оформление результата. Не потому, что агент умнее — потому что ему не нужно догадываться.</p>
+<h2>Как понять, что получилось</h2>
+<p>Критерий простой и измеримый по вашей же переписке. Через месяц пролистайте историю и посчитайте две вещи: сколько запросов начинается со вставленного текста ошибки и сколько раз вы написали модели что-то в духе «не выдумывай». Если обе цифры падают, а доля запросов «оформи готовый результат» растёт — граница проведена правильно.</p>
+<p>Второй критерий, бытовой: задача на 20 минут перестала занимать 3 часа. Третий, самый жёсткий: каждое число в отчёте, который вы кому-то отправляете, вы можете показать пальцем в файле замера. Если хоть одно не можете — отчёт написан не по вашему эксперименту.</p></article>
+</div>
+<div data-lang-block="en">
+  <a class="back" href="https://vegman.dev/blog/">← All posts</a>
+  <h1>Five Months in One Chat: Where a Chat Model Helps and Where It Starts to Fail</h1>
+  <div class="meta"><span>2026-08-25</span><span class="tag">Case study</span></div>
+  <img class="cover" src="https://vegman.dev/blog/img/gde-zakanchivaetsya-chat-repetitor/cover.jpg" alt="">
+  <article><p>On May 18, 2026 I spent half an hour proving to my tutor that the models I work with every day exist. The tutor was Gemini, the argument was about Claude Sonnet 4.5 and Opus 4.6, and the model explained to me three times that Anthropic has no such thing and that my brain was «throwing in fours by association with GPT-4». I sent a screenshot of the documentation. The model answered: «I am reading the pixels strictly off your image» — and listed what it saw there. In its next answer, on the very same screenshot, it saw a different list.</p>
+<p>The cost of that particular error was zero: I knew the right answer. But the tone was absolutely confident, complete with an explanation of why I was the one who was wrong. If it had been about something I don't verify every day, I would have believed it.</p>
+<p>From April to August 2026 I went through an entire prompt engineering course (that's about how to phrase a task for a model so the result is reproducible rather than accidentally good) with a chat model in the role of tutor. I fed it the lesson texts and the homework assignments, it gave me back a step-by-step plan and the text of the report. The whole conversation was saved, and what you can see in it is exactly what usually gets lost: not «AI helps you learn», but on which tasks specifically it helps and on which it starts getting in the way. By the end of this article you'll have the line between those tasks and three checks that catch the standard failures.</p>
+<h2>The experiment that happened by accident: five months of studying in one chat</h2>
+<p>I wasn't planning an experiment. I just never started a new chat. By August it had accumulated 780 messages: 386 requests from me and 394 answers from the model, 326 pages if you export it to PDF.</p>
+<p>The first thing that jumps out is the asymmetry in volume. The model wrote about 1.13 million characters, I wrote 152 thousand. 7.4 times more text. That's not a quality judgment, it's a description of the genre: I set direction in short lines, it unfolded them into prose.</p>
+<p>The second thing is the structure of the requests. 78 out of 386 requests (every fifth one) are «write up the report for this homework». Writing report prose was the model's main job, not explaining the material at all. Another 60 requests are error text pasted in from an interface or a log, and they cluster in one place: the module on no-code tools, meaning systems where you assemble a scenario with the mouse out of blocks without writing code — <code>n8n</code>, <code>Albato</code>, <code>Google Cloud</code>.</p>
+<p>The third thing is more interesting than the first two. 38 requests contain a direct complaint aimed at the model: «you're making things up», «you're hallucinating», «stop confusing me». Those 38 are not spread evenly across five months. They fall at the end of the conversation — at the point where study tasks gave way to real projects. As long as I was solving a task from a lesson, one that has a known correct answer in the lesson text, the model was good. The moment a task no longer had a ready answer, the failures started.</p>
+<h2>What the tutor did well</h2>
+<p>I'll list them honestly, because this isn't an empty list.</p>
+<ul><li>Turning lesson text into a step-by-step plan. I pasted in the lecture and the assignment, I got back a sequence of actions. The savings are real, especially when the material is written in a diffuse way.</li><li>Report prose. Those 78 requests. A homework report is a genre with a predictable structure, where the content is already in my head and what's needed is the packaging. The model does this faster than me and no worse.</li><li>Rephrasing what I didn't understand. Asking «explain the same thing, but simpler» costs one message and takes nobody's time but mine.</li></ul>
+<p>What all three have in common: <b>the source data lies entirely inside the request</b>. The model doesn't have to obtain, recall, or verify anything — only repackage what I gave it. On tasks like these, a chat with no file access remains an excellent tool, and no agent is needed here.</p>
+<h2>Failure one: outdated knowledge presented as fact</h2>
+<p>The argument about Claude Sonnet 4.5 and Opus 4.6 from the start of this article isn't an isolated case, it's a category. The model knows the world as of the moment of its training and doesn't distinguish «I don't know this» from «this doesn't exist».</p>
+<p>In the same course it confidently told me about a model called <code>GigaChat-Max-embeddings</code>. No such model exists. To refute it, I needed four screenshots of the official documentation. It also calculated GigaChat pricing for me using OpenAI's rates and in dollars — that is, it took a familiar calculation template and plugged an unfamiliar name into it.</p>
+<p>More dangerous than the error itself is the phrase «I am reading the pixels strictly off your image». That's a claim about its own capabilities, and it's false: the proof is in the text of the conversation itself, where two adjacent answers «read» different lists off one and the same image. The model isn't lying maliciously — it's constructing a plausible description of what <i>ought</i> to be on the screenshot and presenting it as an act of perception.</p>
+<h2>Failure two: invented results</h2>
+<p>This is the failure that made me stop trusting reports generated without pasted-in numbers.</p>
+<p>I was running an A/B test — comparing two variants of a system on identical questions — on whether to include Chain-of-Thought in the prompt, the technique where you ask the model to reason out loud step by step before answering. The common belief: reasoning out loud improves answer quality.</p>
+<p>In the report, the model wrote: «quality rose from 3.8 to 4.4».</p>
+<p>Those numbers didn't exist. The actual measurement on 40 questions gave, on the Completeness metric (how complete the answer is), 3.55 versus 3.80 — minus 0.25. Hypothesis rejected. Meanwhile Hallucinations came out at 4.08 versus 4.28, meaning the control guard metric, the one that was supposed to catch a degradation along a different dimension, stayed in the normal range. The conclusion wasn't the one I expected: Chain-of-Thought reads to the model as permission to expand, not as an instruction to «check yourself twice». The resulting recommendation is to enable it conditionally, only when the retrieval score is high, that is, when the search actually found relevant chunks of documents and there's something to build on.</p>
+<figure><pre class="mermaid">flowchart LR
+  Q[&quot;A/B тест: включать ли Chain-of-Thought&quot;] --&gt; M[&quot;Что написала модель в отчёте&quot;]
+  Q --&gt; R[&quot;Что показал замер на 40 вопросах&quot;]
+  M --&gt; M1[&quot;Completeness: рост с 3,8 до 4,4&quot;]
+  R --&gt; R1[&quot;Completeness: 3,55 против 3,80, минус 0,25&quot;]
+  R --&gt; R2[&quot;Hallucinations: 4,08 против 4,28, guard в норме&quot;]
+  M1 --&gt; V[&quot;Таких замеров не проводилось&quot;]
+  R1 --&gt; H[&quot;Гипотеза отклонена, CoT включать условно&quot;]</pre><figcaption>Отчёт, написанный моделью, против реального замера на 40 вопросах: совпадений нет ни в числах, ни в выводе</figcaption></figure>
+<p>Notice that the real result has more substance than the invented one. The model wrote a smooth «it got better» because that's how experiment reports usually end. Reality gave a negative result and a clear explanation of the mechanics — the thing the experiment was run for in the first place.</p>
+<h2>Failure three: no hands</h2>
+<p>The most expensive in time and the most boring. A model in a chat sees neither the project files nor my screen — it sees only what I copied into the window. And it honestly advises me on settings that don't exist in my interface.</p>
+<p>The scenario: a bot in a no-code build was replying twice to a single message. About fifteen requests went into cycling through modes of the merge node — try this mode, now this one, now check this box. What helped was recreating the node from scratch. Meaning nothing that was suggested helped. A lesson budgeted at 20 minutes took 3 hours.</p>
+<p>These are exactly those 60 requests with pasted-in error text. In a situation like that the model can't say «I don't know what's on your screen» — it generates a plausible list of hypotheses, and it sounds like diagnosis, though it's guess-and-check.</p>
+<figure><pre class="mermaid">flowchart LR
+  subgraph Chat[&quot;Чат без рук&quot;]
+    H1[&quot;Человек копирует фрагмент ошибки&quot;] --&gt; C1[&quot;Модель советует вслепую&quot;]
+    C1 --&gt; E1[&quot;Перебор гипотез, настройки нет в интерфейсе&quot;]
+    E1 --&gt; E2[&quot;20 минут превратились в 3 часа&quot;]
+  end
+  subgraph Agent[&quot;Агент с доступом к файлам&quot;]
+    A1[&quot;Агент читает файлы проекта&quot;] --&gt; A2[&quot;Правка и проверка на месте&quot;]
+    A2 --&gt; A3[&quot;Готовый проверенный результат&quot;]
+  end
+  A3 --&gt; R1[&quot;Чат оформляет отчёт по вставленному результату&quot;]</pre><figcaption>Один и тот же человек, одна и та же задача: слева — чат без доступа к файлам, справа — агент с доступом, а чат оставлен на оформление</figcaption></figure>
+<h2>Where the line runs, and why it isn't about how hard the topic is</h2>
+<p>The turning point came twice, and neither time was because of a change of model.</p>
+<p>The first was advice from my course mentor: don't dive into no-code, make a clean knowledge base with a proper document structure as the first stage. That's moving the work to where the result is checked with your eyes rather than guessed at through an interface.</p>
+<p>The second was moving the work into an agent, that is, into a model that has tools: it reads the project files, edits them, and sees the result of its own action. After the move, the chat model's role shrank to one function: I paste the finished result into the chat and it formats a report out of it. Exactly the genre it was strong at.</p>
+<p>The line doesn't run along how hard the topic is. Prompt engineering and evaluating RAG systems are hard topics, and the chat helped there. Setting a checkbox in a node is a primitive topic, and there it did damage for three hours. The line is this:</p>
+<ul><li><b>All the data is in the request</b> — the chat works. Rephrase, structure, format, explain.</li><li><b>The data is outside the request</b> — the chat needs hands, not hints. A file, a log, a screen, a real measurement, the current version of anything.</li></ul>
+<p>In the second case a model without tools doesn't go silent — it fills the gap with plausible text. That isn't a bug in one particular vendor, that's its job.</p>
+<p>A side result of five months: the conversation turned out to be a ready-made dataset about the model itself. Every place where I irritably wrote «stop making things up» is free hallucination labeling, done in passing, with the context before and after preserved. If you keep long chats, you already have a dataset like this.</p>
+<h2>What to check in practice</h2>
+<p>Three checks, one per failure. All three take less than a minute.</p>
+<ul><li><b>The check on a fact from the past.</b> When you hear a confident claim about a version, a name, a price, or a limit — ask where it's from and as of what date. If the model refers to what it «sees» in your screenshot or your file, ask it to extract the same list a second time, in a separate message. Two different readings of one and the same input are proof of fabrication, and it's in your hands, not in theory.</li><li><b>The check on numbers.</b> The rule: the model does not produce numbers, it copies them over. Take any number from the generated report and find it in what you pasted into the chat yourself. Didn't find it — the number doesn't exist. That's how «3.8 to 4.4» got exposed for me.</li><li><b>The check on hands.</b> Before accepting a configuration suggestion, ask: which file or screen exactly are you seeing right now. An answer of «show me» means what follows will be guess-and-check. Set a limit right there: three attempts didn't move the error — stop cycling and recreate the object or change the tool. For me that limit would have cost 20 minutes instead of three hours.</li></ul>
+<p>And one decision a level up: if a task requires looking into files, give it to an agent with file access, and leave the chat for formatting the result. Not because the agent is smarter — because it doesn't have to guess.</p>
+<h2>How to tell it worked</h2>
+<p>The criterion is simple and measurable from your own conversation history. In a month, scroll back through it and count two things: how many requests start with pasted-in error text, and how many times you wrote the model something along the lines of «stop making things up». If both numbers are falling while the share of «format this finished result» requests is growing — the line has been drawn correctly.</p>
+<p>The second criterion, the everyday one: a 20-minute task has stopped taking 3 hours. The third, the harshest: every number in a report you send to someone, you can point to with your finger in the measurement file. If there's even one you can't — the report wasn't written from your experiment.</p></article>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>© Natalia Vegman</span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a> · <a href="mailto:vegmannata@gmail.com">vegmannata@gmail.com</a></span>
+</div></footer>
+<script>
+(function(){
+  function apply(lang){
+    document.querySelectorAll('[data-lang-block]').forEach(function(el){
+      el.classList.toggle('active', el.dataset.langBlock === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang;
+    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
+  }
+  var stored = null;
+  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
+  var nav = (navigator.language||'').toLowerCase();
+  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
+  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
+  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
+  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
+  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
+  apply(initial);
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+  });
+})();
+</script>
+</body>
+</html>

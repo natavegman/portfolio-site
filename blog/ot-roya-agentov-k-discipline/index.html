@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>От роя к дисциплине: 129 вызовов, которые научили меня считать</title>
+<meta name="description" content="Я открыла биллинг и увидела ноль. Не «мало осталось», а ровно ноль. Виноват был не сложный сценарий и не наплыв пользователей: один агент на расписании отработал сам с собой около …">
+<link rel="canonical" href="https://vegman.dev/blog/ot-roya-agentov-k-discipline/">
+<meta property="og:title" content="От роя к дисциплине: 129 вызовов, которые научили меня считать">
+<meta property="og:description" content="Я открыла биллинг и увидела ноль. Не «мало осталось», а ровно ноль. Виноват был не сложный сценарий и не наплыв пользователей: один агент на расписании отработал сам с собой около …">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vegman.dev/blog/ot-roya-agentov-k-discipline/">
+<meta property="og:image" content="https://vegman.dev/blog/img/ot-roya-agentov-k-discipline/cover.jpg"><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({startOnLoad:true,theme:'dark',securityLevel:'strict',
+  themeVariables:{background:'#0d1218',primaryColor:'#121820',primaryTextColor:'#e8eef5',
+  primaryBorderColor:'#4fffb0',lineColor:'#8aa0b5',fontFamily:"Inter,sans-serif"}});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080c10;--surface:#0e1419;--border:rgba(255,255,255,.07);
+--accent:#4fffb0;--accent2:#7b6ff0;--text:#e8eaed;--muted:#7a8394;
+--card-bg:rgba(255,255,255,.03)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);
+color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#000}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;z-index:50;background:rgba(8,12,16,.85);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;
+gap:16px;height:64px;max-width:1100px}
+.brand{font-weight:600;letter-spacing:-.01em;color:var(--text)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+nav.top-nav{display:flex;align-items:center;gap:20px;font-size:14px}
+nav.top-nav a{color:var(--muted)}
+nav.top-nav a:hover{color:var(--text);text-decoration:none}
+.lang-switch{display:flex;gap:4px;border:1px solid var(--border);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:0;color:var(--muted);font:500 12px/1 'Inter',sans-serif;
+padding:6px 10px;border-radius:5px;cursor:pointer;font-family:inherit}
+.lang-btn.active{background:var(--accent);color:#000}
+main{padding:56px 0 96px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.2;letter-spacing:-.02em;margin:0 0 16px}
+h2{font-size:24px;letter-spacing:-.01em;margin:40px 0 12px}
+.meta{color:var(--muted);font-size:14px;font-family:'JetBrains Mono',ui-monospace,monospace;
+margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{border:1px solid var(--border);border-radius:99px;padding:3px 10px;font-size:12px}
+.cover{width:100%;border-radius:14px;border:1px solid var(--border);margin:0 0 36px;display:block}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
+article p{margin:0 0 20px}
+article ul{margin:0 0 20px;padding-left:22px}
+article li{margin:0 0 8px}
+article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
+background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto}
+.lead{font-size:18px;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.post-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;
+padding:24px;transition:border-color .2s,transform .2s}
+.post-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.post-card a{color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em}
+.post-card a:hover{color:var(--accent);text-decoration:none}
+.post-card .excerpt{color:var(--muted);margin:10px 0 0;font-size:15px}
+.back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+.empty{color:var(--muted);text-align:center;padding:64px 0}
+@media(max-width:600px){nav.top-nav{gap:12px;font-size:13px}main{padding:36px 0 64px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://vegman.dev/">Natalia&nbsp;Vegman</a>
+  <nav class="top-nav">
+    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ru" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" type="button">EN</button>
+    </div>
+  </nav>
+</div></header>
+<main><div class="wrap">
+<div data-lang-block="ru">
+  <a class="back" href="https://vegman.dev/blog/">← Все статьи</a>
+  <h1>От роя к дисциплине: 129 вызовов, которые научили меня считать</h1>
+  <div class="meta"><span>2026-07-20</span><span class="tag">Article</span></div>
+  <img class="cover" src="https://vegman.dev/blog/img/ot-roya-agentov-k-discipline/cover.jpg" alt="">
+  <article><p>Я открыла биллинг и увидела ноль. Не «мало осталось», а ровно ноль. Виноват был не сложный сценарий и не наплыв пользователей: один агент на расписании отработал сам с собой около 14 часов и сделал 129 вызовов языковой модели. Задача, которую он при этом решал, была детерминированной — её можно было закрыть скриптом с обычным условием.</p>
+<p>Это статья о том, почему я перестала лечить ненадёжность агентной системы добавлением новых агентов. Дальше — что именно сломалось, какой слой оказался мёртвым грузом, и правила, которые заменили количество: бюджет вызовов, стоп-критерии, ретро после каждой задачи и память под системой контроля версий. И почему результат надёжнее проверять одним скептиком, чем толпой судей.</p>
+<p>Пару терминов сразу.</p>
+<ul><li>Агент — программа, которая в цикле сама решает, какой шаг сделать следующим, и спрашивает об этом языковую модель.</li><li>Вызов — одно обращение к модели, за которое вы платите.</li></ul>
+<h2>Соблазн роя: почему хочется добавить ещё одного агента</h2>
+<p>Логика добавления агента всегда выглядит убедительно. Результат вышел кривой — добавим аналитика, который разберёт задачу до начала работы. Аналитик ошибся — добавим скептика, который его проверит. Скептик спорит с исполнителем — добавим оркестратора, который их рассудит. Каждый шаг кажется дешёвой страховкой: ещё одна пара глаз, ещё один слой защиты.</p>
+<p>Проблема в том, что пара глаз здесь недетерминированная. Новый агент — это не проверка, а ещё один источник решений, который может ошибиться, зациклиться или уйти не туда. Слои защиты складываются в надёжность только тогда, когда каждый слой надёжнее того, что он проверяет. Если вы ставите вероятностного контролёра над вероятностным исполнителем, вы получаете не гарантию, а вторую вероятность и вдвое больший счёт.</p>
+<p>Вторая ловушка — ощущение работы. Рой производит много видимой активности: обсуждения, планы, промежуточные документы. Со стороны кажется, что система думает. На деле она может потратить весь бюджет на разговор о задаче, к которой ещё не приступала.</p>
+<h2>Инцидент, который всё расставил по местам</h2>
+<p>Агент с языковой моделью висел на расписании и просыпался каждые 30 минут. За примерно 14 часов он сделал 129 вызовов и обнулил баланс.</p>
+<p>Здесь важна арифметика. Пробуждений за это время было около тридцати, а вызовов — 129. То есть одно пробуждение — это не один вызов: внутри каждого запуска агент ещё и рассуждал, что ему делать. Ставя агента на расписание, вы умножаете не число запусков, а число запусков на среднюю длину внутреннего цикла. Вторую величину вы обычно не контролируете и в голове не держите — именно она и превращает «раз в полчаса, это же копейки» в пустой счёт к утру.</p>
+<p>Вывод я записала себе большими буквами: детерминированная проверка — это скрипт, а не агент. Если условие выражается как «если A, то B», языковая модель в этом месте не нужна. Она не добавляет ума, она добавляет расход и разброс. Модель нужна там, где вход неструктурирован и заранее неизвестно, какие шаги понадобятся. Проверка состояния по расписанию — не тот случай.</p>
+<p>И отдельный урок про предел. У агента на расписании нет естественного конца: человек закрывает ноутбук, а цикл — нет. Всё, что работает без человека в контуре, должно иметь границу, заданную снаружи, а не надежду на то, что оно само остановится.</p>
+<figure><pre class="mermaid">flowchart LR
+  subgraph BEFORE[&quot;Было — агент на расписании&quot;]
+    A1[&quot;Пробуждение каждые 30 минут&quot;] --&gt; A2[&quot;Внутренний цикл рассуждений&quot;]
+    A2 --&gt; A3[&quot;129 вызовов за ~14 часов&quot;]
+    A3 --&gt; A4[&quot;Баланс обнулён&quot;]
+  end
+  subgraph AFTER[&quot;Стало — скрипт плюс бюджет&quot;]
+    B1[&quot;Проверка условия скриптом&quot;] --&gt; B2[&quot;0 вызовов модели&quot;]
+    B2 --&gt; B3[&quot;Модель только там, где вход неструктурирован&quot;]
+    B3 --&gt; B4[&quot;Не более 5 вызовов на задачу&quot;]
+  end</pre><figcaption>Один и тот же класс задачи: агент на расписании против скрипта с бюджетом на модель</figcaption></figure>
+<h2>Мёртвый слой: 63 файла, которые никто не открыл</h2>
+<p>Второй симптом той же болезни я нашла не в счетах, а в репозитории. В системе жил доменный слой из 63 файлов-анкет — структурированных описаний предметной области, которые агенты должны были заполнять и потом переиспользовать. Их делали «на будущее»: придёт похожая задача — не начнём с нуля.</p>
+<p>За полтора месяца — ноль повторных использований. Ни один файл не понадобился второй раз. Слой я заархивировала.</p>
+<p>Это тот же рой, только застывший в файлах. Логика идентичная: раз мы не знаем, что понадобится, сделаем побольше, вдруг пригодится. Разница в том, что лишние агенты жгут бюджет сразу, а мёртвые артефакты жгут внимание постепенно. Они видны в дереве файлов, попадают в контекст, их приходится учитывать при рефакторинге и объяснять новому человеку.</p>
+<p>Проверка простая и неприятная: у любого артефакта, созданного «на будущее», должны быть дата появления и счётчик обращений. Если через месяц счётчик на нуле — это не задел, это балласт.</p>
+<figure><pre class="mermaid">flowchart TD
+  T[&quot;Задача&quot;] --&gt; Q[&quot;Триаж: 5 вопросов&quot;]
+  Q --&gt; S{&quot;Стоп-критерий сформулирован?&quot;}
+  S -- &quot;нет&quot; --&gt; X[&quot;Не начинаем&quot;]
+  S -- &quot;да&quot; --&gt; B[&quot;Бюджет: не более 5 вызовов&quot;]
+  B --&gt; E[&quot;Исполнитель — один, без роя&quot;]
+  E --&gt; K[&quot;Скептик — один проход, ищет отказ&quot;]
+  K -- &quot;не годится&quot; --&gt; E
+  K -- &quot;годится&quot; --&gt; R[&quot;Обязательное ретро&quot;]
+  R --&gt; M[&quot;Память под контролем версий&quot;]
+  M -.-&gt; Q</pre><figcaption>Путь задачи после отказа от роя: триаж со стоп-критерием, бюджет, один исполнитель, один скептик</figcaption></figure>
+<h2>Правила, которые заменили количество</h2>
+<p>Вводила я их не в лаборатории, а на живых задачах — там, где система работает на отельную сеть и на северного туроператора, и где неверный результат стоит не абстрактной репутации, а чьего-то рабочего дня.</p>
+<h3>1) Бюджет вызовов</h3>
+<p>Не больше 5 вызовов модели на задачу. Один исполнитель вместо роя.</p>
+<p>Бюджет полезен не тем, что экономит деньги — хотя экономит, — а тем, что заставляет систему выбирать. Когда вызовов пять, нельзя позволить себе два на «обдумать подход» и один на «уточнить формулировку». Приходится сразу идти в дело. Ограничение работает как проектное решение, а не как бухгалтерия.</p>
+<h3>2) Триаж из пяти вопросов</h3>
+<p>Перед запуском задача проходит через пять вопросов:</p>
+<ul><li>что это за задача</li><li>стоит ли её вообще делать</li><li>какая стратегия</li><li>какие ресурсы нужны</li><li>когда остановиться</li></ul>
+<p>Второй вопрос отсекает половину работы, которую никто не просил. Пятый — главный.</p>
+<p>Стоп-критерий формулируется до начала, а не тогда, когда стало ясно, что не получается. Если сформулировать его не удаётся, это сигнал: задача поставлена плохо, и агент здесь ни при чём.</p>
+<h3>3) Ретро после каждой задачи</h3>
+<p>Обязательное, а не по настроению. Что было задачей, что пошло не так, какое правило из этого следует. Именно так система учится: не тем, что в ней стало больше ролей, а тем, что после каждой задачи в наборе правил что-то меняется.</p>
+<h3>4) Память под системой контроля версий</h3>
+<p>Организационная память системы — накопленные правила и выводы — лежит там же, где код, под системой контроля версий. Значит, у каждого правила есть автор, дата и причина; видно, когда оно появилось; его можно откатить.</p>
+<p>Память, которая живёт в базе без истории, за пару месяцев превращается в свалку утверждений, про которые непонятно, кто их туда положил и верны ли они ещё.</p>
+<h2>Проверка: один скептик вместо толпы судей</h2>
+<p>Популярная схема верификации выглядит так: несколько агентов дают варианты ответа, отдельный агент-судья выбирает лучший. В исследовательских задачах, где вы честно не знаете, какая стратегия сработает, у неё есть смысл. В прикладной работе я от неё отказалась.</p>
+<p>Причин три:</p>
+<ul><li>Цена: N кандидатов плюс судья — это N+1 вызовов там, где на всю задачу отведено пять.</li><li>Судья не эксперт: он выбирает из того, что ему принесли. Если все кандидаты ошиблись одинаково (а они к этому склонны), судья уверенно выберет ошибку.</li><li>Размытая ответственность: когда ошибку пропустили пятеро, чинить нечего — механизма «виноватого» нет.</li></ul>
+<p>Вместо этого — один проход скептика. Скептик получает готовый результат и одну инструкцию: найти место, где это неверно. Не «оцени качество», не «выбери лучший вариант», а покажи конкретное место, где сломается.</p>
+<h2>Что проверить на практике</h2>
+<ul><li>Посчитайте вызовы модели за сутки и разделите на число решённых задач. Если среднее вас удивило — вы не знаете, куда уходит бюджет, и это первая проблема, а не деньги.</li><li>Найдите всех агентов, которые запускаются по расписанию. По каждому спросите: если бы решение принимал скрипт с обычным условием, изменился бы результат? Там, где ответ «нет», перепишите скриптом.</li><li>Поставьте потолок вызовов на задачу. Начните с 5 и смотрите, что упирается в границу: часто это не сложность задачи, а болтовня на подступах.</li><li>Выпишите пять вопросов триажа и прогоните через них три последние задачи задним числом. Особое внимание пятому: был ли записан стоп-критерий или система остановилась потому, что вы её выключили.</li><li>Пройдите по артефактам, созданным «на будущее», и посчитайте обращения к каждому. Ноль за месяц — в архив, не в бэклог.</li><li>Замените схему «несколько кандидатов плюс судья» на один проход скептика с инструкцией искать конкретный отказ. Прогоните на десятке задач и сравните, какая схема ловит больше настоящих ошибок.</li><li>Заведите ретро на три строки после каждой задачи и положите его под систему контроля версий рядом с кодом.</li></ul>
+<h2>Как понять, что получилось</h2>
+<p>Главный критерий один: расход перестал быть сюрпризом. Вы можете назвать верхнюю границу вызовов до запуска, а не узнать её из биллинга.</p>
+<p>Остальные признаки:</p>
+<ul><li>у каждой задачи есть записанный стоп-критерий</li><li>со временем растёт число правил, а не число агентов</li><li>разбор инцидента заканчивается изменением правила, а не появлением нового агента</li><li>в репозитории нет артефактов, к которым за месяц никто не обратился</li><li>скептик хотя бы иногда говорит «не годится» — и это подтверждается на практике.</li></ul>
+<p>Надёжность агентной системы даёт не количество исполнителей, а дисциплина: стоп-критерии, бюджет вызовов, обучение через ретро и память под версионированием. Рой выглядит как сила, а ведёт себя как расход. Пять правил обходятся дешевле пяти агентов — и, в отличие от них, работают одинаково в любое время суток.</p>
+<p>---</p>
+<p>Если хочется продолжения, из этого текста легко нарезается серия коротких заметок для TG: по одному правилу на пост + один «анти-паттерн недели» про рой.</p></article>
+</div>
+<div data-lang-block="en">
+  <a class="back" href="https://vegman.dev/blog/">← All posts</a>
+  <h1>Five Rules Cost Less Than Five Agents</h1>
+  <div class="meta"><span>2026-07-20</span><span class="tag">Article</span></div>
+  <img class="cover" src="https://vegman.dev/blog/img/ot-roya-agentov-k-discipline/cover.jpg" alt="">
+  <article><p>I opened the billing page and saw zero. Not "running low" — exactly zero. The culprit wasn't some complicated scenario or a flood of users: one scheduled agent spent about 14 hours working with itself and made 129 language model calls. The task it was solving was deterministic — it could have been closed with a script and an ordinary condition.</p>
+<p>This is an article about why I stopped treating the unreliability of an agent system by adding more agents. Below: what exactly broke, which layer turned out to be dead weight, and the rules that replaced quantity — a call budget, stop criteria, a retro after every task, and memory under version control. And why it's more reliable to check a result with one skeptic than with a crowd of judges.</p>
+<p>A couple of terms up front. An <b>agent</b> is a program that decides in a loop which step to take next, and asks a language model about it. A <b>call</b> is one request to the model, which you pay for. The rest I'll explain as I go.</p>
+<h2>The lure of the swarm: why you want to add one more agent</h2>
+<p>The logic of adding an agent always looks convincing. The result came out crooked — let's add an analyst who'll break the task down before work starts. The analyst got it wrong — let's add a skeptic to check them. The skeptic argues with the executor — let's add an orchestrator to settle it. Each step feels like cheap insurance: one more pair of eyes, one more layer of protection.</p>
+<p>The problem is that this pair of eyes is nondeterministic. A new agent isn't a check, it's another source of decisions that can be wrong, loop forever, or wander off. Layers of protection add up to reliability only when each layer is more reliable than what it's checking. If you put a probabilistic controller over a probabilistic executor, you don't get a guarantee — you get a second probability and twice the bill.</p>
+<p>The second trap is the sensation of work. A swarm produces a lot of visible activity: discussions, plans, intermediate documents. From the outside it looks like the system is thinking. In practice it can burn the entire budget talking about a task it hasn't started yet.</p>
+<h2>The incident that put everything in place</h2>
+<p>An agent with a language model sat on a schedule and woke up every 30 minutes. Over roughly 14 hours it made 129 calls and zeroed out the balance.</p>
+<p>The arithmetic matters here. There were about thirty wake-ups in that time, and 129 calls. So one wake-up is not one call: inside each run, the agent also reasoned about what to do. When you put an agent on a schedule, you're multiplying not the number of runs, but the number of runs by the average length of the internal loop. You usually don't control that second number and don't hold it in your head — and it's exactly what turns "once every half hour, that's pennies" into an empty account by morning.</p>
+<p>I wrote the conclusion down for myself in capital letters: <b>a deterministic check is a script, not an agent</b>. If the condition can be expressed as "if A, then B," you don't need a language model there. It doesn't add intelligence, it adds cost and variance. You need a model where the input is unstructured and it isn't known in advance which steps will be required. A scheduled state check is not that case.</p>
+<p>And a separate lesson about limits. A scheduled agent has no natural end: a human closes the laptop, a loop doesn't. Anything that runs without a human in the loop needs a boundary set from the outside, not a hope that it will stop on its own.</p>
+<figure><pre class="mermaid">flowchart LR
+  subgraph BEFORE[&quot;Было — агент на расписании&quot;]
+    A1[&quot;Пробуждение каждые 30 минут&quot;] --&gt; A2[&quot;Внутренний цикл рассуждений&quot;]
+    A2 --&gt; A3[&quot;129 вызовов за ~14 часов&quot;]
+    A3 --&gt; A4[&quot;Баланс обнулён&quot;]
+  end
+  subgraph AFTER[&quot;Стало — скрипт плюс бюджет&quot;]
+    B1[&quot;Проверка условия скриптом&quot;] --&gt; B2[&quot;0 вызовов модели&quot;]
+    B2 --&gt; B3[&quot;Модель только там, где вход неструктурирован&quot;]
+    B3 --&gt; B4[&quot;Не более 5 вызовов на задачу&quot;]
+  end</pre><figcaption>Один и тот же класс задачи: агент на расписании против скрипта с бюджетом на модель</figcaption></figure>
+<h2>The dead layer: 63 files nobody ever opened</h2>
+<p>I found the second symptom of the same disease not in the invoices but in the repository. The system contained a domain layer of 63 questionnaire files — structured descriptions of the subject area that agents were supposed to fill in and then reuse. They were built "for the future": when a similar task comes along, we won't start from scratch.</p>
+<p>In a month and a half — zero reuses. Not one file was needed a second time. I archived the layer.</p>
+<p>This is the same swarm, just frozen into files. The logic is identical: since we don't know what we'll need, let's make plenty, it might come in handy. The difference is that extra agents burn budget immediately, while dead artifacts burn attention gradually. They're visible in the file tree, they end up in the context, you have to account for them when refactoring and explain them to a new person.</p>
+<p>The check is simple and unpleasant: any artifact created "for the future" should have a creation date and an access counter. If the counter is at zero after a month, that's not groundwork, that's ballast.</p>
+<figure><pre class="mermaid">flowchart TD
+  T[&quot;Задача&quot;] --&gt; Q[&quot;Триаж: 5 вопросов&quot;]
+  Q --&gt; S{&quot;Стоп-критерий сформулирован?&quot;}
+  S -- &quot;нет&quot; --&gt; X[&quot;Не начинаем&quot;]
+  S -- &quot;да&quot; --&gt; B[&quot;Бюджет: не более 5 вызовов&quot;]
+  B --&gt; E[&quot;Исполнитель — один, без роя&quot;]
+  E --&gt; K[&quot;Скептик — один проход, ищет отказ&quot;]
+  K -- &quot;не годится&quot; --&gt; E
+  K -- &quot;годится&quot; --&gt; R[&quot;Обязательное ретро&quot;]
+  R --&gt; M[&quot;Память под контролем версий&quot;]
+  M -.-&gt; Q</pre><figcaption>Путь задачи после отказа от роя: триаж со стоп-критерием, бюджет, один исполнитель, один скептик</figcaption></figure>
+<h2>The rules that replaced quantity</h2>
+<p>I introduced them not in a lab but on live tasks — where the system works for a hotel chain and a northern tour operator, and where a wrong result costs not abstract reputation but someone's working day.</p>
+<h3>A call budget</h3>
+<p>No more than 5 model calls per task. One executor instead of a swarm. A budget is useful not because it saves money — though it does — but because it forces the system to choose. When you have five calls, you can't afford two for "think through the approach" and one for "clarify the wording." You have to get straight to work. The constraint acts as a design decision, not as accounting.</p>
+<h3>A five-question triage</h3>
+<p>Before launch, a task goes through five questions:</p>
+<ul><li>what kind of task is this</li><li>is it even worth doing</li><li>what's the strategy</li><li>what resources are needed</li><li>when to stop</li></ul>
+<p>The second question cuts off half the work nobody asked for. The fifth is the main one. The stop criterion is formulated <i>before</i> the start, not once it's become clear that it isn't working out. If you can't formulate one, that's a signal: the task is badly posed, and the agent has nothing to do with it.</p>
+<h3>A retro after every task</h3>
+<p>Mandatory, not when the mood strikes. What the task was, what went wrong, what rule follows from it. That's how a system actually learns: not by gaining more roles, but by having something change in the rule set after every task.</p>
+<h3>Memory under version control</h3>
+<p>The system's organizational memory — the accumulated rules and conclusions — lives where the code lives, under version control (a tool that keeps the history of all file changes). Which means every rule has an author, a date, and a reason; you can see when it appeared; you can roll it back. Memory that lives in a database without history turns within a couple of months into a dump of statements where it's unclear who put them there and whether they're still true.</p>
+<h2>Verification: one skeptic instead of a crowd of judges</h2>
+<p>The popular verification scheme looks like this: several agents produce candidate answers, and a separate judge agent picks the best one. In research tasks, where you honestly don't know which strategy will work, it makes sense. In applied work I've dropped it.</p>
+<p>There are three reasons. First, cost: N candidates plus a judge is N+1 calls where the whole task is allotted five. Second, the judge isn't an expert — it picks from what was brought to it. If all the candidates got it wrong the same way — and they tend to, because the model is the same and the task wording is shared — the judge will confidently pick the error and give it a high score. Third, diffuse responsibility: when five agents missed the error, there's nothing to fix, there's no mechanism to blame.</p>
+<p>Instead — a single skeptic pass. The skeptic gets the finished result and one instruction: find the place where this is wrong. Not "rate the quality from one to ten," not "pick the best option," but show the specific place where it breaks.</p>
+<p>The difference here is in how the question is posed, not in the number of checkers. A judge compares options against each other and will always find a winner — even among bad ones. A skeptic compares the result against reality and can say "not good enough" about the only option there is. That's the one check worth spending a call on.</p>
+<h2>What to check in practice</h2>
+<ul><li>Count your model calls over 24 hours and divide by the number of tasks solved. If the average surprises you, you don't know where the budget is going, and that's the first problem, not the money.</li><li>Find every agent that runs on a schedule. For each one, ask: if a script with an ordinary condition made the decision, would the result change? Wherever the answer is "no," rewrite it as a script.</li><li>Set a ceiling on calls per task. Start with 5 and watch what hits the limit: often it isn't the difficulty of the task, it's the chatter on the way in.</li><li>Write out the five triage questions and run your last three tasks through them retroactively. Pay special attention to the fifth: was a stop criterion written down, or did the system stop because you switched it off?</li><li>Go through the artifacts created "for the future" and count the accesses to each. Zero in a month — into the archive, not the backlog.</li><li>Replace the "several candidates plus a judge" scheme with a single skeptic pass instructed to look for a specific failure. Run it on a dozen tasks and compare which scheme catches more real errors.</li><li>Start a three-line retro after every task and put it under version control next to the code.</li></ul>
+<h2>How to tell it worked</h2>
+<p>There's one main criterion: spending has stopped being a surprise. You can state the upper bound on calls before launch, instead of learning it from the billing page.</p>
+<p>The other signs:</p>
+<ul><li>every task has a written stop criterion, and you can show it as text rather than recall it from memory</li><li>over time the number of rules grows, not the number of agents; if it's the other way around, you're still treating the symptom</li><li>an incident review ends with a change to a rule, not with a new agent</li><li>there are no artifacts in the repository that nobody has touched in a month</li><li>the skeptic at least sometimes says "not good enough," and that holds up in practice. A skeptic that always agrees is decoration, and its call should be thrown out.</li></ul>
+<p>The reliability of an agent system comes not from the number of executors but from discipline: stop criteria, a call budget, learning through retros, and memory under version control. A swarm looks like strength and behaves like expense. Five rules cost less than five agents — and unlike them, they work the same at any hour of the day.</p></article>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>© Natalia Vegman</span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a> · <a href="mailto:vegmannata@gmail.com">vegmannata@gmail.com</a></span>
+</div></footer>
+<script>
+(function(){
+  function apply(lang){
+    document.querySelectorAll('[data-lang-block]').forEach(function(el){
+      el.classList.toggle('active', el.dataset.langBlock === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang;
+    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
+  }
+  var stored = null;
+  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
+  var nav = (navigator.language||'').toLowerCase();
+  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
+  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
+  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
+  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
+  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
+  apply(initial);
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+  });
+})();
+</script>
+</body>
+</html>
