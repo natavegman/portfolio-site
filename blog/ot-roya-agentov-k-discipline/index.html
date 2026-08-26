@@ -73,6 +73,28 @@ padding:24px;transition:border-color .2s,transform .2s}
 .post-card a:hover{color:var(--accent);text-decoration:none}
 .post-card .excerpt{color:var(--muted);margin:10px 0 0;font-size:15px}
 .back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+/* Практический хвост статьи: то, что читатель может сделать завтра, не должно
+   выглядеть как ещё один абзац текста. */
+.practice{background:var(--card-bg);border:1px solid var(--border);
+border-left:3px solid var(--accent);border-radius:14px;padding:8px 28px 4px;margin:44px 0 0}
+.practice .practice-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;
+font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+margin:20px 0 0}
+.practice h2{font-size:21px;margin:8px 0 12px}
+.practice h3{font-size:17px;margin:24px 0 8px}
+.cta{background:linear-gradient(180deg,rgba(79,255,176,.06),rgba(123,111,240,.05));
+border:1px solid var(--border);border-radius:16px;padding:28px;margin:36px 0 0}
+.cta .cta-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;
+letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.cta h3{font-size:22px;letter-spacing:-.01em;margin:0 0 10px}
+.cta p{color:var(--muted);margin:0 0 20px;font-size:15px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--border);border-radius:10px;
+padding:11px 18px;font-size:14px;font-weight:500;color:var(--text);transition:.2s}
+.btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:#000}
+.btn-accent:hover{background:#3ce89e;border-color:#3ce89e;color:#000}
+@media(max-width:520px){.cta-actions .btn{flex:1 1 100%;text-align:center}}
 footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
 [data-lang-block]{display:none}
@@ -159,15 +181,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <p>Причин три:</p>
 <ul><li>Цена: N кандидатов плюс судья — это N+1 вызовов там, где на всю задачу отведено пять.</li><li>Судья не эксперт: он выбирает из того, что ему принесли. Если все кандидаты ошиблись одинаково (а они к этому склонны), судья уверенно выберет ошибку.</li><li>Размытая ответственность: когда ошибку пропустили пятеро, чинить нечего — механизма «виноватого» нет.</li></ul>
 <p>Вместо этого — один проход скептика. Скептик получает готовый результат и одну инструкцию: найти место, где это неверно. Не «оцени качество», не «выбери лучший вариант», а покажи конкретное место, где сломается.</p>
+<section class="practice"><p class="practice-kicker">Применить у себя</p>
 <h2>Что проверить на практике</h2>
 <ul><li>Посчитайте вызовы модели за сутки и разделите на число решённых задач. Если среднее вас удивило — вы не знаете, куда уходит бюджет, и это первая проблема, а не деньги.</li><li>Найдите всех агентов, которые запускаются по расписанию. По каждому спросите: если бы решение принимал скрипт с обычным условием, изменился бы результат? Там, где ответ «нет», перепишите скриптом.</li><li>Поставьте потолок вызовов на задачу. Начните с 5 и смотрите, что упирается в границу: часто это не сложность задачи, а болтовня на подступах.</li><li>Выпишите пять вопросов триажа и прогоните через них три последние задачи задним числом. Особое внимание пятому: был ли записан стоп-критерий или система остановилась потому, что вы её выключили.</li><li>Пройдите по артефактам, созданным «на будущее», и посчитайте обращения к каждому. Ноль за месяц — в архив, не в бэклог.</li><li>Замените схему «несколько кандидатов плюс судья» на один проход скептика с инструкцией искать конкретный отказ. Прогоните на десятке задач и сравните, какая схема ловит больше настоящих ошибок.</li><li>Заведите ретро на три строки после каждой задачи и положите его под систему контроля версий рядом с кодом.</li></ul>
 <h2>Как понять, что получилось</h2>
 <p>Главный критерий один: расход перестал быть сюрпризом. Вы можете назвать верхнюю границу вызовов до запуска, а не узнать её из биллинга.</p>
 <p>Остальные признаки:</p>
 <ul><li>у каждой задачи есть записанный стоп-критерий</li><li>со временем растёт число правил, а не число агентов</li><li>разбор инцидента заканчивается изменением правила, а не появлением нового агента</li><li>в репозитории нет артефактов, к которым за месяц никто не обратился</li><li>скептик хотя бы иногда говорит «не годится» — и это подтверждается на практике.</li></ul>
-<p>Надёжность агентной системы даёт не количество исполнителей, а дисциплина: стоп-критерии, бюджет вызовов, обучение через ретро и память под версионированием. Рой выглядит как сила, а ведёт себя как расход. Пять правил обходятся дешевле пяти агентов — и, в отличие от них, работают одинаково в любое время суток.</p>
-<p>---</p>
-<p>Если хочется продолжения, из этого текста легко нарезается серия коротких заметок для TG: по одному правилу на пост + один «анти-паттерн недели» про рой.</p></article>
+<p>Надёжность агентной системы даёт не количество исполнителей, а дисциплина: стоп-критерии, бюджет вызовов, обучение через ретро и память под версионированием. Рой выглядит как сила, а ведёт себя как расход. Пять правил обходятся дешевле пяти агентов — и, в отличие от них, работают одинаково в любое время суток.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">На связь со мной</p>
+  <h3>Разберём вашу задачу</h3>
+  <p>Я Наталья Вегман, проектирую ИИ-системы для бизнеса: агентов, интеграции с рабочими системами, поиск по базе знаний и учёт их стоимости. Если после статьи осталось «а как это у нас» — напишите, посмотрим на вашем примере.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Написать в Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Канал «Заметки на полях кода»</a>
+  </div>
+</aside>
 </div>
 <div data-lang-block="en">
   <a class="back" href="https://vegman.dev/blog/">← All posts</a>
@@ -230,13 +261,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <p>There are three reasons. First, cost: N candidates plus a judge is N+1 calls where the whole task is allotted five. Second, the judge isn't an expert — it picks from what was brought to it. If all the candidates got it wrong the same way — and they tend to, because the model is the same and the task wording is shared — the judge will confidently pick the error and give it a high score. Third, diffuse responsibility: when five agents missed the error, there's nothing to fix, there's no mechanism to blame.</p>
 <p>Instead — a single skeptic pass. The skeptic gets the finished result and one instruction: find the place where this is wrong. Not "rate the quality from one to ten," not "pick the best option," but show the specific place where it breaks.</p>
 <p>The difference here is in how the question is posed, not in the number of checkers. A judge compares options against each other and will always find a winner — even among bad ones. A skeptic compares the result against reality and can say "not good enough" about the only option there is. That's the one check worth spending a call on.</p>
+<section class="practice"><p class="practice-kicker">Put it to work</p>
 <h2>What to check in practice</h2>
 <ul><li>Count your model calls over 24 hours and divide by the number of tasks solved. If the average surprises you, you don't know where the budget is going, and that's the first problem, not the money.</li><li>Find every agent that runs on a schedule. For each one, ask: if a script with an ordinary condition made the decision, would the result change? Wherever the answer is "no," rewrite it as a script.</li><li>Set a ceiling on calls per task. Start with 5 and watch what hits the limit: often it isn't the difficulty of the task, it's the chatter on the way in.</li><li>Write out the five triage questions and run your last three tasks through them retroactively. Pay special attention to the fifth: was a stop criterion written down, or did the system stop because you switched it off?</li><li>Go through the artifacts created "for the future" and count the accesses to each. Zero in a month — into the archive, not the backlog.</li><li>Replace the "several candidates plus a judge" scheme with a single skeptic pass instructed to look for a specific failure. Run it on a dozen tasks and compare which scheme catches more real errors.</li><li>Start a three-line retro after every task and put it under version control next to the code.</li></ul>
 <h2>How to tell it worked</h2>
 <p>There's one main criterion: spending has stopped being a surprise. You can state the upper bound on calls before launch, instead of learning it from the billing page.</p>
 <p>The other signs:</p>
 <ul><li>every task has a written stop criterion, and you can show it as text rather than recall it from memory</li><li>over time the number of rules grows, not the number of agents; if it's the other way around, you're still treating the symptom</li><li>an incident review ends with a change to a rule, not with a new agent</li><li>there are no artifacts in the repository that nobody has touched in a month</li><li>the skeptic at least sometimes says "not good enough," and that holds up in practice. A skeptic that always agrees is decoration, and its call should be thrown out.</li></ul>
-<p>The reliability of an agent system comes not from the number of executors but from discipline: stop criteria, a call budget, learning through retros, and memory under version control. A swarm looks like strength and behaves like expense. Five rules cost less than five agents — and unlike them, they work the same at any hour of the day.</p></article>
+<p>The reliability of an agent system comes not from the number of executors but from discipline: stop criteria, a call budget, learning through retros, and memory under version control. A swarm looks like strength and behaves like expense. Five rules cost less than five agents — and unlike them, they work the same at any hour of the day.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">Get in touch</p>
+  <h3>Let's look at your case</h3>
+  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup — write to me and we'll go through it.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
+  </div>
+</aside>
 </div>
 </div></main>
 <footer><div class="wrap">

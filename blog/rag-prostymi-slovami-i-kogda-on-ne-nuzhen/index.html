@@ -73,6 +73,28 @@ padding:24px;transition:border-color .2s,transform .2s}
 .post-card a:hover{color:var(--accent);text-decoration:none}
 .post-card .excerpt{color:var(--muted);margin:10px 0 0;font-size:15px}
 .back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+/* Практический хвост статьи: то, что читатель может сделать завтра, не должно
+   выглядеть как ещё один абзац текста. */
+.practice{background:var(--card-bg);border:1px solid var(--border);
+border-left:3px solid var(--accent);border-radius:14px;padding:8px 28px 4px;margin:44px 0 0}
+.practice .practice-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;
+font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+margin:20px 0 0}
+.practice h2{font-size:21px;margin:8px 0 12px}
+.practice h3{font-size:17px;margin:24px 0 8px}
+.cta{background:linear-gradient(180deg,rgba(79,255,176,.06),rgba(123,111,240,.05));
+border:1px solid var(--border);border-radius:16px;padding:28px;margin:36px 0 0}
+.cta .cta-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;
+letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.cta h3{font-size:22px;letter-spacing:-.01em;margin:0 0 10px}
+.cta p{color:var(--muted);margin:0 0 20px;font-size:15px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--border);border-radius:10px;
+padding:11px 18px;font-size:14px;font-weight:500;color:var(--text);transition:.2s}
+.btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:#000}
+.btn-accent:hover{background:#3ce89e;border-color:#3ce89e;color:#000}
+@media(max-width:520px){.cta-actions .btn{flex:1 1 100%;text-align:center}}
 footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
 [data-lang-block]{display:none}
@@ -150,6 +172,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <p>Если хотя бы одно из этих условий не выполняется, вы строите сложную конструкцию там, где хватило бы простой.</p>
 <ul><li>Таблицы. Самый частый и самый дорогой промах. Когда на входе таблица, а не текст, RAG работает плохо. Вопросы к таблицам — это «сколько», «у кого больше», «покажи все за период». Такие вопросы решаются фильтрами и группировками, то есть маленькими операциями над данными, а не поиском по смыслу. Векторный поиск найдёт «похожие строки» — но похожие строки не складываются в правильную сумму.</li><li>Точные справочники. Если у сущности есть код, артикул или идентификатор, ищите по нему напрямую. Точное совпадение и быстрее, и надёжнее, и его не надо настраивать порогами.</li><li>Короткие регламенты. Если весь свод правил — несколько страниц, его можно целиком положить модели в запрос. Никакой векторной базы, никакой нарезки, никаких порогов. Меньше деталей — меньше мест, где сломается.</li><li>Один документ на один вопрос. Когда пользователь и так знает, в какой инструкции ответ, вы решаете задачу навигации, а не поиска.</li></ul>
 <p>Правило, к которому я пришла: RAG стоит заводить тогда, когда вы уже пробовали обойтись без него и упёрлись. Не наоборот.</p>
+<section class="practice"><p class="practice-kicker">Применить у себя</p>
 <h2>Что проверить на практике</h2>
 <p>Если у вас уже есть RAG или вы только собираетесь его делать — вот что реально стоит сделать руками.</p>
 <ul><li>Соберите двадцать настоящих вопросов от тех, кто будет этим пользоваться. Не придуманных вами — настоящих, с их формулировками и опечатками.</li><li>Прогоните их и смотрите не на ответы, а на найденные фрагменты. Выведите их себе в лог вместе с оценками похожести. Пока вы этого не видите, вы чините вслепую.</li><li>Отдельно проверьте каждый раздел базы на пустоту: задайте по вопросу из каждой темы и убедитесь, что ни по одной не возвращается ноль фрагментов. Это ловит сбои фильтрации, которые иначе всплывут через месяц у пользователя.</li><li>Возьмите несколько узких отраслевых терминов и проверьте, находятся ли они. Если нет — вам нужен не другой векторизатор, а добавленный поиск по вхождению слова.</li><li>Покрутите порог в обе стороны и посмотрите, что меняется: при слишком низком к модели поедет шум, при слишком высоком начнутся ответы «не знаю» там, где ответ есть.</li><li>Откройте пять случайных чанков и прочитайте их так, будто вы видите текст впервые и без заголовка. Если непонятно, к чему они относятся, — модели тоже будет непонятно. Это сигнал добавить категорию и преамбулу.</li><li>Найдите в своём списке вопрос, который на самом деле про таблицу («сколько», «сравни», «за период»). Решите его отдельно — фильтром, а не поиском.</li></ul>
@@ -157,7 +180,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <p>Критерий не «ответы стали красивее». Красиво они звучали и раньше — в этом и опасность.</p>
 <p>Проверяйте так:</p>
 <ul><li>Для каждого контрольного вопроса нужный фрагмент попадает в найденное. Это измеряется отдельно от качества ответа и чинится отдельными средствами. Если фрагмент не найден, разговор про формулировки бессмысленен.</li><li>Ни один раздел базы не даёт ноль. Пустой результат должен быть событием, о котором вы узнаёте из логов, а не из жалобы сотрудника.</li><li>Ответ проверяем по источнику. Возьмите ответ и найдите в процитированных фрагментах ту самую фразу. Если её там нет — модель дописала от себя, и это лечится инструкцией отвечать строго по контексту.</li><li>Вы можете назвать виновника любой ошибки. Вот это главный признак зрелости системы: глядя на неверный ответ, вы за минуту говорите — «поиск не нашёл» или «нашёл верно, но модель переврала». Пока эти два случая для вас неразличимы, вы не отлаживаете систему, а гадаете.</li></ul>
-<p>И последнее. Если после всех проверок выяснится, что ваша задача — про таблицы, точные коды или три страницы правил, самый ценный результат этой статьи в том, что вы не станете строить RAG. Это не поражение, это сэкономленные месяцы.</p></article>
+<p>И последнее. Если после всех проверок выяснится, что ваша задача — про таблицы, точные коды или три страницы правил, самый ценный результат этой статьи в том, что вы не станете строить RAG. Это не поражение, это сэкономленные месяцы.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">На связь со мной</p>
+  <h3>Разберём вашу задачу</h3>
+  <p>Я Наталья Вегман, проектирую ИИ-системы для бизнеса: агентов, интеграции с рабочими системами, поиск по базе знаний и учёт их стоимости. Если после статьи осталось «а как это у нас» — напишите, посмотрим на вашем примере.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Написать в Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Канал «Заметки на полях кода»</a>
+  </div>
+</aside>
 </div>
 <div data-lang-block="en">
   <a class="back" href="https://vegman.dev/blog/">← All posts</a>
@@ -207,13 +240,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <p>Now for the part all of this was leading up to. RAG is a tool for one specific situation: <b>the answer is contained in connected prose, there's a lot of that prose, and you don't know in advance where exactly the needed part sits</b>. If even one of those conditions doesn't hold, you're building an elaborate construction where something simple would have done.</p>
 <ul><li><b>Tables.</b> This is the most common and most expensive mistake. When the input is a table rather than text, RAG works badly. Questions about tables are "how many," "who has more," "show me everything for this period." Such questions are solved with filters and groupings — small operations over data, not search by meaning. Vector search will find you "similar rows" — but similar rows don't add up to a correct total.</li><li><b>Exact reference data.</b> If an entity has a code, a SKU, or an identifier, look it up directly. An exact match is faster, more reliable, and doesn't need thresholds tuned.</li><li><b>Short regulations.</b> If the entire set of rules is a few pages, you can put all of it into the model's prompt. No vector database, no chunking, no thresholds. Fewer parts means fewer places to break.</li><li><b>One document per question.</b> When the user already knows which instruction holds the answer, you're solving a navigation problem, not a search problem.</li></ul>
 <p>The rule I've arrived at: it's worth setting up RAG once you've already tried to get by without it and hit a wall. Not the other way around.</p>
+<section class="practice"><p class="practice-kicker">Put it to work</p>
 <h2>What to check in practice</h2>
 <p>If you already have a RAG system, or you're just about to build one — here's what's actually worth doing by hand.</p>
 <ul><li>Collect twenty real questions from the people who will be using it. Not ones you made up — real ones, with their phrasing and their typos.</li><li>Run them and look <b>not at the answers, but at the retrieved fragments</b>. Dump them to a log along with similarity scores. Until you can see this, you're fixing things blind.</li><li>Separately, check every section of the base for emptiness: ask one question from each topic and make sure none of them returns zero fragments. This catches filtering failures that would otherwise surface a month later, on a user.</li><li>Take a few narrow industry terms and check whether they're found. If not — what you need isn't a different vectorizer, it's added keyword matching.</li><li>Turn the threshold both ways and see what changes: too low and noise flows to the model, too high and you start getting "I don't know" where the answer exists.</li><li>Open five random chunks and read them as if you were seeing the text for the first time and without a heading. If it's unclear what they relate to, it will be unclear to the model too. That's your signal to add a category and a preamble.</li><li>Find the question in your list that is really about a table ("how many," "compare," "for this period"). Solve it separately — with a filter, not with search.</li></ul>
 <h2>How to tell whether it worked</h2>
 <p>The criterion is not "the answers got prettier." They sounded pretty before, too — that's exactly the danger. Check it like this:</p>
 <ul><li><b>For every control question, the needed fragment shows up in the retrieved set.</b> This is measured separately from answer quality and fixed with separate means. If the fragment wasn't found, discussing phrasing is pointless.</li><li><b>No section of the base returns zero.</b> An empty result should be an event you learn about from logs, not from a staff complaint.</li><li><b>The answer is verifiable against its source.</b> Take the answer and find that exact phrase in the quoted fragments. If it isn't there, the model filled in the gap on its own, and that's cured by an instruction to answer strictly from the context.</li><li><b>You can name the culprit behind any error.</b> This, I'd say, is the main sign of a mature system: looking at a wrong answer, within a minute you can say — "retrieval didn't find it" or "it found the right thing, but the model garbled it." As long as those two cases are indistinguishable to you, you aren't debugging a system, you're guessing.</li></ul>
-<p>And one last thing. If after all these checks it turns out that your task is about tables, exact codes, or three pages of rules, the most valuable outcome of this article is that you won't build a RAG system. That's not a defeat, it's months saved.</p></article>
+<p>And one last thing. If after all these checks it turns out that your task is about tables, exact codes, or three pages of rules, the most valuable outcome of this article is that you won't build a RAG system. That's not a defeat, it's months saved.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">Get in touch</p>
+  <h3>Let's look at your case</h3>
+  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup — write to me and we'll go through it.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
+  </div>
+</aside>
 </div>
 </div></main>
 <footer><div class="wrap">

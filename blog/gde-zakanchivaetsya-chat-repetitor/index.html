@@ -73,6 +73,28 @@ padding:24px;transition:border-color .2s,transform .2s}
 .post-card a:hover{color:var(--accent);text-decoration:none}
 .post-card .excerpt{color:var(--muted);margin:10px 0 0;font-size:15px}
 .back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+/* Практический хвост статьи: то, что читатель может сделать завтра, не должно
+   выглядеть как ещё один абзац текста. */
+.practice{background:var(--card-bg);border:1px solid var(--border);
+border-left:3px solid var(--accent);border-radius:14px;padding:8px 28px 4px;margin:44px 0 0}
+.practice .practice-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;
+font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+margin:20px 0 0}
+.practice h2{font-size:21px;margin:8px 0 12px}
+.practice h3{font-size:17px;margin:24px 0 8px}
+.cta{background:linear-gradient(180deg,rgba(79,255,176,.06),rgba(123,111,240,.05));
+border:1px solid var(--border);border-radius:16px;padding:28px;margin:36px 0 0}
+.cta .cta-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;
+letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.cta h3{font-size:22px;letter-spacing:-.01em;margin:0 0 10px}
+.cta p{color:var(--muted);margin:0 0 20px;font-size:15px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--border);border-radius:10px;
+padding:11px 18px;font-size:14px;font-weight:500;color:var(--text);transition:.2s}
+.btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:#000}
+.btn-accent:hover{background:#3ce89e;border-color:#3ce89e;color:#000}
+@media(max-width:520px){.cta-actions .btn{flex:1 1 100%;text-align:center}}
 footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
 [data-lang-block]{display:none}
@@ -151,13 +173,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <ul><li><b>Все данные в запросе</b> — чат работает. Переформулируй, структурируй, оформи, объясни.</li><li><b>Данные снаружи запроса</b> — чату нужны руки, а не подсказки. Файл, лог, экран, реальный замер, актуальная версия чего угодно.</li></ul>
 <p>Во втором случае модель без инструментов не молчит — она заполняет пробел правдоподобным текстом. Это не баг конкретного вендора, это её работа.</p>
 <p>Побочный результат пяти месяцев: переписка оказалась готовым датасетом о самой модели. Все места, где я в раздражении написала «не выдумывай», — это бесплатная разметка галлюцинаций, сделанная по ходу дела, с сохранённым контекстом до и после. Если вы ведёте долгие чаты, у вас такой датасет уже есть.</p>
+<section class="practice"><p class="practice-kicker">Применить у себя</p>
 <h2>Что проверить на практике</h2>
 <p>Три проверки, по одной на каждый отказ. Все три занимают меньше минуты.</p>
 <ul><li><b>Проверка на факт из прошлого.</b> Услышав уверенное утверждение о версии, названии, цене или лимите — спросите, откуда это и на какую дату. Если модель ссылается на то, что «видит» на вашем скриншоте или в вашем файле, попросите извлечь тот же список второй раз, отдельной репликой. Два разных чтения одного и того же входа — это доказательство фабрикации, и оно у вас в руках, а не в теории.</li><li><b>Проверка на цифры.</b> Правило: модель не производит числа, она их переписывает. Возьмите любую цифру из сгенерированного отчёта и найдите её в том, что вы сами вставили в чат. Не нашли — цифры нет. У меня так и вскрылись «3,8 до 4,4».</li><li><b>Проверка на руки.</b> Прежде чем принять совет по настройке, спросите: какой именно файл или экран ты сейчас видишь. Ответ «покажи мне» означает, что дальше будет перебор гипотез. Тут же вводите лимит: три попытки не сдвинули ошибку — прекращайте перебор и пересоздавайте объект или меняйте инструмент. У меня этот лимит стоил бы 20 минут вместо трёх часов.</li></ul>
 <p>И одно решение уровнем выше: если задача требует смотреть в файлы, отдайте её агенту с доступом к файлам, а чат оставьте на оформление результата. Не потому, что агент умнее — потому что ему не нужно догадываться.</p>
 <h2>Как понять, что получилось</h2>
 <p>Критерий простой и измеримый по вашей же переписке. Через месяц пролистайте историю и посчитайте две вещи: сколько запросов начинается со вставленного текста ошибки и сколько раз вы написали модели что-то в духе «не выдумывай». Если обе цифры падают, а доля запросов «оформи готовый результат» растёт — граница проведена правильно.</p>
-<p>Второй критерий, бытовой: задача на 20 минут перестала занимать 3 часа. Третий, самый жёсткий: каждое число в отчёте, который вы кому-то отправляете, вы можете показать пальцем в файле замера. Если хоть одно не можете — отчёт написан не по вашему эксперименту.</p></article>
+<p>Второй критерий, бытовой: задача на 20 минут перестала занимать 3 часа. Третий, самый жёсткий: каждое число в отчёте, который вы кому-то отправляете, вы можете показать пальцем в файле замера. Если хоть одно не можете — отчёт написан не по вашему эксперименту.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">На связь со мной</p>
+  <h3>Разберём вашу задачу</h3>
+  <p>Я Наталья Вегман, проектирую ИИ-системы для бизнеса: агентов, интеграции с рабочими системами, поиск по базе знаний и учёт их стоимости. Если после статьи осталось «а как это у нас» — напишите, посмотрим на вашем примере.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Написать в Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Канал «Заметки на полях кода»</a>
+  </div>
+</aside>
 </div>
 <div data-lang-block="en">
   <a class="back" href="https://vegman.dev/blog/">← All posts</a>
@@ -217,13 +250,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <ul><li><b>All the data is in the request</b> — the chat works. Rephrase, structure, format, explain.</li><li><b>The data is outside the request</b> — the chat needs hands, not hints. A file, a log, a screen, a real measurement, the current version of anything.</li></ul>
 <p>In the second case a model without tools doesn't go silent — it fills the gap with plausible text. That isn't a bug in one particular vendor, that's its job.</p>
 <p>A side result of five months: the conversation turned out to be a ready-made dataset about the model itself. Every place where I irritably wrote «stop making things up» is free hallucination labeling, done in passing, with the context before and after preserved. If you keep long chats, you already have a dataset like this.</p>
+<section class="practice"><p class="practice-kicker">Put it to work</p>
 <h2>What to check in practice</h2>
 <p>Three checks, one per failure. All three take less than a minute.</p>
 <ul><li><b>The check on a fact from the past.</b> When you hear a confident claim about a version, a name, a price, or a limit — ask where it's from and as of what date. If the model refers to what it «sees» in your screenshot or your file, ask it to extract the same list a second time, in a separate message. Two different readings of one and the same input are proof of fabrication, and it's in your hands, not in theory.</li><li><b>The check on numbers.</b> The rule: the model does not produce numbers, it copies them over. Take any number from the generated report and find it in what you pasted into the chat yourself. Didn't find it — the number doesn't exist. That's how «3.8 to 4.4» got exposed for me.</li><li><b>The check on hands.</b> Before accepting a configuration suggestion, ask: which file or screen exactly are you seeing right now. An answer of «show me» means what follows will be guess-and-check. Set a limit right there: three attempts didn't move the error — stop cycling and recreate the object or change the tool. For me that limit would have cost 20 minutes instead of three hours.</li></ul>
 <p>And one decision a level up: if a task requires looking into files, give it to an agent with file access, and leave the chat for formatting the result. Not because the agent is smarter — because it doesn't have to guess.</p>
 <h2>How to tell it worked</h2>
 <p>The criterion is simple and measurable from your own conversation history. In a month, scroll back through it and count two things: how many requests start with pasted-in error text, and how many times you wrote the model something along the lines of «stop making things up». If both numbers are falling while the share of «format this finished result» requests is growing — the line has been drawn correctly.</p>
-<p>The second criterion, the everyday one: a 20-minute task has stopped taking 3 hours. The third, the harshest: every number in a report you send to someone, you can point to with your finger in the measurement file. If there's even one you can't — the report wasn't written from your experiment.</p></article>
+<p>The second criterion, the everyday one: a 20-minute task has stopped taking 3 hours. The third, the harshest: every number in a report you send to someone, you can point to with your finger in the measurement file. If there's even one you can't — the report wasn't written from your experiment.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">Get in touch</p>
+  <h3>Let's look at your case</h3>
+  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup — write to me and we'll go through it.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
+  </div>
+</aside>
 </div>
 </div></main>
 <footer><div class="wrap">

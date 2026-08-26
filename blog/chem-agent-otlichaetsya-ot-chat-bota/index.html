@@ -73,6 +73,28 @@ padding:24px;transition:border-color .2s,transform .2s}
 .post-card a:hover{color:var(--accent);text-decoration:none}
 .post-card .excerpt{color:var(--muted);margin:10px 0 0;font-size:15px}
 .back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+/* Практический хвост статьи: то, что читатель может сделать завтра, не должно
+   выглядеть как ещё один абзац текста. */
+.practice{background:var(--card-bg);border:1px solid var(--border);
+border-left:3px solid var(--accent);border-radius:14px;padding:8px 28px 4px;margin:44px 0 0}
+.practice .practice-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;
+font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+margin:20px 0 0}
+.practice h2{font-size:21px;margin:8px 0 12px}
+.practice h3{font-size:17px;margin:24px 0 8px}
+.cta{background:linear-gradient(180deg,rgba(79,255,176,.06),rgba(123,111,240,.05));
+border:1px solid var(--border);border-radius:16px;padding:28px;margin:36px 0 0}
+.cta .cta-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;
+letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.cta h3{font-size:22px;letter-spacing:-.01em;margin:0 0 10px}
+.cta p{color:var(--muted);margin:0 0 20px;font-size:15px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--border);border-radius:10px;
+padding:11px 18px;font-size:14px;font-weight:500;color:var(--text);transition:.2s}
+.btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:#000}
+.btn-accent:hover{background:#3ce89e;border-color:#3ce89e;color:#000}
+@media(max-width:520px){.cta-actions .btn{flex:1 1 100%;text-align:center}}
 footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
 [data-lang-block]{display:none}
@@ -142,6 +164,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <h2>Где человек должен остаться в цикле</h2>
 <p>Есть класс действий, которые нельзя отдавать агенту «молча»: запись файлов, отправка сообщений, команды в системах, которые влияют на реальный мир. Всё, у чего есть последствия за пределами агента, должно требовать подтверждения человека.</p>
 <p>В своих контентных пайплайнах я держу это правило железно: ничего не публикуется без явного действия человека, и статус в базе меняю только я. Агент может собрать материал, написать черновик, проверить его и положить на стол. Кнопку жму я.</p>
+<section class="practice"><p class="practice-kicker">Применить у себя</p>
 <h2>Что проверить в существующей системе (чек-лист)</h2>
 <p>Если у тебя уже есть система, которую называют агентом, пройдись по ней так:</p>
 <ul><li>Возьми один реальный запрос и попроси показать, что система делала между вопросом и ответом. Если показать нечего — это чат-бот.</li><li>Найди список инструментов. Описания должны быть конкретными. Внятность описания = предсказуемость выбора.</li><li>Спроси, что происходит при ошибке инструмента. Хороший ответ: «читаем ошибку и решаем, что дальше». Плохой: «не знаем».</li><li>Выясни, какие действия идут без подтверждения. Всё, что пишет/отправляет/запускает, должно проходить через человека.</li><li>Попроси лог одного прогона целиком. Без лога нечем дебажить.</li><li>Перед спором про модель задай вопрос: что именно модель видит на шаге, где всё ломается. Очень часто оказывается, что нужного куска просто нет в контексте.</li></ul>
@@ -149,8 +172,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <p>Два критерия:</p>
 <ul><li>Возьми один провалившийся прогон и попробуй объяснить, почему он провалился, по логу — не спрашивая разработчиков. Если можешь назвать конкретный шаг, конкретный вызов инструмента и конкретный результат, который повернул систему не туда — значит, обвязка есть, и её можно чинить точечно.</li></ul>
 <ul><li>Попробуй перечислить по памяти шесть частей обвязки: память, инструменты, изоляция, подтверждения, события, продолжение задачи. Те пункты, на которых ты запнёшься, — обычно и есть места, где «агент» ближе к чат-боту, чем хотелось бы.</li></ul>
+</section>
 <h3>Источник</h3>
 <ul><li><a href="https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/" rel="nofollow">https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/</a></li></ul></article>
+  <aside class="cta">
+  <p class="cta-kicker">На связь со мной</p>
+  <h3>Разберём вашу задачу</h3>
+  <p>Я Наталья Вегман, проектирую ИИ-системы для бизнеса: агентов, интеграции с рабочими системами, поиск по базе знаний и учёт их стоимости. Если после статьи осталось «а как это у нас» — напишите, посмотрим на вашем примере.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Написать в Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Канал «Заметки на полях кода»</a>
+  </div>
+</aside>
 </div>
 <div data-lang-block="en">
   <a class="back" href="https://vegman.dev/blog/">← All posts</a>
@@ -197,6 +230,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <p>There's a class of actions you can't hand to an agent unasked: writing files, sending messages, running commands on a system. Anything with consequences beyond the agent itself should require a human confirmation. An autonomous run in this design doesn't perform the action itself — it puts a request in a queue, and a human works through that queue.</p>
 <p>I have this rule wired into all my content pipelines: no text gets published without an explicit human action, and I'm the only one who changes status in the database. The agent can gather the material, write the draft, check it, and put it on the desk. I press the button.</p>
 <p>The second mark of a mature agent is reproducibility. Every run leaves a full trace of what it did: which tools it called, what it got back, why it turned where it turned. Without that trace there is literally nothing to debug with: you look at a bad result and guess which of twenty steps went off the rails. With it, you open the log and see the step where the agent read the wrong document.</p>
+<section class="practice"><p class="practice-kicker">Put it to work</p>
 <h2>What to check in practice</h2>
 <p>If you already have a system that gets called an agent, walk through it with this list.</p>
 <ul><li>Take one real request and ask to be shown what the system did between the question and the answer. If there's nothing to show — it's a chatbot.</li><li>Find the tool list. Read the descriptions: they should make it clear when each tool applies. If a description is vague, the agent will be choosing at random.</li><li>Ask what happens when a tool errors. A good answer is "it reads the error and decides what's next." A bad one is "we don't know."</li><li>Find out which actions run without confirmation. Anything that writes, sends, or launches should go through a human.</li><li>Ask for the full log of a single run. If there isn't one, or it's patchy, the system has no reproducibility.</li><li>Before discussing a model swap, ask this question: what exactly does the model see at the step that's failing. Often it turns out the piece it needed simply wasn't in the context.</li></ul>
@@ -204,8 +238,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <p>The criterion is simple and testable: take one failed run and try to explain why it failed — from the log, without asking any of the developers.</p>
 <p>If you can name a specific step, a specific tool call, and a specific result that sent the agent the wrong way, then you have a harness, and it can be fixed precisely. If the only explanation you can produce is "the model probably didn't understand," there's nothing to fix yet, and switching models won't help here: you'll just replace one opaque box with another, more expensive one.</p>
 <p>The second criterion: try to list from memory the six parts of the harness for your own system — memory, tools, isolation, confirmations, events, task continuation. The items you stumble on are exactly the places where your agent is closer to a chatbot than you'd like.</p>
+</section>
 <h3>Sources</h3>
 <ul><li><a href="https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/">TechCrunch on Nvidia's results: the real hero is the harness, not the model</a></li></ul></article>
+  <aside class="cta">
+  <p class="cta-kicker">Get in touch</p>
+  <h3>Let's look at your case</h3>
+  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup — write to me and we'll go through it.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
+  </div>
+</aside>
 </div>
 </div></main>
 <footer><div class="wrap">

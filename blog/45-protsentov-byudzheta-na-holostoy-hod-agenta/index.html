@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>45% бюджета уходило на то, что агент спрашивал «нет ли для меня работы»</title>
-<meta name="description" content="Лид (обновлённый): Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей …">
+<meta name="description" content="Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей жизнью» и списывала…">
 <link rel="canonical" href="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">
 <meta property="og:title" content="45% бюджета уходило на то, что агент спрашивал «нет ли для меня работы»">
-<meta property="og:description" content="Лид (обновлённый): Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей …">
+<meta property="og:description" content="Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей жизнью» и списывала…">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">
 <meta property="og:image" content="https://vegman.dev/blog/img/45-protsentov-byudzheta-na-holostoy-hod-agenta/cover.jpg"><script type="module">
@@ -73,6 +73,28 @@ padding:24px;transition:border-color .2s,transform .2s}
 .post-card a:hover{color:var(--accent);text-decoration:none}
 .post-card .excerpt{color:var(--muted);margin:10px 0 0;font-size:15px}
 .back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+/* Практический хвост статьи: то, что читатель может сделать завтра, не должно
+   выглядеть как ещё один абзац текста. */
+.practice{background:var(--card-bg);border:1px solid var(--border);
+border-left:3px solid var(--accent);border-radius:14px;padding:8px 28px 4px;margin:44px 0 0}
+.practice .practice-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;
+font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+margin:20px 0 0}
+.practice h2{font-size:21px;margin:8px 0 12px}
+.practice h3{font-size:17px;margin:24px 0 8px}
+.cta{background:linear-gradient(180deg,rgba(79,255,176,.06),rgba(123,111,240,.05));
+border:1px solid var(--border);border-radius:16px;padding:28px;margin:36px 0 0}
+.cta .cta-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;
+letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.cta h3{font-size:22px;letter-spacing:-.01em;margin:0 0 10px}
+.cta p{color:var(--muted);margin:0 0 20px;font-size:15px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--border);border-radius:10px;
+padding:11px 18px;font-size:14px;font-weight:500;color:var(--text);transition:.2s}
+.btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:#000}
+.btn-accent:hover{background:#3ce89e;border-color:#3ce89e;color:#000}
+@media(max-width:520px){.cta-actions .btn{flex:1 1 100%;text-align:center}}
 footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
 [data-lang-block]{display:none}
@@ -99,13 +121,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   <h1>45% бюджета уходило на то, что агент спрашивал «нет ли для меня работы»</h1>
   <div class="meta"><span>2026-07-31</span><span class="tag">Article</span></div>
   <img class="cover" src="https://vegman.dev/blog/img/45-protsentov-byudzheta-na-holostoy-hod-agenta/cover.jpg" alt="">
-  <article><p>Лид (обновлённый):</p>
-<p>Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей жизнью» и списывала деньги.</p>
+  <article><p>Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей жизнью» и списывала деньги.</p>
 <p>Это история про мою агентную систему (не клиентский проект). Агент здесь — программа, которая по расписанию или событию сама решает, что делать дальше, и на каждом шаге обращается к языковой модели. У такой системы есть неприятная черта: она задаёт вопросы даже тогда, когда отвечать не на что.</p>
 <p>Когда я докопалась до причин, выяснилось неожиданное: 45% всех моих расходов на модели за всё время ушло на один вопрос, который агент задавал сам себе: «нет ли для меня работы?». Не на работу — на вопрос о работе.</p>
 <p>Ниже — почему в агентных системах главная статья расхода часто не полезное действие, а холостой ход, и какие метрики/учёт нужны, чтобы отвечать на «куда ушло», а не только на «сколько осталось».</p>
-<p>---</p>
-<p>Дальше — текст статьи (оставила как есть по смыслу, выровняла под сайт):</p>
 <h2>Симптом: счёт вырос, а пользователей больше не стало</h2>
 <p>Обычная реакция на выросший счёт — искать причину в нагрузке: кто-то много писал агенту, кто-то загрузил большой документ, где-то пошёл ретрай. Но нагрузки не было: пользователей столько же, задач столько же, функциональность та же.</p>
 <p>Второй симптом я заметила почти случайно: контекст, который агент отправлял в модель, рос сам по себе. За два с половиной часа наблюдения размер входа увеличился с 29 643 до 29 707 токенов. Токены — это то, за что в итоге выставляют счёт.</p>
@@ -159,13 +178,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <ul><li>Ноль вызовов модели. Инструмент разбора расходов не должен сам расходовать. Это чистый парсинг логов, без ИИ внутри.</li><li>Быстро. У меня — около 3 секунд на 125 МБ логов. Если анализ долго — вы запустите его раз в месяц. А нужно — в момент, когда «что-то не так».</li><li>Сходимость с биллингом. У меня расхождение 4%. Если не сходится со счётом провайдера, вы объясняете не тот расход.</li></ul>
 <p>И три принципа из практики наблюдаемости:</p>
 <ul><li>Цифра от провайдера важнее пересчёта токенайзером.</li><li>Пересчитывать токенайзером только там, где провайдер цифру не вернул (это заплатка, не источник истины).</li><li>Где цены нет — писать «без цены», а не ноль. Ноль молча складывается и даёт правдоподобную, но неправильную сумму.</li></ul>
+<section class="practice"><p class="practice-kicker">Применить у себя</p>
 <h2>Что проверить у себя (короткий чек‑лист)</h2>
 <ul><li>Найдите вызовы, которые происходят строго по расписанию, а не в ответ на человека/событие. Сортируйте по количеству — самая частая строка часто и самая дорогая.</li><li>Посмотрите отношение входных токенов к выходным. Соотношение в сотни раз — сигнал, что вы возите «полный контекст» ради односложного ответа.</li><li>Посчитайте долю счёта, которая уходит на вызовы, после которых система ничего не сделала. Это цена холостого хода.</li><li>Проверьте, сколько у вас «слоёв учёта», и видят ли они друг друга. Если разбор идёт по одному источнику, а счёт приходит по другому — сведите в одну таблицу.</li><li>Выключите один периодический вызов тем способом, который обещает документация, и дождитесь следующего расписания. Смотрите не в конфиг, а в логи.</li><li>Прежде чем менять модель на более дешёвую, ответьте письменно: что сломается, если этот вызов не делать вообще? Если ответ «ничего» — удешевлять нечего, надо удалять.</li></ul>
 <h2>Как понять, что получилось</h2>
 <p>Критерий не «счёт стал меньше». Счёт может уменьшиться просто потому, что вы перевели мусор на дешёвую модель.</p>
 <p>Считайте, что вы реально закрыли проблему, если выполняются три условия:</p>
 <ul><li>За минуту, не открывая консоль провайдера, вы можете назвать три самые дорогие строки расхода за неделю — с точностью до агента и дня.</li><li>Ваш разбор сходится со счётом с понятной вам погрешностью.</li><li>В счёте не осталось строк, за которыми не стоит ни одного действия. Каждый периодический вызов либо приводит к работе, либо выключен — и это проверено по логам.</li></ul>
-<p>Пока эти три вещи не выполняются, «сколько осталось» будет продолжать заслонять «куда ушло», а холостой ход будет выдавать себя только медленно растущей цифрой.</p></article>
+<p>Пока эти три вещи не выполняются, «сколько осталось» будет продолжать заслонять «куда ушло», а холостой ход будет выдавать себя только медленно растущей цифрой.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">На связь со мной</p>
+  <h3>Разберём вашу задачу</h3>
+  <p>Я Наталья Вегман, проектирую ИИ-системы для бизнеса: агентов, интеграции с рабочими системами, поиск по базе знаний и учёт их стоимости. Если после статьи осталось «а как это у нас» — напишите, посмотрим на вашем примере.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Написать в Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Канал «Заметки на полях кода»</a>
+  </div>
+</aside>
 </div>
 <div data-lang-block="en">
   <a class="back" href="https://vegman.dev/blog/">← All posts</a>
@@ -220,6 +250,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <ul><li>Zero model calls. A spend-analysis tool shouldn't spend anything itself. This is pure log parsing, with no AI inside.</li><li>About 3 seconds for 125 megabytes of logs. If the analysis takes a long time, you'll run it once a month, when what you need is to run it the moment the question comes up.</li><li>4% divergence from the provider's billing. <i>Billing</i> is the bill the model provider issues. If your analysis doesn't reconcile with the bill, you're explaining the wrong spend.</li></ul>
 <p>And three principles from observability practice — that is, from the practice of structuring logs so they can answer a question you didn't ask in advance:</p>
 <ul><li>The provider's number beats a tokenizer recount. A <i>tokenizer</i> is a library that splits text into tokens the same way the model does. It gives you a similar number, but that's not what you're billed on.</li><li>Recount with a tokenizer only where the provider didn't return a number. That's a patch over a hole in the data, not a source of truth.</li><li>Where there's no price, write "no price," not zero. Zero silently adds into the total and makes the report wrong but plausible. "No price" is visible to the eye, and it forces you to go figure it out.</li></ul>
+<section class="practice"><p class="practice-kicker">Put it to work</p>
 <h2>What to check in practice</h2>
 <ul><li>Find the calls in your logs that happen strictly on a schedule rather than in response to a human action or an event. Sort them by count, not by cost — the most frequent line is usually also the most expensive one.</li><li>For each periodic call, look at the ratio of input tokens to output tokens. A ratio in the hundreds is a sign that you're hauling the full context around for a one-word answer.</li><li>Calculate what share of your bill consists of calls after which the system did nothing. That's the price of idling.</li><li>Check how many accounting layers you have and whether they can see each other. If your analysis runs on one source and the bill comes from another, pull them into a single table of the form project — model — agent — day.</li><li>Turn off one periodic call using the method the documentation promises, and wait for the next scheduled firing. Look at the logs, not at the config.</li><li>Before switching to a cheaper model, answer in writing: what breaks if this call isn't made at all. If the answer is "nothing," there's nothing to make cheaper — it needs to be deleted.</li></ul>
 <h2>How to know it worked</h2>
@@ -228,7 +259,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <p>First: within a minute, without opening the provider's console, you can name the three most expensive lines of your spend for the past week — down to the agent and the day. Not the total, the composition.</p>
 <p>Second: your analysis reconciles with the provider's bill within a margin you understand. Mine is 4%, and I know what it's made of. If the divergence is unknown, you're still looking at part of the picture.</p>
 <p>Third: there are no lines left in your bill with not a single action behind them. Every periodic call either leads to work, or is turned off and verified against the logs as actually turned off.</p>
-<p>Until those three things are true, "how much is left" will keep blocking the view of "where did it go" — and idling won't give itself away by anything except a slowly growing number.</p></article>
+<p>Until those three things are true, "how much is left" will keep blocking the view of "where did it go" — and idling won't give itself away by anything except a slowly growing number.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">Get in touch</p>
+  <h3>Let's look at your case</h3>
+  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup — write to me and we'll go through it.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
+  </div>
+</aside>
 </div>
 </div></main>
 <footer><div class="wrap">
