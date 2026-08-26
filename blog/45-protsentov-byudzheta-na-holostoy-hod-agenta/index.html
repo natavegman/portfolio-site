@@ -69,8 +69,12 @@ border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto}
 .post-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;
 padding:24px;transition:border-color .2s,transform .2s}
 .post-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.post-card a{color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em}
-.post-card a:hover{color:var(--accent);text-decoration:none}
+/* Кликается вся карточка, а не только заголовок: рамка выглядит как кнопка,
+   и промах по ней читается как «сайт сломан». Ссылка — блок вокруг всего. */
+.post-card>a{display:block;color:inherit;text-decoration:none}
+.post-card .post-title{display:block;color:var(--text);font-size:20px;
+font-weight:600;letter-spacing:-.01em}
+.post-card:hover .post-title{color:var(--accent)}
 .post-card .excerpt{color:var(--muted);margin:10px 0 0;font-size:15px}
 .back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
 /* Практический хвост статьи: то, что читатель может сделать завтра, не должно
