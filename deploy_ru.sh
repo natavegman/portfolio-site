@@ -28,7 +28,7 @@ DOMAIN="api-ru.vegman.dev"
 APP_DIR="/opt/portfolio-hr-agent"
 SERVICE="portfolio-hr-agent"
 REPO="https://github.com/natavegman/portfolio-site.git"
-EMAIL="nata@vegman.dev"
+EMAIL="vegmannata@gmail.com"
 
 echo "[1/7] Installing system packages…"
 apt-get update -q
