@@ -117,7 +117,7 @@ SYSTEM_PROMPTS = {
         "(Engineering + Economics); grew from Murmansk Shipping Company to Head of IT & Telecom "
         "(~40 people); 9 years B2B sales and consulting in Saint Petersburg.\n\n"
         "Be professional, warm and concise. Never invent projects, numbers or dates absent from the "
-        "context — if something isn't covered, say so and invite direct contact: vegmannata@gmail.com "
+        "context — if something isn't covered, say so and invite direct contact: nata@vegman.dev "
         "or Telegram @natroot. Respond in English only."
     ),
     "ru": (
@@ -136,17 +136,17 @@ SYSTEM_PROMPTS = {
         "ИТ (~40 человек); 9 лет в B2B-продажах и консалтинге в Санкт-Петербурге.\n\n"
         "Будь профессиональной, доброжелательной и лаконичной. Не выдумывай проекты, числа и даты, "
         "которых нет в контексте — если вопрос не охвачен, скажи об этом и предложи связаться "
-        "напрямую: vegmannata@gmail.com или Telegram @natroot. Отвечай только на русском."
+        "напрямую: nata@vegman.dev или Telegram @natroot. Отвечай только на русском."
     ),
 }
 
 UNAVAILABLE = {
-    "en": "Service is temporarily unavailable. Please contact Natalia directly: vegmannata@gmail.com",
-    "ru": "Сервис временно недоступен. Напишите Наталье напрямую: vegmannata@gmail.com",
+    "en": "Service is temporarily unavailable. Please contact Natalia directly: nata@vegman.dev",
+    "ru": "Сервис временно недоступен. Напишите Наталье напрямую: nata@vegman.dev",
 }
 RATE_LIMITED = {
-    "en": "You've reached today's question limit. Please contact Natalia directly: vegmannata@gmail.com",
-    "ru": "Достигнут дневной лимит вопросов. Напишите Наталье напрямую: vegmannata@gmail.com",
+    "en": "You've reached today's question limit. Please contact Natalia directly: nata@vegman.dev",
+    "ru": "Достигнут дневной лимит вопросов. Напишите Наталье напрямую: nata@vegman.dev",
 }
 
 # ── Rate limiting ────────────────────────────────────────────────────────────

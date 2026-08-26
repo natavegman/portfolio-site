@@ -18,7 +18,7 @@ DOMAIN="api.vegman.dev"
 APP_DIR="/opt/portfolio-hr-agent"
 SERVICE="portfolio-hr-agent"
 REPO="https://github.com/natavegman/portfolio-site.git"
-EMAIL="vegmannata@gmail.com"
+EMAIL="nata@vegman.dev"
 
 echo "╔══════════════════════════════════════════════════════╗"
 echo "║  Portfolio HR-Agent (EN) → api.vegman.dev            ║"
