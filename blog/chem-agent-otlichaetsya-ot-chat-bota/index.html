@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<!-- Google Consent Mode — defaults must exist before any analytics or ad tag -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'granted',
+  security_storage: 'granted',
+  wait_for_update: 500
+});
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Чем агент отличается от чат-бота — и почему обвязка важнее модели</title>
@@ -23,6 +37,18 @@ mermaid.initialize({startOnLoad:true,theme:'dark',securityLevel:'strict',
 :root{--bg:#080c10;--surface:#0e1419;--border:rgba(255,255,255,.07);
 --accent:#4fffb0;--accent2:#7b6ff0;--text:#e8eaed;--muted:#7a8394;
 --card-bg:rgba(255,255,255,.03)}
+
+/* ── Cookie-баннер (consent.js): цвета и шрифт из темы сайта ── */
+:root{--cc-surface:var(--surface);--cc-text:var(--text);--cc-muted:var(--muted);
+--cc-line:var(--border);--cc-accent:var(--accent);--cc-accent-text:#000;
+--cc-font:'Inter',system-ui,-apple-system,sans-serif}
+/* consent.js добавляет свой <style> в <head> в рантайме — то есть после этого
+   блока, и при равной специфичности его светлая схема перебила бы значения
+   выше. Сайт всегда тёмный, поэтому держим тему более специфичным селектором. */
+@media (prefers-color-scheme:light){
+body .cc{--cc-surface:var(--surface);--cc-text:var(--text);--cc-muted:var(--muted);
+--cc-line:var(--border);--cc-accent-text:#000}
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);
@@ -259,6 +285,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <footer><div class="wrap">
   <span>© Natalia Vegman</span>
   <span><a href="https://t.me/codenoteai">@codenoteai</a> · <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></span>
+  <span><a href="/privacy/"><span data-lang-block="ru">Политика конфиденциальности</span><span data-lang-block="en">Privacy policy</span></a> · <a href="#" onclick="if(window.cookieConsent){cookieConsent.open()}return false"><span data-lang-block="ru">Настройки куки</span><span data-lang-block="en">Cookie settings</span></a></span>
 </div></footer>
 <script>
 (function(){
@@ -271,6 +298,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     });
     document.documentElement.lang = lang;
     try{ localStorage.setItem('preferredLang', lang); }catch(e){}
+    if(window.cookieConsent) cookieConsent.setLanguage(lang);
   }
   var stored = null;
   try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
@@ -286,5 +314,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   });
 })();
 </script>
+<script src="/consent.js" defer></script>
 </body>
 </html>

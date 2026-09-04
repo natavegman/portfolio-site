@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- Google Consent Mode — defaults must exist before any analytics or ad tag -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'granted',
+  security_storage: 'granted',
+  wait_for_update: 500
+});
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Политика конфиденциальности — Natalia Vegman</title>
+<meta name="description" content="Какие данные собирает vegman.dev, зачем, на каком основании и как ими управлять.">
+<link rel="canonical" href="https://vegman.dev/privacy/">
+<style>
+  :root{
+    --bg:#0e1116; --surface:#151921; --text:#e8eaed; --muted:#a2aab6;
+    --line:rgba(255,255,255,.12); --accent:#5b9dff;
+  }
+  @media (prefers-color-scheme:light){
+    :root{--bg:#fbfbfc;--surface:#fff;--text:#14181f;--muted:#5a6472;--line:rgba(0,0,0,.12)}
+  }
+  /* ── Cookie-баннер (consent.js): цвета и шрифт из темы страницы ── */
+  :root{
+    --cc-surface:var(--surface); --cc-text:var(--text); --cc-muted:var(--muted);
+    --cc-line:var(--line); --cc-accent:var(--accent); --cc-accent-text:#0b0f14;
+    --cc-font:system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  /* consent.js добавляет свой <style> в <head> в рантайме — то есть после
+     этого блока, и при равной специфичности его собственная светлая схема
+     перебила бы значения выше. Повторяем их более специфичным селектором,
+     уже из палитры страницы. */
+  @media (prefers-color-scheme:light){
+    body .cc{--cc-surface:var(--surface);--cc-text:var(--text);--cc-muted:var(--muted);
+      --cc-line:var(--line);--cc-accent:var(--accent);--cc-accent-text:#fff}
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font:400 1rem/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;}
+  .wrap{max-width:44rem;margin:0 auto;padding:3rem 1.25rem 5rem}
+  header{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding-bottom:1.5rem;border-bottom:1px solid var(--line);margin-bottom:2.5rem}
+  header a{color:var(--text);text-decoration:none;font-weight:600;letter-spacing:-.01em}
+  .langs{display:flex;gap:.25rem}
+  .langs button{font:inherit;font-size:.8125rem;cursor:pointer;background:none;color:var(--muted);
+    border:1px solid transparent;border-radius:.25rem;padding:.25rem .55rem}
+  .langs button[aria-pressed="true"]{color:var(--text);border-color:var(--line)}
+  .langs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  h1{font-size:1.75rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .5rem}
+  .updated{color:var(--muted);font-size:.875rem;margin:0 0 2.5rem}
+  h2{font-size:1.125rem;letter-spacing:-.01em;margin:2.5rem 0 .75rem}
+  p,li{color:var(--text)}
+  p{margin:0 0 1rem}
+  ul{margin:0 0 1rem;padding-left:1.15rem}
+  li{margin-bottom:.5rem}
+  a{color:var(--accent);text-underline-offset:.2em}
+  table{width:100%;border-collapse:collapse;margin:0 0 1.5rem;font-size:.9375rem}
+  th,td{text-align:left;vertical-align:top;padding:.6rem .75rem .6rem 0;border-bottom:1px solid var(--line)}
+  th{font-weight:600;color:var(--muted);font-size:.8125rem}
+  .note{background:var(--surface);border:1px solid var(--line);border-radius:.5rem;
+    padding:1rem 1.15rem;color:var(--muted);font-size:.9375rem}
+  footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.875rem}
+  [hidden]{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a href="/">Natalia Vegman</a>
+  <div class="langs">
+    <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<!-- ======================= RU ======================= -->
+<main id="ru">
+  <h1>Политика конфиденциальности</h1>
+  <p class="updated">Последнее обновление: 4 сентября 2026 года</p>
+
+  <p>Этот документ описывает, какие данные собирает сайт vegman.dev, зачем они нужны,
+     сколько хранятся и как вы можете ими управлять.</p>
+
+  <h2>Кто обрабатывает данные</h2>
+  <p>Оператор данных — <strong>[укажите ФИО и юридическое наименование ИП]</strong>,
+     зарегистрированное в Республике Казахстан, регистрационный номер
+     <strong>[БИН/ИИН]</strong>, адрес <strong>[юридический адрес]</strong>.
+     Связаться можно по адресу <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>.</p>
+
+  <h2>Какие данные собираются</h2>
+  <ul>
+    <li><strong>Технические данные запроса.</strong> IP-адрес, тип браузера и устройства,
+        дата и время обращения, запрошенные страницы. Эти данные попадают в журналы
+        веб-сервера и нужны для работы сайта и защиты от злоупотреблений.</li>
+    <li><strong>Сообщения чат-ассистенту.</strong> Текст ваших вопросов передаётся
+        на сервер сайта и далее в сервис OpenAI для формирования ответа.
+        Не отправляйте в чат персональные данные, которые не хотите передавать
+        третьей стороне.</li>
+    <li><strong>Письма.</strong> Если вы пишете на указанный e-mail, ваш адрес и содержание
+        письма хранятся в почтовом ящике до тех пор, пока это нужно для переписки.</li>
+    <li><strong>Статистика посещений</strong> — обезличенные данные о просмотрах страниц,
+        собираются только при вашем согласии.</li>
+    <li><strong>Рекламные данные.</strong> Если на сайте показывается реклама,
+        рекламные партнёры могут собирать данные для её подбора — только при вашем согласии.</li>
+  </ul>
+
+  <h2>Куки и похожие технологии</h2>
+  <table>
+    <tr><th>Категория</th><th>Зачем</th><th>Основание</th></tr>
+    <tr><td>Необходимые</td><td>Работа сайта, запоминание выбора языка и решения по куки</td><td>Законный интерес</td></tr>
+    <tr><td>Аналитика</td><td>Понять, какие материалы читают</td><td>Согласие</td></tr>
+    <tr><td>Реклама</td><td>Показ и подбор объявлений</td><td>Согласие</td></tr>
+  </table>
+  <p>Аналитические и рекламные куки не устанавливаются, пока вы не дадите согласие
+     в баннере. Изменить или отозвать решение можно в любой момент —
+     <a href="#" onclick="if(window.cookieConsent){cookieConsent.open()}return false">открыть настройки куки</a>.
+     Куки также можно удалить в настройках браузера.</p>
+
+  <h2>Реклама Google</h2>
+  <p>Сайт использует Google AdSense. Google и его партнёры могут использовать куки
+     для показа объявлений с учётом ваших прежних посещений этого и других сайтов.
+     Персонализированную рекламу можно отключить в
+     <a href="https://adssettings.google.com/" rel="nofollow noopener">настройках рекламы Google</a>,
+     а отказаться от использования куки сторонними поставщиками —
+     на <a href="https://www.aboutads.info/choices/" rel="nofollow noopener">aboutads.info</a>.</p>
+
+  <h2>Кому передаются данные</h2>
+  <ul>
+    <li>GitHub, Inc. — хостинг статических страниц;</li>
+    <li>OpenAI — обработка сообщений чат-ассистента;</li>
+    <li>Google — показ рекламы и, при вашем согласии, аналитика;</li>
+    <li>государственные органы — только если этого требует закон.</li>
+  </ul>
+  <p>Данные не продаются и не передаются кому-либо ещё.</p>
+
+  <h2>Сроки хранения</h2>
+  <p>Журналы веб-сервера хранятся до 30 дней. Переписка по электронной почте —
+     пока это нужно для отношений с вами. Решение по куки хранится в вашем браузере
+     180 дней, после чего запрашивается заново.</p>
+
+  <h2>Ваши права</h2>
+  <p>Вы можете запросить копию своих данных, их исправление или удаление,
+     ограничить или оспорить обработку, а также отозвать ранее данное согласие.
+     Для этого напишите на <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>.
+     Ответ — в течение 30 дней. Если вы находитесь в ЕЭЗ или Великобритании,
+     вы вправе подать жалобу в надзорный орган своей страны.</p>
+
+  <h2>Дети</h2>
+  <p>Сайт адресован взрослой профессиональной аудитории и не предназначен
+     для детей младше 16 лет.</p>
+
+  <h2>Изменения</h2>
+  <p>При изменении политики обновляется дата в начале страницы.
+     Если изменения затронут порядок работы с куки, согласие будет запрошено заново.</p>
+</main>
+
+<!-- ======================= EN ======================= -->
+<main id="en" hidden>
+  <h1>Privacy policy</h1>
+  <p class="updated">Last updated: 4 September 2026</p>
+
+  <p>This page explains what data vegman.dev collects, why, how long it is kept,
+     and how you can control it.</p>
+
+  <h2>Who processes your data</h2>
+  <p>The data controller is <strong>[legal name of the sole proprietorship]</strong>,
+     registered in the Republic of Kazakhstan, registration number
+     <strong>[BIN/IIN]</strong>, address <strong>[registered address]</strong>.
+     Contact: <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>.</p>
+
+  <h2>What is collected</h2>
+  <ul>
+    <li><strong>Technical request data.</strong> IP address, browser and device type,
+        date and time, pages requested. This ends up in server logs and is used to run
+        the site and prevent abuse.</li>
+    <li><strong>Chat assistant messages.</strong> Your questions are sent to the site's
+        backend and on to OpenAI to generate an answer. Please don't put personal data
+        into the chat that you wouldn't want shared with a third party.</li>
+    <li><strong>Email.</strong> If you write to the address above, your address and the
+        content of the message stay in the mailbox for as long as the correspondence
+        requires.</li>
+    <li><strong>Visit statistics</strong> — anonymous page-view data, collected only
+        with your consent.</li>
+    <li><strong>Advertising data.</strong> Where ads are shown, advertising partners may
+        collect data to select them — only with your consent.</li>
+  </ul>
+
+  <h2>Cookies and similar technologies</h2>
+  <table>
+    <tr><th>Category</th><th>Purpose</th><th>Legal basis</th></tr>
+    <tr><td>Necessary</td><td>Running the site, remembering your language and cookie choice</td><td>Legitimate interest</td></tr>
+    <tr><td>Analytics</td><td>Understanding which articles get read</td><td>Consent</td></tr>
+    <tr><td>Advertising</td><td>Serving and selecting ads</td><td>Consent</td></tr>
+  </table>
+  <p>No analytics or advertising cookies are set until you consent through the banner.
+     You can change or withdraw that choice at any time —
+     <a href="#" onclick="if(window.cookieConsent){cookieConsent.open()}return false">open cookie settings</a>.
+     Cookies can also be deleted in your browser settings.</p>
+
+  <h2>Google advertising</h2>
+  <p>This site uses Google AdSense. Google and its partners may use cookies to serve ads
+     based on your prior visits to this and other websites. You can turn off personalised
+     advertising in <a href="https://adssettings.google.com/" rel="nofollow noopener">Google Ads Settings</a>,
+     and opt out of third-party vendor cookies at
+     <a href="https://www.aboutads.info/choices/" rel="nofollow noopener">aboutads.info</a>.</p>
+
+  <h2>Who receives the data</h2>
+  <ul>
+    <li>GitHub, Inc. — static site hosting;</li>
+    <li>OpenAI — processing chat assistant messages;</li>
+    <li>Google — advertising and, with your consent, analytics;</li>
+    <li>public authorities — only where required by law.</li>
+  </ul>
+  <p>Data is never sold or shared with anyone else.</p>
+
+  <h2>Retention</h2>
+  <p>Server logs are kept for up to 30 days. Email correspondence is kept as long as our
+     relationship requires. Your cookie choice is stored in your browser for 180 days,
+     after which you are asked again.</p>
+
+  <h2>Your rights</h2>
+  <p>You may request a copy of your data, its correction or deletion, restrict or object
+     to processing, and withdraw consent previously given. Write to
+     <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>; you will get a reply within
+     30 days. If you are in the EEA or the UK, you also have the right to lodge a complaint
+     with your national supervisory authority.</p>
+
+  <h2>Children</h2>
+  <p>This site is aimed at an adult professional audience and is not directed
+     at children under 16.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the date at the top is updated. Where changes affect how
+     cookies are used, consent will be requested again.</p>
+</main>
+
+<footer>
+  <p>© Natalia Vegman · <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></p>
+  <p><a href="/privacy/" id="f-privacy">Политика конфиденциальности</a> ·
+     <a href="#" id="f-cookies"
+        onclick="if(window.cookieConsent){cookieConsent.open()}return false">Настройки куки</a></p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.langs button');
+  function set(lang) {
+    document.getElementById('ru').hidden = lang !== 'ru';
+    document.getElementById('en').hidden = lang !== 'en';
+    document.documentElement.lang = lang;
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+    });
+    document.getElementById('f-privacy').textContent =
+      lang === 'en' ? 'Privacy policy' : 'Политика конфиденциальности';
+    document.getElementById('f-cookies').textContent =
+      lang === 'en' ? 'Cookie settings' : 'Настройки куки';
+    if (window.cookieConsent) cookieConsent.setLanguage(lang);
+    try { localStorage.setItem('preferredLang', lang); } catch (e) {}
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { set(b.dataset.lang); });
+  });
+  var saved;
+  try { saved = localStorage.getItem('preferredLang'); } catch (e) {}
+  set(saved === 'en' || (!saved && (navigator.language || '').toLowerCase().indexOf('ru') !== 0) ? 'en' : 'ru');
+})();
+</script>
+<script src="/consent.js" defer></script>
+</body>
+</html>
