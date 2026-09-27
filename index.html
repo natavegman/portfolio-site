@@ -867,13 +867,14 @@
   revealEls.forEach(el => revealObserver.observe(el));
 
   /* ── Stat counters ─────────────────────────────────────────── */
-  const statData = [{ val: 19 }, { val: 10 }, { val: 10 }];
+  const statData = [{ val: 19 }, { val: 14 }, { val: 10 }];
   const statNums = document.querySelectorAll('.stat-num');
   const statObserver = new IntersectionObserver(entries => {
-    entries.forEach((entry, i) => {
+    entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       const el  = entry.target;
-      const end = statData[i]?.val ?? 0;
+      // номер счетчика по месту на странице, а не по порядку срабатывания
+      const end = statData[[...statNums].indexOf(el)]?.val ?? 0;
       const span = el.querySelector('span');
       let start = null;
       const step = ts => {
