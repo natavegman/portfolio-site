@@ -87,8 +87,8 @@ A personal interest in genealogy led to the MyFamilyTree side project — a Fast
 * **Note:** *Instagram is a product of Meta Platforms Inc., whose activities are banned in the Russian Federation.
 * **Implementation:** GigaChat generates posts strictly matching the ToV brief. BeautifulSoup scrapes reference content from URLs provided by the editor. Editorial favorites saved to database for future reference.
 
-### 10. MyFamilyTree
+### 10. Evidence-Based Family Tree (MyFamilyTree)
 * **Role:** Backend Developer.
 * **Context:** Personal genealogy platform — a side project driven by genuine interest in family history research and document digitization.
+* **Progress (September 2026):** Every fact in the tree is tied to a document. GEDCOM import of 2,415 people, OCR of 19th and 20th century parish registers with Yandex Vision, transcribed archive files, a registry of 312 online sources and drafted requests to Russian and foreign archives. Next step is KinOS, a service for living family history where AI finds gaps in the tree but changes nothing without a human's confirmation.
 * **Implementation:** FastAPI backend that imports GEDCOM family-tree files, parses person records and family relationships into a PostgreSQL database via SQLAlchemy, and serves REST endpoints for searching people and attaching archival documents (birth certificates, photos, emigration records) to family records. Docker Compose for local development.
-* **GitHub:** https://github.com/natavegman/MyFamilyTree
