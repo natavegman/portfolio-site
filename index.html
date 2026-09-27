@@ -3,779 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Natalia Vegman — AI Automation Consultant & IT Architect</title>
+  <title>Natalia Vegman - AI Automation Consultant & IT Architect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    /* ─── Reset & Base ─────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:       #080c10;
-      --surface:  #0e1419;
-      --border:   rgba(255,255,255,.07);
-      --accent:   #4fffb0;
-      --accent2:  #7b6ff0;
-      --text:     #e8eaed;
-      --muted:    #7a8394;
-      --card-bg:  rgba(255,255,255,.03);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    ::selection { background: var(--accent); color: #000; }
-
-    /* ─── Custom cursor ────────────────────────────────────────── */
-    .cursor {
-      width: 10px; height: 10px;
-      background: var(--accent);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      transition: transform .15s ease, opacity .2s;
-      mix-blend-mode: exclusion;
-    }
-    .cursor-ring {
-      width: 36px; height: 36px;
-      border: 1.5px solid var(--accent);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9998;
-      transition: transform .4s cubic-bezier(.23,1,.32,1), opacity .3s;
-      opacity: .5;
-      mix-blend-mode: exclusion;
-    }
-    .cursor.hover  { transform: scale(2.5); }
-    .cursor-ring.hover { transform: scale(1.4); opacity: 1; }
-
-    /* ─── Grid noise overlay ──────────────────────────────────── */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ─── Navigation ───────────────────────────────────────────── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.25rem 4rem;
-      border-bottom: 1px solid transparent;
-      transition: border-color .3s, background .3s, backdrop-filter .3s;
-      gap: 2rem;
-    }
-    nav.scrolled {
-      background: rgba(8,12,16,.85);
-      backdrop-filter: blur(18px);
-      border-color: var(--border);
-    }
-    .nav-logo {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .9rem;
-      color: var(--accent);
-      letter-spacing: .04em;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-    .nav-links {
-      display: flex; gap: 2.5rem; list-style: none;
-      flex: 1; justify-content: center;
-    }
-    .nav-links a {
-      font-size: .85rem; font-weight: 500;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-
-    /* ─── Language Switcher ────────────────────────────────────── */
-    .lang-switcher {
-      display: flex;
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .lang-btn {
-      padding: .3rem .65rem;
-      font-size: .72rem;
-      font-weight: 700;
-      font-family: 'JetBrains Mono', monospace;
-      letter-spacing: .08em;
-      background: transparent;
-      color: var(--muted);
-      border: none;
-      cursor: pointer;
-      transition: background .2s, color .2s;
-    }
-    .lang-btn.active {
-      background: var(--accent);
-      color: #000;
-    }
-    .lang-btn:not(.active):hover { color: var(--text); }
-
-    /* ─── Hero ─────────────────────────────────────────────────── */
-    .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 8rem 4rem 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(79,255,176,.08) 0%, transparent 70%);
-      top: -150px; right: -200px;
-      pointer-events: none;
-      animation: pulse 8s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: .7; }
-      50%       { transform: scale(1.15); opacity: 1; }
-    }
-
-    .hero-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .78rem;
-      color: var(--accent);
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp .6s .2s forwards;
-    }
-    .hero-name {
-      font-size: clamp(3rem, 7vw, 6.5rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -.02em;
-      margin-bottom: 1.25rem;
-      opacity: 0;
-      animation: fadeUp .7s .35s forwards;
-    }
-    .hero-name span { color: var(--accent); }
-    .hero-subtitle {
-      font-size: clamp(1rem, 2vw, 1.35rem);
-      color: var(--muted);
-      font-weight: 400;
-      max-width: 600px;
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: fadeUp .7s .5s forwards;
-    }
-    .hero-cta {
-      display: flex; gap: 1rem; flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp .7s .65s forwards;
-    }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: .5rem;
-      padding: .75rem 1.75rem;
-      border-radius: 8px;
-      font-size: .9rem; font-weight: 600;
-      text-decoration: none;
-      transition: transform .2s, box-shadow .2s;
-      cursor: pointer;
-      border: none;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary {
-      background: var(--accent);
-      color: #000;
-      box-shadow: 0 0 0 0 rgba(79,255,176,.4);
-    }
-    .btn-primary:hover { box-shadow: 0 8px 30px rgba(79,255,176,.35); }
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: transparent;
-    }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-
-    /* ─── Scroll indicator ─────────────────────────────────────── */
-    .scroll-hint {
-      position: absolute; bottom: 2.5rem; left: 50%;
-      transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: .5rem;
-      opacity: 0;
-      animation: fadeIn 1s 1.2s forwards;
-    }
-    .scroll-hint span {
-      font-size: .7rem; color: var(--muted);
-      letter-spacing: .14em; text-transform: uppercase;
-    }
-    .scroll-line {
-      width: 1px; height: 48px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-      animation: scrollDown 1.8s ease-in-out infinite;
-    }
-    @keyframes scrollDown {
-      0%   { transform: scaleY(0); transform-origin: top; }
-      50%  { transform: scaleY(1); transform-origin: top; }
-      51%  { transform: scaleY(1); transform-origin: bottom; }
-      100% { transform: scaleY(0); transform-origin: bottom; }
-    }
-
-    /* ─── Stats ────────────────────────────────────────────────── */
-    .stats {
-      display: flex; gap: 3.5rem; margin-top: 4rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp .6s .8s forwards;
-    }
-    .stat-item { display: flex; flex-direction: column; gap: .25rem; }
-    .stat-num {
-      font-size: 2rem; font-weight: 700; color: var(--text);
-      line-height: 1;
-    }
-    .stat-num span { color: var(--accent); }
-    .stat-label { font-size: .8rem; color: var(--muted); letter-spacing: .05em; }
-
-    /* ─── Sections ─────────────────────────────────────────────── */
-    section {
-      padding: 7rem 4rem;
-      position: relative;
-      z-index: 1;
-    }
-    .section-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .72rem;
-      color: var(--accent);
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      margin-bottom: .75rem;
-    }
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -.02em;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-    .section-desc {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 4rem;
-      line-height: 1.75;
-    }
-
-    /* ─── Featured project ─────────────────────────────────────── */
-    #featured { background: var(--surface); }
-
-    .featured-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .feat-visual {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      background: linear-gradient(135deg, #0e1822 0%, #131028 50%, #0a1a18 100%);
-      border: 1px solid var(--border);
-    }
-    .feat-visual-inner {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .phone-frame {
-      width: 160px; height: 310px;
-      background: #0f1623;
-      border-radius: 28px;
-      border: 2px solid rgba(255,255,255,.12);
-      padding: 1rem;
-      display: flex; flex-direction: column; gap: .5rem;
-      box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.05);
-      animation: float 4s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-12px); }
-    }
-    .phone-screen-top {
-      width: 40px; height: 5px;
-      background: rgba(255,255,255,.1);
-      border-radius: 10px;
-      margin: 0 auto .5rem;
-    }
-    .phone-bubble {
-      border-radius: 12px;
-      padding: .5rem .75rem;
-      font-size: .5rem;
-      line-height: 1.4;
-      font-family: 'Inter', sans-serif;
-    }
-    .phone-bubble.user {
-      background: var(--accent2);
-      color: #fff;
-      align-self: flex-end;
-      max-width: 80%;
-    }
-    .phone-bubble.bot {
-      background: rgba(255,255,255,.08);
-      color: var(--text);
-      max-width: 90%;
-    }
-    .phone-bubble.img-bubble {
-      background: linear-gradient(135deg, #1a2a3a, #1a1a2e);
-      height: 60px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: .5rem; color: var(--muted);
-    }
-    .phone-dots {
-      display: flex; gap: .25rem; margin-top: auto;
-      justify-content: center;
-    }
-    .phone-dot {
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.15);
-    }
-    .phone-dot.active { background: var(--accent); }
-
-    .feat-tag {
-      position: absolute;
-      background: rgba(14,20,25,.9);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: .5rem 1rem;
-      font-size: .72rem;
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--accent);
-      animation: float 4s ease-in-out infinite;
-    }
-    .feat-tag:nth-child(2) { animation-delay: .8s;  top: 1.5rem; right: 1.5rem; }
-    .feat-tag:nth-child(3) { animation-delay: 1.6s; bottom: 2rem; left: 1.5rem; }
-
-    .feat-content { display: flex; flex-direction: column; gap: 1.5rem; }
-    .feat-title {
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      font-weight: 700;
-      letter-spacing: -.02em;
-      line-height: 1.15;
-    }
-    .feat-desc { font-size: 1rem; color: var(--muted); line-height: 1.8; }
-    .feat-stack { display: flex; flex-wrap: wrap; gap: .5rem; }
-    .tech-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .72rem;
-      padding: .35rem .8rem;
-      border-radius: 6px;
-      background: rgba(79,255,176,.07);
-      border: 1px solid rgba(79,255,176,.2);
-      color: var(--accent);
-      letter-spacing: .04em;
-    }
-    .feat-highlights { display: flex; flex-direction: column; gap: .75rem; }
-    .highlight-item {
-      display: flex; align-items: flex-start; gap: .75rem;
-      font-size: .9rem; color: var(--muted);
-    }
-    .highlight-item::before {
-      content: '→';
-      color: var(--accent);
-      flex-shrink: 0;
-      margin-top: .05em;
-    }
-
-    /* ─── Projects grid ────────────────────────────────────────── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2rem;
-      display: flex; flex-direction: column; gap: 1.25rem;
-      transition: transform .25s, border-color .25s, box-shadow .25s;
-      cursor: default;
-    }
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(79,255,176,.25);
-      box-shadow: 0 20px 60px rgba(0,0,0,.4);
-    }
-    .project-header {
-      display: flex; align-items: flex-start; justify-content: space-between;
-    }
-    .project-icon {
-      width: 44px; height: 44px;
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--border);
-    }
-    .project-type {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .67rem;
-      color: var(--muted);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .project-name { font-size: 1.1rem; font-weight: 600; letter-spacing: -.01em; }
-    .project-desc { font-size: .875rem; color: var(--muted); line-height: 1.7; flex: 1; }
-    .project-stack { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: auto; }
-    .stack-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .65rem;
-      padding: .2rem .55rem;
-      border-radius: 4px;
-      background: rgba(255,255,255,.05);
-      color: var(--muted);
-    }
-
-    /* ─── Project GitHub link ─────────────────────────────────── */
-    .project-link {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .68rem;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: .04em;
-      transition: color .2s;
-      align-self: flex-start;
-      margin-top: .25rem;
-    }
-    .project-link:hover { color: var(--accent); }
-
-    /* ─── Skills ───────────────────────────────────────────────── */
-    #skills { background: var(--surface); }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.25rem;
-    }
-    .skill-group {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.5rem;
-      background: var(--card-bg);
-      transition: border-color .25s;
-    }
-    .skill-group:hover { border-color: rgba(79,255,176,.2); }
-    .skill-group-title {
-      font-size: .78rem; font-weight: 600;
-      letter-spacing: .1em; text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .skill-list { display: flex; flex-direction: column; gap: .5rem; }
-    .skill-item {
-      font-size: .875rem; color: var(--muted);
-      display: flex; align-items: center; gap: .5rem;
-    }
-    .skill-item::before {
-      content: '';
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    /* ─── About ────────────────────────────────────────────────── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 6rem;
-      align-items: start;
-    }
-    .about-text {
-      font-size: 1.05rem; color: var(--muted);
-      line-height: 1.9;
-      display: flex; flex-direction: column; gap: 1.25rem;
-    }
-    .about-text p strong { color: var(--text); }
-    .about-aside { display: flex; flex-direction: column; gap: 1.25rem; }
-    .about-card {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.25rem 1.5rem;
-      background: var(--card-bg);
-    }
-    .about-card-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .68rem; color: var(--accent);
-      letter-spacing: .14em; text-transform: uppercase;
-      margin-bottom: .6rem;
-    }
-    .about-card-value { font-size: .9rem; color: var(--text); line-height: 1.6; }
-    .about-card-value small { color: var(--muted); font-size: .82rem; }
-
-    /* ─── Contact ──────────────────────────────────────────────── */
-    #contact {
-      text-align: center;
-      padding: 8rem 4rem;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(79,255,176,.06) 0%, transparent 100%),
-        var(--bg);
-    }
-    #contact .section-title { max-width: 640px; margin: 0 auto 1rem; }
-    #contact .section-desc  { margin: 0 auto 3rem; }
-    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-
-    /* ─── Footer ───────────────────────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 4rem;
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: .8rem; color: var(--muted);
-    }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--accent); }
-    .footer-mono { font-family: 'JetBrains Mono', monospace; }
-
-    /* ─── Reveal animation ─────────────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-    .reveal.visible { opacity: 1; transform: none; }
-    .reveal-delay-1 { transition-delay: .1s; }
-    .reveal-delay-2 { transition-delay: .2s; }
-    .reveal-delay-3 { transition-delay: .3s; }
-    .reveal-delay-4 { transition-delay: .4s; }
-
-    /* ─── Keyframes ────────────────────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: none; }
-    }
-    @keyframes fadeIn { to { opacity: 1; } }
-
-    /* ─── Chat Widget ──────────────────────────────────────────── */
-    #chat-launcher {
-      position: fixed;
-      bottom: 2rem; right: 2rem;
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border: none;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      color: #000;
-      box-shadow: 0 4px 24px rgba(79,255,176,.35);
-      z-index: 1000;
-      transition: transform .25s, box-shadow .25s;
-    }
-    #chat-launcher:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 36px rgba(79,255,176,.55);
-    }
-    #chat-launcher svg { width: 24px; height: 24px; }
-
-    #chat-panel {
-      position: fixed;
-      bottom: 6.5rem; right: 2rem;
-      width: 380px; height: 530px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      display: flex; flex-direction: column;
-      overflow: hidden;
-      z-index: 999;
-      box-shadow: 0 24px 64px rgba(0,0,0,.65);
-      transform: translateY(24px) scale(.96);
-      opacity: 0;
-      pointer-events: none;
-      transition: transform .32s cubic-bezier(.23,1,.32,1), opacity .32s;
-    }
-    #chat-panel.open {
-      transform: none;
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .chat-header {
-      display: flex; align-items: center; gap: .85rem;
-      padding: 1rem 1.25rem;
-      border-bottom: 1px solid var(--border);
-      background: rgba(255,255,255,.02);
-      flex-shrink: 0;
-    }
-    .chat-avatar {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(79,255,176,.2), rgba(123,111,240,.2));
-      border: 1px solid rgba(79,255,176,.3);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .78rem; font-weight: 700;
-      color: var(--accent);
-      flex-shrink: 0;
-      position: relative;
-    }
-    .chat-avatar::after {
-      content: '';
-      position: absolute; bottom: 1px; right: 1px;
-      width: 9px; height: 9px;
-      border-radius: 50%;
-      background: #4ade80;
-      border: 2px solid var(--surface);
-    }
-    .chat-header-info { flex: 1; min-width: 0; }
-    .chat-title-text {
-      font-size: .9rem; font-weight: 600; color: var(--text); line-height: 1.2;
-    }
-    .chat-subtitle-text {
-      font-size: .7rem; color: var(--muted);
-      font-family: 'JetBrains Mono', monospace;
-    }
-    #chat-close {
-      background: none; border: none; color: var(--muted);
-      cursor: pointer; font-size: 1.35rem; line-height: 1;
-      padding: .2rem .4rem; border-radius: 5px;
-      transition: color .2s, background .2s; flex-shrink: 0;
-    }
-    #chat-close:hover { color: var(--text); background: rgba(255,255,255,.06); }
-
-    .chat-messages {
-      flex: 1; overflow-y: auto;
-      padding: 1rem;
-      display: flex; flex-direction: column; gap: .75rem;
-      scrollbar-width: thin; scrollbar-color: var(--border) transparent;
-    }
-    .chat-messages::-webkit-scrollbar { width: 4px; }
-    .chat-messages::-webkit-scrollbar-track { background: transparent; }
-    .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-    .chat-msg {
-      display: flex; gap: .6rem; max-width: 92%;
-      align-items: flex-end;
-    }
-    .chat-msg.user { align-self: flex-end; flex-direction: row-reverse; }
-    .chat-msg-bubble {
-      padding: .6rem .9rem;
-      border-radius: 14px;
-      font-size: .845rem; line-height: 1.6;
-    }
-    .chat-msg.bot .chat-msg-bubble {
-      background: rgba(255,255,255,.06);
-      border: 1px solid var(--border);
-      color: var(--text);
-      border-bottom-left-radius: 4px;
-    }
-    .chat-msg.user .chat-msg-bubble {
-      background: linear-gradient(135deg, rgba(79,255,176,.18), rgba(123,111,240,.18));
-      border: 1px solid rgba(79,255,176,.22);
-      color: var(--text);
-      border-bottom-right-radius: 4px;
-    }
-    .chat-msg-bubble p { margin: 0 0 .4rem; }
-    .chat-msg-bubble p:last-child { margin-bottom: 0; }
-    .chat-msg-bubble ul { margin: .3rem 0 .3rem 1.1rem; padding: 0; }
-    .chat-msg-bubble li { margin-bottom: .2rem; }
-
-    .typing-indicator {
-      display: flex; gap: .35rem;
-      padding: .65rem .9rem;
-      background: rgba(255,255,255,.06);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      border-bottom-left-radius: 4px;
-      width: fit-content;
-    }
-    .typing-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--muted);
-      animation: typingBounce 1.2s ease-in-out infinite;
-    }
-    .typing-dot:nth-child(2) { animation-delay: .2s; }
-    .typing-dot:nth-child(3) { animation-delay: .4s; }
-    @keyframes typingBounce {
-      0%, 60%, 100% { transform: translateY(0); }
-      30%            { transform: translateY(-6px); background: var(--accent); }
-    }
-
-    .chat-footer {
-      padding: .75rem 1rem;
-      border-top: 1px solid var(--border);
-      display: flex; gap: .6rem;
-      background: rgba(255,255,255,.02);
-      flex-shrink: 0;
-    }
-    #chat-input {
-      flex: 1;
-      background: rgba(255,255,255,.05);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: .55rem .9rem;
-      font-size: .85rem; color: var(--text);
-      font-family: 'Inter', sans-serif;
-      outline: none;
-      transition: border-color .2s;
-    }
-    #chat-input:focus { border-color: rgba(79,255,176,.35); }
-    #chat-input::placeholder { color: var(--muted); }
-    #chat-send {
-      width: 38px; height: 38px;
-      border-radius: 10px;
-      background: var(--accent);
-      border: none; color: #000;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      transition: transform .2s, box-shadow .2s;
-    }
-    #chat-send:hover { transform: scale(1.08); box-shadow: 0 4px 16px rgba(79,255,176,.4); }
-    #chat-send:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
-    #chat-send svg { width: 16px; height: 16px; }
-
-    /* ─── Responsive ───────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.5rem; }
-      section { padding: 5rem 1.5rem; }
-      .hero { padding: 7rem 1.5rem 4rem; }
-      .featured-card { grid-template-columns: 1fr; gap: 3rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-      footer { padding: 1.5rem; flex-direction: column; gap: .75rem; text-align: center; }
-      #contact { padding: 6rem 1.5rem; }
-    }
-    @media (max-width: 600px) {
-      .nav-links { display: none; }
-      .hero-name { font-size: 2.8rem; }
-      .feat-visual { aspect-ratio: 3/2; }
-      .phone-frame { width: 120px; height: 240px; }
-      #chat-panel { width: calc(100vw - 2rem); right: 1rem; bottom: 5.5rem; height: 470px; }
-      #chat-launcher { right: 1rem; bottom: 1rem; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
+  <script>
+    /* тема: сохраненный выбор, иначе системная; ключ общий с блогом, как preferredLang */
+    (function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
+    if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+    document.documentElement.dataset.theme=t})();
+    function toggleTheme(){var r=document.documentElement,t=r.dataset.theme==='light'?'dark':'light';
+    r.dataset.theme=t;try{localStorage.setItem('preferredTheme',t)}catch(e){}}
+  </script>
 </head>
 <body>
 
@@ -798,14 +38,22 @@
     <button class="lang-btn active" data-lang="en">EN</button>
     <button class="lang-btn"        data-lang="ru">RU</button>
   </div>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Theme">
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
 </nav>
 
 <!-- Hero -->
 <section class="hero" id="home">
+  <div class="hero-art" aria-hidden="true">
+    <div class="ha-arc"></div><div class="ha-photo-sm"></div><canvas class="ha-canvas" id="heroCanvas"></canvas><div class="ha-orb"></div>
+    <div class="ha-h"></div><div class="ha-v"></div><span class="ha-vert">vegman.dev / 2026</span>
+  </div>
   <p class="hero-eyebrow" data-i18n="heroEyebrow">AI Automation Consultant & IT Architect</p>
   <h1 class="hero-name">Nata<br /><span>Vegman</span></h1>
   <p class="hero-subtitle" data-i18n-html="heroSubtitle">
-    I translate business pain into rigorous technical architecture&nbsp;— from multimodal LLM pipelines to enterprise DWH and end-to-end process automation.
+    I translate business pain into rigorous technical architecture - from multimodal LLM pipelines to enterprise DWH and end-to-end process automation.
   </p>
   <div class="hero-cta">
     <a href="#featured" class="btn btn-primary"  data-i18n="heroCta1">See my work</a>
@@ -819,7 +67,7 @@
       <div class="stat-label" data-i18n="stat1Label">Years in IT</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">10</div>
+      <div class="stat-num">14</div>
       <div class="stat-label" data-i18n="stat2Label">Projects shipped</div>
     </div>
     <div class="stat-item">
@@ -837,9 +85,9 @@
 <!-- Featured Project -->
 <section id="featured">
   <p class="section-label reveal"              data-i18n="featLabel">Featured project</p>
-  <h2 class="section-title reveal reveal-delay-1" data-i18n-html="featTitle">Nebo AI<br />Assistant</h2>
+  <h2 class="section-title reveal reveal-delay-1" data-i18n-html="featTitle">Apart-Hotel<br />AI Assistant</h2>
   <p class="section-desc reveal reveal-delay-2"   data-i18n="featDesc">
-    Multimodal AI concierge for a premium apart-hotel network — hybrid RAG helpdesk, Computer Vision defect detection, and native Telegram voice transcription.
+    Multimodal AI concierge for a premium apart-hotel network - hybrid RAG helpdesk, Computer Vision defect detection, and native Telegram voice transcription.
   </p>
 
   <div class="featured-card">
@@ -849,8 +97,8 @@
         <div class="phone-frame">
           <div class="phone-screen-top"></div>
           <div class="phone-bubble bot"       data-i18n="phoneBotMsg1">Welcome! How can I assist you today?</div>
-          <div class="phone-bubble user"      data-i18n="phoneUserMsg">AC in room 315 is broken 😢</div>
-          <div class="phone-bubble img-bubble" data-i18n="phoneAnalyzing">🔍 Analyzing report…</div>
+          <div class="phone-bubble user"      data-i18n="phoneUserMsg">AC in room 315 is broken</div>
+          <div class="phone-bubble img-bubble" data-i18n="phoneAnalyzing">Analyzing report...</div>
           <div class="phone-bubble bot"       data-i18n="phoneBotMsg2">Ticket created. Technician in 20 min.</div>
           <div class="phone-dots">
             <div class="phone-dot active"></div>
@@ -877,7 +125,7 @@
       <div class="feat-highlights">
         <div class="highlight-item" data-i18n="featH1">Async FastAPI backend natively integrated with Bnovo PMS API; separate prompt modes for Staff and Guest sessions.</div>
         <div class="highlight-item" data-i18n="featH2">Computer Vision (GPT-4o / GigaChat Vision) auto-detects equipment defects from photos and creates urgent CRM maintenance tickets.</div>
-        <div class="highlight-item" data-i18n="featH3">Yandex SpeechKit transcribes native OGG OPUS voice messages in-memory — no CPU bottleneck on the server.</div>
+        <div class="highlight-item" data-i18n="featH3">Yandex SpeechKit transcribes native OGG OPUS voice messages in-memory - no CPU bottleneck on the server.</div>
         <div class="highlight-item" data-i18n="featH4">Full security stack: Docker Compose, Row-Level Security, Telegram webhook token validation, MAINTENANCE_MODE kill switch.</div>
       </div>
     </div>
@@ -890,11 +138,106 @@
   <h2 class="section-title reveal reveal-delay-1" data-i18n="projTitle">Things I've built</h2>
   <p class="section-desc reveal reveal-delay-2"   data-i18n="projDesc">A selection of tools and systems across different domains.</p>
 
-  <div class="projects-grid">
+  <div class="projects-grid collapsed" id="projectsGrid">
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon"></div>
+        <span class="project-type" data-i18n="p5Type">AI / Multi-Agent</span>
+      </div>
+      <div class="project-name" data-i18n="p5Name">AI Company of Agents</div>
+      <div class="project-desc" data-i18n="p5Desc">
+        An orchestrator and three specialists (researcher, developer, designer) work as a company rather than a swarm. Every task goes through triage by level, a budget of at most five model calls, a stop criterion and a mandatory retro. The organization&#x27;s memory (constitution, roles, knowledge base) lives in git and syncs to Notion daily by a script with no LLM in the loop.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Hermes</span>
+        <span class="stack-tag">OpenClaw</span>
+        <span class="stack-tag">MCP</span>
+        <span class="stack-tag">OpenRouter</span>
+        <span class="stack-tag">Git</span>
+        <span class="stack-tag">Notion API</span>
+      </div>
+    </div>
 
     <div class="project-card reveal">
       <div class="project-header">
-        <div class="project-icon">📊</div>
+        <div class="project-icon"></div>
+        <span class="project-type" data-i18n="p11Type">Automation / Content</span>
+      </div>
+      <div class="project-name" data-i18n="p11Name">Content Pipeline: from World News to Post and Article</div>
+      <div class="project-desc" data-i18n="p11Desc">
+        Twice a day a script collects AI news from 15 feeds across the US, Europe and Asia; a model picks what matters and drafts a post, an editor gate checks it. Approved texts go to a Telegram channel on schedule and to a bilingual blog on GitHub Pages. Publishing itself makes zero model calls: scripts, Notion statuses and a linter that blocks the agent&#x27;s notes to the editor.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">Notion API</span>
+        <span class="stack-tag">Telegram Bot API</span>
+        <span class="stack-tag">Telethon</span>
+        <span class="stack-tag">GitHub Pages</span>
+        <span class="stack-tag">fal.ai</span>
+      </div>
+      <a href="https://vegman.dev/blog/" class="project-link" target="_blank" rel="noopener">↗ Blog</a>
+      <a href="https://t.me/codenoteai" class="project-link" target="_blank" rel="noopener">↗ Telegram</a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon"></div>
+        <span class="project-type" data-i18n="p12Type">AI / Sales</span>
+      </div>
+      <div class="project-name" data-i18n="p12Name">Freelance Lead Response Pipeline</div>
+      <div class="project-desc" data-i18n="p12Desc">
+        Orders from a freelance marketplace are collected from RSS and page markup without spending a single token. A filter built from marketplace categories and the owner&#x27;s past verdicts keeps 3 to 5 orders a day out of dozens. A model drafts each reply from a dossier and real reply samples; a human edits and sends it in one tap from Telegram. 49 control cases run after every filter change, and outcomes are logged back to the base.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">RSS</span>
+        <span class="stack-tag">JSON-LD</span>
+        <span class="stack-tag">Claude</span>
+        <span class="stack-tag">Notion API</span>
+        <span class="stack-tag">Telegram</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon"></div>
+        <span class="project-type" data-i18n="p14Type">AI / FinOps</span>
+      </div>
+      <div class="project-name" data-i18n="p14Name">AI Agent Cost Accounting</div>
+      <div class="project-desc" data-i18n="p14Desc">
+        A balance dashboard across providers plus a &quot;where did the money go&quot; report that merges three log layers which never see each other and reconciles the total with the OpenRouter bill. The breakdown found that 45% of spend went to an agent asking every 30 minutes whether there was work for it: 1007 calls. With the polling switched off, that line dropped to zero.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">SQLite</span>
+        <span class="stack-tag">OpenRouter API</span>
+        <span class="stack-tag">systemd</span>
+      </div>
+      <a href="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/" class="project-link" target="_blank" rel="noopener">↗ Case study</a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon"></div>
+        <span class="project-type" data-i18n="p13Type">Data / B2B Sourcing</span>
+      </div>
+      <div class="project-name" data-i18n="p13Name">B2B Client Sourcing from Open Registries</div>
+      <div class="project-desc" data-i18n="p13Desc">
+        A pipeline for an industrial partner: candidates are selected by industry code and region, then each company gets revenue for every year, headcount, management, contacts and open vacancies. API responses are cached; financials are cross-checked with the tax service&#x27;s primary source through a gateway inside Russia. First batch: 35 companies, 5 after screening, 1 recommended.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">Checko API</span>
+        <span class="stack-tag">FNS GIR BO</span>
+        <span class="stack-tag">rabota.ru</span>
+        <span class="stack-tag">Trudvsem</span>
+        <span class="stack-tag">Notion API</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon"></div>
         <span class="project-type" data-i18n="p1Type">Analytics / ETL</span>
       </div>
       <div class="project-name" data-i18n="p1Name">Fisheries DWH &amp; Analytics Platform</div>
@@ -914,7 +257,7 @@
 
     <div class="project-card reveal reveal-delay-1">
       <div class="project-header">
-        <div class="project-icon">🛰️</div>
+        <div class="project-icon"></div>
         <span class="project-type" data-i18n="p2Type">AI / Scraping</span>
       </div>
       <div class="project-name" data-i18n="p2Name">Competitor Intelligence System</div>
@@ -931,9 +274,47 @@
       <a href="https://github.com/natavegman/ships_analytic" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
     </div>
 
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon"></div>
+        <span class="project-type" data-i18n="p15Type">AI / Video</span>
+      </div>
+      <div class="project-name" data-i18n="p15Name">Animated Kids Channel Pipeline</div>
+      <div class="project-desc" data-i18n="p15Desc">
+        A Spanish-language series for children aged 2 to 5 is built by a pipeline: character canon, stills, animation, voice, music, editing, QA and upload via the YouTube Data API. Voice and music are separate stems, so a new language is a re-dub without re-rendering the video. Each episode&#x27;s cost is estimated before launch, and the QA gate refuses to upload an episode with placeholders. Status: character canon is done, the channel is in preparation.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">fal.ai</span>
+        <span class="stack-tag">Kling</span>
+        <span class="stack-tag">ElevenLabs</span>
+        <span class="stack-tag">ffmpeg</span>
+        <span class="stack-tag">YouTube Data API</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon"></div>
+        <span class="project-type" data-i18n="p6Type">AI / Portfolio</span>
+      </div>
+      <div class="project-name" data-i18n="p6Name">Personal HR Agent (this site)</div>
+      <div class="project-desc" data-i18n="p6Desc">
+        This very site - bilingual AI portfolio with a FastAPI RAG backend, FAISS vector search, and a GPT-4o chat widget that answers questions about Natalia in EN or RU based on the visitor's language.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">FAISS</span>
+        <span class="stack-tag">OpenAI</span>
+        <span class="stack-tag">GitHub Pages</span>
+        <span class="stack-tag">nginx</span>
+      </div>
+      <a href="https://github.com/natavegman/portfolio-site" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
+    </div>
+
     <div class="project-card reveal reveal-delay-2">
       <div class="project-header">
-        <div class="project-icon">🧠</div>
+        <div class="project-icon"></div>
         <span class="project-type" data-i18n="p3Type">AI / R&amp;D</span>
       </div>
       <div class="project-name" data-i18n="p3Name">LLM Tone-of-Voice Fine-Tuning</div>
@@ -951,12 +332,12 @@
 
     <div class="project-card reveal reveal-delay-3">
       <div class="project-header">
-        <div class="project-icon">📄</div>
+        <div class="project-icon"></div>
         <span class="project-type" data-i18n="p4Type">Automation / OCR</span>
       </div>
       <div class="project-name" data-i18n="p4Name">Document Auto-Fill Tool</div>
       <div class="project-desc" data-i18n="p4Desc">
-        Reads scanned prior-year forms with Tesseract OCR, maps recognized fields to the current-year PDF structure, and programmatically fills the new form — eliminating manual re-entry for annual workflows.
+        Reads scanned prior-year forms with Tesseract OCR, maps recognized fields to the current-year PDF structure, and programmatically fills the new form - eliminating manual re-entry for annual workflows.
       </div>
       <div class="project-stack">
         <span class="stack-tag">Python</span>
@@ -966,47 +347,9 @@
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-4">
-      <div class="project-header">
-        <div class="project-icon">🤖</div>
-        <span class="project-type" data-i18n="p5Type">AI / Multi-Agent</span>
-      </div>
-      <div class="project-name" data-i18n="p5Name">Multi-Agent Consulting System</div>
-      <div class="project-desc" data-i18n="p5Desc">
-        Four-agent hierarchical system (orchestrator + researcher + developer + designer) built on Hermes/OpenClaw with Telegram interface. Domain routing engine for 7 business domains, Shared State inter-agent protocol, and OpenRouter multi-model fallback across Claude, Gemini, and GPT.
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">Hermes</span>
-        <span class="stack-tag">OpenClaw</span>
-        <span class="stack-tag">MCP</span>
-        <span class="stack-tag">OpenRouter</span>
-        <span class="stack-tag">Telegram</span>
-        <span class="stack-tag">systemd</span>
-      </div>
-    </div>
-
-    <div class="project-card reveal">
-      <div class="project-header">
-        <div class="project-icon">💬</div>
-        <span class="project-type" data-i18n="p6Type">AI / Portfolio</span>
-      </div>
-      <div class="project-name" data-i18n="p6Name">Personal HR Agent (this site)</div>
-      <div class="project-desc" data-i18n="p6Desc">
-        This very site — bilingual AI portfolio with a FastAPI RAG backend, FAISS vector search, and a GPT-4o chat widget that answers questions about Natalia in EN or RU based on the visitor's language.
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">FAISS</span>
-        <span class="stack-tag">OpenAI</span>
-        <span class="stack-tag">GitHub Pages</span>
-        <span class="stack-tag">nginx</span>
-      </div>
-      <a href="https://github.com/natavegman/portfolio-site" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
-    </div>
-
     <div class="project-card reveal reveal-delay-1">
       <div class="project-header">
-        <div class="project-icon">👗</div>
+        <div class="project-icon"></div>
         <span class="project-type" data-i18n="p7Type">AI / Fashion</span>
       </div>
       <div class="project-name" data-i18n="p7Name">Smart Style Bot</div>
@@ -1023,14 +366,32 @@
       <a href="https://github.com/natavegman/Smart-Style-Bot" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
     </div>
 
+    <div class="project-card reveal reveal-delay-3">
+      <div class="project-header">
+        <div class="project-icon"></div>
+        <span class="project-type" data-i18n="p9Type">AI / Content</span>
+      </div>
+      <div class="project-name" data-i18n="p9Name">Instagram* Post Generator</div>
+      <div class="project-desc" data-i18n="p9Desc">
+        Flask web app that generates branded Instagram* posts for an expert blog. GigaChat keeps a strict Tone of Voice, scrapes reference content from URLs, and saves editorial favorites.
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Flask</span>
+        <span class="stack-tag">GigaChat</span>
+        <span class="stack-tag">BeautifulSoup</span>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag" data-i18n="p9Tag">Instagram*</span>
+      </div>
+    </div>
+
     <div class="project-card reveal reveal-delay-2">
       <div class="project-header">
-        <div class="project-icon">📷</div>
+        <div class="project-icon"></div>
         <span class="project-type" data-i18n="p8Type">Web / Creative</span>
       </div>
       <div class="project-name" data-i18n="p8Name">Birthday Photo Album</div>
       <div class="project-desc" data-i18n="p8Desc">
-        Interactive web photo album for a 70th-birthday celebration — five life chapters (Childhood → Today), animated portrait cards, background music, and ~200 photos auto-imported from iCloud. Pure vanilla JS, zero frameworks.
+        Interactive web photo album for a 70th-birthday celebration - five life chapters (from Childhood to Today), animated portrait cards, background music, and ~200 photos auto-imported from iCloud. Pure vanilla JS, zero frameworks.
       </div>
       <div class="project-stack">
         <span class="stack-tag">Vanilla JS</span>
@@ -1042,28 +403,9 @@
       <a href="https://github.com/natavegman/svetlana70-album" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
     </div>
 
-    <div class="project-card reveal reveal-delay-3">
-      <div class="project-header">
-        <div class="project-icon">✍️</div>
-        <span class="project-type" data-i18n="p9Type">AI / Content</span>
-      </div>
-      <div class="project-name" data-i18n="p9Name">VK Post Generator</div>
-      <div class="project-desc" data-i18n="p9Desc">
-        Flask web app that generates branded VK posts in the voice of "Maya" — an AI biohacking coach persona. GigaChat matches a strict Tone of Voice, scrapes reference content from URLs, and saves editorial favorites.
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">Flask</span>
-        <span class="stack-tag">GigaChat</span>
-        <span class="stack-tag">BeautifulSoup</span>
-        <span class="stack-tag">Python</span>
-        <span class="stack-tag">VK</span>
-      </div>
-      <a href="https://github.com/natavegman/site-generation-post" class="project-link" target="_blank" rel="noopener">↗ GitHub</a>
-    </div>
-
     <div class="project-card reveal reveal-delay-4">
       <div class="project-header">
-        <div class="project-icon">🌳</div>
+        <div class="project-icon"></div>
         <span class="project-type" data-i18n="p10Type">Genealogy / API</span>
       </div>
       <div class="project-name" data-i18n="p10Name">MyFamilyTree</div>
@@ -1081,6 +423,7 @@
     </div>
 
   </div>
+  <button class="show-all" id="showAll" onclick="document.getElementById('projectsGrid').classList.remove('collapsed');this.remove()" data-i18n="showAll">Show all projects</button>
 </section>
 
 <!-- Skills -->
@@ -1095,8 +438,8 @@
       <div class="skill-group-title" data-i18n="sg1">AI / LLM</div>
       <div class="skill-list">
         <div class="skill-item" data-i18n="s1i1">OpenAI GPT-4o / Vision / Embeddings</div>
-        <div class="skill-item" data-i18n="s1i2">Anthropic Claude · Google Gemini 2.5</div>
-        <div class="skill-item" data-i18n="s1i3">OpenRouter · Sber GigaChat</div>
+        <div class="skill-item" data-i18n="s1i2">Anthropic Claude, Google Gemini 2.5</div>
+        <div class="skill-item" data-i18n="s1i3">OpenRouter, Sber GigaChat</div>
         <div class="skill-item" data-i18n="s1i4">RAG pipelines (ChromaDB, FAISS)</div>
         <div class="skill-item" data-i18n="s1i5">Fine-Tuning: LoRA / PEFT / QLoRA</div>
       </div>
@@ -1141,8 +484,8 @@
         <div class="skill-item" data-i18n="s5i1">Hermes (Python agent framework)</div>
         <div class="skill-item" data-i18n="s5i2">OpenClaw (Node.js gateway)</div>
         <div class="skill-item" data-i18n="s5i3">MCP (Model Context Protocol)</div>
-        <div class="skill-item" data-i18n="s5i4">Domain routing · Shared State</div>
-        <div class="skill-item" data-i18n="s5i5">systemd services · hot-swap</div>
+        <div class="skill-item" data-i18n="s5i4">Task triage, call budget, retros</div>
+        <div class="skill-item" data-i18n="s5i5">systemd services, hot-swap</div>
       </div>
     </div>
 
@@ -1157,13 +500,13 @@
   <div class="about-grid">
     <div class="about-text reveal reveal-delay-2">
       <p data-i18n-html="aboutP1">
-        I'm an <strong>AI Automation Consultant & IT Architect</strong> with 19 years of hands-on experience. I specialize in production-ready AI systems — from multimodal LLM pipelines and enterprise DWH to end-to-end business process automation.
+        I'm an <strong>AI Automation Consultant & IT Architect</strong> with 19 years of hands-on experience. I specialize in production-ready AI systems - from multimodal LLM pipelines and enterprise DWH to end-to-end business process automation.
       </p>
       <p data-i18n-html="aboutP2">
         My projects span hospitality tech, fisheries analytics, and maritime intelligence. What they share: messy, domain-specific data that needs to be turned into something genuinely useful for the people doing the work.
       </p>
       <p data-i18n-html="aboutP3">
-        I architect resilient pipelines that seamlessly connect legacy SaaS/PMS/CRM systems, relational databases, and Large Language Models into a single coherent workflow — with security built in from the start.
+        I architect resilient pipelines that seamlessly connect legacy SaaS/PMS/CRM systems, relational databases, and Large Language Models into a single coherent workflow - with security built in from the start.
       </p>
       <p data-i18n-html="aboutP4">
         Operating as a registered Sole Proprietor with <strong>Kazakhstan e-Resident status</strong> for seamless international B2B contracting and payments.
@@ -1210,6 +553,7 @@
   <span class="footer-mono" style="color:var(--accent)">vegman.dev</span>
   <span>Natalia Vegman &copy; 2025</span>
   <span data-i18n="footerBuilt">Built with vanilla HTML/CSS/JS</span>
+  <span class="footer-note" data-i18n="metaNote">* Instagram is a product of Meta Platforms Inc., whose activities are banned in the Russian Federation.</span>
 </footer>
 
 <!-- ─── Chat Widget ───────────────────────────────────────────── -->
@@ -1235,7 +579,7 @@
   <div class="chat-footer">
     <input type="text" id="chat-input"
            data-i18n-placeholder="chatPlaceholder"
-           placeholder="Ask about skills, projects, rates…"
+           placeholder="Ask about skills, projects, rates..."
            autocomplete="off" />
     <button id="chat-send" aria-label="Send">
       <svg viewBox="0 0 24 24" fill="currentColor">
@@ -1248,7 +592,7 @@
 <!-- ─── Backend URLs (edit these for production) ──────────────── -->
 <script>
   window.CHAT_API_EN = 'https://api.vegman.dev';     /* EN server: 65.20.101.241  */
-  window.CHAT_API_RU = 'https://api.vegman.dev';     /* OpenAI blocked in RU → use EN server */
+  window.CHAT_API_RU = 'https://api.vegman.dev';     /* OpenAI blocked in RU: use EN server */
 </script>
 
 <!-- ─── Scripts ──────────────────────────────────────────────── -->
@@ -1264,21 +608,21 @@
       navAbout: 'About', navContact: 'Contact',
       navBlog: 'Blog',
       heroEyebrow: 'AI Automation Consultant & IT Architect',
-      heroSubtitle: 'I translate business pain into rigorous technical architecture&nbsp;&mdash; from multimodal LLM pipelines to enterprise DWH and end-to-end process automation.',
+      heroSubtitle: 'I translate business pain into rigorous technical architecture - from multimodal LLM pipelines to enterprise DWH and end-to-end process automation.',
       heroCta1: 'See my work', heroCta2: 'Get in touch', heroCta3: 'Download CV',
       stat1Label: 'Years in IT', stat2Label: 'Projects shipped', stat3Label: 'Integrations built',
       scrollHint: 'scroll',
       featLabel: 'Featured project',
-      featTitle: 'Nebo AI<br />Assistant',
-      featDesc: 'Multimodal AI concierge for a premium apart-hotel network — hybrid RAG helpdesk, Computer Vision defect detection, and native Telegram voice transcription via Yandex SpeechKit.',
+      featTitle: 'Apart-Hotel<br />AI Assistant',
+      featDesc: 'Multimodal AI concierge for a premium apart-hotel network - hybrid RAG helpdesk, Computer Vision defect detection, and native Telegram voice transcription via Yandex SpeechKit.',
       phoneBotMsg1: 'Welcome! How can I assist you today?',
-      phoneUserMsg: 'AC in room 315 is broken 😢',
-      phoneAnalyzing: '🔍 Analyzing report…',
+      phoneUserMsg: 'AC in room 315 is broken',
+      phoneAnalyzing: 'Analyzing report...',
       phoneBotMsg2: 'Ticket created in CRM. Technician arrives in 20 min.',
       featTag1: 'RAG + Vision', featTag2: 'Bnovo PMS',
       featH1: 'Async FastAPI backend natively integrated with Bnovo PMS API; separate prompt modes for Staff and Guest sessions.',
       featH2: 'Computer Vision (GPT-4o / GigaChat Vision) auto-detects equipment defects from photos and creates urgent CRM maintenance tickets.',
-      featH3: 'Yandex SpeechKit transcribes native OGG OPUS voice messages in-memory — no CPU bottleneck on the server.',
+      featH3: 'Yandex SpeechKit transcribes native OGG OPUS voice messages in-memory - no CPU bottleneck on the server.',
       featH4: 'Full security stack: Docker Compose, Row-Level Security, Telegram webhook token validation, MAINTENANCE_MODE kill switch.',
       projLabel: 'More projects', projTitle: "Things I've built",
       projDesc: 'A selection of tools and systems across different domains.',
@@ -1289,12 +633,12 @@
       p3Type: 'AI / R&amp;D', p3Name: 'LLM Tone-of-Voice Fine-Tuning',
       p3Desc: 'Fine-tuning pipeline for ruGPT-3 using 4-bit quantization + LoRA adapters on Google Colab T4 GPU, targeting luxury 5-star concierge ToV with full local data isolation.',
       p4Type: 'Automation / OCR', p4Name: 'Document Auto-Fill Tool',
-      p4Desc: 'Reads scanned prior-year forms with Tesseract OCR, maps recognized fields to the current-year PDF structure, and programmatically fills the new form — eliminating manual re-entry for annual workflows.',
+      p4Desc: 'Reads scanned prior-year forms with Tesseract OCR, maps recognized fields to the current-year PDF structure, and programmatically fills the new form - eliminating manual re-entry for annual workflows.',
       skillLabel: 'Expertise', skillTitle: 'Tech stack',
       skillDesc: 'Tools and technologies I work with in production.',
       sg1: 'AI / LLM', sg2: 'Backend', sg3: 'Data &amp; Automation', sg4: 'Integrations', sg5: 'AI Agents',
-      s1i1: 'OpenAI GPT-4o / Vision / Embeddings', s1i2: 'Anthropic Claude · Google Gemini 2.5',
-      s1i3: 'OpenRouter · Sber GigaChat',
+      s1i1: 'OpenAI GPT-4o / Vision / Embeddings', s1i2: 'Anthropic Claude, Google Gemini 2.5',
+      s1i3: 'OpenRouter, Sber GigaChat',
       s1i4: 'RAG pipelines (ChromaDB, FAISS)', s1i5: 'Fine-Tuning: LoRA / PEFT / QLoRA',
       s2i1: 'Python 3.10+ / FastAPI', s2i2: 'SQLAlchemy 2.0 / Alembic', s2i3: 'PostgreSQL',
       s2i4: 'Docker / Docker Compose', s2i5: 'Async / ASGI design',
@@ -1303,14 +647,14 @@
       s4i1: 'Telegram Bot API', s4i2: 'Bnovo PMS / Bitrix24 / AmoCRM', s4i3: 'Yandex SpeechKit STT/TTS',
       s4i4: 'Notion API', s4i5: 'VetIS / Federal registries API',
       s5i1: 'Hermes (Python agent framework)', s5i2: 'OpenClaw (Node.js gateway)',
-      s5i3: 'MCP (Model Context Protocol)', s5i4: 'Domain routing · Shared State',
-      s5i5: 'systemd services · hot-swap',
-      p5Type: 'AI / Multi-Agent', p5Name: 'Multi-Agent Consulting System',
-      p5Desc: 'Four-agent hierarchical system (orchestrator + researcher + developer + designer) built on Hermes/OpenClaw with Telegram interface. Domain routing engine for 7 business domains, Shared State inter-agent protocol, and OpenRouter multi-model fallback across Claude, Gemini, and GPT.',
+      s5i3: 'MCP (Model Context Protocol)', s5i4: 'Task triage, call budget, retros',
+      s5i5: 'systemd services, hot-swap',
+      p5Type: "AI / Multi-Agent", p5Name: "AI Company of Agents",
+      p5Desc: "An orchestrator and three specialists (researcher, developer, designer) work as a company rather than a swarm. Every task goes through triage by level, a budget of at most five model calls, a stop criterion and a mandatory retro. The organization's memory (constitution, roles, knowledge base) lives in git and syncs to Notion daily by a script with no LLM in the loop.",
       aboutLabel: 'Background', aboutTitle: 'About me',
-      aboutP1: 'I started as a software engineer and spent <strong>14 years at Murmansk Shipping Company</strong> — one of Russia\'s largest maritime enterprises. I grew from engineer to Head of IT & Telecommunications, managing a department of ~40 people. We built a proprietary ERP from scratch, implemented SAP and 1C, and ran our own on-premises data center. It was where I learned to think in systems — and to stay calm when those systems break.',
-      aboutP2: 'Seven years ago I moved to Saint Petersburg and shifted into a client-facing role: <strong>9 years of B2B sales and consulting</strong>, working as a single point of contact between businesses and external technical teams. That combination — deep architecture knowledge plus the ability to translate it into business outcomes — turned out to be exactly what AI projects need.',
-      aboutP3: 'For the past few years I\'ve been fully focused on <strong>production AI systems</strong>: RAG pipelines, multimodal LLM backends, enterprise DWH, and multi-agent architectures. The fisheries DWH, the hotel AI assistant, the competitor monitoring tool, the style bot — each one a real business problem solved with real code in production.',
+      aboutP1: 'I started as a software engineer and spent <strong>14 years at Murmansk Shipping Company</strong> - one of Russia\'s largest maritime enterprises. I grew from engineer to Head of IT & Telecommunications, managing a department of ~40 people. We built a proprietary ERP from scratch, implemented SAP and 1C, and ran our own on-premises data center. It was where I learned to think in systems - and to stay calm when those systems break.',
+      aboutP2: 'Seven years ago I moved to Saint Petersburg and shifted into a client-facing role: <strong>9 years of B2B sales and consulting</strong>, working as a single point of contact between businesses and external technical teams. That combination - deep architecture knowledge plus the ability to translate it into business outcomes - turned out to be exactly what AI projects need.',
+      aboutP3: 'For the past few years I\'ve been fully focused on <strong>production AI systems</strong>: RAG pipelines, multimodal LLM backends, enterprise DWH, and multi-agent architectures. The fisheries DWH, the hotel AI assistant, the competitor monitoring tool, the style bot - each one a real business problem solved with real code in production.',
       aboutP4: 'Operating as a registered Sole Proprietor with <strong>Kazakhstan e-Resident status</strong> for seamless international B2B contracting and payments.',
       aboutLocLabel: 'Location', aboutLocVal: 'Available remotely',
       aboutLangLabel: 'Primary language',
@@ -1322,57 +666,70 @@
       contactLabel: "Let's talk", contactTitle: 'Have a project in mind?',
       contactDesc: 'Open to freelance projects, consulting, and interesting collaboration. Drop me a message.',
       footerBuilt: 'Built with vanilla HTML/CSS/JS',
+      metaNote: '* Instagram is a product of Meta Platforms Inc., whose activities are banned in the Russian Federation.',
+      p9Tag: 'Instagram*',
       p6Type: 'AI / Portfolio', p6Name: 'Personal HR Agent (this site)',
-      p6Desc: 'This very site — bilingual AI portfolio with a FastAPI RAG backend, FAISS vector search, and a GPT-4o chat widget that answers questions about Natalia in EN or RU based on the visitor\'s language. Static frontend on GitHub Pages, API on a custom VPS.',
+      p6Desc: 'This very site - bilingual AI portfolio with a FastAPI RAG backend, FAISS vector search, and a GPT-4o chat widget that answers questions about Natalia in EN or RU based on the visitor\'s language. Static frontend on GitHub Pages, API on a custom VPS.',
       p7Type: 'AI / Fashion', p7Name: 'Smart Style Bot',
       p7Desc: 'Telegram AI-stylist: analyzes your wardrobe via Gemini Vision, picks outfits for any occasion, and applies Virtual Try-On (Fashn / fal.ai) to show how clothes look on your photo. Recommends purchases from Russian marketplaces.',
       p8Type: 'Web / Creative', p8Name: 'Birthday Photo Album',
-      p8Desc: 'Interactive web photo album for a 70th-birthday celebration — five life chapters (Childhood → Today), animated portrait cards, background music, and ~200 photos auto-imported from iCloud and compressed with Python. Pure vanilla JS, zero frameworks.',
-      p9Type: 'AI / Content', p9Name: 'VK Post Generator',
-      p9Desc: 'Flask web app that generates branded VK community posts in the voice of "Maya" — an AI biohacking coach persona. GigaChat matches a strict Tone of Voice, scrapes reference content from URLs, and saves editorial favorites.',
+      p8Desc: 'Interactive web photo album for a 70th-birthday celebration - five life chapters (from Childhood to Today), animated portrait cards, background music, and ~200 photos auto-imported from iCloud and compressed with Python. Pure vanilla JS, zero frameworks.',
+      p9Type: 'AI / Content', p9Name: 'Instagram* Post Generator',
+      p9Desc: 'Flask web app that generates branded Instagram* posts for an expert blog. GigaChat keeps a strict Tone of Voice, scrapes reference content from URLs, and saves editorial favorites.',
       p10Type: 'Genealogy / API', p10Name: 'MyFamilyTree',
       p10Desc: 'FastAPI backend for a personal genealogy platform. Imports GEDCOM family-tree files, stores relationships in PostgreSQL via SQLAlchemy, and serves REST endpoints for searching people and attaching archival documents to family records.',
+      showAll: "Show all projects",
+      p15Type: "AI / Video", p15Name: "Animated Kids Channel Pipeline",
+      p15Desc: "A Spanish-language series for children aged 2 to 5 is built by a pipeline: character canon, stills, animation, voice, music, editing, QA and upload via the YouTube Data API. Voice and music are separate stems, so a new language is a re-dub without re-rendering the video. Each episode's cost is estimated before launch, and the QA gate refuses to upload an episode with placeholders. Status: character canon is done, the channel is in preparation.",
+      p14Type: "AI / FinOps", p14Name: "AI Agent Cost Accounting",
+      p14Desc: "A balance dashboard across providers plus a \"where did the money go\" report that merges three log layers which never see each other and reconciles the total with the OpenRouter bill. The breakdown found that 45% of spend went to an agent asking every 30 minutes whether there was work for it: 1007 calls. With the polling switched off, that line dropped to zero.",
+      p13Type: "Data / B2B Sourcing", p13Name: "B2B Client Sourcing from Open Registries",
+      p13Desc: "A pipeline for an industrial partner: candidates are selected by industry code and region, then each company gets revenue for every year, headcount, management, contacts and open vacancies. API responses are cached; financials are cross-checked with the tax service's primary source through a gateway inside Russia. First batch: 35 companies, 5 after screening, 1 recommended.",
+      p12Type: "AI / Sales", p12Name: "Freelance Lead Response Pipeline",
+      p12Desc: "Orders from a freelance marketplace are collected from RSS and page markup without spending a single token. A filter built from marketplace categories and the owner's past verdicts keeps 3 to 5 orders a day out of dozens. A model drafts each reply from a dossier and real reply samples; a human edits and sends it in one tap from Telegram. 49 control cases run after every filter change, and outcomes are logged back to the base.",
+      p11Type: "Automation / Content", p11Name: "Content Pipeline: from World News to Post and Article",
+      p11Desc: "Twice a day a script collects AI news from 15 feeds across the US, Europe and Asia; a model picks what matters and drafts a post, an editor gate checks it. Approved texts go to a Telegram channel on schedule and to a bilingual blog on GitHub Pages. Publishing itself makes zero model calls: scripts, Notion statuses and a linter that blocks the agent's notes to the editor.",
       chatTitle: "Natalia's HR Agent",
       chatSubtitle: 'AI-powered career assistant',
-      chatPlaceholder: 'Ask about skills, projects, rates…',
-      chatGreeting: "Hi! I’m Natalia’s personal HR agent. Ask me anything about her skills, experience, or collaboration terms — I’ll answer right away! 🚀",
+      chatPlaceholder: 'Ask about skills, projects, rates...',
+      chatGreeting: "Hi! I'm Natalia's personal HR agent. Ask me anything about her skills, experience, or collaboration terms - I'll answer right away!",
     },
     ru: {
       navWork: 'Работы', navProjects: 'Проекты', navSkills: 'Навыки',
       navAbout: 'Обо мне', navContact: 'Контакт',
       navBlog: 'Блог',
       heroEyebrow: 'AI Automation Consultant & IT Architect',
-      heroSubtitle: 'Перевожу бизнес-боли в строгую техническую архитектуру&nbsp;&mdash; от мультимодальных LLM-пайплайнов до корпоративных DWH и сквозной автоматизации процессов.',
+      heroSubtitle: 'Перевожу бизнес-боли в строгую техническую архитектуру - от мультимодальных LLM-пайплайнов до корпоративных DWH и сквозной автоматизации процессов.',
       heroCta1: 'Смотреть работы', heroCta2: 'Написать', heroCta3: 'Скачать CV',
       stat1Label: 'Лет в IT', stat2Label: 'Проектов реализовано', stat3Label: 'Интеграций построено',
       scrollHint: 'листай',
       featLabel: 'Ключевой проект',
-      featTitle: 'Nebo AI<br />Assistant',
-      featDesc: 'Мультимодальный AI-консьерж для сети апарт-отелей — гибридный RAG-хелпдеск, Computer Vision для детекции дефектов и нативная транскрипция Telegram-голосовых через Yandex SpeechKit.',
+      featTitle: 'AI-ассистент<br />сети апарт-отелей',
+      featDesc: 'Мультимодальный AI-консьерж для сети апарт-отелей - гибридный RAG-хелпдеск, Computer Vision для детекции дефектов и нативная транскрипция Telegram-голосовых через Yandex SpeechKit.',
       phoneBotMsg1: 'Здравствуйте! Чем могу помочь?',
-      phoneUserMsg: 'В номере 315 сломан кондиционер 😢',
-      phoneAnalyzing: '🔍 Обрабатываю заявку…',
+      phoneUserMsg: 'В номере 315 сломан кондиционер',
+      phoneAnalyzing: 'Обрабатываю заявку...',
       phoneBotMsg2: 'Тикет в CRM создан. Мастер через 20 мин.',
       featTag1: 'RAG + Vision', featTag2: 'Bnovo PMS',
       featH1: 'Асинхронный FastAPI-бэкенд с нативной интеграцией Bnovo PMS API; раздельные промпт-режимы для персонала и гостей.',
-      featH2: 'Computer Vision (GPT-4o / GigaChat Vision) авто-детектирует дефекты оборудования по фото и создаёт тикеты в CRM.',
-      featH3: 'Yandex SpeechKit транскрибирует нативные OGG OPUS сообщения in-memory — без нагрузки на CPU сервера.',
+      featH2: 'Computer Vision (GPT-4o / GigaChat Vision) авто-детектирует дефекты оборудования по фото и создает тикеты в CRM.',
+      featH3: 'Yandex SpeechKit транскрибирует нативные OGG OPUS сообщения in-memory - без нагрузки на CPU сервера.',
       featH4: 'Полный стек безопасности: Docker Compose, Row-Level Security, валидация Telegram-токена, Kill Switch MAINTENANCE_MODE.',
-      projLabel: 'Ещё проекты', projTitle: 'Что я построила',
+      projLabel: 'Еще проекты', projTitle: 'Что я построила',
       projDesc: 'Инструменты и системы из разных предметных областей.',
       p1Type: 'Аналитика / ETL', p1Name: 'DWH и аналитика рыбной отрасли',
       p1Desc: 'Мигрировала фрагментированную ETL-экосистему в централизованное PostgreSQL DWH. Разработала сложную логику трансферов квот, интегрировала UN Comtrade API и АМП-парсинг судов; оркестрация через n8n, Notion как read-only дашборд.',
       p2Type: 'AI / Scraping', p2Name: 'Система мониторинга конкурентов',
-      p2Desc: 'macOS-десктоп для scraping компаний рыбной отрасли через headless Selenium с обходом защиты. Данные подаются в GPT-4o при temperature=0 → структурированный JSON-снимок по конкурентам с оценкой рисков.',
+      p2Desc: 'macOS-десктоп для scraping компаний рыбной отрасли через headless Selenium с обходом защиты. Данные подаются в GPT-4o при temperature=0: структурированный JSON-снимок по конкурентам с оценкой рисков.',
       p3Type: 'AI / R&amp;D', p3Name: 'Fine-Tuning стиля общения LLM',
-      p3Desc: 'Пайплайн дообучения ruGPT-3: 4-битное квантование + LoRA-адаптеры на Google Colab T4 GPU, целевой Tone of Voice — консьерж-сервис 5 звёзд. Полная локальная изоляция конфиденциальных данных.',
+      p3Desc: 'Пайплайн дообучения ruGPT-3: 4-битное квантование + LoRA-адаптеры на Google Colab T4 GPU, целевой Tone of Voice - консьерж-сервис 5 звезд. Полная локальная изоляция конфиденциальных данных.',
       p4Type: 'Автоматизация / OCR', p4Name: 'Инструмент авто-заполнения документов',
-      p4Desc: 'Читает отсканированные формы через Tesseract OCR, сопоставляет поля с актуальным PDF и программно заполняет новую форму — устраняет ручной повторный ввод в ежегодных документооборотах.',
+      p4Desc: 'Читает отсканированные формы через Tesseract OCR, сопоставляет поля с актуальным PDF и программно заполняет новую форму - устраняет ручной повторный ввод в ежегодных документооборотах.',
       skillLabel: 'Экспертиза', skillTitle: 'Технологический стек',
       skillDesc: 'Инструменты и технологии, с которыми я работаю в продакшне.',
       sg1: 'AI / LLM', sg2: 'Бэкенд', sg3: 'Данные и автоматизация', sg4: 'Интеграции', sg5: 'AI-агенты',
-      s1i1: 'OpenAI GPT-4o / Vision / Embeddings', s1i2: 'Anthropic Claude · Google Gemini 2.5',
-      s1i3: 'OpenRouter · Sber GigaChat',
+      s1i1: 'OpenAI GPT-4o / Vision / Embeddings', s1i2: 'Anthropic Claude, Google Gemini 2.5',
+      s1i3: 'OpenRouter, Sber GigaChat',
       s1i4: 'RAG-пайплайны (ChromaDB, FAISS)', s1i5: 'Fine-Tuning: LoRA / PEFT / QLoRA',
       s2i1: 'Python 3.10+ / FastAPI', s2i2: 'SQLAlchemy 2.0 / Alembic', s2i3: 'PostgreSQL',
       s2i4: 'Docker / Docker Compose', s2i5: 'Async / ASGI-архитектура',
@@ -1381,39 +738,52 @@
       s4i1: 'Telegram Bot API', s4i2: 'Bnovo PMS / Bitrix24 / AmoCRM', s4i3: 'Yandex SpeechKit STT/TTS',
       s4i4: 'Notion API', s4i5: 'VetIS / API госреестров',
       s5i1: 'Hermes (Python agent framework)', s5i2: 'OpenClaw (Node.js gateway)',
-      s5i3: 'MCP (Model Context Protocol)', s5i4: 'Доменная маршрутизация · Shared State',
-      s5i5: 'systemd services · hot-swap',
-      p5Type: 'AI / Multi-Agent', p5Name: 'Мульти-агентная система для AI-консалтинга',
-      p5Desc: 'Четырёхагентная иерархическая система (оркестратор + исследователь + разработчик + дизайнер) на Hermes/OpenClaw с интерфейсом через Telegram. Domain routing (7 доменов), Shared State протокол и multi-provider LLM routing через OpenRouter с fallback между Claude, Gemini и GPT.',
+      s5i3: 'MCP (Model Context Protocol)', s5i4: 'Триаж задач, бюджет вызовов, ретро',
+      s5i5: 'systemd services, hot-swap',
+      p5Type: "AI / Мультиагентность", p5Name: "ИИ-компания из агентов",
+      p5Desc: "Оркестратор и три специалиста (исследователь, разработчик, дизайнер) работают как компания, а не как рой. У каждой задачи триаж по уровню сложности, бюджет не больше пяти вызовов модели, стоп-критерий и обязательное ретро. Память организации (конституция, роли, база знаний) живет в git и раз в сутки уходит в Notion скриптом без LLM.",
       aboutLabel: 'О себе', aboutTitle: 'Обо мне',
-      aboutP1: 'Начинала как инженер-разработчик ПО, <strong>14 лет проработала в Мурманском морском пароходстве</strong> — одном из крупнейших морских транспортных предприятий России. Прошла путь от инженера до начальника службы ИТ и телекоммуникаций, в управлении было около 40 человек. Вместе с командой мы разрабатывали собственную ERP, внедряли SAP и 1С, администрировали собственный дата-центр. Именно здесь я научилась думать системами — и сохранять спокойствие, когда эти системы ломаются.',
-      aboutP2: 'Семь лет назад переехала в Санкт-Петербург и перешла в клиентскую работу: <strong>9 лет в B2B-продажах и консалтинге</strong> — единой точкой входа между бизнесом и внешними техническими командами. Это сочетание глубокой архитектурной экспертизы с умением переводить её на язык бизнеса оказалось именно тем, что нужно AI-проектам.',
-      aboutP3: 'Последние несколько лет полностью сосредоточена на <strong>production AI-системах</strong>: RAG-пайплайны, мультимодальные LLM-бэкенды, корпоративные DWH, мульти-агентные архитектуры. DWH для рыбной отрасли, AI-ассистент для сети отелей, система мониторинга конкурентов, бот-стилист — каждый проект это реальная бизнес-задача, решённая настоящим кодом в продакшне.',
-      aboutP4: 'Работаю официально как ИП со <strong>статусом eResident Казахстана</strong> — для удобных международных B2B-расчётов и заключения контрактов.',
-      aboutLocLabel: 'Местоположение', aboutLocVal: 'Доступна удалённо',
+      aboutP1: 'Начинала как инженер-разработчик ПО, <strong>14 лет проработала в Мурманском морском пароходстве</strong> - одном из крупнейших морских транспортных предприятий России. Прошла путь от инженера до начальника службы ИТ и телекоммуникаций, в управлении было около 40 человек. Вместе с командой мы разрабатывали собственную ERP, внедряли SAP и 1С, администрировали собственный дата-центр. Именно здесь я научилась думать системами - и сохранять спокойствие, когда эти системы ломаются.',
+      aboutP2: 'Семь лет назад переехала в Санкт-Петербург и перешла в клиентскую работу: <strong>9 лет в B2B-продажах и консалтинге</strong> - единой точкой входа между бизнесом и внешними техническими командами. Это сочетание глубокой архитектурной экспертизы с умением переводить ее на язык бизнеса оказалось именно тем, что нужно AI-проектам.',
+      aboutP3: 'Последние несколько лет полностью сосредоточена на <strong>production AI-системах</strong>: RAG-пайплайны, мультимодальные LLM-бэкенды, корпоративные DWH, мульти-агентные архитектуры. DWH для рыбной отрасли, AI-ассистент для сети отелей, система мониторинга конкурентов, бот-стилист - каждый проект это реальная бизнес-задача, решенная настоящим кодом в продакшне.',
+      aboutP4: 'Работаю официально как ИП со <strong>статусом eResident Казахстана</strong> - для удобных международных B2B-расчетов и заключения контрактов.',
+      aboutLocLabel: 'Местоположение', aboutLocVal: 'Доступна удаленно',
       aboutLangLabel: 'Основной язык',
       aboutLangVal: 'Python<br><small>также свободно: SQL, YAML, shell-скрипты</small>',
       aboutStatusLabel: 'Правовой статус',
       aboutStatusVal: 'ИП, eResident Казахстана<br><small>Официальный договор оказания услуг</small>',
       aboutRateLabel: 'Ставка консалтинга',
-      aboutRateVal: 'От 5 000 ₽ / час<br><small>Проектная стоимость — по согласованию</small>',
+      aboutRateVal: 'От 5 000 ₽ / час<br><small>Проектная стоимость - по согласованию</small>',
       contactLabel: 'Давайте пообщаемся', contactTitle: 'Есть проект?',
       contactDesc: 'Открыта для фриланс-проектов, консалтинга и интересного сотрудничества. Напишите мне.',
       footerBuilt: 'Сделано на vanilla HTML/CSS/JS',
+      metaNote: '',
+      p9Tag: 'VK',
       p6Type: 'AI / Portfolio', p6Name: 'Персональный HR-агент (этот сайт)',
-      p6Desc: 'Этот сайт — двуязычное AI-портфолио с FastAPI RAG-бэкендом, FAISS-поиском и GPT-4o чат-виджетом, отвечающим на EN или RU в зависимости от языка посетителя. Статический фронтенд на GitHub Pages, API на собственном VPS.',
+      p6Desc: 'Этот сайт - двуязычное AI-портфолио с FastAPI RAG-бэкендом, FAISS-поиском и GPT-4o чат-виджетом, отвечающим на EN или RU в зависимости от языка посетителя. Статический фронтенд на GitHub Pages, API на собственном VPS.',
       p7Type: 'AI / Мода', p7Name: 'Smart Style Bot',
-      p7Desc: 'Telegram AI-стилист: анализирует гардероб через Gemini Vision, подбирает образы под любой повод и применяет Virtual Try-On (Fashn / fal.ai) — показывает вещи на твоём фото. Рекомендует покупки с российских маркетплейсов.',
+      p7Desc: 'Telegram AI-стилист: анализирует гардероб через Gemini Vision, подбирает образы под любой повод и применяет Virtual Try-On (Fashn / fal.ai) - показывает вещи на твоем фото. Рекомендует покупки с российских маркетплейсов.',
       p8Type: 'Web / Творческое', p8Name: 'Фотоальбом к юбилею',
-      p8Desc: 'Интерактивный веб-фотоальбом к 70-летию — пять глав жизни (Детство → Сегодня), анимированные портреты, фоновая музыка и ~200 фото, автоматически импортированных из iCloud и сжатых Python-скриптом. Чистый vanilla JS, без фреймворков.',
+      p8Desc: 'Интерактивный веб-фотоальбом к 70-летию - пять глав жизни (от детства до сегодняшнего дня), анимированные портреты, фоновая музыка и ~200 фото, автоматически импортированных из iCloud и сжатых Python-скриптом. Чистый vanilla JS, без фреймворков.',
       p9Type: 'AI / Контент', p9Name: 'Генератор постов ВКонтакте',
-      p9Desc: 'Flask-приложение для генерации брендированных постов VK-сообщества в голосе «Майи» — AI-наставника по биохакингу. GigaChat соблюдает строгий Tone of Voice, парсит референсные URL и сохраняет избранные посты.',
+      p9Desc: 'Flask-приложение генерирует брендированные посты для экспертного блога во ВКонтакте. GigaChat держит строгий Tone of Voice, парсит референсы по ссылкам и сохраняет избранное редактора.',
       p10Type: 'Генеалогия / API', p10Name: 'MyFamilyTree',
       p10Desc: 'FastAPI-бэкенд для личной генеалогической платформы. Импортирует GEDCOM-файлы семейных деревьев, хранит связи в PostgreSQL через SQLAlchemy, REST-эндпоинты для поиска людей и прикрепления архивных документов к записям.',
+      showAll: "Все проекты",
+      p15Type: "AI / Видео", p15Name: "Конвейер детского анимационного канала",
+      p15Desc: "Сериал на испанском для детей 2-5 лет собирает конвейер: канон героев, кадры, анимация, озвучка, музыка, монтаж, QA и загрузка через YouTube Data API. Голос и музыка лежат отдельными дорожками, поэтому новый язык - это переозвучка без перерендера видео. Смета серии считается до запуска, QA-гейт не дает залить серию с заглушками. Статус: канон героев готов, канал в подготовке.",
+      p14Type: "AI / FinOps", p14Name: "Учет расходов на ИИ-агентов",
+      p14Desc: "Дашборд балансов по провайдерам и отчет «куда ушли деньги», который сводит три слоя логов, не видящих друг друга, и сверяет итог со счетом OpenRouter. Разбор показал: 45% расходов уходило на агента, который каждые 30 минут спрашивал, нет ли для него работы, это 1007 вызовов. После выключения опроса эта строка обнулилась.",
+      p13Type: "Данные / Продажи", p13Name: "Поиск B2B-заказчиков по открытым реестрам",
+      p13Desc: "Пайплайн для промышленного партнера: кандидаты отбираются по ОКВЭД и региону, к каждой компании подтягиваются выручка за все годы, численность, руководитель, контакты и открытые вакансии. Ответы API кэшируются, отчетность сверяется с первоисточником ФНС через шлюз в России. Первый батч: 35 компаний, 5 после отбора, 1 на рекомендацию.",
+      p12Type: "AI / Продажи", p12Name: "Конвейер откликов на фриланс-заказы",
+      p12Desc: "Заказы с биржи собираются из RSS и разметки страницы, не тратя ни одного токена. Фильтр по разделам площадки и прошлым решениям владельца оставляет 3-5 заказов в день из десятков. Черновик отклика модель пишет по досье и образцам живых откликов, человек правит и отправляет в один тап из Telegram. После каждой правки фильтра прогоняются 49 контрольных примеров, исходы откликов пишутся обратно в базу.",
+      p11Type: "Автоматизация / Контент", p11Name: "Контент-конвейер: от мировых новостей до поста и статьи",
+      p11Desc: "Дважды в день скрипт собирает ИИ-новости из 15 лент США, Европы и Азии, модель отбирает важное и пишет черновик, редактор-гейт его проверяет. Одобренное уходит по расписанию в Telegram-канал и в двуязычный блог на GitHub Pages. Сама публикация не делает ни одного вызова модели: скрипты, статусы в Notion и линтер, который не пускает служебные пометки агента.",
       chatTitle: 'HR-агент Натальи',
       chatSubtitle: 'AI-ассистент по карьере',
-      chatPlaceholder: 'Спросите о навыках, проектах, ставках…',
-      chatGreeting: 'Привет! Я персональный HR-агент Натальи. Спросите о её навыках, опыте или условиях сотрудничества — отвечу сразу! 🚀',
+      chatPlaceholder: 'Спросите о навыках, проектах, ставках...',
+      chatGreeting: 'Привет! Я персональный HR-агент Натальи. Спросите о ее навыках, опыте или условиях сотрудничества - отвечу сразу!',
     }
   };
 
@@ -1604,12 +974,12 @@
       const res = await fetch(`${getChatApi()}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        /* top_k is the server's call — it tunes retrieval alongside the cost caps */
+        /* top_k is the server's call - it tunes retrieval alongside the cost caps */
         body: JSON.stringify({ message: text.slice(0, 500), lang }),
       });
       if (!res.ok) {
         /* The API explains itself in the visitor's language (quota, daily limit,
-           …). Show that instead of a blanket "unavailable" that hides the reason. */
+           ...). Show that instead of a blanket "unavailable" that hides the reason. */
         let detail = '';
         try { detail = (await res.json()).detail; } catch { /* non-JSON error body */ }
         throw new Error(detail || `HTTP ${res.status}`);
@@ -1650,5 +1020,6 @@
     });
   });
 </script>
+<script src="heroart.js"></script>
 </body>
 </html>

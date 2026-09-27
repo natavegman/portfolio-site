@@ -42,9 +42,9 @@ A personal interest in genealogy led to the MyFamilyTree side project — a Fast
 * **Implementation:** Designed and deployed a PostgreSQL DWH styled entirely via SQLAlchemy 2.0 declarative mappings and maintained by Alembic migrations. Engineered advanced "Quota Transfer" business logic to dynamically calculate the actual fish-catch owner by cross-referencing vessel charter records. Integrated the UN Comtrade Data API for international market prices by HS code, and automated live vessel port-approach logs by parsing AMP registries. Re-routed Notion to act as a read-only dashboard updated asynchronously via the Notion API. Orchestrated the full pipeline via n8n deployed on a dedicated cloud VPS.
 * **GitHub:** https://github.com/natavegman/ships_analytic
 
-### 2. Multimodal AI Assistant & Hospitality Automation ("Nebo AI Assistant")
+### 2. Multimodal AI Assistant & Hospitality Automation (Apart-Hotel AI Assistant)
 * **Role:** Backend Developer & IT Architect.
-* **Context:** Automated the intake, technical diagnosis, and resolution routing of room repair incidents and guest FAQs across a premium apart-hotel network ("5 Nebo" / "47 Nebo"), significantly reducing staff workload.
+* **Context:** Automated the intake, technical diagnosis, and resolution routing of room repair incidents and guest FAQs across a premium apart-hotel network, significantly reducing staff workload.
 * **Implementation:** Built an async ASGI application on FastAPI natively integrated with the Bnovo PMS API. Deployed a hybrid RAG system using ChromaDB + GigaChat, with specialized prompts for "Staff" and "Guest" session modes. Integrated a Computer Vision module (GPT-4o / GigaChat Vision) to extract hardware failure data from guest photos and auto-generate maintenance tickets in the hotel CRM. Embedded Yandex SpeechKit to asynchronously transcribe Telegram voice messages (OGG OPUS) in-memory, avoiding server CPU overhead.
 * **Security & DevOps:** Docker Compose containerization, Telegram webhook validation via X-Telegram-Bot-Api-Secret-Token, MAINTENANCE_MODE Feature Flag / Kill Switch, Row-Level Security (RLS) on the database.
 
@@ -81,11 +81,11 @@ A personal interest in genealogy led to the MyFamilyTree side project — a Fast
 * **Implementation:** Pure vanilla JS, zero frameworks. Python script auto-imported and compressed photos from iCloud, organizing them by chapter. Deployed on GitHub Pages.
 * **GitHub:** https://github.com/natavegman/svetlana70-album
 
-### 9. VK Post Generator ("Maya" — AI Biohacking Coach)
+### 9. Instagram* Post Generator
 * **Role:** Full-Stack Developer & Prompt Engineer.
-* **Context:** Flask web app that generates branded VK community posts in the voice of "Maya" — an AI biohacking coach persona with a strict Tone of Voice guideline.
+* **Context:** Flask web app that generates branded Instagram* posts for an expert blog with a strict Tone of Voice guideline.
+* **Note:** *Instagram is a product of Meta Platforms Inc., whose activities are banned in the Russian Federation.
 * **Implementation:** GigaChat generates posts strictly matching the ToV brief. BeautifulSoup scrapes reference content from URLs provided by the editor. Editorial favorites saved to database for future reference.
-* **GitHub:** https://github.com/natavegman/site-generation-post
 
 ### 10. MyFamilyTree
 * **Role:** Backend Developer.
