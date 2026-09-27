@@ -3,13 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Как выбрать модель под задачу и не разориться</title>
+<title>Как выбрать модель под задачу и не разориться | Наталья Вегман</title>
 <meta name="description" content="Начинается это почти всегда одинаково. Человек собирает первый рабочий пайплайн - цепочку шагов, где текст передается от одного вызова модели к другому, - открывает свежий рейтинг ...">
+<meta name="author" content="Наталья Вегман">
 <link rel="canonical" href="https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/">
-<meta property="og:title" content="Как выбрать модель под задачу и не разориться">
+<link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/">
+<link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/kak-vybrat-model-pod-zadachu/">
+<link rel="alternate" hreflang="x-default" href="https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/">
+<link rel="alternate" type="application/rss+xml" title="Блог: Наталья Вегман" href="https://vegman.dev/blog/feed.xml">
+<meta property="og:title" content="Как выбрать модель под задачу и не разориться | Наталья Вегман">
 <meta property="og:description" content="Начинается это почти всегда одинаково. Человек собирает первый рабочий пайплайн - цепочку шагов, где текст передается от одного вызова модели к другому, - открывает свежий рейтинг ...">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="vegman.dev">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Как выбрать модель под задачу и не разориться", "description": "Начинается это почти всегда одинаково. Человек собирает первый рабочий пайплайн - цепочку шагов, где текст передается от одного вызова модели к другому, - открывает свежий рейтинг ...", "datePublished": "2026-03-26", "dateModified": "2026-03-26", "inLanguage": "ru", "url": "https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/", "mainEntityOfPage": "https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/", "author": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "publisher": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "articleSection": "Кейсы", "image": "https://vegman.dev/blog/img/kak-vybrat-model-pod-zadachu/cover.jpg"}</script>
 <script>
 (function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
 if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
@@ -17,7 +26,7 @@ document.documentElement.dataset.theme=t})();
 function toggleTheme(){var r=document.documentElement,t=r.dataset.theme==='light'?'dark':'light';
 r.dataset.theme=t;try{localStorage.setItem('preferredTheme',t)}catch(e){}}
 </script>
-<meta property="og:image" content="https://vegman.dev/blog/img/kak-vybrat-model-pod-zadachu/cover.jpg"><script type="module">
+<meta property="og:image" content="https://vegman.dev/blog/img/kak-vybrat-model-pod-zadachu/cover.jpg"><meta property="article:published_time" content="2026-03-26"><script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const els=[...document.querySelectorAll('pre.mermaid')];
 els.forEach(e=>{e.dataset.src=e.textContent;});
@@ -204,8 +213,8 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
     <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
     <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
     <div class="lang-switch">
-      <button class="lang-btn" data-lang="ru" type="button">RU</button>
-      <button class="lang-btn" data-lang="en" type="button">EN</button>
+      <button class="lang-btn" data-lang="ru" data-href="https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" data-href="https://vegman.dev/en/blog/kak-vybrat-model-pod-zadachu/" type="button">EN</button>
     </div>
     <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   </nav>
@@ -279,103 +288,28 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
   </div>
 </aside>
 </div>
-<div data-lang-block="en">
-  <a class="back" href="https://vegman.dev/blog/">All posts</a>
-  <h1>Roles, Not Rankings: How I Choose Models for a Pipeline</h1>
-  <div class="meta"><span>2026-03-26</span><span class="tag">case</span></div>
-  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-  <article><p>It almost always starts the same way. Someone puts together their first working pipeline - a chain of steps where text is passed from one model call to the next - opens the latest language model leaderboard, takes the top entry, and plugs it into every step in a row. The system works, and that feels good. Then the bill arrives, and it turns out the strongest and most expensive model in the system spent most of its time going through lists and throwing out what didn't fit.</p>
-<p>The usual next move is to swap the expensive model for a cheap one and relax. That's a mistake too, just a quieter one.</p>
-<p>I'll show how I choose models in my own setup: not "the best one", but different ones - for roles inside a single system. You'll walk away with three parameters the choice actually runs on, a trap I fell into myself, and two technical details that make the system fail somewhere other than where you'll go looking to fix it.</p>
-<h2>Why "which model is best" is the wrong question</h2>
-<p>A place in the ranking is an averaged result on a set of benchmarks: math, code, reasoning, knowledge, sometimes all at once. Averaging over many different tasks is exactly what you don't need. You don't have "tasks in general", you have a specific step of a specific pipeline: pick a few suitable items out of a long list, translate a paragraph, find the right chunk in a knowledge base, put together coherent text.</p>
-<p>A model in a system isn't an employee you hire because they're the smartest on the market. It's a part in a particular position, and the position has requirements. The top line of the ranking answers none of them.</p>
-<p>The right question sounds like this: <b>which model does this step need, and why</b>. And the answer is almost never the same for the whole system.</p>
-<figure><pre class="mermaid">flowchart LR
-  A[Поток входящих материалов] --&gt; B[Роль: массовое чтение и первичный отбор]
-  B --&gt;|быстрая дешевая модель| C[Короткий список]
-  C --&gt; D[Роль: рассуждение, редактура, перевод]
-  D --&gt;|сильная модель| E[Готовый результат]
-  F[Отраслевая база знаний на русском] --&gt; G[Роль: поиск по смыслу]
-  G --&gt;|модель отечественного провайдера, своя квота| D</pre><figcaption>Одна система, три роли, три разные модели: дорогая работает последней и на малом объеме</figcaption></figure>
-<h2>Roles, not rankings: how it works in my setup</h2>
-<p>My system has several roles, and each one has its own model.</p>
-<ul><li>Bulk reading and first-pass selection of material - a fast, cheap model. It goes through the incoming stream, looks at each item against formal criteria, and leaves a short list.</li><li>Reasoning, editing, and translation - a strong model. It comes in later and works not with the stream but with the little that made it through the selection.</li><li>Working with a Russian-language industry knowledge base - a model from a domestic provider with its own quota. Quota here means a separate limit and a separate balance, not shared with the other calls.</li></ul>
-<p>Splitting by role gives you the main thing: <b>the expensive model gets called rarely and for good reason, not for every little thing</b>. Notice where the savings come from. Not from my having found a cheaper model, but from the expensive call no longer happening where it wasn't needed. Those are different things, and the second one works more reliably.</p>
-<h2>The three parameters the choice actually runs on</h2>
-<h3>First: language and domain</h3>
-<p>To search by meaning rather than by word matching, text is turned into a vector - a long set of numbers where fragments close in meaning end up near each other. This is called vectorization, and a separate model does it. That's how knowledge base search works: the question gets vectorized, and the system pulls out the document chunks nearest to it.</p>
-<p>For a Russian-language knowledge base, the quality of vectorization in Russian matters more than the model's place in the general ranking. A model can be considered perfectly strong in general and still be worse at telling apart the shades of phrasing of your language and your industry. You have to check that on your own texts and your own real questions, not from a table.</p>
-<h3>Second: the nature of the task</h3>
-<p>Selecting from a list by criteria and generating coherent text are different tasks, and they load the model differently. A fast model selects well and writes long texts badly. In my case it looked like this: on a long text it slides into an impersonal brochure and starts inventing facts - that is, confidently producing plausible details that weren't in the source.</p>
-<p>So the conclusion "the model is weak" is wrong. The right conclusion: this model is good at selection and no good at generation. It stays in the system, just in its own place.</p>
-<h3>Third: how you pay</h3>
-<p>The usual scheme is per-unit payment for tokens. A token is a piece of text, roughly part of a word; you pay both for what you sent the model and for what it wrote back. Under this scheme cost grows along with volume, linearly and without a ceiling.</p>
-<p>Part of the work is worth moving off per-unit payment onto a subscription with a fixed price. For a stream of same-type tasks this changes the economics radically: you pay for the month, not for every run, and growth in volume stops being growth in the bill. One-off and rare tasks, on the contrary, live perfectly fine on per-unit payment.</p>
-<figure><pre class="mermaid">flowchart TB
-  A[Регулярный вызов, который на самом деле не нужен] --&gt; B[Шаг 1: перевести на модель дешевле]
-  A --&gt; C[Шаг 1: проверить, нужен ли вызов вообще]
-  B --&gt; D[Расход по вызову меньше в 7 раз]
-  C --&gt; E[Вызов отключен, расход по нему исчез]
-  D --&gt; F[Силы потрачены на оптимизацию мусора]
-  E --&gt; G[Сначала нужность, потом цена]</pre><figcaption>Один и тот же ненужный вызов: удешевить или отключить</figcaption></figure>
-<h2>The cost-cutting trap</h2>
-<p>Now about the mistake I tested on myself.</p>
-<p>I had a recurring call that cost noticeable money. I moved it to a cheaper model and got a sevenfold saving. A nice number. The problem is that this call wasn't needed at all - it simply should have been turned off. Instead of a sevenfold saving I could have had a complete one, and I spent effort optimizing something whose place was in the trash.</p>
-<p>Hence the order of operations I now stick to strictly: <b>first check whether the call is needed, then what it costs</b>. Making it cheaper is the second step, not the first. It's very tempting, because it gives a fast, measurable result and doesn't require thinking about what's going on in the system.</p>
-<h3>The token ceiling you never spend</h3>
-<p>When you call a model you set an upper bound on the length of the response - the parameter usually called <code>max_tokens</code>. That isn't spending, it's a declaration: "the answer may be this long".</p>
-<p>Providers sometimes check ability to pay against the requested ceiling rather than the actual spend. A task that asks for the model's maximum ceiling for the sake of a ninety-token answer starts failing when the balance runs low - even though it spends pennies. The symptom is deceptive: spend is small, but the calls don't go through. The cure is to set the ceiling by the real length of the answer, not "bigger, just in case".</p>
-<h3>One key for everyone</h3>
-<p>Several agents can share one access key and one balance. When the balance runs out, they all fail at once, but it looks like one of them broke - the one whose error you noticed first. You go off to fix its logic, while the cause is shared and external.</p>
-<p>The sign of exactly this situation: several different failures in different places within the same minute. It helps to know in advance which agent goes through which key, and to split critical roles across different balances.</p>
-<section class="practice"><p class="practice-kicker">Put it to work</p>
-<h2>What to check in practice</h2>
-<ul><li>Write out the steps of your pipeline as a list: what happens, with what, how often. Until that list exists, a conversation about models is pointless.</li><li>Next to each step, mark the type of task: selection and classification, or text generation. Give the first to a fast model, the second to a strong one.</li><li>Find the most frequent call. Ask not "what cheaper thing can replace it", but "what breaks if I turn it off". If there's no clear answer - turn it off and see.</li><li>Look at <code>max_tokens</code> on every call and compare it with the real length of the responses. Anywhere the ceiling is several times the actual figure, bring it into line.</li><li>Draw up a map of keys: which agent works with which key and off which balance. Find the places where one balance holds several independent roles.</li><li>For a Russian-language knowledge base, run your real questions through different vectorization models and compare what came back. Judge the results, not the model's description.</li><li>Work out whether you have a stream of same-type tasks. If you do - compare its monthly cost in tokens with the price of a subscription.</li></ul>
-<h2>How to tell it worked</h2>
-<p>The criterion isn't the bill, though the bill will change too. The criterion is this.</p>
-<ul><li>You can explain in a minute, for every step, why that particular model is there, and the explanation doesn't come down to "it's at the top of the ranking".</li><li>The strong model is called rarely and on small volume - only after cheap selection has cut the stream down.</li><li>If you remove the strong model from the selection step, the quality of the final result doesn't change. Which means it wasn't needed at that step in the first place.</li><li>Long texts stop arriving as an impersonal brochure with invented details - because they're written by a model that can do it.</li><li>When something fails, you look at balances and keys first, and at the agent's logic second. That reflex saves hours.</li></ul>
-<p>Choosing a model isn't a purchase, it's design. You aren't looking for one good one, you're placing several different ones where their strengths are needed and their weaknesses don't get in the way. Then the bill becomes a consequence of the architecture, not a surprise at the end of the month.</p></section>
-</article>
-  <aside class="cta">
-  <p class="cta-kicker">Get in touch</p>
-  <h3>Let's look at your case</h3>
-  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup, write to me and we'll go through it.</p>
-  <div class="cta-actions">
-    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
-    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
-  </div>
-</aside>
-</div>
 </div></main>
 <footer><div class="wrap">
   <span>Natalia Vegman</span>
-  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>, <a href="https://vegman.dev/blog/feed.xml">RSS</a></span>
 </div></footer>
 <script>
 (function(){
-  function apply(lang){
-    document.querySelectorAll('[data-lang-block]').forEach(function(el){
-      el.classList.toggle('active', el.dataset.langBlock === lang);
-    });
-    document.querySelectorAll('.lang-btn').forEach(function(b){
-      b.classList.toggle('active', b.dataset.lang === lang);
-    });
-    document.documentElement.lang = lang;
-    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
-  }
+  var cur = document.documentElement.lang;
+  document.querySelectorAll('[data-lang-block]').forEach(function(el){
+    el.classList.toggle('active', el.dataset.langBlock === cur);
+  });
   var stored = null;
   try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
-  var nav = (navigator.language||'').toLowerCase();
-  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
-  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
-  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
-  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
-  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
-  apply(initial);
   document.querySelectorAll('.lang-btn').forEach(function(b){
-    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+    b.classList.toggle('active', b.dataset.lang === cur);
+    b.addEventListener('click', function(){
+      try{ localStorage.setItem('preferredLang', b.dataset.lang); }catch(e){}
+      if(b.dataset.lang !== cur && b.dataset.href) location.href = b.dataset.href;
+    });
   });
+  var other = stored && stored !== cur && document.querySelector('.lang-btn[data-lang="'+stored+'"]');
+  if(other && other.dataset.href) location.replace(other.dataset.href);
 })();
 </script>
 </body>

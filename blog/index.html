@@ -5,11 +5,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Блог: Наталья Вегман</title>
 <meta name="description" content="Инженерные заметки о внедрении ИИ в бизнес-процессы: архитектура, агенты, интеграции, стоимость решений.">
+<meta name="author" content="Наталья Вегман">
 <link rel="canonical" href="https://vegman.dev/blog/">
+<link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/">
+<link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/">
+<link rel="alternate" hreflang="x-default" href="https://vegman.dev/blog/">
+<link rel="alternate" type="application/rss+xml" title="Блог: Наталья Вегман" href="https://vegman.dev/blog/feed.xml">
 <meta property="og:title" content="Блог: Наталья Вегман">
 <meta property="og:description" content="Инженерные заметки о внедрении ИИ в бизнес-процессы: архитектура, агенты, интеграции, стоимость решений.">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://vegman.dev/blog/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="vegman.dev">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "Блог: Наталья Вегман", "description": "Инженерные заметки о внедрении ИИ в бизнес-процессы: архитектура, агенты, интеграции, стоимость решений.", "url": "https://vegman.dev/blog/", "inLanguage": "ru", "author": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}}</script>
 <script>
 (function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
 if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
@@ -184,8 +193,8 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
     <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
     <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
     <div class="lang-switch">
-      <button class="lang-btn" data-lang="ru" type="button">RU</button>
-      <button class="lang-btn" data-lang="en" type="button">EN</button>
+      <button class="lang-btn" data-lang="ru" data-href="https://vegman.dev/blog/" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" data-href="https://vegman.dev/en/blog/" type="button">EN</button>
     </div>
     <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   </nav>
@@ -609,453 +618,28 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
     </a>
   </li></ul>
 </div>
-<div data-lang-block="en">
-  <section class="blog-hero">
-    <a class="kicker" href="https://vegman.dev/blog/openai-agents-api-autonomous-pipelines/"><i>New</i>OpenAI Agents API: Autonomous Agents in the Cloud and a New Era for Pipelines</a>
-    <h1>How <em>AI</em> works<br>in business: an architect's notes</h1>
-    <p class="lead">An architect's notes on putting AI into business processes: architecture, agents, integrations, and the cost of each decision.</p>
-    <div class="arc"></div>
-  </section>
-  <div class="filters"><button type="button" class="on" data-filter="">All</button><button type="button" data-filter="Case study">Cases</button><button type="button" data-filter="Article">Articles</button><button type="button" data-filter="News">News</button></div><ul class="post-grid"><li class="post-card featured" data-rubric="News">
-    <a href="https://vegman.dev/blog/openai-agents-api-autonomous-pipelines/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-25</span><span class="tag">news</span></div>
-        <span class="post-title">OpenAI Agents API: Autonomous Agents in the Cloud and a New Era for Pipelines</span>
-        <p class="excerpt">Building autonomous agents for complex tasks used to be something only large teams could do. You had to manage dialog state by hand, orchestrate tool calls, build delegation mechan...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/gpt-6-astra-novaya-realnost-dlya-biznes-zadach/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle">6</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-23</span><span class="tag">news</span></div>
-        <span class="post-title">GPT-6 Astra: A New Reality for Business Tasks</span>
-        <p class="excerpt">OpenAI has released GPT-6 Astra, a new flagship model built for complex work tasks. It is already available in ChatGPT Work, Codex and through the API. If you have been waiting for...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-22</span><span class="tag">news</span></div>
-        <span class="post-title">Hackers Are Stealing Claude Limits: How to Protect Your Sessions</span>
-        <p class="excerpt">Attention, everyone using Claude on a subscription: attackers are stealing login sessions and burning through other people&#x27;s limits. In emails to affected users, Anthropic explaine...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/roy-agentov-pustaya-trata-tokenov/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-18</span><span class="tag">news</span></div>
-        <span class="post-title">Agent &quot;swarms&quot; - just a waste of tokens?</span>
-        <p class="excerpt">Eric Provencher, an OpenAI Codex developer, said plainly that AI agent &quot;swarms&quot; often cause massive token waste without any real gain in quality. In his view, more than two paralle...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/whatsapp-business-ai-agents/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-16</span><span class="tag">news</span></div>
-        <span class="post-title">Meta opens WhatsApp Business to AI agents: routine setup gets automated</span>
-        <p class="excerpt">Meta has launched a tool that lets AI agents set up and manage WhatsApp Business messaging on their own. This changes how customer support and marketing automation works: agents no...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/gemini-ponimaet-video-v-rezhime-agenta-do-88-menshe-tokenov/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle">88%</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-15</span><span class="tag">news</span></div>
-        <span class="post-title">Gemini understands video in agent mode: up to 88% fewer tokens and up to 7% more accurate</span>
-        <p class="excerpt">Google DeepMind has introduced a new capability for Gemini 3.7 Flash, 3.6 Flash and 3.5 Flash-Lite: agentic video understanding. The model no longer pushes the video through a fixe...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/chatgpt-work-zametki-s-poley-boya/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-14</span><span class="tag">news</span></div>
-        <span class="post-title">ChatGPT Work: Notes from the Field</span>
-        <p class="excerpt">OpenAI has rolled out ChatGPT Work, and Simon Willison, as usual, took it apart piece by piece. This is not ChatGPT under a new name. It is a full platform for agents with some ver...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/kak-slomali-avtorezhim-claude-code-opus-5-uroki-dlya-bezopas/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle">5</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-11</span><span class="tag">news</span></div>
-        <span class="post-title">How Claude Code Opus 5 Auto Mode got broken: lessons for building safe agents</span>
-        <p class="excerpt">The Auto Mode protection in Claude Code Opus 5 turned out to be vulnerable. Strictly speaking, this is not a classic prompt injection: Willison calls it an attack through the agent...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/ii-agenty-vashi-novye-klienty-pochemu-markdown-vazhnee-html/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-09</span><span class="tag">news</span></div>
-        <span class="post-title">AI Agents Are Your New Customers: Why Markdown Matters More Than HTML</span>
-        <p class="excerpt">The founder of Inth, a startup that builds developer tools, made this point in the AI Engineer video series: more and more often, software is chosen and installed by an AI agent, n...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/ibm-granite-4-2-llm-architecture/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle">4.2</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-08</span><span class="tag">news</span></div>
-        <span class="post-title">IBM Granite 4.2: A Detailed Look at How Agentic LLMs Are Built</span>
-        <p class="excerpt">IBM has updated its Granite models to version 4.2, with the focus on reasoning and agentic work. The point is not a bigger parameter count. It is post-training (SFT and multi-stage...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/jalapeno-openai-protiv-nvidia/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-07</span><span class="tag">news</span></div>
-        <span class="post-title">Jalapeño: how OpenAI is beating Nvidia on its own turf</span>
-        <p class="excerpt">OpenAI and &quot;Jalapeño&quot; are not about &quot;yet another chip&quot;. They are about control over inference. At the Hot Chips conference, OpenAI showed the first benchmarks of its own accelerato...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/alabama-protiv-openai-sbezhavshiy-agent-podsvechivaet-riski/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-03</span><span class="tag">news</span></div>
-        <span class="post-title">Alabama vs OpenAI: a &quot;runaway&quot; agent puts the risks in plain sight</span>
-        <p class="excerpt">My success criterion for agentic systems: the agent does not &quot;escape&quot; the sandbox. Ever. That&#x27;s why the news about the Alabama Attorney General investigating OpenAI is not tabloid ...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle">4</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-02</span><span class="tag">news</span></div>
-        <span class="post-title">A 4-bit model beat its own bf16 version: what Quantization-Aware Healing showed</span>
-        <p class="excerpt">If you&#x27;ve ever quantized an LLM to 4 bits, you know the pain: inference gets cheap, but the model doesn&#x27;t always stay smart. In a Multiverse Computing post on Hugging Face, the tea...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/openai-presekla-rossiyskuyu-kampaniyu-vliyaniya-s-ispolzovan/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-09-01</span><span class="tag">news</span></div>
-        <span class="post-title">OpenAI disrupted a Russian influence campaign that used AI</span>
-        <p class="excerpt">AI in disinformation is no longer a &quot;scare story&quot;. It is an operational risk. On August 25, OpenAI reported that it had banned a cluster of ChatGPT accounts that most likely operat...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/thomson-reuters-potratila-40-mln-na-sobstvennyy-ii-build-vs/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle">40</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-08-29</span><span class="tag">news</span></div>
-        <span class="post-title">Thomson Reuters spent $40M on its own AI: build vs. buy</span>
-        <p class="excerpt">Over a little more than two years, Thomson Reuters has spent about $40 million on a team and compute for its own language model, and the model is already live under the name &quot;Thoms...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/ii-agent-pytalsya-obmanom-protaschit-malvar-v-opensorsnyy-pr/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-08-28</span><span class="tag">news</span></div>
-        <span class="post-title">A rogue AI agent tried to con its way into getting malware merged into an open-source project</span>
-        <p class="excerpt">The UK&#x27;s AI Security Institute ran a test (the article about it came out on August 24, 2026) in which an agent built on Anthropic Mythos 5 tried to inject malware into the open-sou...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/model-na-trilliony-parametrov-na-odnom-cpu-i-8-gb-ram-chto-e/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle">8</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-08-27</span><span class="tag">news</span></div>
-        <span class="post-title">A trillion-parameter model on one CPU and 8 GB of RAM. What does it change?</span>
-        <p class="excerpt">In early August, FareedKhan-dev published the kimi-k3-in-c project, which runs the Kimi K3 model with 2.78 trillion parameters on a single CPU with just 8.24 GB of RAM. This isn&#x27;t ...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/gde-zakanchivaetsya-chat-repetitor/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-dim" d="M0 300 L166 300"/><rect class="m-node" x="166.0" y="276.0" width="48" height="48" rx="13.440000000000001"/><circle class="m-dot" cx="190" cy="300" r="2.4"/><path class="m-line" d="M214 300 C 310 240, 350 240, 444 300"/><circle class="m-halo" cx="488.2" cy="287.0" r="54.6"/><rect class="m-node on" x="444.0" y="274.0" width="52" height="52" rx="14.560000000000002"/><circle class="m-dot on" cx="470" cy="300" r="3.2"/><text class="m-label" x="190" y="372" text-anchor="middle">report: up</text><text class="m-label big" x="470" y="380" text-anchor="middle">measured: -0.25</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-08-25</span><span class="tag">case</span></div>
-        <span class="post-title">Five Months in One Chat: Where a Chat Model Helps and Where It Starts to Fail</span>
-        <p class="excerpt">On May 18, 2026 I spent half an hour proving to my tutor that the models I work with every day exist. The tutor was Gemini, the argument was about Claude Sonnet 4.5 and Opus 4.6, a...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/6811-zvezd-za-11-dney-kak-otlichit-hayp-ot-zrelosti-v-kode/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle">6,811</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-08-25</span><span class="tag">news</span></div>
-        <span class="post-title">6,811 Stars in 11 Days: How to Tell Hype from Mature Code</span>
-        <p class="excerpt">The JavaScript project dsh-routing-suite collected 6811 stars in the 11 days since it was created on August 14, 2026. Before I pull a repository like this into production, I check ...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/snizhenie-tsen-na-openai-api-chto-eto-znachit-dlya-vashego-b/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-08-23</span><span class="tag">news</span></div>
-        <span class="post-title">Lower OpenAI API prices: what does it mean for your budget and architecture?</span>
-        <p class="excerpt">OpenAI has cut GPT-5.6 Sol API prices by more than 20%, and this isn&#x27;t news for the sake of news. Just last week I was talking with a client about the cost of API calls and why it ...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-08-23</span><span class="tag">case</span></div>
-        <span class="post-title">Auto-posting a blog from Notion to Telegram: what surfaced between &quot;the script ran&quot; and &quot;the post looks like a post&quot;</span>
-        <p class="excerpt">### Auto-posting from Notion to Telegram: why &quot;the script ran&quot; doesn&#x27;t mean &quot;the post worked&quot; In one day I got auto-posting for my personal blog to production status: a card in Not...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/filtr-kotoryy-otsekal-luchshee-keys-otbora-zakazov-na-fl-ru/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-08-23</span><span class="tag">case</span></div>
-        <span class="post-title">The Filter That Cut Out the Best: Screening Projects on FL.ru</span>
-        <p class="excerpt">The Filter That Cut Out the Best I build automation for other people&#x27;s businesses, but this case is about my own. I have a pipeline: it reads the project feed on a freelance market...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="News">
-    <a href="https://vegman.dev/blog/openworker-ii-sotrudnik-na-vashem-zheleze/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-08-18</span><span class="tag">news</span></div>
-        <span class="post-title">OpenWorker: your AI employee that lives on the desktop and delivers results, not correspondence</span>
-        <p class="excerpt">I noticed something strange: over the past couple of years we&#x27;ve gotten used to the idea that an &quot;AI agent&quot; lives in a separate chat. You go into a web interface, describe a task, ...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Article">
-    <a href="https://vegman.dev/blog/oshibki-pervogo-goda-s-llm/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-08-06</span><span class="tag">article</span></div>
-        <span class="post-title">Five mistakes from my first year with language models</span>
-        <p class="excerpt">You&#x27;ve built your first assistant on top of a language model - a program that takes your request as text and writes the rest of the answer. It replies coherently, politely, and bes...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-dim" d="M0 300 L166 300"/><rect class="m-node" x="166.0" y="276.0" width="48" height="48" rx="13.440000000000001"/><circle class="m-dot" cx="190" cy="300" r="2.4"/><path class="m-line" d="M214 300 C 310 240, 350 240, 444 300"/><circle class="m-halo" cx="488.2" cy="287.0" r="54.6"/><rect class="m-node on" x="444.0" y="274.0" width="52" height="52" rx="14.560000000000002"/><circle class="m-dot on" cx="470" cy="300" r="3.2"/><text class="m-label" x="190" y="372" text-anchor="middle">1007 calls</text><text class="m-label big" x="470" y="380" text-anchor="middle">0</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-07-31</span><span class="tag">case</span></div>
-        <span class="post-title">45% of My Model Spend Went to One Question the Agent Asked Itself</span>
-        <p class="excerpt">I opened my bill for language models and saw a number bigger than usual. Over that same period not a single new user had shown up, I hadn&#x27;t shipped any new features, and load hadn&#x27;...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/ot-roya-agentov-k-discipline/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle">5 calls</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-07-20</span><span class="tag">case</span></div>
-        <span class="post-title">Five Rules Cost Less Than Five Agents</span>
-        <p class="excerpt">I opened the billing page and saw zero. Not &quot;running low&quot; - exactly zero. The culprit wasn&#x27;t some complicated scenario or a flood of users: one scheduled agent spent about 14 hours...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Article">
-    <a href="https://vegman.dev/blog/dvuyazychnyy-blog-na-statike/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-07-09</span><span class="tag">article</span></div>
-        <span class="post-title">A Bilingual Blog on Static Hosting: Three Decisions That Keep It From Breaking Quietly</span>
-        <p class="excerpt">I had a static portfolio site: a few pre-built pages that a free repository host simply serves as they are. No server with its own logic, no database - just a set of files. The hom...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/notion-kak-baza-dlya-kontent-konveyera/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-06-25</span><span class="tag">case</span></div>
-        <span class="post-title">Turning a Notion Database into a Publishing Pipeline</span>
-        <p class="excerpt">Picture a chat where the whole editorial team lives. There&#x27;s a link to a draft, an edit on top of it - &quot;change the headline&quot; - below that a question, &quot;wait, did we already publish ...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/sekrety-v-payplayne/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-06-11</span><span class="tag">case</span></div>
-        <span class="post-title">Secrets in Automation: Three Places a Key Leaks Quietly</span>
-        <p class="excerpt">The publishing script ran ten times in a row in my terminal. I put it into the task scheduler - and it started failing with an access error. Same script, same machine, same user. B...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Article">
-    <a href="https://vegman.dev/blog/raspisaniya-i-votchdogi/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-05-28</span><span class="tag">article</span></div>
-        <span class="post-title">Silence Is the Correct Output</span>
-        <p class="excerpt">At six in the morning the phone buzzes: &quot;Queue empty, no new material.&quot; At six thirty - the same message. At seven - again. By the end of the day there are forty-eight of them, and...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Article">
-    <a href="https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-05-14</span><span class="tag">article</span></div>
-        <span class="post-title">The Rules I Took Out of the Prompt and Put Into Code</span>
-        <p class="excerpt">One day I opened the channel and saw my own article there, with tag names sitting in the text literally - angle brackets in the middle of a sentence. Next to it was a link to the o...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/deploy-kotoryy-ne-lomaet-bota/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-04-23</span><span class="tag">case</span></div>
-        <span class="post-title">Tests Before Startup: Four Decisions That Keep a Broken Version Off the Server</span>
-        <p class="excerpt">I have a system of two containers: a web service and a Telegram bot with a scheduler. The code lives inside the image, not in a mounted directory - meaning the container doesn&#x27;t lo...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/kak-ne-dat-modeli-vrat-ciframi/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-04-09</span><span class="tag">case</span></div>
-        <span class="post-title">Confabulated Numbers in Generated Text, and the Gate That Stops Them</span>
-        <p class="excerpt">In my content pipeline, the model was writing a short note: one provider had cut its API prices. I read the draft and couldn&#x27;t find anything to object to. The price of the main mod...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-03-26</span><span class="tag">case</span></div>
-        <span class="post-title">Roles, Not Rankings: How I Choose Models for a Pipeline</span>
-        <p class="excerpt">It almost always starts the same way. Someone puts together their first working pipeline - a chain of steps where text is passed from one model call to the next - opens the latest ...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/dva-processa-odna-baza/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-03-19</span><span class="tag">case</span></div>
-        <span class="post-title">The problem looked architectural. It was the order of the deploy steps.</span>
-        <p class="excerpt">The deploy runs the usual way: the script builds the images, brings up the containers, then runs the tests. The tests open the vector database - the same one the service that just ...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Article">
-    <a href="https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-03-05</span><span class="tag">article</span></div>
-        <span class="post-title">The script does, the model thinks</span>
-        <p class="excerpt">The same payment error message arrived every thirty minutes. Not once a day, not on a new release - exactly every half hour, around the clock, unchanged. A job whose entire purpose...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Article">
-    <a href="https://vegman.dev/blog/chem-agent-otlichaetsya-ot-chat-bota/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle">stop?</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-02-26</span><span class="tag">article</span></div>
-        <span class="post-title">Chatbot or Agent: The Difference Is the Harness, Not the Model</span>
-        <p class="excerpt">You write to a bot: &quot;Book a table for two at seven this evening.&quot; It replies politely and correctly, asks whether you&#x27;d like a window seat or the main room, wishes you a pleasant e...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Article">
-    <a href="https://vegman.dev/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle">RAG</text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-02-18</span><span class="tag">article</span></div>
-        <span class="post-title">RAG in Practice: What It Actually Is, and When You Don&#x27;t Need It</span>
-        <p class="excerpt">Midnight, the front desk, a guest walks in with a foreign passport. The receptionist - third shift of their life - opens the internal assistant and asks: &quot;how do I register a forei...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/tablicy-eto-ne-rag/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-02-05</span><span class="tag">case</span></div>
-        <span class="post-title">When the Input Is a Table, You Don&#x27;t Need RAG</span>
-        <p class="excerpt">You export a table from your maintenance system: vessel, unit, status, criticality. You hand it to an AI assistant and ask it to work out what to fix first. It replies with a parag...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Case study">
-    <a href="https://vegman.dev/blog/pochemu-demo-rabotaet-a-v-prode-lomaetsya/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-01-29</span><span class="tag">case</span></div>
-        <span class="post-title">Three Ways a Bot That Worked in the Demo Broke in Production</span>
-        <p class="excerpt">The demo lasts fifteen minutes. You ask the bot three questions - it answers in a second. You show the report mailout - it goes out on time. Everyone is happy, the work is accepted...</p>
-      </div>
-    </a>
-  </li>
-<li class="post-card" data-rubric="Article">
-    <a href="https://vegman.dev/blog/ot-koda-k-arhitekture-ii-sistem/">
-      <div class="pic" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-      <div class="body">
-        <div class="meta"><span>2026-01-15</span><span class="tag">article</span></div>
-        <span class="post-title">Four Habits That Break When You Start Building AI Systems</span>
-        <p class="excerpt">You run a test a second time in a row, without touching a single line of code - and it fails. Not because of the network, not because of a random timeout: the response simply came ...</p>
-      </div>
-    </a>
-  </li></ul>
-</div>
 </div></main>
 <footer><div class="wrap">
   <span>Natalia Vegman</span>
-  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>, <a href="https://vegman.dev/blog/feed.xml">RSS</a></span>
 </div></footer>
 <script>
 (function(){
-  function apply(lang){
-    document.querySelectorAll('[data-lang-block]').forEach(function(el){
-      el.classList.toggle('active', el.dataset.langBlock === lang);
-    });
-    document.querySelectorAll('.lang-btn').forEach(function(b){
-      b.classList.toggle('active', b.dataset.lang === lang);
-    });
-    document.documentElement.lang = lang;
-    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
-  }
+  var cur = document.documentElement.lang;
+  document.querySelectorAll('[data-lang-block]').forEach(function(el){
+    el.classList.toggle('active', el.dataset.langBlock === cur);
+  });
   var stored = null;
   try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
-  var nav = (navigator.language||'').toLowerCase();
-  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
-  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
-  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
-  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
-  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
-  apply(initial);
   document.querySelectorAll('.lang-btn').forEach(function(b){
-    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+    b.classList.toggle('active', b.dataset.lang === cur);
+    b.addEventListener('click', function(){
+      try{ localStorage.setItem('preferredLang', b.dataset.lang); }catch(e){}
+      if(b.dataset.lang !== cur && b.dataset.href) location.href = b.dataset.href;
+    });
   });
+  var other = stored && stored !== cur && document.querySelector('.lang-btn[data-lang="'+stored+'"]');
+  if(other && other.dataset.href) location.replace(other.dataset.href);
 })();
 
 document.querySelectorAll('.post-card').forEach(function(el){

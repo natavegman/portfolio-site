@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auto-posting a blog from Notion to Telegram: what surfaced between &quot;the script ran&quot; and &quot;the post looks like a post&quot; | Natalia Vegman</title>
+<meta name="description" content="### Auto-posting from Notion to Telegram: why &quot;the script ran&quot; doesn&#x27;t mean &quot;the post worked&quot; In one day I got auto-posting for my personal blog to production status: a card in Not...">
+<meta name="author" content="Natalia Vegman">
+<link rel="canonical" href="https://vegman.dev/en/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/">
+<link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/">
+<link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/">
+<link rel="alternate" hreflang="x-default" href="https://vegman.dev/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/">
+<link rel="alternate" type="application/rss+xml" title="Blog: Natalia Vegman" href="https://vegman.dev/en/blog/feed.xml">
+<meta property="og:title" content="Auto-posting a blog from Notion to Telegram: what surfaced between &quot;the script ran&quot; and &quot;the post looks like a post&quot; | Natalia Vegman">
+<meta property="og:description" content="### Auto-posting from Notion to Telegram: why &quot;the script ran&quot; doesn&#x27;t mean &quot;the post worked&quot; In one day I got auto-posting for my personal blog to production status: a card in Not...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vegman.dev/en/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="vegman.dev">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Auto-posting a blog from Notion to Telegram: what surfaced between \"the script ran\" and \"the post looks like a", "description": "### Auto-posting from Notion to Telegram: why \"the script ran\" doesn't mean \"the post worked\" In one day I got auto-posting for my personal blog to production status: a card in Not...", "datePublished": "2026-08-23", "dateModified": "2026-08-23", "inLanguage": "en", "url": "https://vegman.dev/en/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/", "mainEntityOfPage": "https://vegman.dev/en/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/", "author": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "publisher": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "articleSection": "Cases"}</script>
+<script>
+(function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
+if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+document.documentElement.dataset.theme=t})();
+function toggleTheme(){var r=document.documentElement,t=r.dataset.theme==='light'?'dark':'light';
+r.dataset.theme=t;try{localStorage.setItem('preferredTheme',t)}catch(e){}}
+</script>
+<meta property="article:published_time" content="2026-08-23">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080a;--surface:#0f0d0b;--surface-hex:#14100c;--border:rgba(255,190,130,.10);
+--rule:rgba(255,190,130,.14);--grid:rgba(255,190,130,.045);--accent:#ff9a3c;--accent-2:#ffb45c;
+--on-accent:#140a02;--text:#f1ebe3;--muted:#8d8379;--faint:#5d554e;--line-hex:#6a5a4b;
+--card-bg:rgba(255,160,90,.025);--spot:rgba(255,140,50,.10);--nav-bg:rgba(7,8,10,.82);
+--hover-border:rgba(255,154,60,.55);--hover-shadow:0 0 0 1px rgba(255,154,60,.2),0 14px 44px rgba(255,120,40,.16);
+--motif-bg:radial-gradient(ellipse 60% 70% at 55% 55%,rgba(255,140,50,.10),transparent 70%);
+--arc:rgba(255,180,110,.55);--arc-glow:0 -4px 28px rgba(255,140,50,.28);--paper:none;--m-line:#ffb45c;--m-dim:rgba(255,170,100,.28);--m-node-bg:#0d0a07;--m-glow:url(#glow);--m-halo:#ff9a3c;--m-halo-op:.22;--m-halo-f:url(#halo);--m-blend:normal;--m-muted:#a8927c;--m-accent:#ffc58a;color-scheme:dark}
+:root[data-theme="light"]{--bg:#eeebe3;--surface:#f5f3ee;--surface-hex:#f5f3ee;--border:rgba(30,26,22,.12);
+--rule:rgba(30,26,22,.55);--grid:rgba(30,26,22,.07);--accent:#e2701f;--accent-2:#c25912;
+--on-accent:#fff;--text:#1d1a17;--muted:#6a625a;--faint:#9a9189;--line-hex:#9d9387;
+--card-bg:rgba(255,255,255,.45);--spot:rgba(226,112,31,.11);--nav-bg:rgba(238,235,227,.86);
+--hover-border:rgba(226,112,31,.6);--hover-shadow:0 0 0 1px rgba(226,112,31,.22),0 16px 44px rgba(226,112,31,.2);
+--motif-bg:none;--arc:rgba(30,26,22,.55);--arc-glow:none;
+--paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+--m-line:#2a2622;--m-dim:rgba(42,38,34,.35);--m-node-bg:#f3f1ea;--m-glow:none;--m-halo:#e8732a;--m-halo-op:.78;--m-halo-f:none;--m-blend:multiply;--m-muted:#7a7068;--m-accent:#c85a14;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg) var(--paper);
+color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .35s,color .35s}
+::selection{background:var(--accent);color:var(--on-accent)}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.wrap.wide{max-width:1100px}
+header.top{position:sticky;top:0;z-index:50;background:var(--nav-bg);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;
+gap:16px;height:64px;max-width:1100px}
+.brand{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;color:var(--text)}
+.brand::after{content:'.';color:var(--accent)}
+.brand:hover{text-decoration:none;color:var(--accent-2)}
+nav.top-nav{display:flex;align-items:center;gap:18px;font-size:14px}
+nav.top-nav a{color:var(--muted)}
+nav.top-nav a:hover{color:var(--text);text-decoration:none}
+.lang-switch{display:flex;gap:3px;border:1px solid var(--border);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:0;color:var(--muted);font:500 12px/1 'Inter',sans-serif;
+padding:6px 10px;border-radius:5px;cursor:pointer}
+.lang-btn.active{background:var(--accent);color:var(--on-accent)}
+.theme-btn{width:34px;height:32px;border:1px solid var(--border);border-radius:8px;background:none;
+color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.theme-btn svg{width:16px;height:16px}.theme-btn .sun{display:none}
+:root[data-theme="light"] .theme-btn .sun{display:block}:root[data-theme="light"] .theme-btn .moon{display:none}
+main{padding:56px 0 96px}
+h1{font-size:clamp(30px,5vw,46px);font-weight:500;line-height:1.12;letter-spacing:-.03em;margin:0 0 16px}
+h2{font-size:25px;font-weight:500;letter-spacing:-.02em;margin:44px 0 12px}
+h3{font-weight:500}
+.meta{color:var(--muted);font-size:13px;font-family:'JetBrains Mono',ui-monospace,monospace;
+margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{color:var(--accent-2);text-transform:lowercase}
+.post-motif{aspect-ratio:16/9;border:1px solid var(--border);border-radius:18px;background:var(--motif-bg);
+margin:0 0 40px;display:flex;overflow:hidden}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
+article p{margin:0 0 20px}
+article ul{margin:0 0 20px;padding-left:22px}
+article li{margin:0 0 8px}
+article li::marker{color:var(--accent)}
+article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
+background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto;color:transparent}
+article pre.mermaid[data-processed]{color:inherit}
+.lead{font-size:18px;color:var(--muted)}
+.back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+/* Практический хвост статьи: то, что читатель может сделать завтра. Цветной
+   полосы слева нет: это шаблон, по которому текст узнается как машинный. */
+.practice{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:10px 28px 6px;margin:48px 0 0;position:relative}
+.practice .practice-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;display:flex;align-items:center;gap:10px;
+font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:20px 0 0}
+.practice .practice-kicker::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.practice h2{font-size:21px;margin:8px 0 12px}
+.practice h3{font-size:17px;margin:24px 0 8px}
+.cta{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:18px;padding:30px;margin:36px 0 0;background:var(--card-bg)}
+.cta::before{content:'';position:absolute;width:220px;aspect-ratio:1;border-radius:50%;right:-70px;top:-90px;
+background:var(--accent);opacity:.16;filter:blur(2px)}
+:root[data-theme="light"] .cta::before{opacity:.75;mix-blend-mode:multiply;filter:none}
+.cta>*{position:relative}
+.cta .cta-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;
+letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:0 0 10px}
+.cta h3{font-size:24px;letter-spacing:-.02em;margin:0 0 10px}
+.cta p{color:var(--muted);margin:0 0 20px;font-size:15px;max-width:520px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--rule);border-radius:99px;
+padding:11px 20px;font-size:14px;font-weight:500;color:var(--text);transition:.25s}
+.btn:hover{border-color:var(--accent);color:var(--accent-2);text-decoration:none}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn-accent:hover{color:var(--on-accent);box-shadow:var(--hover-shadow);transform:translateY(-2px)}
+@media(max-width:520px){.cta-actions .btn{flex:1 1 100%;text-align:center}}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
+footer a{color:var(--muted)}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+.empty{color:var(--muted);text-align:center;padding:64px 0}
+
+/* список статей */
+.blog-hero{position:relative;padding:40px 0 120px;text-align:center;overflow:hidden}
+.blog-hero .kicker{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--border);border-radius:99px;
+padding:5px 14px 5px 6px;font-size:13px;color:var(--muted);margin-bottom:28px;background:var(--card-bg)}
+.blog-hero .kicker i{font-style:normal;background:var(--accent);color:var(--on-accent);border-radius:99px;padding:2px 10px;font-weight:500}
+.blog-hero .kicker:hover{text-decoration:none;color:var(--text)}
+.blog-hero h1{font-size:clamp(38px,6vw,64px);line-height:1.06;margin:0 auto 20px;max-width:820px}
+.blog-hero h1 em{font-style:normal;color:var(--accent)}
+.blog-hero .lead{max-width:600px;margin:0 auto}
+.arc{position:absolute;left:50%;bottom:-560px;width:1100px;height:640px;transform:translateX(-50%);border-radius:50%;
+border-top:1px solid var(--arc);box-shadow:var(--arc-glow)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 28px;font-family:'JetBrains Mono',monospace;font-size:13px}
+.filters button{font:inherit;background:none;border:1px solid var(--border);border-radius:99px;padding:6px 15px;color:var(--muted);cursor:pointer;transition:.2s}
+.filters button.on,.filters button:hover{border-color:var(--accent);color:var(--accent-2)}
+.post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;list-style:none;padding:0;margin:0}
+.post-card{border:1px solid var(--border);border-radius:18px;background:var(--card-bg);overflow:hidden;position:relative;
+transition:border-color .25s,box-shadow .25s,transform .25s}
+.post-card:hover{border-color:var(--hover-border);box-shadow:var(--hover-shadow);transform:translateY(-3px)}
+.post-card::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var(--spot),transparent 65%)}
+.post-card:hover::after{opacity:1}
+/* Кликается вся карточка, а не только заголовок: рамка выглядит как кнопка,
+   и промах по ней читается как «сайт сломан». Ссылка - блок вокруг всего. */
+.post-card>a{display:block;color:inherit;text-decoration:none;height:100%}
+.post-card .pic{aspect-ratio:16/9;background:var(--motif-bg);border-bottom:1px solid var(--border);display:flex}
+.post-card .body{padding:22px 24px 26px}
+.post-card .meta{margin:0 0 10px;font-size:12px}
+.post-card .post-title{display:block;color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.post-card .excerpt{color:var(--muted);margin:8px 0 0;font-size:15px;line-height:1.55}
+.post-card.featured{grid-column:1/-1}
+.post-card.featured>a{display:grid;grid-template-columns:1.35fr 1fr}
+.post-card.featured .pic{aspect-ratio:auto;min-height:320px;border-bottom:0;border-right:1px solid var(--border)}
+.post-card.featured .body{display:flex;flex-direction:column;justify-content:center;padding:36px}
+.post-card.featured .post-title{font-size:28px}
+.post-card[hidden]{display:none}
+@media(max-width:760px){.post-grid{grid-template-columns:1fr}.post-card.featured>a{grid-template-columns:1fr}
+.post-card.featured .pic{border-right:0;border-bottom:1px solid var(--border);aspect-ratio:16/9;min-height:0}
+.blog-hero{padding:24px 0 90px}.arc{width:700px;bottom:-600px}}
+@media(max-width:600px){nav.top-nav{gap:10px;font-size:13px}nav.top-nav>a{display:none}main{padding:36px 0 64px}.wrap{padding:0 16px}}
+
+.m-line{fill:none;stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dim{fill:none;stroke:var(--m-dim);stroke-width:1.2;stroke-dasharray:3 6}
+.m-node{fill:var(--m-node-bg);stroke:var(--m-dim);stroke-width:1.2}
+.m-node.on{stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dot{fill:var(--m-dim)} .m-dot.on{fill:var(--m-line)}
+.m-halo{fill:var(--m-halo);opacity:var(--m-halo-op);filter:var(--m-halo-f);mix-blend-mode:var(--m-blend)}
+.m-ring{fill:none;stroke:var(--m-line);stroke-width:1.5;filter:var(--m-glow)}
+.m-label{font-family:'JetBrains Mono',monospace;font-size:15px;fill:var(--m-muted);letter-spacing:.04em}
+.m-label.big{font-size:30px;fill:var(--m-accent)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="glow" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800">
+  <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="halo" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800"><feGaussianBlur stdDeviation="18"/></filter>
+</defs></svg>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://vegman.dev/">vegman.dev</a>
+  <nav class="top-nav">
+    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/en/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ru" data-href="https://vegman.dev/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" data-href="https://vegman.dev/en/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/" type="button">EN</button>
+    </div>
+    <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</div></header>
+<main><div class="wrap">
+<div data-lang-block="en">
+  <a class="back" href="https://vegman.dev/en/blog/">All posts</a>
+  <h1>Auto-posting a blog from Notion to Telegram: what surfaced between &quot;the script ran&quot; and &quot;the post looks like a post&quot;</h1>
+  <div class="meta"><span>2026-08-23</span><span class="tag">case</span></div>
+  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
+  <article><h3>Auto-posting from Notion to Telegram: why "the script ran" doesn't mean "the post worked"</h3>
+<p>In one day I got auto-posting for my personal blog to production status: a card in Notion moves to Scheduled - and about 15 minutes later the post appears on its own in the Telegram channel, with screenshots going to comments.</p>
+<p>Important: at the moment of publication there's no "magic" - it's a predictable script (regular Python on a schedule). All decisions about text I make in advance, at the prep stage.</p>
+<p>The most unexpected part of this story isn't that "you can build automation in an evening." It's how many little things surface between "the script ran without errors" and "the post actually looks like a post."</p>
+<p>Below - 8 pitfalls I stepped on.</p>
+<h2>1) A "successful publication" can look like a garbage feed</h2>
+<p>The first run technically succeeded: cover, text, screenshot, two files (CSV with data and MD with a report). Five messages in a row.</p>
+<p>Formally - success. In reality - the channel became a dump.</p>
+<p>Conclusion: raw data doesn't go into the blog at all. Maximum - screenshots. And file attachments under the post - that's "here's my working folder," not content.</p>
+<h2>2) Formatting can get lost... silently</h2>
+<p>Text went out as plain: no highlights, no code. And even worse - Notion managed to turn the file mention repair_schedule.md into a "link to site" schedule.md.</p>
+<p>If you don't reread with your eyes, it's easy to leave a live link to nowhere in the post.</p>
+<p>What I had to do: separately parse how Notion stores markup/links, and before sending clean out auto-links that appear on their own.</p>
+<h2>3) There are limits you can't buy</h2>
+<p>I wanted "image and long text in one message." And hit a hard Telegram limitation:</p>
+<ul><li>caption under a photo - maximum 1024 characters,</li><li>regular message text - up to 4096.</li></ul>
+<p>And here's the surprise: Premium doesn't help. This limit is set by the bot interface, and it's the same for everyone.</p>
+<p>I tested with probes (1100, 1647, 2048, 2100) - everything bounced with the same: message caption is too long.</p>
+<p>Conclusion: you can't simultaneously have all images and long text in one message.</p>
+<ul><li>either images + caption up to 1024,</li><li>or one "header" and full text up to 4096.</li></ul>
+<p>For me the workaround through link preview worked: the cover renders on top, and the text stays long.</p>
+<h2>4) Comments under the post - a separate universe</h2>
+<p>A comment under a channel post isn't a "comment on the message," but a reply in the linked discussion group to an automatic copy of the post.</p>
+<p>To put screenshots there, you need the number of that very copy. The standard way - catch updates from the bot. But that same token is already occupied by another process, and you can't "take away" events from it.</p>
+<p>Had to work around it: put a timestamp in the group and look at what messages appeared after it.</p>
+<p>And then it turned out the copy doesn't arrive instantly: measurement showed a 4-6 second delay. The script managed to check earlier and only saw my own test messages.</p>
+<h2>5) Permissions turned out to be more important than code</h2>
+<p>Even when the search for the right message worked, the bot couldn't "reply to the copy" - Telegram returned message to be replied not found.</p>
+<p>The reason wasn't in the code, but in the group settings: in privacy mode a regular participant doesn't see others' messages.</p>
+<p>Solution - make the bot an administrator.</p>
+<h2>6) Raised permissions - changed not one function, but the entire field of vision</h2>
+<p>And here came a side effect that no one designed.</p>
+<p>A few minutes later a comment from the bot appeared under the post - with analysis and questions "is this going to Telegram or the website?". Auto-posting doesn't do that.</p>
+<p>Turned out: another process responded, which lives on the same token. After promotion to admin the bot started seeing everything in the group - and someone took my screenshot for an inquiry.</p>
+<p>Lesson: raising permissions, you change not one point, but what the entire system working with these keys "sees."</p>
+<h2>7) "The comment should be from the author, not the bot." And the bot can't do that</h2>
+<p>There's a requirement: comments should look human - from the author, not the bot.</p>
+<p>But in the bot interface you can't choose the sender: the bot always writes from itself.</p>
+<p>The only way - send messages as a client on behalf of the account. And there were also small traps there: keys are tied to the application, not to a specific account; plus in discussions by default it's easy to write "on behalf of the channel" rather than from yourself - you have to explicitly switch.</p>
+<h2>8) A "mine" that didn't explode only because I noticed it in advance</h2>
+<p>In the content database the same "Telegram" channel value was used for both the personal blog and another channel. The script selected cards by this field.</p>
+<p>One status error - and someone else's post could fly to the wrong place.</p>
+<p>We split this into two values before a real incident happened.</p>
+<h2>Numbers (so it's clear this isn't "feelings")</h2>
+<ul><li>~15 minutes - launch period on schedule, without LLM calls at the moment of publication.</li><li>1024 vs 4096 - caption under photo limit vs message text limit.</li><li>4-6 seconds - delay of the post copy appearing in the discussion group.</li><li>1569 characters of text (1647 with heading) - where I hit the caption limit.</li><li>4 republications until the format became correct.</li></ul>
+<h2>Final conclusion</h2>
+<p>Auto-publishing breaks not on "API," but on joints: permissions, default settings, neighboring processes on the same keys, and platform limitations that aren't visible until you hit them head-on.</p>
+<p>"The script ran without errors" and "got what I wanted" - different events. The second always needs to be checked with your eyes.</p></article>
+  <aside class="cta">
+  <p class="cta-kicker">Get in touch</p>
+  <h3>Let's look at your case</h3>
+  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup, write to me and we'll go through it.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
+  </div>
+</aside>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>Natalia Vegman</span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>, <a href="https://vegman.dev/en/blog/feed.xml">RSS</a></span>
+</div></footer>
+<script>
+(function(){
+  var cur = document.documentElement.lang;
+  document.querySelectorAll('[data-lang-block]').forEach(function(el){
+    el.classList.toggle('active', el.dataset.langBlock === cur);
+  });
+  var stored = null;
+  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.lang === cur);
+    b.addEventListener('click', function(){
+      try{ localStorage.setItem('preferredLang', b.dataset.lang); }catch(e){}
+      if(b.dataset.lang !== cur && b.dataset.href) location.href = b.dataset.href;
+    });
+  });
+  var other = stored && stored !== cur && document.querySelector('.lang-btn[data-lang="'+stored+'"]');
+  if(other && other.dataset.href) location.replace(other.dataset.href);
+})();
+</script>
+</body>
+</html>

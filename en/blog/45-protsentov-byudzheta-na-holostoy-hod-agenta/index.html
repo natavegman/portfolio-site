@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>45% of My Model Spend Went to One Question the Agent Asked Itself | Natalia Vegman</title>
+<meta name="description" content="I opened my bill for language models and saw a number bigger than usual. Over that same period not a single new user had shown up, I hadn&#x27;t shipped any new features, and load hadn&#x27;...">
+<meta name="author" content="Natalia Vegman">
+<link rel="canonical" href="https://vegman.dev/en/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">
+<link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">
+<link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">
+<link rel="alternate" hreflang="x-default" href="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">
+<link rel="alternate" type="application/rss+xml" title="Blog: Natalia Vegman" href="https://vegman.dev/en/blog/feed.xml">
+<meta property="og:title" content="45% of My Model Spend Went to One Question the Agent Asked Itself | Natalia Vegman">
+<meta property="og:description" content="I opened my bill for language models and saw a number bigger than usual. Over that same period not a single new user had shown up, I hadn&#x27;t shipped any new features, and load hadn&#x27;...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vegman.dev/en/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="vegman.dev">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "45% of My Model Spend Went to One Question the Agent Asked Itself", "description": "I opened my bill for language models and saw a number bigger than usual. Over that same period not a single new user had shown up, I hadn't shipped any new features, and load hadn'...", "datePublished": "2026-07-31", "dateModified": "2026-07-31", "inLanguage": "en", "url": "https://vegman.dev/en/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/", "mainEntityOfPage": "https://vegman.dev/en/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/", "author": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "publisher": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "articleSection": "Cases", "image": "https://vegman.dev/blog/img/45-protsentov-byudzheta-na-holostoy-hod-agenta/cover.jpg"}</script>
+<script>
+(function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
+if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+document.documentElement.dataset.theme=t})();
+function toggleTheme(){var r=document.documentElement,t=r.dataset.theme==='light'?'dark':'light';
+r.dataset.theme=t;try{localStorage.setItem('preferredTheme',t)}catch(e){}}
+</script>
+<meta property="og:image" content="https://vegman.dev/blog/img/45-protsentov-byudzheta-na-holostoy-hod-agenta/cover.jpg"><meta property="article:published_time" content="2026-07-31"><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const els=[...document.querySelectorAll('pre.mermaid')];
+els.forEach(e=>{e.dataset.src=e.textContent;});
+function vars(){const s=getComputedStyle(document.documentElement),g=n=>s.getPropertyValue(n).trim();
+  return {background:g('--surface-hex'),primaryColor:g('--surface-hex'),primaryTextColor:g('--text'),
+  primaryBorderColor:g('--accent'),lineColor:g('--line-hex'),secondaryColor:g('--surface-hex'),
+  tertiaryColor:g('--surface-hex'),clusterBkg:g('--surface-hex'),clusterBorder:g('--line-hex'),
+  edgeLabelBackground:g('--surface-hex'),fontFamily:'Inter,sans-serif'};}
+// Рисуем только видимые схемы: у скрытой языковой версии нет размеров, и mermaid
+// собирал ее схемы в полоску 16 px (было на живом сайте до 27.09.2026).
+// Поэтому перерисовка и при смене темы, и при смене языка.
+async function draw(){
+  mermaid.initialize({startOnLoad:false,theme:'base',securityLevel:'strict',themeVariables:vars()});
+  els.forEach(e=>{e.removeAttribute('data-processed');e.textContent=e.dataset.src;});
+  const vis=els.filter(e=>e.offsetParent);
+  if(vis.length) await mermaid.run({nodes:vis});
+}
+draw();
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme','lang']});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080a;--surface:#0f0d0b;--surface-hex:#14100c;--border:rgba(255,190,130,.10);
+--rule:rgba(255,190,130,.14);--grid:rgba(255,190,130,.045);--accent:#ff9a3c;--accent-2:#ffb45c;
+--on-accent:#140a02;--text:#f1ebe3;--muted:#8d8379;--faint:#5d554e;--line-hex:#6a5a4b;
+--card-bg:rgba(255,160,90,.025);--spot:rgba(255,140,50,.10);--nav-bg:rgba(7,8,10,.82);
+--hover-border:rgba(255,154,60,.55);--hover-shadow:0 0 0 1px rgba(255,154,60,.2),0 14px 44px rgba(255,120,40,.16);
+--motif-bg:radial-gradient(ellipse 60% 70% at 55% 55%,rgba(255,140,50,.10),transparent 70%);
+--arc:rgba(255,180,110,.55);--arc-glow:0 -4px 28px rgba(255,140,50,.28);--paper:none;--m-line:#ffb45c;--m-dim:rgba(255,170,100,.28);--m-node-bg:#0d0a07;--m-glow:url(#glow);--m-halo:#ff9a3c;--m-halo-op:.22;--m-halo-f:url(#halo);--m-blend:normal;--m-muted:#a8927c;--m-accent:#ffc58a;color-scheme:dark}
+:root[data-theme="light"]{--bg:#eeebe3;--surface:#f5f3ee;--surface-hex:#f5f3ee;--border:rgba(30,26,22,.12);
+--rule:rgba(30,26,22,.55);--grid:rgba(30,26,22,.07);--accent:#e2701f;--accent-2:#c25912;
+--on-accent:#fff;--text:#1d1a17;--muted:#6a625a;--faint:#9a9189;--line-hex:#9d9387;
+--card-bg:rgba(255,255,255,.45);--spot:rgba(226,112,31,.11);--nav-bg:rgba(238,235,227,.86);
+--hover-border:rgba(226,112,31,.6);--hover-shadow:0 0 0 1px rgba(226,112,31,.22),0 16px 44px rgba(226,112,31,.2);
+--motif-bg:none;--arc:rgba(30,26,22,.55);--arc-glow:none;
+--paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+--m-line:#2a2622;--m-dim:rgba(42,38,34,.35);--m-node-bg:#f3f1ea;--m-glow:none;--m-halo:#e8732a;--m-halo-op:.78;--m-halo-f:none;--m-blend:multiply;--m-muted:#7a7068;--m-accent:#c85a14;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg) var(--paper);
+color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .35s,color .35s}
+::selection{background:var(--accent);color:var(--on-accent)}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.wrap.wide{max-width:1100px}
+header.top{position:sticky;top:0;z-index:50;background:var(--nav-bg);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;
+gap:16px;height:64px;max-width:1100px}
+.brand{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;color:var(--text)}
+.brand::after{content:'.';color:var(--accent)}
+.brand:hover{text-decoration:none;color:var(--accent-2)}
+nav.top-nav{display:flex;align-items:center;gap:18px;font-size:14px}
+nav.top-nav a{color:var(--muted)}
+nav.top-nav a:hover{color:var(--text);text-decoration:none}
+.lang-switch{display:flex;gap:3px;border:1px solid var(--border);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:0;color:var(--muted);font:500 12px/1 'Inter',sans-serif;
+padding:6px 10px;border-radius:5px;cursor:pointer}
+.lang-btn.active{background:var(--accent);color:var(--on-accent)}
+.theme-btn{width:34px;height:32px;border:1px solid var(--border);border-radius:8px;background:none;
+color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.theme-btn svg{width:16px;height:16px}.theme-btn .sun{display:none}
+:root[data-theme="light"] .theme-btn .sun{display:block}:root[data-theme="light"] .theme-btn .moon{display:none}
+main{padding:56px 0 96px}
+h1{font-size:clamp(30px,5vw,46px);font-weight:500;line-height:1.12;letter-spacing:-.03em;margin:0 0 16px}
+h2{font-size:25px;font-weight:500;letter-spacing:-.02em;margin:44px 0 12px}
+h3{font-weight:500}
+.meta{color:var(--muted);font-size:13px;font-family:'JetBrains Mono',ui-monospace,monospace;
+margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{color:var(--accent-2);text-transform:lowercase}
+.post-motif{aspect-ratio:16/9;border:1px solid var(--border);border-radius:18px;background:var(--motif-bg);
+margin:0 0 40px;display:flex;overflow:hidden}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
+article p{margin:0 0 20px}
+article ul{margin:0 0 20px;padding-left:22px}
+article li{margin:0 0 8px}
+article li::marker{color:var(--accent)}
+article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
+background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto;color:transparent}
+article pre.mermaid[data-processed]{color:inherit}
+.lead{font-size:18px;color:var(--muted)}
+.back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+/* Практический хвост статьи: то, что читатель может сделать завтра. Цветной
+   полосы слева нет: это шаблон, по которому текст узнается как машинный. */
+.practice{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:10px 28px 6px;margin:48px 0 0;position:relative}
+.practice .practice-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;display:flex;align-items:center;gap:10px;
+font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:20px 0 0}
+.practice .practice-kicker::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.practice h2{font-size:21px;margin:8px 0 12px}
+.practice h3{font-size:17px;margin:24px 0 8px}
+.cta{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:18px;padding:30px;margin:36px 0 0;background:var(--card-bg)}
+.cta::before{content:'';position:absolute;width:220px;aspect-ratio:1;border-radius:50%;right:-70px;top:-90px;
+background:var(--accent);opacity:.16;filter:blur(2px)}
+:root[data-theme="light"] .cta::before{opacity:.75;mix-blend-mode:multiply;filter:none}
+.cta>*{position:relative}
+.cta .cta-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;
+letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:0 0 10px}
+.cta h3{font-size:24px;letter-spacing:-.02em;margin:0 0 10px}
+.cta p{color:var(--muted);margin:0 0 20px;font-size:15px;max-width:520px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--rule);border-radius:99px;
+padding:11px 20px;font-size:14px;font-weight:500;color:var(--text);transition:.25s}
+.btn:hover{border-color:var(--accent);color:var(--accent-2);text-decoration:none}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn-accent:hover{color:var(--on-accent);box-shadow:var(--hover-shadow);transform:translateY(-2px)}
+@media(max-width:520px){.cta-actions .btn{flex:1 1 100%;text-align:center}}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
+footer a{color:var(--muted)}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+.empty{color:var(--muted);text-align:center;padding:64px 0}
+
+/* список статей */
+.blog-hero{position:relative;padding:40px 0 120px;text-align:center;overflow:hidden}
+.blog-hero .kicker{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--border);border-radius:99px;
+padding:5px 14px 5px 6px;font-size:13px;color:var(--muted);margin-bottom:28px;background:var(--card-bg)}
+.blog-hero .kicker i{font-style:normal;background:var(--accent);color:var(--on-accent);border-radius:99px;padding:2px 10px;font-weight:500}
+.blog-hero .kicker:hover{text-decoration:none;color:var(--text)}
+.blog-hero h1{font-size:clamp(38px,6vw,64px);line-height:1.06;margin:0 auto 20px;max-width:820px}
+.blog-hero h1 em{font-style:normal;color:var(--accent)}
+.blog-hero .lead{max-width:600px;margin:0 auto}
+.arc{position:absolute;left:50%;bottom:-560px;width:1100px;height:640px;transform:translateX(-50%);border-radius:50%;
+border-top:1px solid var(--arc);box-shadow:var(--arc-glow)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 28px;font-family:'JetBrains Mono',monospace;font-size:13px}
+.filters button{font:inherit;background:none;border:1px solid var(--border);border-radius:99px;padding:6px 15px;color:var(--muted);cursor:pointer;transition:.2s}
+.filters button.on,.filters button:hover{border-color:var(--accent);color:var(--accent-2)}
+.post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;list-style:none;padding:0;margin:0}
+.post-card{border:1px solid var(--border);border-radius:18px;background:var(--card-bg);overflow:hidden;position:relative;
+transition:border-color .25s,box-shadow .25s,transform .25s}
+.post-card:hover{border-color:var(--hover-border);box-shadow:var(--hover-shadow);transform:translateY(-3px)}
+.post-card::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var(--spot),transparent 65%)}
+.post-card:hover::after{opacity:1}
+/* Кликается вся карточка, а не только заголовок: рамка выглядит как кнопка,
+   и промах по ней читается как «сайт сломан». Ссылка - блок вокруг всего. */
+.post-card>a{display:block;color:inherit;text-decoration:none;height:100%}
+.post-card .pic{aspect-ratio:16/9;background:var(--motif-bg);border-bottom:1px solid var(--border);display:flex}
+.post-card .body{padding:22px 24px 26px}
+.post-card .meta{margin:0 0 10px;font-size:12px}
+.post-card .post-title{display:block;color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.post-card .excerpt{color:var(--muted);margin:8px 0 0;font-size:15px;line-height:1.55}
+.post-card.featured{grid-column:1/-1}
+.post-card.featured>a{display:grid;grid-template-columns:1.35fr 1fr}
+.post-card.featured .pic{aspect-ratio:auto;min-height:320px;border-bottom:0;border-right:1px solid var(--border)}
+.post-card.featured .body{display:flex;flex-direction:column;justify-content:center;padding:36px}
+.post-card.featured .post-title{font-size:28px}
+.post-card[hidden]{display:none}
+@media(max-width:760px){.post-grid{grid-template-columns:1fr}.post-card.featured>a{grid-template-columns:1fr}
+.post-card.featured .pic{border-right:0;border-bottom:1px solid var(--border);aspect-ratio:16/9;min-height:0}
+.blog-hero{padding:24px 0 90px}.arc{width:700px;bottom:-600px}}
+@media(max-width:600px){nav.top-nav{gap:10px;font-size:13px}nav.top-nav>a{display:none}main{padding:36px 0 64px}.wrap{padding:0 16px}}
+
+.m-line{fill:none;stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dim{fill:none;stroke:var(--m-dim);stroke-width:1.2;stroke-dasharray:3 6}
+.m-node{fill:var(--m-node-bg);stroke:var(--m-dim);stroke-width:1.2}
+.m-node.on{stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dot{fill:var(--m-dim)} .m-dot.on{fill:var(--m-line)}
+.m-halo{fill:var(--m-halo);opacity:var(--m-halo-op);filter:var(--m-halo-f);mix-blend-mode:var(--m-blend)}
+.m-ring{fill:none;stroke:var(--m-line);stroke-width:1.5;filter:var(--m-glow)}
+.m-label{font-family:'JetBrains Mono',monospace;font-size:15px;fill:var(--m-muted);letter-spacing:.04em}
+.m-label.big{font-size:30px;fill:var(--m-accent)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="glow" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800">
+  <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="halo" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800"><feGaussianBlur stdDeviation="18"/></filter>
+</defs></svg>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://vegman.dev/">vegman.dev</a>
+  <nav class="top-nav">
+    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/en/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ru" data-href="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" data-href="https://vegman.dev/en/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/" type="button">EN</button>
+    </div>
+    <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</div></header>
+<main><div class="wrap">
+<div data-lang-block="en">
+  <a class="back" href="https://vegman.dev/en/blog/">All posts</a>
+  <h1>45% of My Model Spend Went to One Question the Agent Asked Itself</h1>
+  <div class="meta"><span>2026-07-31</span><span class="tag">case</span></div>
+  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-dim" d="M0 300 L166 300"/><rect class="m-node" x="166.0" y="276.0" width="48" height="48" rx="13.440000000000001"/><circle class="m-dot" cx="190" cy="300" r="2.4"/><path class="m-line" d="M214 300 C 310 240, 350 240, 444 300"/><circle class="m-halo" cx="488.2" cy="287.0" r="54.6"/><rect class="m-node on" x="444.0" y="274.0" width="52" height="52" rx="14.560000000000002"/><circle class="m-dot on" cx="470" cy="300" r="3.2"/><text class="m-label" x="190" y="372" text-anchor="middle">1007 calls</text><text class="m-label big" x="470" y="380" text-anchor="middle">0</text></svg></div>
+  <article><p>I opened my bill for language models and saw a number bigger than usual. Over that same period not a single new user had shown up, I hadn't shipped any new features, and load hadn't grown. The system was sitting there servicing itself - and that cost money.</p>
+<p>This is about my own agent system, not a client project. An <i>agent</i> here is a program that decides on its own what to do next, on a schedule or in response to an event, and calls a language model at every step. Such a program has an unpleasant property: it asks questions even when there's nothing to answer.</p>
+<p>When I finished the analysis, it turned out that 45% of everything I had ever spent on models went to one single question the agent asked itself: "is there any work for me?" Not on the work - on the question about the work.</p>
+<p>By the end of this article you'll understand why the main cost line in agent systems is idling rather than useful action, and how to build accounting that answers "where did it go" instead of only "how much is left."</p>
+<h2>The symptom: the bill grew, the user count didn't</h2>
+<p>The usual reaction to a bigger bill is to look for the cause in load. Somebody wrote a lot to the agent, somebody uploaded a big document, a retry loop kicked in somewhere. But there was no load: same number of users, same number of tasks, same functionality.</p>
+<p>I noticed the second symptom almost by accident. The context the agent was sending to the model was growing on its own. Over two and a half hours of observation, the input size went from 29,643 to 29,707 tokens. A <i>token</i> is a chunk of text - model input and output are counted in tokens, and that's what the provider bills you for.</p>
+<p>Sixty-four tokens over two and a half hours is trivial in itself. What matters isn't the size, it's the sign. Spend was growing without a single new user. A system that gets more expensive while idle will keep getting more expensive: the growth mechanism is built in, and it doesn't depend on whether anyone is using it.</p>
+<h2>Eleven days blind: why the cause stayed hidden</h2>
+<p>Eleven days passed between "the bill grew" and "here's the cause." The whole time, the spend was perfectly visible in dollars and completely invisible in causes. I knew the amount and didn't know what it was for.</p>
+<p>The reason is annoying. My monitoring answered the question "how much is left": remaining limit, spent this period, are we approaching the threshold. That kind of monitoring honestly warns you that the money is running out and says nothing at all about where exactly it's going. What I needed was a different question - "where did it go": a breakdown by project, model, agent, and day.</p>
+<p>The other half of the problem was that accounting lived in two layers that can't see each other. My analysis ran over one layer while the money was burning in the other. Until those layers are pulled into a single table, any analysis turns into guesswork: you confidently explain the part of the spend that happened to land in your hands, and you don't suspect the rest exists. For eleven days I was explaining the smaller half of the bill to myself.</p>
+<figure><pre class="mermaid">flowchart LR
+  A[&quot;Счет провайдера&quot;] --&gt; D[&quot;Одна таблица:&lt;br/&gt;проект x модель x агент x день&quot;]
+  B[&quot;Логи агентов&quot;] --&gt; D
+  C[&quot;Выгрузка по проектам&quot;] --&gt; D
+  D --&gt; Q[&quot;Вопрос «какой агент&lt;br/&gt;съел эти деньги»&quot;]
+  A -.-&gt;|&quot;поодиночке&quot;| X[&quot;Объяснима только&lt;br/&gt;часть счета&quot;]
+  B -.-&gt; X
+  C -.-&gt; X</pre><figcaption>Пока слои учета лежат врозь, каждый отвечает на свой вопрос - и ни один не отвечает на «куда ушло»</figcaption></figure>
+<h2>What the analysis showed: the price of "do I have anything to do?"</h2>
+<p>When I finally pulled everything into one table, the largest cost line turned out to be not work but polling. 1007 calls, $13.83-45% of all model spend over the entire life of the system.</p>
+<p>The mechanics are simple. The poll ran every 30 minutes, around the clock, against an empty task list. Forty-eight times a day the system woke the agent and asked whether there was any work for it. There never was.</p>
+<p>The most interesting part is the ratio inside each call. Every such request was roughly 29,700 input tokens against a response of about 90 tokens. That is, every half hour the agent's full context went off to the model: system instructions, tool descriptions, accumulated state - all for the phrase "I have nothing to do." The input is hundreds of times bigger than the answer.</p>
+<p>Which leads to a conclusion worth taking away separately from my story. In agent systems you pay mostly for input, not output. The answer is short, while the context the agent needs to make a decision is long, and it gets sent in full on every call - including the ones where the decision is known in advance and equals "do nothing."</p>
+<h2>The intermediate-optimization trap</h2>
+<p>Before I found the cause, I did exactly what everyone does: I moved the call to a cheaper model. The savings came to 7x on that same call. A pretty number; it would have made a great report.</p>
+<p>Except I made cheaper what I should have turned off. A sevenfold savings on a useless action is still spending, just tidier. Worse, that kind of optimization closes the question psychologically: the chart went down, so you did your job, so you can move on to something else. The spend stayed, but it stopped being irritating - and therefore stopped being investigated.</p>
+<p>The order of operations should be the reverse. First "is this call needed at all," then "which model makes it." Optimizing the model without checking whether the call is necessary is penny-pinching.</p>
+<h2>Documentation describes intent, not behavior</h2>
+<p>Next came an attempt to turn the polling off the honest way. The platform has a service file listing periodic tasks, and the documentation flatly promised: keep the file empty and there will be no calls.</p>
+<p>I reduced the file to nothing but comments. The poll ran again, right on schedule.</p>
+<p>The factual conclusion: polling is enabled at the platform level and isn't suppressed by the contents of that file. The methodological conclusion matters more. The documentation described the authors' intent, not the system's behavior. That's not deception and usually not even a mistake: it was written that way when that was the plan, then the behavior drifted away from the text, and the text stayed.</p>
+<p>The practical implication for you: turning something off counts as turned off only after you've looked at the logs or the bill and confirmed the calls really aren't happening. Checking against the documentation is checking someone else's intentions - and what you pay for is behavior.</p>
+<figure><pre class="mermaid">flowchart LR
+  subgraph BEFORE[&quot;До разбора&quot;]
+    B1[&quot;Опрос каждые 30 минут,&lt;br/&gt;круглосуточно&quot;] --&gt; B2[&quot;1007 вызовов&quot;] --&gt; B3[&quot;13,83 $ - 45%&lt;br/&gt;всех расходов&quot;]
+  end
+  subgraph AFTER[&quot;После выключения&quot;]
+    A1[&quot;Опроса нет&quot;] --&gt; A2[&quot;0 вызовов&quot;] --&gt; A3[&quot;0 $&quot;]
+  end
+  BEFORE ==&gt;|&quot;проверено по счету,&lt;br/&gt;а не по документации&quot;| AFTER</pre><figcaption>45% всех расходов на модели - это опрос «нет ли для меня работы» при пустом списке задач</figcaption></figure>
+<h2>How to count honestly: the analysis tool</h2>
+<p>To avoid repeating eleven days of blindness, I wrote a script that pulls every accounting layer into one table: project by model by agent by day. One flat table you can query with "which agent, in which model, on which day ate this money."</p>
+<p>The characteristics that are essential for a tool like this:</p>
+<ul><li>Zero model calls. A spend-analysis tool shouldn't spend anything itself. This is pure log parsing, with no AI inside.</li><li>About 3 seconds for 125 megabytes of logs. If the analysis takes a long time, you'll run it once a month, when what you need is to run it the moment the question comes up.</li><li>4% divergence from the provider's billing. <i>Billing</i> is the bill the model provider issues. If your analysis doesn't reconcile with the bill, you're explaining the wrong spend.</li></ul>
+<p>And three principles from observability practice - that is, from the practice of structuring logs so they can answer a question you didn't ask in advance:</p>
+<ul><li>The provider's number beats a tokenizer recount. A <i>tokenizer</i> is a library that splits text into tokens the same way the model does. It gives you a similar number, but that's not what you're billed on.</li><li>Recount with a tokenizer only where the provider didn't return a number. That's a patch over a hole in the data, not a source of truth.</li><li>Where there's no price, write "no price," not zero. Zero silently adds into the total and makes the report wrong but plausible. "No price" is visible to the eye, and it forces you to go figure it out.</li></ul>
+<section class="practice"><p class="practice-kicker">Put it to work</p>
+<h2>What to check in practice</h2>
+<ul><li>Find the calls in your logs that happen strictly on a schedule rather than in response to a human action or an event. Sort them by count, not by cost - the most frequent line is usually also the most expensive one.</li><li>For each periodic call, look at the ratio of input tokens to output tokens. A ratio in the hundreds is a sign that you're hauling the full context around for a one-word answer.</li><li>Calculate what share of your bill consists of calls after which the system did nothing. That's the price of idling.</li><li>Check how many accounting layers you have and whether they can see each other. If your analysis runs on one source and the bill comes from another, pull them into a single table of the form project - model - agent - day.</li><li>Turn off one periodic call using the method the documentation promises, and wait for the next scheduled firing. Look at the logs, not at the config.</li><li>Before switching to a cheaper model, answer in writing: what breaks if this call isn't made at all. If the answer is "nothing," there's nothing to make cheaper - it needs to be deleted.</li></ul>
+<h2>How to know it worked</h2>
+<p>The criterion isn't "the bill got smaller." The bill can shrink just because you moved garbage onto a cheap model.</p>
+<p>It worked if three things are true.</p>
+<p>First: within a minute, without opening the provider's console, you can name the three most expensive lines of your spend for the past week - down to the agent and the day. Not the total, the composition.</p>
+<p>Second: your analysis reconciles with the provider's bill within a margin you understand. Mine is 4%, and I know what it's made of. If the divergence is unknown, you're still looking at part of the picture.</p>
+<p>Third: there are no lines left in your bill with not a single action behind them. Every periodic call either leads to work, or is turned off and verified against the logs as actually turned off.</p>
+<p>Until those three things are true, "how much is left" will keep blocking the view of "where did it go" - and idling won't give itself away by anything except a slowly growing number.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">Get in touch</p>
+  <h3>Let's look at your case</h3>
+  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup, write to me and we'll go through it.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
+  </div>
+</aside>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>Natalia Vegman</span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>, <a href="https://vegman.dev/en/blog/feed.xml">RSS</a></span>
+</div></footer>
+<script>
+(function(){
+  var cur = document.documentElement.lang;
+  document.querySelectorAll('[data-lang-block]').forEach(function(el){
+    el.classList.toggle('active', el.dataset.langBlock === cur);
+  });
+  var stored = null;
+  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.lang === cur);
+    b.addEventListener('click', function(){
+      try{ localStorage.setItem('preferredLang', b.dataset.lang); }catch(e){}
+      if(b.dataset.lang !== cur && b.dataset.href) location.href = b.dataset.href;
+    });
+  });
+  var other = stored && stored !== cur && document.querySelector('.lang-btn[data-lang="'+stored+'"]');
+  if(other && other.dataset.href) location.replace(other.dataset.href);
+})();
+</script>
+</body>
+</html>

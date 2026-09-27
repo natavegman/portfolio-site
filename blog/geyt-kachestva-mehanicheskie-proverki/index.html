@@ -3,13 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Гейт качества: механические проверки вместо доверия</title>
+<title>Гейт качества: механические проверки вместо доверия | Наталья Вегман</title>
 <meta name="description" content="Однажды я открыла канал и увидела там собственную статью, в которой имена тегов стояли в тексте буквально - угловыми скобками посреди предложения. Рядом лежала ссылка на первоисточ...">
+<meta name="author" content="Наталья Вегман">
 <link rel="canonical" href="https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/">
-<meta property="og:title" content="Гейт качества: механические проверки вместо доверия">
+<link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/">
+<link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/geyt-kachestva-mehanicheskie-proverki/">
+<link rel="alternate" hreflang="x-default" href="https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/">
+<link rel="alternate" type="application/rss+xml" title="Блог: Наталья Вегман" href="https://vegman.dev/blog/feed.xml">
+<meta property="og:title" content="Гейт качества: механические проверки вместо доверия | Наталья Вегман">
 <meta property="og:description" content="Однажды я открыла канал и увидела там собственную статью, в которой имена тегов стояли в тексте буквально - угловыми скобками посреди предложения. Рядом лежала ссылка на первоисточ...">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="vegman.dev">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Гейт качества: механические проверки вместо доверия", "description": "Однажды я открыла канал и увидела там собственную статью, в которой имена тегов стояли в тексте буквально - угловыми скобками посреди предложения. Рядом лежала ссылка на первоисточ...", "datePublished": "2026-05-14", "dateModified": "2026-05-14", "inLanguage": "ru", "url": "https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/", "mainEntityOfPage": "https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/", "author": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "publisher": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "articleSection": "Статьи", "image": "https://vegman.dev/blog/img/geyt-kachestva-mehanicheskie-proverki/cover.jpg"}</script>
 <script>
 (function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
 if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
@@ -17,7 +26,7 @@ document.documentElement.dataset.theme=t})();
 function toggleTheme(){var r=document.documentElement,t=r.dataset.theme==='light'?'dark':'light';
 r.dataset.theme=t;try{localStorage.setItem('preferredTheme',t)}catch(e){}}
 </script>
-<meta property="og:image" content="https://vegman.dev/blog/img/geyt-kachestva-mehanicheskie-proverki/cover.jpg"><script type="module">
+<meta property="og:image" content="https://vegman.dev/blog/img/geyt-kachestva-mehanicheskie-proverki/cover.jpg"><meta property="article:published_time" content="2026-05-14"><script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const els=[...document.querySelectorAll('pre.mermaid')];
 els.forEach(e=>{e.dataset.src=e.textContent;});
@@ -204,8 +213,8 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
     <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
     <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
     <div class="lang-switch">
-      <button class="lang-btn" data-lang="ru" type="button">RU</button>
-      <button class="lang-btn" data-lang="en" type="button">EN</button>
+      <button class="lang-btn" data-lang="ru" data-href="https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" data-href="https://vegman.dev/en/blog/geyt-kachestva-mehanicheskie-proverki/" type="button">EN</button>
     </div>
     <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   </nav>
@@ -281,105 +290,28 @@ if found:
   </div>
 </aside>
 </div>
-<div data-lang-block="en">
-  <a class="back" href="https://vegman.dev/blog/">All posts</a>
-  <h1>The Rules I Took Out of the Prompt and Put Into Code</h1>
-  <div class="meta"><span>2026-05-14</span><span class="tag">article</span></div>
-  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><circle class="m-ring" cx="340" cy="290" r="130"/><path class="m-dim" d="M0 500 C 120 500, 180 460, 227.41669750802296 385.0"/><circle class="m-halo" cx="354.0" cy="150.0" r="42.0"/><rect class="m-node on" x="320.0" y="140.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot on" cx="340.0" cy="160.0" r="3.2"/><rect class="m-node" x="432.58330249197707" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="452.58330249197707" cy="355.0" r="2.4"/><rect class="m-node" x="207.41669750802296" y="335.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="227.41669750802296" cy="355.0" r="2.4"/><text class="m-label big" x="340" y="300" text-anchor="middle"></text></svg></div>
-  <article><p>One day I opened the channel and saw my own article there, with tag names sitting in the text literally - angle brackets in the middle of a sentence. Next to it was a link to the original source, broken apart into half an address and a fragment of a word. The text had been proofread beforehand. It was fine. It just didn't reach the reader in the shape I sent it.</p>
-<p>This isn't a story about a bad model. It's a story about the fact that some requirements for a text are pointless to ask for - they have to be checked. Below I'll go through which requirements are worth moving into code, why markup breaks more quietly than anything else, and how to structure the error you send back so the next attempt fixes exactly what's broken instead of rewriting everything from scratch.</p>
-<h2>A prompt is a request, not a guarantee</h2>
-<p>A prompt is the text instruction you give the model before generation: write like this, don't write like that, quotes like these, links like those. It's a convenient place, rules go in there easily, and for a while it seems like that's enough.</p>
-<p>In my experience, a rule written into the prompt is followed <i>almost</i> always.</p>
-<p>That "almost" is what costs the most. Not because there are many violations - there are few. But because the moment of discovery is chosen as badly as possible: the violation surfaces at the reader. Ninety-nine texts in a row come out exactly as you asked, you stop looking at that detail - and the hundredth comes out different.</p>
-<p>The difference between a request and a guarantee is who answers for the outcome. A request is carried out by the model, and the carrying out is probabilistic. A guarantee is given by code: the check either passed or it didn't, there's no third state. The prompt doesn't go anywhere in the process - it stays the way you get a good text on the first try. It just stops being the only place where the requirement lives.</p>
-<h2>What makes sense to check with code</h2>
-<p>The selection criterion is simple: what goes into code is whatever you can answer yes or no to without reading the text. Not "is it written interestingly," but "is the thing that should be here actually here."</p>
-<p>In my content pipeline, this is what gets checked by code:</p>
-<ul><li>is there a link to the original source - not "is it appropriate," just is it there</li><li>is the link formatted as words rather than a bare address</li><li>are there any bare addresses left anywhere else in the text</li><li>does the markup have any emphasis, or did the text arrive as one solid grey mass</li><li>did straight quotes slip in instead of guillemets</li><li>does the length fit within the given bounds</li><li>are there any clichés from the blacklist.</li></ul>
-<p>There's nothing clever in these checks, and that's their value. Each one takes a few lines, runs instantly, and doesn't depend on the mood of the generation. The list looks petty right up until it catches a text that was otherwise ready to publish.</p>
-<p>This is also where the boundary runs that I try not to blur: <b>code checks form, a human checks meaning</b>. A mechanical gate doesn't replace proofreading. It takes the drudgery out of it - the part where you hunt for a straight quote with your eyes and count whether the text has even one emphasized fragment. After the gate, proofreading does what it exists for: are the claims correct, does the structure work, did the text lie in some detail.</p>
-<figure><pre class="mermaid">flowchart TB
-  D[&quot;Черновик от модели&quot;] --&gt; G{&quot;Механические проверки&quot;}
-  G --&gt; G1[&quot;Разметка сбалансирована&quot;]
-  G --&gt; G2[&quot;Цифры есть в фактуре&quot;]
-  G --&gt; G3[&quot;Ссылки оформлены словами&quot;]
-  G --&gt; G4[&quot;Имен заказчиков нет&quot;]
-  G1 &amp; G2 &amp; G3 &amp; G4 --&gt;|&quot;хоть одна не прошла&quot;| BACK[&quot;Точный список замечаний&lt;br/&gt;автору: правка, а не&lt;br/&gt;новая генерация&quot;]
-  G1 &amp; G2 &amp; G3 &amp; G4 --&gt;|&quot;все прошли&quot;| HUMAN[&quot;Вычитка о смысле:&lt;br/&gt;верно ли, работает ли&lt;br/&gt;структура&quot;]</pre><figcaption>Гейт отвечает только на вопросы формы; смысл остается человеку</figcaption></figure>
-<h2>Markup: why it breaks the most quietly</h2>
-<p>Markup is a separate class of problem, and a nastier one than the rest.</p>
-<p>The messenger the text goes out to accepts only a few tags. If the markup is unbalanced - you opened emphasis and didn't close it, nested one tag inside another the wrong way - it doesn't display the text crookedly. It rejects the message entirely. Which means an error in a single character turns into "there was no publication," and you find out about it only from the absence of the post.</p>
-<p>So markup in my setup is handled in two passes. First the script fixes what can be fixed mechanically: line breaks, lists - things where the correct version follows unambiguously, no guessing. And what can't be fixed mechanically, it doesn't try to guess: it rejects it and sends it back to the author.</p>
-<p>Now about that failure from the beginning of the article. The text went to the channel with literal tags and a broken link because the publishing layer was escaping the markup - that is, turning the special characters into ordinary ones - while the pipeline puts that markup there deliberately. Two layers, each right in its own way, and the result is visible only at the output, at the reader.</p>
-<p>After fixing it I added a safety catch: if escaped markup is left in the finished message, publication doesn't happen at all. Not "publish and fix," not "publish with a caveat" - just don't publish.</p>
-<p>The principle behind it: <b>not publishing is cheaper than fixing what's published</b>. An unsent post costs you ten minutes and mild irritation. A sent and broken one costs you an edit in front of your audience - and in a channel where messages can't be quietly rewritten, a deletion and a repeat send on top of that.</p>
-<h2>How an error should come back to the author</h2>
-<p>A gate that can only say "didn't pass" is nearly useless. It reports that something somewhere is wrong and leaves you to find it yourself - that is, it hands back exactly the work you wrote it to be rid of.</p>
-<p>The error should come back as a list of specific complaints: there's no link to the original source here, there are straight quotes in three places here, the text is below the lower bound here, there's a cliché from the list here. Then the next attempt fixes exactly what needs fixing and doesn't touch the rest.</p>
-<p>This matters both when you're doing the fixing yourself and when the model is rewriting the text. A blanket rejection provokes a rewrite from scratch - and along with the problem spot, the good parts that were already done get carried away too. A precise list turns the second pass into an edit rather than a new generation.</p>
-<figure><pre class="code-figure"><code># Кириллица только с заглавной буквы: иначе короткое имя совпадет с обычным словом
-CLIENT_RE = re.compile(&quot;|&quot;.join(CLIENT_NAMES))
-
-
-def client_names(text):
-    &quot;&quot;&quot;Имена заказчиков, просочившиеся в публичный текст.&quot;&quot;&quot;
-    return sorted({m.group(0) for m in CLIENT_RE.finditer(text or &quot;&quot;)})
-
-
-# в проверке статьи:
-found = client_names(text)
-if found:
-    errors.append(&quot;имена заказчиков в тексте: &quot; + &quot;, &quot;.join(found))</code></pre><figcaption>Правило из промпта, переписанное в проверку: гейт заворачивает текст, если имя заказчика всплыло</figcaption></figure>
-<section class="practice"><p class="practice-kicker">Put it to work</p>
-<h2>What to check in practice</h2>
-<p>If you want to set up a gate like this yourself, start small - there's no need to write a big set of checks right away.</p>
-<ul><li>Write out the rules that currently live only in the prompt. Just as a list, as they are.</li><li>Mark the ones you can answer yes or no to without getting into the meaning. Those are your candidates for code.</li><li>Take one such item - bare addresses in the text, say - and write a check a few lines long. Run it over a dozen already-published texts; if you find a violation, you've just proved to yourself why "almost always" isn't enough.</li><li>Separate the errors that can be fixed mechanically from the ones that can't. Fix the first kind silently, reject the second.</li><li>Word the rejection text so that it enumerates specific complaints rather than summarizing.</li><li>If there's another layer between generation and publication, check what it does to your markup. It's worth verifying that the two layers' expectations match once, explicitly, instead of finding out on a live post.</li><li>Where a broken result costs more than a missing one, put in a safety catch that refuses to publish.</li></ul>
-<h2>How to tell it worked</h2>
-<p>The main sign is that you stop proofreading the text for form. Not because you've gotten lax, but because the form has already been checked: if something's wrong, the text simply won't reach proofreading. Attention frees up for meaning, and it shows in the kind of comments you now write on drafts.</p>
-<p>The second sign is that the gate's rejections stop surprising you. You read the list of complaints and immediately know what to fix; no time goes into working out "what was even meant here."</p>
-<p>The third is that the number of post-publication corrections tends to zero. Not halves - actually goes to zero for the class of problems you closed with code.</p>
-<p>And a side effect I didn't appreciate right away: the list of checks acquires a history. Every check in it is the trace of a specific breakage, not the result of musing about quality in general. Rereading the list, you can see what the system learned on and at what cost. It's the most honest process documentation I've ever had: impossible to write in advance and pointless to prettify.</p></section>
-</article>
-  <aside class="cta">
-  <p class="cta-kicker">Get in touch</p>
-  <h3>Let's look at your case</h3>
-  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup, write to me and we'll go through it.</p>
-  <div class="cta-actions">
-    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
-    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
-  </div>
-</aside>
-</div>
 </div></main>
 <footer><div class="wrap">
   <span>Natalia Vegman</span>
-  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>, <a href="https://vegman.dev/blog/feed.xml">RSS</a></span>
 </div></footer>
 <script>
 (function(){
-  function apply(lang){
-    document.querySelectorAll('[data-lang-block]').forEach(function(el){
-      el.classList.toggle('active', el.dataset.langBlock === lang);
-    });
-    document.querySelectorAll('.lang-btn').forEach(function(b){
-      b.classList.toggle('active', b.dataset.lang === lang);
-    });
-    document.documentElement.lang = lang;
-    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
-  }
+  var cur = document.documentElement.lang;
+  document.querySelectorAll('[data-lang-block]').forEach(function(el){
+    el.classList.toggle('active', el.dataset.langBlock === cur);
+  });
   var stored = null;
   try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
-  var nav = (navigator.language||'').toLowerCase();
-  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
-  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
-  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
-  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
-  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
-  apply(initial);
   document.querySelectorAll('.lang-btn').forEach(function(b){
-    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+    b.classList.toggle('active', b.dataset.lang === cur);
+    b.addEventListener('click', function(){
+      try{ localStorage.setItem('preferredLang', b.dataset.lang); }catch(e){}
+      if(b.dataset.lang !== cur && b.dataset.href) location.href = b.dataset.href;
+    });
   });
+  var other = stored && stored !== cur && document.querySelector('.lang-btn[data-lang="'+stored+'"]');
+  if(other && other.dataset.href) location.replace(other.dataset.href);
 })();
 </script>
 </body>

@@ -3,13 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Когда языковая модель не нужна: правило «скрипт делает, модель думает»</title>
+<title>Когда языковая модель не нужна: правило «скрипт делает, модель думает» | Наталья Вегман</title>
 <meta name="description" content="### Скрипт делает, модель думает Каждые тридцать минут приходило одно и то же сообщение об ошибке оплаты. Не раз в день и не «после релиза» - ровно по таймеру, круглые сутки. Задач...">
+<meta name="author" content="Наталья Вегман">
 <link rel="canonical" href="https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/">
-<meta property="og:title" content="Когда языковая модель не нужна: правило «скрипт делает, модель думает»">
+<link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/">
+<link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/">
+<link rel="alternate" hreflang="x-default" href="https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/">
+<link rel="alternate" type="application/rss+xml" title="Блог: Наталья Вегман" href="https://vegman.dev/blog/feed.xml">
+<meta property="og:title" content="Когда языковая модель не нужна: правило «скрипт делает, модель думает» | Наталья Вегман">
 <meta property="og:description" content="### Скрипт делает, модель думает Каждые тридцать минут приходило одно и то же сообщение об ошибке оплаты. Не раз в день и не «после релиза» - ровно по таймеру, круглые сутки. Задач...">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="vegman.dev">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Когда языковая модель не нужна: правило «скрипт делает, модель думает»", "description": "### Скрипт делает, модель думает Каждые тридцать минут приходило одно и то же сообщение об ошибке оплаты. Не раз в день и не «после релиза» - ровно по таймеру, круглые сутки. Задач...", "datePublished": "2026-03-05", "dateModified": "2026-03-05", "inLanguage": "ru", "url": "https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/", "mainEntityOfPage": "https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/", "author": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "publisher": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "articleSection": "Статьи", "image": "https://vegman.dev/blog/img/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/cover.jpg"}</script>
 <script>
 (function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
 if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
@@ -17,7 +26,7 @@ document.documentElement.dataset.theme=t})();
 function toggleTheme(){var r=document.documentElement,t=r.dataset.theme==='light'?'dark':'light';
 r.dataset.theme=t;try{localStorage.setItem('preferredTheme',t)}catch(e){}}
 </script>
-<meta property="og:image" content="https://vegman.dev/blog/img/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/cover.jpg"><script type="module">
+<meta property="og:image" content="https://vegman.dev/blog/img/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/cover.jpg"><meta property="article:published_time" content="2026-03-05"><script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const els=[...document.querySelectorAll('pre.mermaid')];
 els.forEach(e=>{e.dataset.src=e.textContent;});
@@ -204,8 +213,8 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
     <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
     <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
     <div class="lang-switch">
-      <button class="lang-btn" data-lang="ru" type="button">RU</button>
-      <button class="lang-btn" data-lang="en" type="button">EN</button>
+      <button class="lang-btn" data-lang="ru" data-href="https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" data-href="https://vegman.dev/en/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/" type="button">EN</button>
     </div>
     <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   </nav>
@@ -295,93 +304,28 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
   </div>
 </aside>
 </div>
-<div data-lang-block="en">
-  <a class="back" href="https://vegman.dev/blog/">All posts</a>
-  <h1>The script does, the model thinks</h1>
-  <div class="meta"><span>2026-03-05</span><span class="tag">article</span></div>
-  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
-  <article><p>The same payment error message arrived every thirty minutes. Not once a day, not on a new release - exactly every half hour, around the clock, unchanged. A job whose entire purpose was to glance at the queue of finished material and send a short notification had by then stopped checking anything at all, but it kept dutifully knocking and burning money.</p>
-<p>That job was mine, and I was also the one who put it together wrong. If you're building your first automation right now and putting a language model - a program that produces a text response from a text request - at the center by default, this article is about not repeating my approach. By the end you'll be able to decide in about a minute whether a model belongs in a given task, and why in a fair share of cases an ordinary script - a small program that runs a fixed sequence of actions - is enough.</p>
-<h2>The story: how a routine check ate the whole budget</h2>
-<p>The mechanics were simple. The scheduler - the service that runs a program on a timetable - triggered the job every half hour. The job looked at the queue of finished material and, if something had shown up, sent a notification. That's it.</p>
-<p>But it was built as a full-blown agent. <b>An agent</b> is a program that calls a language model and hands it a set of tools (read data, go to storage, send a message), and the model itself decides which tool to call and in what order. Sounds solid. In practice, all the work this job did came down to two actions: read the data and drop it into a fixed text template. Not a single place where anything had to be <i>decided</i>.</p>
-<p>Now about what I paid for that.</p>
-<p>A model's work is counted in <b>tokens</b> - a unit of text, roughly a piece of a word, and that's what the billing is based on. Every call to a model specifies a ceiling: the maximum number of tokens it may produce in its response. My run requested the model's maximum ceiling rather than what was actually needed - and what was needed was three lines of notification. And here's the key point I learned the expensive way: the provider checks whether you can pay against the <i>requested ceiling</i>, not against how many tokens are actually spent. Which means that every half hour the job showed up and asked to reserve, for its response, the maximum the model is capable of.</p>
-<p>While there was a cushion on the balance, none of this showed. When the balance dropped, a trivial check started failing with a payment error. Not because it lacked the money to do its work - the work cost pennies - but because it was asking for a ceiling the balance no longer covered. And it failed every thirty minutes, endlessly, until I switched it off by hand.</p>
-<p>The fix took less time than the diagnosis. I rewrote the same job as an ordinary script: read, compare, fill in the template, send. No model, no tools, no agent. The cost per run became zero, the behavior predictable.</p>
-<figure><pre class="mermaid">flowchart TB
-  subgraph M[&quot;С моделью&quot;]
-    M1[&quot;Запуск по расписанию,&lt;br/&gt;48 раз в сутки&quot;] --&gt; M2[&quot;Вызов модели&lt;br/&gt;на каждую проверку&quot;] --&gt; M3[&quot;Платно за каждый запуск,&lt;br/&gt;поведение непредсказуемо&quot;]
-  end
-  subgraph S[&quot;Скриптом&quot;]
-    S1[&quot;Тот же запуск&lt;br/&gt;по расписанию&quot;] --&gt; S2[&quot;Прочитать, сравнить,&lt;br/&gt;подставить в шаблон&quot;] --&gt; S3[&quot;Стоимость запуска - ноль,&lt;br/&gt;поведение одинаково&quot;]
-  end
-  M ==&gt; S</pre><figcaption>Одна и та же задача по расписанию: с моделью и без нее</figcaption></figure>
-<h2>Why this happens: what you pay for convenience</h2>
-<p>A model doesn't end up in a job like this out of malice. It ends up there because with it you don't have to think anything through in advance. You don't feel like describing every branch - the model will sort it out. The data format might change - the model will understand. That's genuine convenience, and sometimes it even pays for itself. But it comes with a bill, and here's what makes it up.</p>
-<ul><li>The price has nothing to do with the difficulty of the task. Checking "is there anything in the queue" costs about the same as substantive work. You pay for the call, not for the value.</li><li>Reservation goes by the ceiling, not by actual use. A tiny response can run into a limit sized for a big one.</li><li>You acquire an external point of failure. A script depends on your data. A job with a model also depends on someone else's service, on your balance, and on their rules. And the failure doesn't arrive at deploy time - it arrives weeks later, when you've already forgotten what's inside.</li><li>Behavior stops being reproducible. On the same data you can get slightly different text. For a notification that's a trifle; for a check someone relies on, it isn't.</li><li>The job is hard to test. You can't write an assertion that "this input gives exactly this output" if the output is a little different every time.</li><li>Everything breaks when you reword something. The prompt - the model's text instruction - becomes part of the logic, but doesn't behave like code: you rewrite a paragraph to read better, the behavior shifts, and the compiler won't warn you.</li></ul>
-<p>Worth remembering separately: a recurring job amplifies any mistake. A one-off script fails once, and you see it. A scheduled job will fail forty-eight times a day, and spend money forty-eight times a day just the same, if the failure costs money.</p>
-<h2>The rule I now apply before writing any code</h2>
-<p>The rule is short, and I apply it before I open the editor.</p>
-<p><b>If a task comes down to reading data, comparing, and fixed formatting - it's a script. No exceptions.</b></p>
-<p>The three verbs work as a filter here. <i>Reading</i> - take the data from where it sits. <i>Comparing</i> - check a condition: empty or not, more or less, changed or the same. <i>Fixed formatting</i> - put values into a text template written in advance. If all the work breaks down into these three actions, a model has nothing to do there: it will add nothing but cost and unpredictability.</p>
-<p>The easiest way to check yourself is with one question: <i>is there a step in this task that I can't write as an <code>if</code> condition?</i> If every step can be written - write a script. If there's a step that needs a judgment of "does this fit by meaning or not" - that, and only that, is where a model appears.</p>
-<p>Hence the phrasing I use as a reminder: <b>the script does, the model thinks</b>. Action is code. Judgment is a model.</p>
-<p>The rule has a pleasant side effect that makes it worth following even if everything were free. A script has reproducible behavior: the same input gives the same output. Which means you can cover it with tests and confirm once that it does exactly what's needed. And it won't break because someone reworded a prompt.</p>
-<h3>The second habit: empty output means silence</h3>
-<p>There's one more thing I now build in from the start. A recurring job that finds nothing on most of its runs should produce <i>empty</i> output. Not "nothing found," not "check complete, no changes" - empty.</p>
-<p>Running every half hour, that's the difference between silence and forty-eight messages a day that you'll stop reading within a week. And once you stop reading the stream, you'll also miss the one message the whole thing was built for. A notification should mean an event. No event means silence.</p>
-<h2>Where a model really is needed</h2>
-<p>The rule isn't that models aren't needed. It's that they should stand where you can't do without them. And you can't do without them where there's reasoning, judgment, or generation.</p>
-<ul><li><b>Selection by meaning.</b> Not "take all records from the past day" - that's a condition, that's a script. But "pick out of the stream what's relevant to the topic," where the criterion can't be expressed as a list of words.</li><li><b>Writing text.</b> Not substituting values into a template, but coherent text that didn't exist before: a summary, a draft, an explanation.</li><li><b>Interpreting unstructured input.</b> The data arrived any which way - as an email, a free-form message, mismatched records - and you have to extract meaning from it, not a field at a fixed position.</li></ul>
-<p>Most often the right construction is neither an "agent" nor a "script," but a script with one model step inside. The script fetches the data, filters, counts, formats, and sends. The model is called once, at exactly the point where judgment is needed, and gets an already prepared chunk as input. That way you pay for the thinking and don't pay for the shuffling.</p>
-<section class="practice"><p class="practice-kicker">Put it to work</p>
-<h2>What to check in practice</h2>
-<p>If you already have automation running, here's what you can do today.</p>
-<ul><li>Write out all your recurring jobs and next to each one what it does, step by step, in verbs. Not "analyzes data," but "reads, compares, sends."</li><li>Mark the jobs whose list contains not a single judgment step. Those are candidates for rewriting as a script.</li><li>For the remaining jobs with a model, look at what response ceiling they request. If it's set to the model's default maximum while the response is actually short - lower the ceiling to something reasonable.</li><li>Check what happens on failure. A job that fails on a schedule should go quiet after several failures in a row, or at least report itself once rather than on every run.</li><li>Find the jobs that send a message even when they found nothing, and remove that message.</li><li>Take one job from the candidate list and rewrite it as a script, all the way through. Just one, to feel the difference in the amount of work - usually there's less of it than it seems.</li></ul>
-<h2>How to tell it worked</h2>
-<p>The criterion is simple and checkable: <b>run the rewritten job twice on the same data and compare the output character by character</b>. If it matches - you have a script, and its behavior can be pinned down with a test. If it doesn't - there's still a model inside, and you need to answer honestly what it's doing there.</p>
-<p>The second sign: over a day of running, a job that had nothing to report sent not a single message, and the cost of its runs stayed at zero. The third, the calmest one, you'll notice later - when something changes on the provider's side and your queue check simply doesn't notice.</p></section>
-</article>
-  <aside class="cta">
-  <p class="cta-kicker">Get in touch</p>
-  <h3>Let's look at your case</h3>
-  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup, write to me and we'll go through it.</p>
-  <div class="cta-actions">
-    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
-    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
-  </div>
-</aside>
-</div>
 </div></main>
 <footer><div class="wrap">
   <span>Natalia Vegman</span>
-  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>, <a href="https://vegman.dev/blog/feed.xml">RSS</a></span>
 </div></footer>
 <script>
 (function(){
-  function apply(lang){
-    document.querySelectorAll('[data-lang-block]').forEach(function(el){
-      el.classList.toggle('active', el.dataset.langBlock === lang);
-    });
-    document.querySelectorAll('.lang-btn').forEach(function(b){
-      b.classList.toggle('active', b.dataset.lang === lang);
-    });
-    document.documentElement.lang = lang;
-    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
-  }
+  var cur = document.documentElement.lang;
+  document.querySelectorAll('[data-lang-block]').forEach(function(el){
+    el.classList.toggle('active', el.dataset.langBlock === cur);
+  });
   var stored = null;
   try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
-  var nav = (navigator.language||'').toLowerCase();
-  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
-  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
-  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
-  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
-  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
-  apply(initial);
   document.querySelectorAll('.lang-btn').forEach(function(b){
-    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+    b.classList.toggle('active', b.dataset.lang === cur);
+    b.addEventListener('click', function(){
+      try{ localStorage.setItem('preferredLang', b.dataset.lang); }catch(e){}
+      if(b.dataset.lang !== cur && b.dataset.href) location.href = b.dataset.href;
+    });
   });
+  var other = stored && stored !== cur && document.querySelector('.lang-btn[data-lang="'+stored+'"]');
+  if(other && other.dataset.href) location.replace(other.dataset.href);
 })();
 </script>
 </body>

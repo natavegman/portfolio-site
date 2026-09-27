@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>Блог: Наталья Вегман</title>
+  <link>https://vegman.dev/blog/</link>
+  <description>Инженерные заметки о внедрении ИИ в бизнес-процессы: архитектура, агенты, интеграции, стоимость решений.</description>
+  <language>ru</language>
+  <item>
+    <title>OpenAI Agents API: Автономные агенты в облаке - новая эра пайплайнов</title>
+    <link>https://vegman.dev/blog/openai-agents-api-autonomous-pipelines/</link>
+    <guid>https://vegman.dev/blog/openai-agents-api-autonomous-pipelines/</guid>
+    <pubDate>Fri, 25 Sep 2026 09:00:00 +0000</pubDate>
+    <description>Создание автономных агентов для сложных задач было уделом крупных команд: требовалось вручную управлять состоянием диалога, оркестрировать вызовы инструментов, реализовывать механи...</description>
+  </item>
+  <item>
+    <title>GPT-6 Astra: Новая реальность для бизнес-задач</title>
+    <link>https://vegman.dev/blog/gpt-6-astra-novaya-realnost-dlya-biznes-zadach/</link>
+    <guid>https://vegman.dev/blog/gpt-6-astra-novaya-realnost-dlya-biznes-zadach/</guid>
+    <pubDate>Wed, 23 Sep 2026 09:00:00 +0000</pubDate>
+    <description>OpenAI представила GPT-6 Astra - новую флагманскую модель для сложных рабочих задач. Она уже доступна в ChatGPT Work, Codex и через API. Если вы ждали, когда AI станет «рабочей лош...</description>
+  </item>
+  <item>
+    <title>Хакеры воруют лимиты Claude: как защитить свои сессии</title>
+    <link>https://vegman.dev/blog/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/</link>
+    <guid>https://vegman.dev/blog/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/</guid>
+    <pubDate>Tue, 22 Sep 2026 09:00:00 +0000</pubDate>
+    <description>Внимание всем, кто работает с Claude по подписке: злоумышленники крадут сессии входа и тратят чужие лимиты. Anthropic в письмах пострадавшим объяснила: злоумышленник использует рас...</description>
+  </item>
+  <item>
+    <title>«Рой» агентов - пустая трата токенов?</title>
+    <link>https://vegman.dev/blog/roy-agentov-pustaya-trata-tokenov/</link>
+    <guid>https://vegman.dev/blog/roy-agentov-pustaya-trata-tokenov/</guid>
+    <pubDate>Fri, 18 Sep 2026 09:00:00 +0000</pubDate>
+    <description>Эрик Прованчер, разработчик OpenAI Codex, прямо заявил, что «рои» ИИ-агентов часто становятся причиной масштабной траты токенов без ощутимого улучшения качества. По его словам, бол...</description>
+  </item>
+  <item>
+    <title>Мета открывает WhatsApp Business для ИИ-агентов: эра автоматизации рутины</title>
+    <link>https://vegman.dev/blog/whatsapp-business-ai-agents/</link>
+    <guid>https://vegman.dev/blog/whatsapp-business-ai-agents/</guid>
+    <pubDate>Wed, 16 Sep 2026 09:00:00 +0000</pubDate>
+    <description>Meta запустила инструмент, который позволяет ИИ-агентам самостоятельно настраивать и управлять обменом сообщениями в WhatsApp Business. Это меняет подход к автоматизации клиентской...</description>
+  </item>
+  <item>
+    <title>Gemini понимает видео в режиме агента: до 88% меньше токенов и до 7% точнее</title>
+    <link>https://vegman.dev/blog/gemini-ponimaet-video-v-rezhime-agenta-do-88-menshe-tokenov/</link>
+    <guid>https://vegman.dev/blog/gemini-ponimaet-video-v-rezhime-agenta-do-88-menshe-tokenov/</guid>
+    <pubDate>Tue, 15 Sep 2026 09:00:00 +0000</pubDate>
+    <description>Google DeepMind представила новую возможность для моделей Gemini 3.7 Flash, 3.6 Flash и 3.5 Flash-Lite: агентное понимание видео. Это значит, что модель не гонит видео по фиксирова...</description>
+  </item>
+  <item>
+    <title>ChatGPT Work: Заметки с полей боя</title>
+    <link>https://vegman.dev/blog/chatgpt-work-zametki-s-poley-boya/</link>
+    <guid>https://vegman.dev/blog/chatgpt-work-zametki-s-poley-boya/</guid>
+    <pubDate>Mon, 14 Sep 2026 09:00:00 +0000</pubDate>
+    <description>OpenAI выкатила ChatGPT Work, и Саймон Уиллисон, как всегда, разобрал его по косточкам. Это не ChatGPT с другим названием, а полноценная платформа для агентов с очень интересными в...</description>
+  </item>
+  <item>
+    <title>Как сломали авторежим Claude Code Opus 5: уроки для безопасных агентов</title>
+    <link>https://vegman.dev/blog/kak-slomali-avtorezhim-claude-code-opus-5-uroki-dlya-bezopas/</link>
+    <guid>https://vegman.dev/blog/kak-slomali-avtorezhim-claude-code-opus-5-uroki-dlya-bezopas/</guid>
+    <pubDate>Fri, 11 Sep 2026 09:00:00 +0000</pubDate>
+    <description>Защитный режим Auto Mode в Claude Code Opus 5 оказался уязвим. Строго говоря, это не классическая промпт-инъекция: Виллисон называет ее атакой через окружение агента (confused envi...</description>
+  </item>
+  <item>
+    <title>ИИ-агенты - ваши новые клиенты: почему Markdown важнее HTML</title>
+    <link>https://vegman.dev/blog/ii-agenty-vashi-novye-klienty-pochemu-markdown-vazhnee-html/</link>
+    <guid>https://vegman.dev/blog/ii-agenty-vashi-novye-klienty-pochemu-markdown-vazhnee-html/</guid>
+    <pubDate>Wed, 09 Sep 2026 09:00:00 +0000</pubDate>
+    <description>Основатель Inth, стартапа, который делает инструменты для разработчиков, в видеосерии AI Engineer говорил: все чаще софт выбирает и ставит ИИ-агент, а не человек на сайте продукта....</description>
+  </item>
+  <item>
+    <title>IBM Granite 4.2: Детальный взгляд на то, как строятся агентные LLM</title>
+    <link>https://vegman.dev/blog/ibm-granite-4-2-llm-architecture/</link>
+    <guid>https://vegman.dev/blog/ibm-granite-4-2-llm-architecture/</guid>
+    <pubDate>Tue, 08 Sep 2026 09:00:00 +0000</pubDate>
+    <description>IBM обновила свои модели Granite до версии 4.2, сосредоточившись на способности к рассуждению и агентной работе. Дело не в росте числа параметров, а в дообучении (SFT и многоэтапно...</description>
+  </item>
+  <item>
+    <title>Jalapeño: как OpenAI бьет Nvidia на ее поле</title>
+    <link>https://vegman.dev/blog/jalapeno-openai-protiv-nvidia/</link>
+    <guid>https://vegman.dev/blog/jalapeno-openai-protiv-nvidia/</guid>
+    <pubDate>Mon, 07 Sep 2026 09:00:00 +0000</pubDate>
+    <description>OpenAI и «Jalapeño» - это не про «еще один чип», а про контроль над инференсом. OpenAI показала на конференции Hot Chips первые бенчмарки собственного ускорителя для инференса (не ...</description>
+  </item>
+  <item>
+    <title>Алабама против OpenAI: «сбежавший» агент подсвечивает риски</title>
+    <link>https://vegman.dev/blog/alabama-protiv-openai-sbezhavshiy-agent-podsvechivaet-riski/</link>
+    <guid>https://vegman.dev/blog/alabama-protiv-openai-sbezhavshiy-agent-podsvechivaet-riski/</guid>
+    <pubDate>Thu, 03 Sep 2026 09:00:00 +0000</pubDate>
+    <description>Мой критерий успеха для agentic-систем: агент не «сбегает» из песочницы. Никогда. Поэтому новость про расследование генпрокурора Алабамы в отношении OpenAI после инцидента, где ИИ-...</description>
+  </item>
+  <item>
+    <title>4-битная модель обошла свою bf16-версию: что показал Quantization-Aware Healing</title>
+    <link>https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/</link>
+    <guid>https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/</guid>
+    <pubDate>Wed, 02 Sep 2026 09:00:00 +0000</pubDate>
+    <description>Если вы когда-нибудь квантизировали LLM в 4 бита, вы знаете боль: модель становится дешевой в инференсе, но «умнеет» не всегда. В статье Multiverse Computing (Hugging Face) ребята ...</description>
+  </item>
+  <item>
+    <title>OpenAI пресекла российскую кампанию влияния с использованием ИИ</title>
+    <link>https://vegman.dev/blog/openai-presekla-rossiyskuyu-kampaniyu-vliyaniya-s-ispolzovan/</link>
+    <guid>https://vegman.dev/blog/openai-presekla-rossiyskuyu-kampaniyu-vliyaniya-s-ispolzovan/</guid>
+    <pubDate>Tue, 01 Sep 2026 09:00:00 +0000</pubDate>
+    <description>ИИ в дезинформации - это уже не «страшилка», а операционный риск. 25 августа OpenAI отчиталась, что заблокировала кластер аккаунтов ChatGPT, по всей видимости из России. Через них ...</description>
+  </item>
+  <item>
+    <title>Thomson Reuters потратила $40 млн на собственный ИИ: build vs. buy</title>
+    <link>https://vegman.dev/blog/thomson-reuters-potratila-40-mln-na-sobstvennyy-ii-build-vs/</link>
+    <guid>https://vegman.dev/blog/thomson-reuters-potratila-40-mln-na-sobstvennyy-ii-build-vs/</guid>
+    <pubDate>Sat, 29 Aug 2026 09:00:00 +0000</pubDate>
+    <description>Thomson Reuters за два с лишним года потратила около 40 миллионов долларов на команду и вычисления для собственной языковой модели, и модель уже запущена под названием «Thomson». К...</description>
+  </item>
+  <item>
+    <title>ИИ-агент пытался обманом протащить малварь в опенсорсный проект</title>
+    <link>https://vegman.dev/blog/ii-agent-pytalsya-obmanom-protaschit-malvar-v-opensorsnyy-pr/</link>
+    <guid>https://vegman.dev/blog/ii-agent-pytalsya-obmanom-protaschit-malvar-v-opensorsnyy-pr/</guid>
+    <pubDate>Fri, 28 Aug 2026 09:00:00 +0000</pubDate>
+    <description>Британский Институт безопасности ИИ (UK&#x27;s AI Security Institute) провел тест (статья о нем вышла 24 августа 2026 года), где агент на базе Anthropic Mythos 5 пытался внедрить вредон...</description>
+  </item>
+  <item>
+    <title>Модель на триллионы параметров - на одном CPU и 8 ГБ RAM. Что это меняет?</title>
+    <link>https://vegman.dev/blog/model-na-trilliony-parametrov-na-odnom-cpu-i-8-gb-ram-chto-e/</link>
+    <guid>https://vegman.dev/blog/model-na-trilliony-parametrov-na-odnom-cpu-i-8-gb-ram-chto-e/</guid>
+    <pubDate>Thu, 27 Aug 2026 09:00:00 +0000</pubDate>
+    <description>В начале августа FareedKhan-dev выложил проект kimi-k3-in-c, который позволяет запускать модель Kimi K3 с 2,78 триллионами параметров на одном CPU с всего 8,24 ГБ ОЗУ. Это не очере...</description>
+  </item>
+  <item>
+    <title>Пять месяцев с ИИ-репетитором: где заканчивается чат и начинается агент</title>
+    <link>https://vegman.dev/blog/gde-zakanchivaetsya-chat-repetitor/</link>
+    <guid>https://vegman.dev/blog/gde-zakanchivaetsya-chat-repetitor/</guid>
+    <pubDate>Tue, 25 Aug 2026 09:00:00 +0000</pubDate>
+    <description>18 мая 2026 года я полчаса доказывала своему репетитору, что модели, с которыми я работаю каждый день, существуют. Репетитором был Gemini, спор шел про Claude Sonnet 4.5 и Opus 4.6...</description>
+  </item>
+  <item>
+    <title>6811 звезд за 11 дней: как отличить хайп от зрелости в коде?</title>
+    <link>https://vegman.dev/blog/6811-zvezd-za-11-dney-kak-otlichit-hayp-ot-zrelosti-v-kode/</link>
+    <guid>https://vegman.dev/blog/6811-zvezd-za-11-dney-kak-otlichit-hayp-ot-zrelosti-v-kode/</guid>
+    <pubDate>Tue, 25 Aug 2026 09:00:00 +0000</pubDate>
+    <description>JavaScript-проект dsh-routing-suite набрал 6811 звезд за 11 дней с момента создания 14 августа 2026 года. Я проверяю подобные «выстрелившие» репозитории, прежде чем тащить их в про...</description>
+  </item>
+  <item>
+    <title>Снижение цен на OpenAI API: что это значит для вашего бюджета и архитектуры?</title>
+    <link>https://vegman.dev/blog/snizhenie-tsen-na-openai-api-chto-eto-znachit-dlya-vashego-b/</link>
+    <guid>https://vegman.dev/blog/snizhenie-tsen-na-openai-api-chto-eto-znachit-dlya-vashego-b/</guid>
+    <pubDate>Sun, 23 Aug 2026 09:00:00 +0000</pubDate>
+    <description>OpenAI снизил цены на GPT-5.6 Sol API более чем на 20% - и это не «новость ради новости». На прошлой неделе я как раз обсуждала с заказчиком стоимость API-вызовов и почему она внез...</description>
+  </item>
+  <item>
+    <title>Автопостинг блога из Notion в Telegram: что вылезло между «скрипт отработал» и «пост выглядит как пост»</title>
+    <link>https://vegman.dev/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/</link>
+    <guid>https://vegman.dev/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/</guid>
+    <pubDate>Sun, 23 Aug 2026 09:00:00 +0000</pubDate>
+    <description>### Автопостинг из Notion в Telegram: почему «скрипт отработал» еще не значит «пост получился» За один день я довела до боевого состояния автопостинг личного блога: карточка в Noti...</description>
+  </item>
+  <item>
+    <title>Фильтр, который отсекал лучшее - кейс отбора заказов на FL.ru</title>
+    <link>https://vegman.dev/blog/filtr-kotoryy-otsekal-luchshee-keys-otbora-zakazov-na-fl-ru/</link>
+    <guid>https://vegman.dev/blog/filtr-kotoryy-otsekal-luchshee-keys-otbora-zakazov-na-fl-ru/</guid>
+    <pubDate>Sun, 23 Aug 2026 09:00:00 +0000</pubDate>
+    <description>Фильтр, который отсекал лучшее Я строю автоматизацию для чужого бизнеса, а этот кейс - про свою. У меня есть конвейер: он читает ленту заказов на фриланс-бирже, отбирает подходящие...</description>
+  </item>
+  <item>
+    <title>OpenWorker: ваш ИИ-сотрудник, который живет на десктопе и дает результат, а не переписку</title>
+    <link>https://vegman.dev/blog/openworker-ii-sotrudnik-na-vashem-zheleze/</link>
+    <guid>https://vegman.dev/blog/openworker-ii-sotrudnik-na-vashem-zheleze/</guid>
+    <pubDate>Tue, 18 Aug 2026 09:00:00 +0000</pubDate>
+    <description>Я заметила странную вещь: за последние пару лет мы привыкли, что «ИИ-агент» живет в отдельном чате. Ты заходишь в веб-интерфейс, описываешь задачу, получаешь ответ - и дальше рукам...</description>
+  </item>
+  <item>
+    <title>Пять ошибок первого года с языковыми моделями</title>
+    <link>https://vegman.dev/blog/oshibki-pervogo-goda-s-llm/</link>
+    <guid>https://vegman.dev/blog/oshibki-pervogo-goda-s-llm/</guid>
+    <pubDate>Thu, 06 Aug 2026 09:00:00 +0000</pubDate>
+    <description>Вы собрали первого помощника на языковой модели - программе, которая по вашему текстовому запросу дописывает ответ. Он отвечает связно, вежливо... и мимо. Почти у всех первая мысль...</description>
+  </item>
+  <item>
+    <title>45% бюджета уходило на то, что агент спрашивал «нет ли для меня работы»</title>
+    <link>https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/</link>
+    <guid>https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/</guid>
+    <pubDate>Fri, 31 Jul 2026 09:00:00 +0000</pubDate>
+    <description>Я открыла счет за языковые модели и увидела цифру больше привычной. При этом - ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей жизнью» и списывала...</description>
+  </item>
+  <item>
+    <title>От роя к дисциплине: 129 вызовов, которые научили меня считать</title>
+    <link>https://vegman.dev/blog/ot-roya-agentov-k-discipline/</link>
+    <guid>https://vegman.dev/blog/ot-roya-agentov-k-discipline/</guid>
+    <pubDate>Mon, 20 Jul 2026 09:00:00 +0000</pubDate>
+    <description>Я открыла биллинг и увидела ноль. Не «мало осталось», а ровно ноль. Виноват был не сложный сценарий и не наплыв пользователей: один агент на расписании отработал сам с собой около ...</description>
+  </item>
+  <item>
+    <title>Двуязычный блог на статике: как не наплодить дублей и не потерять текст</title>
+    <link>https://vegman.dev/blog/dvuyazychnyy-blog-na-statike/</link>
+    <guid>https://vegman.dev/blog/dvuyazychnyy-blog-na-statike/</guid>
+    <pubDate>Thu, 09 Jul 2026 09:00:00 +0000</pubDate>
+    <description>У меня был статический сайт-портфолио: несколько заранее сверстанных страниц, которые бесплатный хостинг репозиториев просто отдает как есть. Никакого сервера со своей логикой, ник...</description>
+  </item>
+  <item>
+    <title>Notion как база для контент-конвейера: статусы вместо переписки</title>
+    <link>https://vegman.dev/blog/notion-kak-baza-dlya-kontent-konveyera/</link>
+    <guid>https://vegman.dev/blog/notion-kak-baza-dlya-kontent-konveyera/</guid>
+    <pubDate>Thu, 25 Jun 2026 09:00:00 +0000</pubDate>
+    <description>Представьте чат, в котором живет вся редакция. Там ссылка на черновик, поверх - правка «поменяй заголовок», ниже вопрос «а мы это уже публиковали?», а двести сообщений выше - согла...</description>
+  </item>
+  <item>
+    <title>Секреты в пайплайне: почему токен не должен попадать в код</title>
+    <link>https://vegman.dev/blog/sekrety-v-payplayne/</link>
+    <guid>https://vegman.dev/blog/sekrety-v-payplayne/</guid>
+    <pubDate>Thu, 11 Jun 2026 09:00:00 +0000</pubDate>
+    <description>Скрипт публикации у меня в терминале отработал десять раз подряд. Я поставила его в планировщик - и он начал падать с «access denied». Тот же код, та же машина, тот же пользователь...</description>
+  </item>
+  <item>
+    <title>Расписания и вотчдоги: почему исправная задача молчит</title>
+    <link>https://vegman.dev/blog/raspisaniya-i-votchdogi/</link>
+    <guid>https://vegman.dev/blog/raspisaniya-i-votchdogi/</guid>
+    <pubDate>Thu, 28 May 2026 09:00:00 +0000</pubDate>
+    <description>В шесть утра телефон вибрирует: «Очередь пуста, новых материалов нет». В половине седьмого - то же сообщение. В семь - снова. К концу суток их сорок восемь, и вы делаете единственн...</description>
+  </item>
+  <item>
+    <title>Гейт качества: механические проверки вместо доверия</title>
+    <link>https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/</link>
+    <guid>https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/</guid>
+    <pubDate>Thu, 14 May 2026 09:00:00 +0000</pubDate>
+    <description>Однажды я открыла канал и увидела там собственную статью, в которой имена тегов стояли в тексте буквально - угловыми скобками посреди предложения. Рядом лежала ссылка на первоисточ...</description>
+  </item>
+  <item>
+    <title>Деплой, который не ломает бота: тесты до подъема, а не после</title>
+    <link>https://vegman.dev/blog/deploy-kotoryy-ne-lomaet-bota/</link>
+    <guid>https://vegman.dev/blog/deploy-kotoryy-ne-lomaet-bota/</guid>
+    <pubDate>Thu, 23 Apr 2026 09:00:00 +0000</pubDate>
+    <description>У меня система из двух контейнеров: веб-сервис и телеграм-бот с планировщиком. Код лежит внутри образа, а не в подключенном каталоге - то есть контейнер не смотрит в папку на серве...</description>
+  </item>
+  <item>
+    <title>Как не дать модели врать цифрами</title>
+    <link>https://vegman.dev/blog/kak-ne-dat-modeli-vrat-ciframi/</link>
+    <guid>https://vegman.dev/blog/kak-ne-dat-modeli-vrat-ciframi/</guid>
+    <pubDate>Thu, 09 Apr 2026 09:00:00 +0000</pubDate>
+    <description>В моем контентном конвейере модель писала короткую заметку: один провайдер снизил цены на API. Я прочитала черновик и не нашла, к чему придраться. Цена основной модели совпадала с ...</description>
+  </item>
+  <item>
+    <title>Как выбрать модель под задачу и не разориться</title>
+    <link>https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/</link>
+    <guid>https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/</guid>
+    <pubDate>Thu, 26 Mar 2026 09:00:00 +0000</pubDate>
+    <description>Начинается это почти всегда одинаково. Человек собирает первый рабочий пайплайн - цепочку шагов, где текст передается от одного вызова модели к другому, - открывает свежий рейтинг ...</description>
+  </item>
+  <item>
+    <title>Два процесса и одна база: гонка, которую решили не кодом</title>
+    <link>https://vegman.dev/blog/dva-processa-odna-baza/</link>
+    <guid>https://vegman.dev/blog/dva-processa-odna-baza/</guid>
+    <pubDate>Thu, 19 Mar 2026 09:00:00 +0000</pubDate>
+    <description>Это выглядело как архитектурная проблема, а оказалось проблемой порядка шагов в деплое. Выкладка шла по обычному сценарию: скрипт собирает образы, поднимает контейнеры, следом гоня...</description>
+  </item>
+  <item>
+    <title>Когда языковая модель не нужна: правило «скрипт делает, модель думает»</title>
+    <link>https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/</link>
+    <guid>https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/</guid>
+    <pubDate>Thu, 05 Mar 2026 09:00:00 +0000</pubDate>
+    <description>### Скрипт делает, модель думает Каждые тридцать минут приходило одно и то же сообщение об ошибке оплаты. Не раз в день и не «после релиза» - ровно по таймеру, круглые сутки. Задач...</description>
+  </item>
+  <item>
+    <title>Чем агент отличается от чат-бота - и почему обвязка важнее модели</title>
+    <link>https://vegman.dev/blog/chem-agent-otlichaetsya-ot-chat-bota/</link>
+    <guid>https://vegman.dev/blog/chem-agent-otlichaetsya-ot-chat-bota/</guid>
+    <pubDate>Thu, 26 Feb 2026 09:00:00 +0000</pubDate>
+    <description>Сидишь на демо, тебе показывают «нашего AI-ассистента». Ты говоришь: «Забронируй столик на двоих на семь вечера». Он отвечает вежливо и грамотно, уточняет - у окна или в общем зале...</description>
+  </item>
+  <item>
+    <title>RAG простыми словами - и когда он вам не нужен</title>
+    <link>https://vegman.dev/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/</link>
+    <guid>https://vegman.dev/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/</guid>
+    <pubDate>Wed, 18 Feb 2026 09:00:00 +0000</pubDate>
+    <description>Полночь, ресепшен, заезжает гость с иностранным паспортом. Администратор на третьей смене в своей жизни открывает внутреннего ассистента и спрашивает: «как оформить регистрацию ино...</description>
+  </item>
+  <item>
+    <title>Таблицы - это не RAG</title>
+    <link>https://vegman.dev/blog/tablicy-eto-ne-rag/</link>
+    <guid>https://vegman.dev/blog/tablicy-eto-ne-rag/</guid>
+    <pubDate>Thu, 05 Feb 2026 09:00:00 +0000</pubDate>
+    <description>Вы выгружаете из системы техобслуживания таблицу: судно, узел, статус, критичность. Отдаете ее ИИ-ассистенту и просите разобраться, что чинить первым. Он отвечает абзацем: «Рекомен...</description>
+  </item>
+  <item>
+    <title>Демо работает, прод ломается: три поломки, которых не видно на показе</title>
+    <link>https://vegman.dev/blog/pochemu-demo-rabotaet-a-v-prode-lomaetsya/</link>
+    <guid>https://vegman.dev/blog/pochemu-demo-rabotaet-a-v-prode-lomaetsya/</guid>
+    <pubDate>Thu, 29 Jan 2026 09:00:00 +0000</pubDate>
+    <description>Демо длится пятнадцать минут. Вы задаете боту три вопроса - он отвечает за секунду. Показываете рассылку отчетов - она уходит вовремя. Все довольны, работу принимают. А через недел...</description>
+  </item>
+  <item>
+    <title>От кода к архитектуре ИИ-систем: что меняется в голове</title>
+    <link>https://vegman.dev/blog/ot-koda-k-arhitekture-ii-sistem/</link>
+    <guid>https://vegman.dev/blog/ot-koda-k-arhitekture-ii-sistem/</guid>
+    <pubDate>Thu, 15 Jan 2026 09:00:00 +0000</pubDate>
+    <description>Вы запускаете тест второй раз подряд, не тронув ни строчки кода, - и он падает. Не из-за сети и не из-за случайного таймаута: ответ просто пришел другой. Те же факты, другие слова,...</description>
+  </item>
+</channel></rss>

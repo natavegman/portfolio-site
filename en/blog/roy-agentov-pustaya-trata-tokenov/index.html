@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent &quot;swarms&quot; - just a waste of tokens? | Natalia Vegman</title>
+<meta name="description" content="Eric Provencher, an OpenAI Codex developer, said plainly that AI agent &quot;swarms&quot; often cause massive token waste without any real gain in quality. In his view, more than two paralle...">
+<meta name="author" content="Natalia Vegman">
+<link rel="canonical" href="https://vegman.dev/en/blog/roy-agentov-pustaya-trata-tokenov/">
+<link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/roy-agentov-pustaya-trata-tokenov/">
+<link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/roy-agentov-pustaya-trata-tokenov/">
+<link rel="alternate" hreflang="x-default" href="https://vegman.dev/blog/roy-agentov-pustaya-trata-tokenov/">
+<link rel="alternate" type="application/rss+xml" title="Blog: Natalia Vegman" href="https://vegman.dev/en/blog/feed.xml">
+<meta property="og:title" content="Agent &quot;swarms&quot; - just a waste of tokens? | Natalia Vegman">
+<meta property="og:description" content="Eric Provencher, an OpenAI Codex developer, said plainly that AI agent &quot;swarms&quot; often cause massive token waste without any real gain in quality. In his view, more than two paralle...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vegman.dev/en/blog/roy-agentov-pustaya-trata-tokenov/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="vegman.dev">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Agent \"swarms\" - just a waste of tokens?", "description": "Eric Provencher, an OpenAI Codex developer, said plainly that AI agent \"swarms\" often cause massive token waste without any real gain in quality. In his view, more than two paralle...", "datePublished": "2026-09-18", "dateModified": "2026-09-18", "inLanguage": "en", "url": "https://vegman.dev/en/blog/roy-agentov-pustaya-trata-tokenov/", "mainEntityOfPage": "https://vegman.dev/en/blog/roy-agentov-pustaya-trata-tokenov/", "author": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "publisher": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "articleSection": "News", "image": "https://vegman.dev/blog/img/roy-agentov-pustaya-trata-tokenov/cover.jpg"}</script>
+<script>
+(function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
+if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+document.documentElement.dataset.theme=t})();
+function toggleTheme(){var r=document.documentElement,t=r.dataset.theme==='light'?'dark':'light';
+r.dataset.theme=t;try{localStorage.setItem('preferredTheme',t)}catch(e){}}
+</script>
+<meta property="og:image" content="https://vegman.dev/blog/img/roy-agentov-pustaya-trata-tokenov/cover.jpg"><meta property="article:published_time" content="2026-09-18">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080a;--surface:#0f0d0b;--surface-hex:#14100c;--border:rgba(255,190,130,.10);
+--rule:rgba(255,190,130,.14);--grid:rgba(255,190,130,.045);--accent:#ff9a3c;--accent-2:#ffb45c;
+--on-accent:#140a02;--text:#f1ebe3;--muted:#8d8379;--faint:#5d554e;--line-hex:#6a5a4b;
+--card-bg:rgba(255,160,90,.025);--spot:rgba(255,140,50,.10);--nav-bg:rgba(7,8,10,.82);
+--hover-border:rgba(255,154,60,.55);--hover-shadow:0 0 0 1px rgba(255,154,60,.2),0 14px 44px rgba(255,120,40,.16);
+--motif-bg:radial-gradient(ellipse 60% 70% at 55% 55%,rgba(255,140,50,.10),transparent 70%);
+--arc:rgba(255,180,110,.55);--arc-glow:0 -4px 28px rgba(255,140,50,.28);--paper:none;--m-line:#ffb45c;--m-dim:rgba(255,170,100,.28);--m-node-bg:#0d0a07;--m-glow:url(#glow);--m-halo:#ff9a3c;--m-halo-op:.22;--m-halo-f:url(#halo);--m-blend:normal;--m-muted:#a8927c;--m-accent:#ffc58a;color-scheme:dark}
+:root[data-theme="light"]{--bg:#eeebe3;--surface:#f5f3ee;--surface-hex:#f5f3ee;--border:rgba(30,26,22,.12);
+--rule:rgba(30,26,22,.55);--grid:rgba(30,26,22,.07);--accent:#e2701f;--accent-2:#c25912;
+--on-accent:#fff;--text:#1d1a17;--muted:#6a625a;--faint:#9a9189;--line-hex:#9d9387;
+--card-bg:rgba(255,255,255,.45);--spot:rgba(226,112,31,.11);--nav-bg:rgba(238,235,227,.86);
+--hover-border:rgba(226,112,31,.6);--hover-shadow:0 0 0 1px rgba(226,112,31,.22),0 16px 44px rgba(226,112,31,.2);
+--motif-bg:none;--arc:rgba(30,26,22,.55);--arc-glow:none;
+--paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+--m-line:#2a2622;--m-dim:rgba(42,38,34,.35);--m-node-bg:#f3f1ea;--m-glow:none;--m-halo:#e8732a;--m-halo-op:.78;--m-halo-f:none;--m-blend:multiply;--m-muted:#7a7068;--m-accent:#c85a14;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg) var(--paper);
+color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .35s,color .35s}
+::selection{background:var(--accent);color:var(--on-accent)}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.wrap.wide{max-width:1100px}
+header.top{position:sticky;top:0;z-index:50;background:var(--nav-bg);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;
+gap:16px;height:64px;max-width:1100px}
+.brand{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;color:var(--text)}
+.brand::after{content:'.';color:var(--accent)}
+.brand:hover{text-decoration:none;color:var(--accent-2)}
+nav.top-nav{display:flex;align-items:center;gap:18px;font-size:14px}
+nav.top-nav a{color:var(--muted)}
+nav.top-nav a:hover{color:var(--text);text-decoration:none}
+.lang-switch{display:flex;gap:3px;border:1px solid var(--border);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:0;color:var(--muted);font:500 12px/1 'Inter',sans-serif;
+padding:6px 10px;border-radius:5px;cursor:pointer}
+.lang-btn.active{background:var(--accent);color:var(--on-accent)}
+.theme-btn{width:34px;height:32px;border:1px solid var(--border);border-radius:8px;background:none;
+color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.theme-btn svg{width:16px;height:16px}.theme-btn .sun{display:none}
+:root[data-theme="light"] .theme-btn .sun{display:block}:root[data-theme="light"] .theme-btn .moon{display:none}
+main{padding:56px 0 96px}
+h1{font-size:clamp(30px,5vw,46px);font-weight:500;line-height:1.12;letter-spacing:-.03em;margin:0 0 16px}
+h2{font-size:25px;font-weight:500;letter-spacing:-.02em;margin:44px 0 12px}
+h3{font-weight:500}
+.meta{color:var(--muted);font-size:13px;font-family:'JetBrains Mono',ui-monospace,monospace;
+margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{color:var(--accent-2);text-transform:lowercase}
+.post-motif{aspect-ratio:16/9;border:1px solid var(--border);border-radius:18px;background:var(--motif-bg);
+margin:0 0 40px;display:flex;overflow:hidden}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
+article p{margin:0 0 20px}
+article ul{margin:0 0 20px;padding-left:22px}
+article li{margin:0 0 8px}
+article li::marker{color:var(--accent)}
+article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
+background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto;color:transparent}
+article pre.mermaid[data-processed]{color:inherit}
+.lead{font-size:18px;color:var(--muted)}
+.back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+/* Практический хвост статьи: то, что читатель может сделать завтра. Цветной
+   полосы слева нет: это шаблон, по которому текст узнается как машинный. */
+.practice{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:10px 28px 6px;margin:48px 0 0;position:relative}
+.practice .practice-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;display:flex;align-items:center;gap:10px;
+font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:20px 0 0}
+.practice .practice-kicker::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.practice h2{font-size:21px;margin:8px 0 12px}
+.practice h3{font-size:17px;margin:24px 0 8px}
+.cta{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:18px;padding:30px;margin:36px 0 0;background:var(--card-bg)}
+.cta::before{content:'';position:absolute;width:220px;aspect-ratio:1;border-radius:50%;right:-70px;top:-90px;
+background:var(--accent);opacity:.16;filter:blur(2px)}
+:root[data-theme="light"] .cta::before{opacity:.75;mix-blend-mode:multiply;filter:none}
+.cta>*{position:relative}
+.cta .cta-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;
+letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:0 0 10px}
+.cta h3{font-size:24px;letter-spacing:-.02em;margin:0 0 10px}
+.cta p{color:var(--muted);margin:0 0 20px;font-size:15px;max-width:520px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--rule);border-radius:99px;
+padding:11px 20px;font-size:14px;font-weight:500;color:var(--text);transition:.25s}
+.btn:hover{border-color:var(--accent);color:var(--accent-2);text-decoration:none}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn-accent:hover{color:var(--on-accent);box-shadow:var(--hover-shadow);transform:translateY(-2px)}
+@media(max-width:520px){.cta-actions .btn{flex:1 1 100%;text-align:center}}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
+footer a{color:var(--muted)}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+.empty{color:var(--muted);text-align:center;padding:64px 0}
+
+/* список статей */
+.blog-hero{position:relative;padding:40px 0 120px;text-align:center;overflow:hidden}
+.blog-hero .kicker{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--border);border-radius:99px;
+padding:5px 14px 5px 6px;font-size:13px;color:var(--muted);margin-bottom:28px;background:var(--card-bg)}
+.blog-hero .kicker i{font-style:normal;background:var(--accent);color:var(--on-accent);border-radius:99px;padding:2px 10px;font-weight:500}
+.blog-hero .kicker:hover{text-decoration:none;color:var(--text)}
+.blog-hero h1{font-size:clamp(38px,6vw,64px);line-height:1.06;margin:0 auto 20px;max-width:820px}
+.blog-hero h1 em{font-style:normal;color:var(--accent)}
+.blog-hero .lead{max-width:600px;margin:0 auto}
+.arc{position:absolute;left:50%;bottom:-560px;width:1100px;height:640px;transform:translateX(-50%);border-radius:50%;
+border-top:1px solid var(--arc);box-shadow:var(--arc-glow)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 28px;font-family:'JetBrains Mono',monospace;font-size:13px}
+.filters button{font:inherit;background:none;border:1px solid var(--border);border-radius:99px;padding:6px 15px;color:var(--muted);cursor:pointer;transition:.2s}
+.filters button.on,.filters button:hover{border-color:var(--accent);color:var(--accent-2)}
+.post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;list-style:none;padding:0;margin:0}
+.post-card{border:1px solid var(--border);border-radius:18px;background:var(--card-bg);overflow:hidden;position:relative;
+transition:border-color .25s,box-shadow .25s,transform .25s}
+.post-card:hover{border-color:var(--hover-border);box-shadow:var(--hover-shadow);transform:translateY(-3px)}
+.post-card::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var(--spot),transparent 65%)}
+.post-card:hover::after{opacity:1}
+/* Кликается вся карточка, а не только заголовок: рамка выглядит как кнопка,
+   и промах по ней читается как «сайт сломан». Ссылка - блок вокруг всего. */
+.post-card>a{display:block;color:inherit;text-decoration:none;height:100%}
+.post-card .pic{aspect-ratio:16/9;background:var(--motif-bg);border-bottom:1px solid var(--border);display:flex}
+.post-card .body{padding:22px 24px 26px}
+.post-card .meta{margin:0 0 10px;font-size:12px}
+.post-card .post-title{display:block;color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.post-card .excerpt{color:var(--muted);margin:8px 0 0;font-size:15px;line-height:1.55}
+.post-card.featured{grid-column:1/-1}
+.post-card.featured>a{display:grid;grid-template-columns:1.35fr 1fr}
+.post-card.featured .pic{aspect-ratio:auto;min-height:320px;border-bottom:0;border-right:1px solid var(--border)}
+.post-card.featured .body{display:flex;flex-direction:column;justify-content:center;padding:36px}
+.post-card.featured .post-title{font-size:28px}
+.post-card[hidden]{display:none}
+@media(max-width:760px){.post-grid{grid-template-columns:1fr}.post-card.featured>a{grid-template-columns:1fr}
+.post-card.featured .pic{border-right:0;border-bottom:1px solid var(--border);aspect-ratio:16/9;min-height:0}
+.blog-hero{padding:24px 0 90px}.arc{width:700px;bottom:-600px}}
+@media(max-width:600px){nav.top-nav{gap:10px;font-size:13px}nav.top-nav>a{display:none}main{padding:36px 0 64px}.wrap{padding:0 16px}}
+
+.m-line{fill:none;stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dim{fill:none;stroke:var(--m-dim);stroke-width:1.2;stroke-dasharray:3 6}
+.m-node{fill:var(--m-node-bg);stroke:var(--m-dim);stroke-width:1.2}
+.m-node.on{stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dot{fill:var(--m-dim)} .m-dot.on{fill:var(--m-line)}
+.m-halo{fill:var(--m-halo);opacity:var(--m-halo-op);filter:var(--m-halo-f);mix-blend-mode:var(--m-blend)}
+.m-ring{fill:none;stroke:var(--m-line);stroke-width:1.5;filter:var(--m-glow)}
+.m-label{font-family:'JetBrains Mono',monospace;font-size:15px;fill:var(--m-muted);letter-spacing:.04em}
+.m-label.big{font-size:30px;fill:var(--m-accent)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="glow" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800">
+  <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="halo" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800"><feGaussianBlur stdDeviation="18"/></filter>
+</defs></svg>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://vegman.dev/">vegman.dev</a>
+  <nav class="top-nav">
+    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/en/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ru" data-href="https://vegman.dev/blog/roy-agentov-pustaya-trata-tokenov/" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" data-href="https://vegman.dev/en/blog/roy-agentov-pustaya-trata-tokenov/" type="button">EN</button>
+    </div>
+    <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</div></header>
+<main><div class="wrap">
+<div data-lang-block="en">
+  <a class="back" href="https://vegman.dev/en/blog/">All posts</a>
+  <h1>Agent &quot;swarms&quot; - just a waste of tokens?</h1>
+  <div class="meta"><span>2026-09-18</span><span class="tag">news</span></div>
+  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle"></text></svg></div>
+  <article><p>Eric Provencher, <b>an OpenAI Codex developer</b>, said plainly that AI agent "swarms" often cause <i>massive token waste</i> without any real gain in quality. In his view, more than two parallel subagents almost always burn tokens for nothing. The problem is that the agents "don't trust each other", so they duplicate checks and use more resources than they need.</p>
+<p>Provencher calls this a "coordination tax". He notes that it is very hard to keep many parallel processes running without constant re-checking and extra costs. He commented on a project that surfaced recently, where <b>$20 000</b> in tokens was spent refactoring a single Python file with <b>1393 Fable agents</b> (it wasn't his project). He thinks one Astra agent could have done the same job for "a fraction of the cost". Agent "swarms" can save time, but their token costs are <i>a real trap</i>.</p>
+<p>His proposed fix is to delegate tasks to separate threads that notify the main agent only when the work is done, instead of polling it for status all the time. System prompts also run several times across different subagents, and those subagents often lack context, which leads to redundant work. Provencher admits that OpenAI still has to come up with better solutions to this problem. Details are in the <a href="https://the-decoder.com/ai-agent-swarms-are-a-massive-waste-of-tokens-with-zero-quality-gain-says-openai-codex-developer/">original post</a> on The Decoder.</p>
+<p><b>Who this is useful for:</b> anyone designing or already deploying agent pipelines and seeing token costs grow. It points straight at where to look for bottlenecks and how to optimize the architecture.<br><b>Who this matters less for:</b> anyone working with simple scenarios, or using agents for tasks that don't need complex coordination and lots of subagents. In those cases the "coordination tax" is much less of a problem.</p>
+<p>Sources: <a href="https://the-decoder.com/ai-agent-swarms-are-a-massive-waste-of-tokens-with-zero-quality-gain-says-openai-codex-developer/" rel="nofollow">https://the-decoder.com/ai-agent-swarms-are-a-massive-waste-of-tokens-with-zero-quality-gain-says-openai-codex-developer/</a></p></article>
+  <aside class="cta">
+  <p class="cta-kicker">Get in touch</p>
+  <h3>Let's look at your case</h3>
+  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup, write to me and we'll go through it.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
+  </div>
+</aside>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>Natalia Vegman</span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>, <a href="https://vegman.dev/en/blog/feed.xml">RSS</a></span>
+</div></footer>
+<script>
+(function(){
+  var cur = document.documentElement.lang;
+  document.querySelectorAll('[data-lang-block]').forEach(function(el){
+    el.classList.toggle('active', el.dataset.langBlock === cur);
+  });
+  var stored = null;
+  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.lang === cur);
+    b.addEventListener('click', function(){
+      try{ localStorage.setItem('preferredLang', b.dataset.lang); }catch(e){}
+      if(b.dataset.lang !== cur && b.dataset.href) location.href = b.dataset.href;
+    });
+  });
+  var other = stored && stored !== cur && document.querySelector('.lang-btn[data-lang="'+stored+'"]');
+  if(other && other.dataset.href) location.replace(other.dataset.href);
+})();
+</script>
+</body>
+</html>
