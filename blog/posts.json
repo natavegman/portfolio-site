@@ -16,7 +16,7 @@
   "title_en": "45% of My Model Spend Went to One Question the Agent Asked Itself",
   "excerpt_ru": "Я открыла счёт за языковые модели и увидела цифру больше привычной. При этом — ни новых пользователей, ни релизов, ни роста нагрузки. Система просто «жила своей жизнью» и списывала…",
   "excerpt_en": "I opened my bill for language models and saw a number bigger than usual. Over that same period not a single new user had shown up, I hadn't shipped any new features, and load hadn'…",
-  "tag": "Article",
+  "tag": "Case study",
   "page_id": "3c556113-c26d-81c0-b35b-d171e2f11d24"
  },
  {
@@ -26,7 +26,7 @@
   "title_en": "Five Rules Cost Less Than Five Agents",
   "excerpt_ru": "Я открыла биллинг и увидела ноль. Не «мало осталось», а ровно ноль. Виноват был не сложный сценарий и не наплыв пользователей: один агент на расписании отработал сам с собой около …",
   "excerpt_en": "I opened the billing page and saw zero. Not \"running low\" — exactly zero. The culprit wasn't some complicated scenario or a flood of users: one scheduled agent spent about 14 hours…",
-  "tag": "Article",
+  "tag": "Case study",
   "page_id": "3c656113-c26d-819a-8f98-c2ddc9af3c73"
  },
  {
@@ -36,7 +36,7 @@
   "title_en": "Chatbot or Agent: The Difference Is the Harness, Not the Model",
   "excerpt_ru": "Сидишь на демо, тебе показывают «нашего AI-ассистента». Ты говоришь: «Забронируй столик на двоих на семь вечера». Он отвечает вежливо и грамотно, уточняет — у окна или в общем зале…",
   "excerpt_en": "You write to a bot: \"Book a table for two at seven this evening.\" It replies politely and correctly, asks whether you'd like a window seat or the main room, wishes you a pleasant e…",
-  "tag": "Case study",
+  "tag": "Article",
   "page_id": "3c556113-c26d-812c-9cb3-c7c3f2300773"
  },
  {
@@ -46,7 +46,7 @@
   "title_en": "RAG in Practice: What It Actually Is, and When You Don't Need It",
   "excerpt_ru": "Полночь, ресепшен, заезжает гость с иностранным паспортом. Администратор на третьей смене в своей жизни открывает внутреннего ассистента и спрашивает: «как оформить регистрацию ино…",
   "excerpt_en": "Midnight, the front desk, a guest walks in with a foreign passport. The receptionist — third shift of their life — opens the internal assistant and asks: \"how do I register a forei…",
-  "tag": "Case study",
+  "tag": "Article",
   "page_id": "3c556113-c26d-81c7-a889-c3fa7dd83e0c"
  }
 ]
