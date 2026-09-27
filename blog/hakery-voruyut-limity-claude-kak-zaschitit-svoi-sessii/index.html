@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Хакеры воруют лимиты Claude: как защитить свои сессии</title>
+<meta name="description" content="Внимание всем, кто работает с Claude по подписке: злоумышленники крадут сессии входа и тратят чужие лимиты. Anthropic в письмах пострадавшим объяснила: злоумышленник использует рас...">
+<link rel="canonical" href="https://vegman.dev/blog/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/">
+<meta property="og:title" content="Хакеры воруют лимиты Claude: как защитить свои сессии">
+<meta property="og:description" content="Внимание всем, кто работает с Claude по подписке: злоумышленники крадут сессии входа и тратят чужие лимиты. Anthropic в письмах пострадавшим объяснила: злоумышленник использует рас...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vegman.dev/blog/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/">
+<script>
+(function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
+if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+document.documentElement.dataset.theme=t})();
+function toggleTheme(){var r=document.documentElement,t=r.dataset.theme==='light'?'dark':'light';
+r.dataset.theme=t;try{localStorage.setItem('preferredTheme',t)}catch(e){}}
+</script>
+<meta property="og:image" content="https://vegman.dev/blog/img/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080a;--surface:#0f0d0b;--surface-hex:#14100c;--border:rgba(255,190,130,.10);
+--rule:rgba(255,190,130,.14);--grid:rgba(255,190,130,.045);--accent:#ff9a3c;--accent-2:#ffb45c;
+--on-accent:#140a02;--text:#f1ebe3;--muted:#8d8379;--faint:#5d554e;--line-hex:#6a5a4b;
+--card-bg:rgba(255,160,90,.025);--spot:rgba(255,140,50,.10);--nav-bg:rgba(7,8,10,.82);
+--hover-border:rgba(255,154,60,.55);--hover-shadow:0 0 0 1px rgba(255,154,60,.2),0 14px 44px rgba(255,120,40,.16);
+--motif-bg:radial-gradient(ellipse 60% 70% at 55% 55%,rgba(255,140,50,.10),transparent 70%);
+--arc:rgba(255,180,110,.55);--arc-glow:0 -4px 28px rgba(255,140,50,.28);--paper:none;--m-line:#ffb45c;--m-dim:rgba(255,170,100,.28);--m-node-bg:#0d0a07;--m-glow:url(#glow);--m-halo:#ff9a3c;--m-halo-op:.22;--m-halo-f:url(#halo);--m-blend:normal;--m-muted:#a8927c;--m-accent:#ffc58a;color-scheme:dark}
+:root[data-theme="light"]{--bg:#eeebe3;--surface:#f5f3ee;--surface-hex:#f5f3ee;--border:rgba(30,26,22,.12);
+--rule:rgba(30,26,22,.55);--grid:rgba(30,26,22,.07);--accent:#e2701f;--accent-2:#c25912;
+--on-accent:#fff;--text:#1d1a17;--muted:#6a625a;--faint:#9a9189;--line-hex:#9d9387;
+--card-bg:rgba(255,255,255,.45);--spot:rgba(226,112,31,.11);--nav-bg:rgba(238,235,227,.86);
+--hover-border:rgba(226,112,31,.6);--hover-shadow:0 0 0 1px rgba(226,112,31,.22),0 16px 44px rgba(226,112,31,.2);
+--motif-bg:none;--arc:rgba(30,26,22,.55);--arc-glow:none;
+--paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+--m-line:#2a2622;--m-dim:rgba(42,38,34,.35);--m-node-bg:#f3f1ea;--m-glow:none;--m-halo:#e8732a;--m-halo-op:.78;--m-halo-f:none;--m-blend:multiply;--m-muted:#7a7068;--m-accent:#c85a14;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg) var(--paper);
+color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .35s,color .35s}
+::selection{background:var(--accent);color:var(--on-accent)}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.wrap.wide{max-width:1100px}
+header.top{position:sticky;top:0;z-index:50;background:var(--nav-bg);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;
+gap:16px;height:64px;max-width:1100px}
+.brand{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;color:var(--text)}
+.brand::after{content:'.';color:var(--accent)}
+.brand:hover{text-decoration:none;color:var(--accent-2)}
+nav.top-nav{display:flex;align-items:center;gap:18px;font-size:14px}
+nav.top-nav a{color:var(--muted)}
+nav.top-nav a:hover{color:var(--text);text-decoration:none}
+.lang-switch{display:flex;gap:3px;border:1px solid var(--border);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:0;color:var(--muted);font:500 12px/1 'Inter',sans-serif;
+padding:6px 10px;border-radius:5px;cursor:pointer}
+.lang-btn.active{background:var(--accent);color:var(--on-accent)}
+.theme-btn{width:34px;height:32px;border:1px solid var(--border);border-radius:8px;background:none;
+color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.theme-btn svg{width:16px;height:16px}.theme-btn .sun{display:none}
+:root[data-theme="light"] .theme-btn .sun{display:block}:root[data-theme="light"] .theme-btn .moon{display:none}
+main{padding:56px 0 96px}
+h1{font-size:clamp(30px,5vw,46px);font-weight:500;line-height:1.12;letter-spacing:-.03em;margin:0 0 16px}
+h2{font-size:25px;font-weight:500;letter-spacing:-.02em;margin:44px 0 12px}
+h3{font-weight:500}
+.meta{color:var(--muted);font-size:13px;font-family:'JetBrains Mono',ui-monospace,monospace;
+margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{color:var(--accent-2);text-transform:lowercase}
+.post-motif{aspect-ratio:16/9;border:1px solid var(--border);border-radius:18px;background:var(--motif-bg);
+margin:0 0 40px;display:flex;overflow:hidden}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
+article p{margin:0 0 20px}
+article ul{margin:0 0 20px;padding-left:22px}
+article li{margin:0 0 8px}
+article li::marker{color:var(--accent)}
+article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
+background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto;color:transparent}
+article pre.mermaid[data-processed]{color:inherit}
+.lead{font-size:18px;color:var(--muted)}
+.back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+/* Практический хвост статьи: то, что читатель может сделать завтра. Цветной
+   полосы слева нет: это шаблон, по которому текст узнается как машинный. */
+.practice{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:10px 28px 6px;margin:48px 0 0;position:relative}
+.practice .practice-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;display:flex;align-items:center;gap:10px;
+font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:20px 0 0}
+.practice .practice-kicker::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.practice h2{font-size:21px;margin:8px 0 12px}
+.practice h3{font-size:17px;margin:24px 0 8px}
+.cta{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:18px;padding:30px;margin:36px 0 0;background:var(--card-bg)}
+.cta::before{content:'';position:absolute;width:220px;aspect-ratio:1;border-radius:50%;right:-70px;top:-90px;
+background:var(--accent);opacity:.16;filter:blur(2px)}
+:root[data-theme="light"] .cta::before{opacity:.75;mix-blend-mode:multiply;filter:none}
+.cta>*{position:relative}
+.cta .cta-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;
+letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:0 0 10px}
+.cta h3{font-size:24px;letter-spacing:-.02em;margin:0 0 10px}
+.cta p{color:var(--muted);margin:0 0 20px;font-size:15px;max-width:520px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--rule);border-radius:99px;
+padding:11px 20px;font-size:14px;font-weight:500;color:var(--text);transition:.25s}
+.btn:hover{border-color:var(--accent);color:var(--accent-2);text-decoration:none}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn-accent:hover{color:var(--on-accent);box-shadow:var(--hover-shadow);transform:translateY(-2px)}
+@media(max-width:520px){.cta-actions .btn{flex:1 1 100%;text-align:center}}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
+footer a{color:var(--muted)}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+.empty{color:var(--muted);text-align:center;padding:64px 0}
+
+/* список статей */
+.blog-hero{position:relative;padding:40px 0 120px;text-align:center;overflow:hidden}
+.blog-hero .kicker{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--border);border-radius:99px;
+padding:5px 14px 5px 6px;font-size:13px;color:var(--muted);margin-bottom:28px;background:var(--card-bg)}
+.blog-hero .kicker i{font-style:normal;background:var(--accent);color:var(--on-accent);border-radius:99px;padding:2px 10px;font-weight:500}
+.blog-hero .kicker:hover{text-decoration:none;color:var(--text)}
+.blog-hero h1{font-size:clamp(38px,6vw,64px);line-height:1.06;margin:0 auto 20px;max-width:820px}
+.blog-hero h1 em{font-style:normal;color:var(--accent)}
+.blog-hero .lead{max-width:600px;margin:0 auto}
+.arc{position:absolute;left:50%;bottom:-560px;width:1100px;height:640px;transform:translateX(-50%);border-radius:50%;
+border-top:1px solid var(--arc);box-shadow:var(--arc-glow)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 28px;font-family:'JetBrains Mono',monospace;font-size:13px}
+.filters button{font:inherit;background:none;border:1px solid var(--border);border-radius:99px;padding:6px 15px;color:var(--muted);cursor:pointer;transition:.2s}
+.filters button.on,.filters button:hover{border-color:var(--accent);color:var(--accent-2)}
+.post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;list-style:none;padding:0;margin:0}
+.post-card{border:1px solid var(--border);border-radius:18px;background:var(--card-bg);overflow:hidden;position:relative;
+transition:border-color .25s,box-shadow .25s,transform .25s}
+.post-card:hover{border-color:var(--hover-border);box-shadow:var(--hover-shadow);transform:translateY(-3px)}
+.post-card::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var(--spot),transparent 65%)}
+.post-card:hover::after{opacity:1}
+/* Кликается вся карточка, а не только заголовок: рамка выглядит как кнопка,
+   и промах по ней читается как «сайт сломан». Ссылка - блок вокруг всего. */
+.post-card>a{display:block;color:inherit;text-decoration:none;height:100%}
+.post-card .pic{aspect-ratio:16/9;background:var(--motif-bg);border-bottom:1px solid var(--border);display:flex}
+.post-card .body{padding:22px 24px 26px}
+.post-card .meta{margin:0 0 10px;font-size:12px}
+.post-card .post-title{display:block;color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.post-card .excerpt{color:var(--muted);margin:8px 0 0;font-size:15px;line-height:1.55}
+.post-card.featured{grid-column:1/-1}
+.post-card.featured>a{display:grid;grid-template-columns:1.35fr 1fr}
+.post-card.featured .pic{aspect-ratio:auto;min-height:320px;border-bottom:0;border-right:1px solid var(--border)}
+.post-card.featured .body{display:flex;flex-direction:column;justify-content:center;padding:36px}
+.post-card.featured .post-title{font-size:28px}
+.post-card[hidden]{display:none}
+@media(max-width:760px){.post-grid{grid-template-columns:1fr}.post-card.featured>a{grid-template-columns:1fr}
+.post-card.featured .pic{border-right:0;border-bottom:1px solid var(--border);aspect-ratio:16/9;min-height:0}
+.blog-hero{padding:24px 0 90px}.arc{width:700px;bottom:-600px}}
+@media(max-width:600px){nav.top-nav{gap:10px;font-size:13px}nav.top-nav>a{display:none}main{padding:36px 0 64px}.wrap{padding:0 16px}}
+
+.m-line{fill:none;stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dim{fill:none;stroke:var(--m-dim);stroke-width:1.2;stroke-dasharray:3 6}
+.m-node{fill:var(--m-node-bg);stroke:var(--m-dim);stroke-width:1.2}
+.m-node.on{stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dot{fill:var(--m-dim)} .m-dot.on{fill:var(--m-line)}
+.m-halo{fill:var(--m-halo);opacity:var(--m-halo-op);filter:var(--m-halo-f);mix-blend-mode:var(--m-blend)}
+.m-ring{fill:none;stroke:var(--m-line);stroke-width:1.5;filter:var(--m-glow)}
+.m-label{font-family:'JetBrains Mono',monospace;font-size:15px;fill:var(--m-muted);letter-spacing:.04em}
+.m-label.big{font-size:30px;fill:var(--m-accent)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="glow" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800">
+  <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="halo" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800"><feGaussianBlur stdDeviation="18"/></filter>
+</defs></svg>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://vegman.dev/">vegman.dev</a>
+  <nav class="top-nav">
+    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ru" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" type="button">EN</button>
+    </div>
+    <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</div></header>
+<main><div class="wrap">
+<div data-lang-block="ru">
+  <a class="back" href="https://vegman.dev/blog/">Все статьи</a>
+  <h1>Хакеры воруют лимиты Claude: как защитить свои сессии</h1>
+  <div class="meta"><span>2026-09-22</span><span class="tag">новость</span></div>
+  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
+  <article><p>Внимание всем, кто работает с Claude по подписке: злоумышленники крадут сессии входа и тратят чужие лимиты. Anthropic в письмах пострадавшим объяснила: злоумышленник использует распространенный инфостилер, который забирает сессии Claude прямо с компьютеров.</p>
+<p>Как это выглядело у одного из пострадавших. У него подписка Claude Max 20x за <b>$200 в месяц</b>. 4 августа он заметил, что лимит тает, хотя в тот день он не работал. Назавтра он поставил все задачи на паузу, и использование все равно выросло <b>с 45% до 55%</b>. По украденной сессии злоумышленник выпускал новые токены доступа и работал от его имени. Anthropic заблокировала сессии и вернула часть денег, <b>£44.49</b>, но как именно украли доступ, определить не смогла, а детального журнала расхода не дала, и он отказался от подписки. Историю 8 сентября рассказал <a href="https://techcrunch.com/2026/09/08/hackers-are-stealing-claude-tokens-from-subscribers/">TechCrunch</a>; пострадавших несколько, их нашли по постам на Reddit и GitHub.</p>
+<p>Инфостилер обычно попадает на компьютер вместе с зараженной программой или через клик по зараженной рекламе. Это напрямую касается тех, кто строит агентные пайплайны: у них на машине постоянно лежат сессии и ключи с доступом к платным сервисам. Если вы из их числа, проверьте журнал использования и выйдите из всех сессий, которые не узнаете.</p>
+<p><b>Кому это полезно:</b></p>
+<ul><li>инженерам и архитекторам, которые работают с Claude в проектах и отвечают за безопасность</li><li>тем, у кого лимит или счет за ИИ вдруг вырос без видимой причины</li><li>всем, кто хочет строить устойчивые AI-решения, а не «запустить чат-бота» для галочки.</li></ul></article>
+  <aside class="cta">
+  <p class="cta-kicker">На связь со мной</p>
+  <h3>Разберем вашу задачу</h3>
+  <p>Я Наталья Вегман, проектирую ИИ-системы для бизнеса: агентов, интеграции с рабочими системами, поиск по базе знаний и учет их стоимости. Если после статьи осталось «а как это у нас», напишите, посмотрим на вашем примере.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Написать в Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Канал «Заметки на полях кода»</a>
+  </div>
+</aside>
+</div>
+<div data-lang-block="en">
+  <a class="back" href="https://vegman.dev/blog/">All posts</a>
+  <h1>Hackers Are Stealing Claude Limits: How to Protect Your Sessions</h1>
+  <div class="meta"><span>2026-09-22</span><span class="tag">news</span></div>
+  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
+  <article><p>Attention, everyone using Claude on a subscription: attackers are stealing login sessions and burning through other people's limits. In emails to affected users, Anthropic explained that the attacker uses a common infostealer that grabs Claude sessions directly from computers.</p>
+<p>Here is how it played out for one of the victims. He has a Claude Max 20x subscription at <b>$200 per month</b>. On August 4 he noticed his limit draining, even though he hadn't worked that day. The next day he paused all his tasks, and usage still went up <b>from 45% to 55%</b>. Using the stolen session, the attacker issued new access tokens and worked under his name. Anthropic blocked the sessions and refunded part of the money, <b>£44.49</b>, but couldn't determine exactly how the access was stolen and didn't provide a detailed usage log, so he cancelled his subscription. <a href="https://techcrunch.com/2026/09/08/hackers-are-stealing-claude-tokens-from-subscribers/">TechCrunch</a> reported the story on September 8; there are several victims, found through posts on Reddit and GitHub.</p>
+<p>An infostealer usually lands on a computer bundled with an infected program or through a click on a malicious ad. This directly affects anyone building agentic pipelines: their machines constantly hold sessions and keys with access to paid services. If that's you, check your usage log and sign out of any sessions you don't recognize.</p>
+<p><b>Who this is for:</b></p>
+<ul><li>engineers and architects who use Claude in their projects and are responsible for security</li><li>anyone whose AI limit or bill suddenly went up for no obvious reason</li><li>anyone who wants to build resilient AI solutions, not just "launch a chatbot" to tick a box.</li></ul></article>
+  <aside class="cta">
+  <p class="cta-kicker">Get in touch</p>
+  <h3>Let's look at your case</h3>
+  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup, write to me and we'll go through it.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
+  </div>
+</aside>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>Natalia Vegman</span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></span>
+</div></footer>
+<script>
+(function(){
+  function apply(lang){
+    document.querySelectorAll('[data-lang-block]').forEach(function(el){
+      el.classList.toggle('active', el.dataset.langBlock === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang;
+    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
+  }
+  var stored = null;
+  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
+  var nav = (navigator.language||'').toLowerCase();
+  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
+  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
+  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
+  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
+  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
+  apply(initial);
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+  });
+})();
+</script>
+</body>
+</html>

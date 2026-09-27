@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Пять ошибок первого года с языковыми моделями</title>
+<meta name="description" content="Вы собрали первого помощника на языковой модели - программе, которая по вашему текстовому запросу дописывает ответ. Он отвечает связно, вежливо... и мимо. Почти у всех первая мысль...">
+<link rel="canonical" href="https://vegman.dev/blog/oshibki-pervogo-goda-s-llm/">
+<meta property="og:title" content="Пять ошибок первого года с языковыми моделями">
+<meta property="og:description" content="Вы собрали первого помощника на языковой модели - программе, которая по вашему текстовому запросу дописывает ответ. Он отвечает связно, вежливо... и мимо. Почти у всех первая мысль...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vegman.dev/blog/oshibki-pervogo-goda-s-llm/">
+<script>
+(function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
+if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+document.documentElement.dataset.theme=t})();
+function toggleTheme(){var r=document.documentElement,t=r.dataset.theme==='light'?'dark':'light';
+r.dataset.theme=t;try{localStorage.setItem('preferredTheme',t)}catch(e){}}
+</script>
+<meta property="og:image" content="https://vegman.dev/blog/img/oshibki-pervogo-goda-s-llm/cover.jpg"><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const els=[...document.querySelectorAll('pre.mermaid')];
+els.forEach(e=>{e.dataset.src=e.textContent;});
+function vars(){const s=getComputedStyle(document.documentElement),g=n=>s.getPropertyValue(n).trim();
+  return {background:g('--surface-hex'),primaryColor:g('--surface-hex'),primaryTextColor:g('--text'),
+  primaryBorderColor:g('--accent'),lineColor:g('--line-hex'),secondaryColor:g('--surface-hex'),
+  tertiaryColor:g('--surface-hex'),clusterBkg:g('--surface-hex'),clusterBorder:g('--line-hex'),
+  edgeLabelBackground:g('--surface-hex'),fontFamily:'Inter,sans-serif'};}
+// Рисуем только видимые схемы: у скрытой языковой версии нет размеров, и mermaid
+// собирал ее схемы в полоску 16 px (было на живом сайте до 27.09.2026).
+// Поэтому перерисовка и при смене темы, и при смене языка.
+async function draw(){
+  mermaid.initialize({startOnLoad:false,theme:'base',securityLevel:'strict',themeVariables:vars()});
+  els.forEach(e=>{e.removeAttribute('data-processed');e.textContent=e.dataset.src;});
+  const vis=els.filter(e=>e.offsetParent);
+  if(vis.length) await mermaid.run({nodes:vis});
+}
+draw();
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme','lang']});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080a;--surface:#0f0d0b;--surface-hex:#14100c;--border:rgba(255,190,130,.10);
+--rule:rgba(255,190,130,.14);--grid:rgba(255,190,130,.045);--accent:#ff9a3c;--accent-2:#ffb45c;
+--on-accent:#140a02;--text:#f1ebe3;--muted:#8d8379;--faint:#5d554e;--line-hex:#6a5a4b;
+--card-bg:rgba(255,160,90,.025);--spot:rgba(255,140,50,.10);--nav-bg:rgba(7,8,10,.82);
+--hover-border:rgba(255,154,60,.55);--hover-shadow:0 0 0 1px rgba(255,154,60,.2),0 14px 44px rgba(255,120,40,.16);
+--motif-bg:radial-gradient(ellipse 60% 70% at 55% 55%,rgba(255,140,50,.10),transparent 70%);
+--arc:rgba(255,180,110,.55);--arc-glow:0 -4px 28px rgba(255,140,50,.28);--paper:none;--m-line:#ffb45c;--m-dim:rgba(255,170,100,.28);--m-node-bg:#0d0a07;--m-glow:url(#glow);--m-halo:#ff9a3c;--m-halo-op:.22;--m-halo-f:url(#halo);--m-blend:normal;--m-muted:#a8927c;--m-accent:#ffc58a;color-scheme:dark}
+:root[data-theme="light"]{--bg:#eeebe3;--surface:#f5f3ee;--surface-hex:#f5f3ee;--border:rgba(30,26,22,.12);
+--rule:rgba(30,26,22,.55);--grid:rgba(30,26,22,.07);--accent:#e2701f;--accent-2:#c25912;
+--on-accent:#fff;--text:#1d1a17;--muted:#6a625a;--faint:#9a9189;--line-hex:#9d9387;
+--card-bg:rgba(255,255,255,.45);--spot:rgba(226,112,31,.11);--nav-bg:rgba(238,235,227,.86);
+--hover-border:rgba(226,112,31,.6);--hover-shadow:0 0 0 1px rgba(226,112,31,.22),0 16px 44px rgba(226,112,31,.2);
+--motif-bg:none;--arc:rgba(30,26,22,.55);--arc-glow:none;
+--paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+--m-line:#2a2622;--m-dim:rgba(42,38,34,.35);--m-node-bg:#f3f1ea;--m-glow:none;--m-halo:#e8732a;--m-halo-op:.78;--m-halo-f:none;--m-blend:multiply;--m-muted:#7a7068;--m-accent:#c85a14;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg) var(--paper);
+color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .35s,color .35s}
+::selection{background:var(--accent);color:var(--on-accent)}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.wrap.wide{max-width:1100px}
+header.top{position:sticky;top:0;z-index:50;background:var(--nav-bg);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;
+gap:16px;height:64px;max-width:1100px}
+.brand{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;color:var(--text)}
+.brand::after{content:'.';color:var(--accent)}
+.brand:hover{text-decoration:none;color:var(--accent-2)}
+nav.top-nav{display:flex;align-items:center;gap:18px;font-size:14px}
+nav.top-nav a{color:var(--muted)}
+nav.top-nav a:hover{color:var(--text);text-decoration:none}
+.lang-switch{display:flex;gap:3px;border:1px solid var(--border);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:0;color:var(--muted);font:500 12px/1 'Inter',sans-serif;
+padding:6px 10px;border-radius:5px;cursor:pointer}
+.lang-btn.active{background:var(--accent);color:var(--on-accent)}
+.theme-btn{width:34px;height:32px;border:1px solid var(--border);border-radius:8px;background:none;
+color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.theme-btn svg{width:16px;height:16px}.theme-btn .sun{display:none}
+:root[data-theme="light"] .theme-btn .sun{display:block}:root[data-theme="light"] .theme-btn .moon{display:none}
+main{padding:56px 0 96px}
+h1{font-size:clamp(30px,5vw,46px);font-weight:500;line-height:1.12;letter-spacing:-.03em;margin:0 0 16px}
+h2{font-size:25px;font-weight:500;letter-spacing:-.02em;margin:44px 0 12px}
+h3{font-weight:500}
+.meta{color:var(--muted);font-size:13px;font-family:'JetBrains Mono',ui-monospace,monospace;
+margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{color:var(--accent-2);text-transform:lowercase}
+.post-motif{aspect-ratio:16/9;border:1px solid var(--border);border-radius:18px;background:var(--motif-bg);
+margin:0 0 40px;display:flex;overflow:hidden}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
+article p{margin:0 0 20px}
+article ul{margin:0 0 20px;padding-left:22px}
+article li{margin:0 0 8px}
+article li::marker{color:var(--accent)}
+article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
+background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto;color:transparent}
+article pre.mermaid[data-processed]{color:inherit}
+.lead{font-size:18px;color:var(--muted)}
+.back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+/* Практический хвост статьи: то, что читатель может сделать завтра. Цветной
+   полосы слева нет: это шаблон, по которому текст узнается как машинный. */
+.practice{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:10px 28px 6px;margin:48px 0 0;position:relative}
+.practice .practice-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;display:flex;align-items:center;gap:10px;
+font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:20px 0 0}
+.practice .practice-kicker::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.practice h2{font-size:21px;margin:8px 0 12px}
+.practice h3{font-size:17px;margin:24px 0 8px}
+.cta{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:18px;padding:30px;margin:36px 0 0;background:var(--card-bg)}
+.cta::before{content:'';position:absolute;width:220px;aspect-ratio:1;border-radius:50%;right:-70px;top:-90px;
+background:var(--accent);opacity:.16;filter:blur(2px)}
+:root[data-theme="light"] .cta::before{opacity:.75;mix-blend-mode:multiply;filter:none}
+.cta>*{position:relative}
+.cta .cta-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;
+letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:0 0 10px}
+.cta h3{font-size:24px;letter-spacing:-.02em;margin:0 0 10px}
+.cta p{color:var(--muted);margin:0 0 20px;font-size:15px;max-width:520px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--rule);border-radius:99px;
+padding:11px 20px;font-size:14px;font-weight:500;color:var(--text);transition:.25s}
+.btn:hover{border-color:var(--accent);color:var(--accent-2);text-decoration:none}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn-accent:hover{color:var(--on-accent);box-shadow:var(--hover-shadow);transform:translateY(-2px)}
+@media(max-width:520px){.cta-actions .btn{flex:1 1 100%;text-align:center}}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
+footer a{color:var(--muted)}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+.empty{color:var(--muted);text-align:center;padding:64px 0}
+
+/* список статей */
+.blog-hero{position:relative;padding:40px 0 120px;text-align:center;overflow:hidden}
+.blog-hero .kicker{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--border);border-radius:99px;
+padding:5px 14px 5px 6px;font-size:13px;color:var(--muted);margin-bottom:28px;background:var(--card-bg)}
+.blog-hero .kicker i{font-style:normal;background:var(--accent);color:var(--on-accent);border-radius:99px;padding:2px 10px;font-weight:500}
+.blog-hero .kicker:hover{text-decoration:none;color:var(--text)}
+.blog-hero h1{font-size:clamp(38px,6vw,64px);line-height:1.06;margin:0 auto 20px;max-width:820px}
+.blog-hero h1 em{font-style:normal;color:var(--accent)}
+.blog-hero .lead{max-width:600px;margin:0 auto}
+.arc{position:absolute;left:50%;bottom:-560px;width:1100px;height:640px;transform:translateX(-50%);border-radius:50%;
+border-top:1px solid var(--arc);box-shadow:var(--arc-glow)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 28px;font-family:'JetBrains Mono',monospace;font-size:13px}
+.filters button{font:inherit;background:none;border:1px solid var(--border);border-radius:99px;padding:6px 15px;color:var(--muted);cursor:pointer;transition:.2s}
+.filters button.on,.filters button:hover{border-color:var(--accent);color:var(--accent-2)}
+.post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;list-style:none;padding:0;margin:0}
+.post-card{border:1px solid var(--border);border-radius:18px;background:var(--card-bg);overflow:hidden;position:relative;
+transition:border-color .25s,box-shadow .25s,transform .25s}
+.post-card:hover{border-color:var(--hover-border);box-shadow:var(--hover-shadow);transform:translateY(-3px)}
+.post-card::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var(--spot),transparent 65%)}
+.post-card:hover::after{opacity:1}
+/* Кликается вся карточка, а не только заголовок: рамка выглядит как кнопка,
+   и промах по ней читается как «сайт сломан». Ссылка - блок вокруг всего. */
+.post-card>a{display:block;color:inherit;text-decoration:none;height:100%}
+.post-card .pic{aspect-ratio:16/9;background:var(--motif-bg);border-bottom:1px solid var(--border);display:flex}
+.post-card .body{padding:22px 24px 26px}
+.post-card .meta{margin:0 0 10px;font-size:12px}
+.post-card .post-title{display:block;color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.post-card .excerpt{color:var(--muted);margin:8px 0 0;font-size:15px;line-height:1.55}
+.post-card.featured{grid-column:1/-1}
+.post-card.featured>a{display:grid;grid-template-columns:1.35fr 1fr}
+.post-card.featured .pic{aspect-ratio:auto;min-height:320px;border-bottom:0;border-right:1px solid var(--border)}
+.post-card.featured .body{display:flex;flex-direction:column;justify-content:center;padding:36px}
+.post-card.featured .post-title{font-size:28px}
+.post-card[hidden]{display:none}
+@media(max-width:760px){.post-grid{grid-template-columns:1fr}.post-card.featured>a{grid-template-columns:1fr}
+.post-card.featured .pic{border-right:0;border-bottom:1px solid var(--border);aspect-ratio:16/9;min-height:0}
+.blog-hero{padding:24px 0 90px}.arc{width:700px;bottom:-600px}}
+@media(max-width:600px){nav.top-nav{gap:10px;font-size:13px}nav.top-nav>a{display:none}main{padding:36px 0 64px}.wrap{padding:0 16px}}
+
+.m-line{fill:none;stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dim{fill:none;stroke:var(--m-dim);stroke-width:1.2;stroke-dasharray:3 6}
+.m-node{fill:var(--m-node-bg);stroke:var(--m-dim);stroke-width:1.2}
+.m-node.on{stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dot{fill:var(--m-dim)} .m-dot.on{fill:var(--m-line)}
+.m-halo{fill:var(--m-halo);opacity:var(--m-halo-op);filter:var(--m-halo-f);mix-blend-mode:var(--m-blend)}
+.m-ring{fill:none;stroke:var(--m-line);stroke-width:1.5;filter:var(--m-glow)}
+.m-label{font-family:'JetBrains Mono',monospace;font-size:15px;fill:var(--m-muted);letter-spacing:.04em}
+.m-label.big{font-size:30px;fill:var(--m-accent)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="glow" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800">
+  <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="halo" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800"><feGaussianBlur stdDeviation="18"/></filter>
+</defs></svg>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://vegman.dev/">vegman.dev</a>
+  <nav class="top-nav">
+    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ru" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" type="button">EN</button>
+    </div>
+    <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</div></header>
+<main><div class="wrap">
+<div data-lang-block="ru">
+  <a class="back" href="https://vegman.dev/blog/">Все статьи</a>
+  <h1>Пять ошибок первого года с языковыми моделями</h1>
+  <div class="meta"><span>2026-08-06</span><span class="tag">статья</span></div>
+  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
+  <article><p>Вы собрали первого помощника на языковой модели - программе, которая по вашему текстовому запросу дописывает ответ. Он отвечает связно, вежливо... и мимо. Почти у всех первая мысль одинаковая: «модель слабая, надо взять посильнее». Я думала ровно так же.</p>
+<p>За первый год плотной работы с моделями у меня накопилось пять ошибок. Каждая стоила недель. И ни одна не была «про модель». Ниже - все пять, с механикой: что именно ломается, почему это выглядит как проблема модели и по какому признаку отличить одно от другого. К концу вы сможете пройтись по своему проекту и проверить, не стоите ли вы прямо сейчас на одной из этих граблей.</p>
+<figure><pre class="mermaid">flowchart TB
+  A[&quot;Ответ неверный&quot;] --&gt; S1{&quot;Что нашел поиск?&quot;}
+  S1 --&gt;|&quot;фрагменты не те&quot;| F1[&quot;Чинить нарезку,&lt;br/&gt;разметку, поиск&quot;]
+  S1 --&gt;|&quot;фрагменты те&quot;| S2{&quot;Что ушло в модель?&quot;}
+  S2 --&gt;|&quot;фрагменты поданы плохо&quot;| F2[&quot;Чинить промпт&lt;br/&gt;и формат подачи&quot;]
+  S2 --&gt;|&quot;подано верно&quot;| F3[&quot;Только теперь - &lt;br/&gt;вопрос к модели&quot;]
+  A -.-&gt;|&quot;соблазн: одна строчка&lt;br/&gt;в настройках&quot;| F3</pre><figcaption>Порядок разбора: смена модели - последний шаг, а не первый</figcaption></figure>
+<h2>Ошибка 1: считать, что качество упирается в модель</h2>
+<p>Поисковый ассистент отвечал неверно - и первой мыслью была смена модели. Это соблазнительно, потому что делается одной строчкой в настройках. Но реальная причина почти всегда оказывалась в подготовке данных.</p>
+<p>Три типичных поломки:</p>
+<ul><li>Нарезка документов без сохранения контекста. Длинный текст режут на куски, чтобы искать по ним по отдельности. Если резать вслепую - по количеству символов - кусок теряет, о чем он вообще: остается абзац с местоимениями и цифрами, к которому не привязан ни раздел, ни предмет разговора.</li><li>Нет пометок категорий. У фрагмента нет ярлыка, к какому разделу, продукту или году он относится. Поиск не может ограничиться нужной областью и тянет похожее по словам из соседней.</li><li>Слишком узкий фильтр поиска. Система отсекает подходящее еще до того, как модель его увидит. Модель не переврала ответ - ей просто не показали нужный фрагмент.</li></ul>
+<p>Во всех трех случаях замена модели ничего не меняет: более сильная модель так же аккуратно ответит по тем же испорченным данным.</p>
+<p>Есть и подтверждение со стороны. В исследовании Nvidia (август 2026) одна и та же модель на тесте интерактивного рассуждения дает 30% без специальной «обвязки» и 100% с ней. Обвязка - это все, что стоит вокруг модели: подготовка данных, поиск, порядок шагов, проверки результата. Разница внутри одной модели - от 30 до 100. Держите эту цифру в голове каждый раз, когда рука тянется «поменять модель».</p>
+<h2>Ошибка 2: ставить модель туда, где хватит скрипта</h2>
+<p>У нас была регулярная проверка очереди задач. Мы повесили ее на полноценного агента - программу, которая сама решает, какие шаги сделать, и обращается к модели на каждом шаге. Звучало разумно: пусть будет умно.</p>
+<p>А по факту работа сводилась к двум действиям: прочитать данные и подставить их в шаблон. Никакого решения там не принималось.</p>
+<p>Платили мы за это дважды:</p>
+<ul><li>Каждый запуск запрашивал у провайдера потолок токенов модели, а не реальную нужду. Токен - небольшой кусочек текста (единица, в которой считаются и лимиты, и деньги). Резервировать максимум под подстановку в шаблон - все равно что каждый раз бронировать грузовик ради одной коробки.</li><li>Мы завели зависимость от внешнего сервиса там, где ее могло не быть. При просевшем балансе тривиальная проверка стала падать каждые 30 минут.</li></ul>
+<p>Правило простое: если у шага нет вариативности - если вы можете заранее описать, что он делает, без слов «в зависимости от смысла», - это скрипт. Скрипт не падает из-за баланса, не стоит денег за запуск и не выдумывает.</p>
+<h2>Ошибка 3: верить промпту как гарантии</h2>
+<p>Промпт - это текст-инструкция, который вы даете модели: кто она, что делает, чего не делает. Кажется, что записанное правило теперь соблюдается. На практике оно соблюдается почти всегда, и вся сложность прячется в слове «почти».</p>
+<p>Самый неприятный вид нарушения - не тот, где модель выдает очевидную чушь. Хуже, когда модель уверенно выдумывает числа того же порядка, что настоящие: например, называет цену выхода 8 долларов вместо 12. Не 800, не «около десяти» - правдоподобное число, которое проходит взглядом и не вызывает подозрений. Именно такие ошибки доезжают до пользователя.</p>
+<p>Поймать это можно только механической сверкой с выверенной фактурой: числа и названия из ответа сопоставляются с источником кодом, а не просьбой в промпте «будь внимательнее». Промпт - это пожелание. Сверка - это проверка.</p>
+<h2>Ошибка 4: проверять только результат, а не источник</h2>
+<p>Долгое время мы проверяли только текст ответа: похоже на правду - хорошо, не похоже - плохо. Пока не начали смотреть, какие именно фрагменты нашел поиск перед тем, как модель начала отвечать, отладка была гаданием.</p>
+<p>Потому что за плохим ответом стоят две совершенно разные поломки:</p>
+<ul><li>Поиск не нашел нужный фрагмент - чинить нужно данные, нарезку, пометки, фильтр.</li><li>Поиск нашел, а модель переврала найденное - чинить нужно промпт, формат подачи фрагментов, сверку.</li></ul>
+<p>По тексту ответа их не различить. По списку найденных фрагментов - различить за секунды.</p>
+<p>Логируйте то, что ушло в модель, вместе с тем, что из нее вышло; это самое дешевое улучшение из всех пяти.</p>
+<figure><pre class="mermaid">flowchart LR
+  subgraph Q1[&quot;«Сколько осталось»&quot;]
+    A1[&quot;Баланс на счете&quot;] --&gt; A2[&quot;Видно, что счет вырос&quot;] --&gt; A3[&quot;11 дней до причины&quot;]
+  end
+  subgraph Q2[&quot;«Куда ушло»&quot;]
+    B1[&quot;Вызовы: проект,&lt;br/&gt;модель, агент, день&quot;] --&gt; B2[&quot;Крупнейшая строка&lt;br/&gt;видна сразу&quot;] --&gt; B3[&quot;Минуты до причины&quot;]
+  end
+  Q1 ==&gt; Q2</pre><figcaption>Мониторинг отвечал на вопрос «сколько осталось» и не отвечал на вопрос «куда ушло» - разница измеряется в днях расследования</figcaption></figure>
+<h2>Ошибка 5: не иметь ответа на вопрос «куда ушли деньги»</h2>
+<p>Мониторинг у нас был. Он отвечал на вопрос «сколько осталось» и не отвечал на вопрос «куда ушло». Разница между этими двумя вопросами измеряется в днях расследования.</p>
+<p>Счет вырос. С момента, когда это стало заметно, до момента «вот причина» прошло 11 дней. Все это время 45% расходов уходило на служебный опрос агента при пустой очереди задач: система исправно спрашивала, есть ли работа, получала ответ «нет» и платила за этот вопрос.</p>
+<p>Общая сумма такого не показывает никогда. Нужен разрез: сколько потратил каждый сценарий, каждый запуск, каждый шаг. Тогда «счет вырос» и «вот причина» - это один экран, а не 11 дней.</p>
+<section class="practice"><p class="practice-kicker">Применить у себя</p>
+<h2>Что проверить на практике (чек-лист)</h2>
+<p>Общий знаменатель всех пяти ошибок один: соблазн решать проблему на уровне модели, потому что это одна строчка в конфиге. Настоящая починка почти всегда лежит уровнем ниже - в данных, в обвязке, в учете.</p>
+<ul><li>Возьмите 5 реальных неверных ответов и для каждого посмотрите, какие фрагменты нашел поиск. Разложите на две стопки: «не нашли» и «нашли, но переврали». Пока стопок нет, вы не отлаживаете - вы гадаете.</li><li>Откройте десяток кусков, на которые нарезаны ваши документы, и прочитайте их как отдельные тексты. Если из куска непонятно, о чем он и к чему относится, - проблема в нарезке, а не в модели.</li><li>Проверьте, есть ли у фрагментов пометки категорий и не режет ли фильтр поиска нужное. На пробном прогоне отключите фильтр и сравните результат.</li><li>Пройдите по списку мест, где вызывается модель, и для каждого ответьте: есть ли здесь вариативность? Если шаг сводится к чтению данных и подстановке в шаблон - переведите его в скрипт.</li><li>Посмотрите, какой лимит токенов запрашивается на каждом вызове. Если это потолок модели по умолчанию - поставьте реальную нужду.</li><li>Возьмите 10 ответов с числами и названиями и сверьте каждое с источником вручную. Найдете расхождения - заводите автоматическую сверку.</li><li>Добавьте в учет расходов разрез по сценариям и шагам. Отдельно проверьте, сколько стоят регулярные фоновые проверки, когда работы нет.</li></ul>
+<h2>Как понять, что получилось</h2>
+<p>Критерий один, и он не про «качество ответов», а про скорость диагноза.</p>
+<p>Возьмите свежий неверный ответ и засеките время. Если за несколько минут - не перезапуская модель и не меняя ее - вы можете сказать, на каком уровне поломка (данные, поиск, промпт, обвязка или учет), значит система наблюдаемая, и дальше это вопрос обычной инженерной работы.</p>
+<p>Если вместо этого вы начинаете перебирать модели и переписывать промпт наугад - вы все еще чините верхний уровень.</p>
+<p>Второй признак, попроще: вы можете назвать три самые дорогие статьи расходов за прошлую неделю по памяти. Не общую сумму - именно статьи.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">На связь со мной</p>
+  <h3>Разберем вашу задачу</h3>
+  <p>Я Наталья Вегман, проектирую ИИ-системы для бизнеса: агентов, интеграции с рабочими системами, поиск по базе знаний и учет их стоимости. Если после статьи осталось «а как это у нас», напишите, посмотрим на вашем примере.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Написать в Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Канал «Заметки на полях кода»</a>
+  </div>
+</aside>
+</div>
+<div data-lang-block="en">
+  <a class="back" href="https://vegman.dev/blog/">All posts</a>
+  <h1>Five mistakes from my first year with language models</h1>
+  <div class="meta"><span>2026-08-06</span><span class="tag">article</span></div>
+  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 310 150, 468 150"/><rect class="m-node" x="470.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 320 300, 478 300"/><circle class="m-halo" cx="516.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="477.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="500" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 310 450, 468 450"/><rect class="m-node" x="470.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="490" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="500" y="372" text-anchor="middle"></text></svg></div>
+  <article><p>You've built your first assistant on top of a language model - a program that takes your request as text and writes the rest of the answer. It replies coherently, politely, and beside the point. Almost everyone's first thought is the same: the model is weak, I need a stronger one. I thought exactly that.</p>
+<p>Over my first year of working closely with models I accumulated five mistakes. Each one cost me weeks, and none of them were about the model. Below are all five, with the mechanics: what exactly breaks, why it looks like a model problem, and what tells one apart from the other. By the end you'll be able to walk through your own project and check whether you're standing on one of these rakes right now.</p>
+<figure><pre class="mermaid">flowchart TB
+  A[&quot;Ответ неверный&quot;] --&gt; S1{&quot;Что нашел поиск?&quot;}
+  S1 --&gt;|&quot;фрагменты не те&quot;| F1[&quot;Чинить нарезку,&lt;br/&gt;разметку, поиск&quot;]
+  S1 --&gt;|&quot;фрагменты те&quot;| S2{&quot;Что ушло в модель?&quot;}
+  S2 --&gt;|&quot;фрагменты поданы плохо&quot;| F2[&quot;Чинить промпт&lt;br/&gt;и формат подачи&quot;]
+  S2 --&gt;|&quot;подано верно&quot;| F3[&quot;Только теперь - &lt;br/&gt;вопрос к модели&quot;]
+  A -.-&gt;|&quot;соблазн: одна строчка&lt;br/&gt;в настройках&quot;| F3</pre><figcaption>Порядок разбора: смена модели - последний шаг, а не первый</figcaption></figure>
+<h2>Mistake: believing quality comes down to the model</h2>
+<p>The search assistant was answering incorrectly - and the first thought was to swap the model. That's tempting, because it's one line in the settings. The real cause almost always turned out to be in how the data was prepared.</p>
+<p>There were three typical causes:</p>
+<ul><li>Splitting documents without preserving context. A long text gets cut into pieces so they can be searched separately. If you cut blindly - by character count - the piece loses what it's even about: what's left is a paragraph of pronouns and numbers with no section and no subject attached to it.</li><li>No category labels. A fragment carries no marker for which section, product, or year it belongs to. Search can't narrow to the right area and pulls in word-similar material from the neighboring one.</li><li>Too narrow a search filter. The system cuts off the right material before the model ever sees it. The model didn't garble the answer - it simply wasn't shown the fragment it needed.</li></ul>
+<p>In all three cases, swapping the model changes nothing: a stronger model will answer just as carefully from the same broken data.</p>
+<p>There's outside confirmation, too. An Nvidia study from August 2026: the same model on an interactive reasoning benchmark scores 30 percent without purpose-built scaffolding and 100 percent with it. Scaffolding is everything standing around the model: data preparation, retrieval, the order of steps, checks on the result. That's a spread from 30 to 100 within a single model. Keep that number in mind every time your hand reaches for the model setting.</p>
+<h2>Mistake: putting a model where a script would do</h2>
+<p>We had a regular check on a task queue. We hung it on a full agent - a program that decides for itself which steps to take and calls the model at every step. It sounded reasonable: let it be smart.</p>
+<p>The entire job came down to two actions: read the data and drop it into a template. No decision was being made there at all.</p>
+<p>We paid for that twice. First, every run requested the model's token ceiling from the provider instead of what it actually needed. A token is a small chunk of text, the unit both limits and money are counted in; reserving the maximum for a template fill is like booking a truck every time for a single box. Second, we took on a dependency on an external service where we didn't need one: when the balance ran low, a trivial check started failing every 30 minutes.</p>
+<p>The rule is simple: if a step has no variability - if you can describe in advance what it does without the words "depending on the meaning" - it's a script. A script doesn't fail because of a balance, doesn't cost money per run, and doesn't make things up.</p>
+<h2>Mistake: trusting the prompt as a guarantee</h2>
+<p>A prompt is the instruction text you give the model: who it is, what it does, what it doesn't do. It feels like a rule written into the prompt is now being followed. In practice it's followed <i>almost always</i>, and all the difficulty hides in the word "almost."</p>
+<p>The nastiest kind of violation isn't the one where the model produces obvious nonsense. The model confidently invented numbers of the same order as the real ones: it named an exit price of 8 dollars instead of 12. Not 800, not "around ten" - a plausible number that passes under your eye and raises no suspicion. Those are exactly the errors that reach the user.</p>
+<p>You can only catch this with a mechanical cross-check against verified facts: numbers and names from the answer are matched against the source in code, not by a request in the prompt to be more careful. A prompt is a wish. A cross-check is a check.</p>
+<h2>Mistake: checking only the result, not the source</h2>
+<p>For a long time we checked only the answer text: looks plausible - good, doesn't - bad. Until we started looking at exactly which fragments search had found before the model began answering, debugging was guesswork.</p>
+<p>Because behind a bad answer sit two completely different breakages:</p>
+<ul><li>Search didn't find the right fragment - what needs fixing is the data, the chunking, the labels, the filter.</li><li>Search found it and the model garbled it - what needs fixing is the prompt, the format the fragments are presented in, the cross-check.</li></ul>
+<p>From the answer text you can't tell them apart. From the list of retrieved fragments you can tell in seconds. Log what went into the model, not just what came out of it; it's the cheapest improvement of all five.</p>
+<figure><pre class="mermaid">flowchart LR
+  subgraph Q1[&quot;«Сколько осталось»&quot;]
+    A1[&quot;Баланс на счете&quot;] --&gt; A2[&quot;Видно, что счет вырос&quot;] --&gt; A3[&quot;11 дней до причины&quot;]
+  end
+  subgraph Q2[&quot;«Куда ушло»&quot;]
+    B1[&quot;Вызовы: проект,&lt;br/&gt;модель, агент, день&quot;] --&gt; B2[&quot;Крупнейшая строка&lt;br/&gt;видна сразу&quot;] --&gt; B3[&quot;Минуты до причины&quot;]
+  end
+  Q1 ==&gt; Q2</pre><figcaption>Мониторинг отвечал на вопрос «сколько осталось» и не отвечал на вопрос «куда ушло» - разница измеряется в днях расследования</figcaption></figure>
+<h2>Mistake: having no answer to "where did the money go"</h2>
+<p>We had monitoring. It answered the question "how much is left" and did not answer the question "where did it go." The distance between those two questions is measured in days of investigation.</p>
+<p>The bill grew. From the moment it became noticeable to the moment of "here's the cause," 11 days passed. That whole time, 45 percent of spending was going to the agent's housekeeping poll against an empty task queue: the system dutifully asked whether there was work, got "no" back, and paid for the question.</p>
+<p>A total never shows you that. You need the breakdown: how much each scenario spent, each run, each step. Then "the bill grew" and "here's the cause" are one screen, not 11 days.</p>
+<section class="practice"><p class="practice-kicker">Put it to work</p>
+<h2>What to check in practice</h2>
+<p>The common denominator of all five mistakes is the same: the temptation to solve the problem at the model level, because that's one line in a config. The real fix almost always sits a level below - in the data, in the scaffolding, in the accounting. Hence the checks.</p>
+<ul><li>Take five real incorrect answers and for each one look at which fragments search found. Sort them into two piles: "didn't find it" and "found it but garbled it." Until you have the piles, you aren't debugging, you're guessing.</li><li>Open a dozen of the chunks your documents were cut into and read them as standalone texts. If a chunk doesn't make clear what it's about and what it belongs to, the problem is in the chunking, not the model.</li><li>Check whether fragments have category labels and whether the search filter is cutting off what you need. Turn the filter off on a trial run and compare.</li><li>Walk the list of places where the model is called and answer for each: is there any variability here? If a step comes down to reading data and filling a template - turn it into a script.</li><li>Look at what token limit is requested on each call. If it's the model's default ceiling - set it to the actual need.</li><li>Take ten answers containing numbers and names and check every one against the source by hand. If you find discrepancies, build an automatic cross-check.</li><li>Add a breakdown by scenario and step to your cost accounting. Separately, check what the regular background checks cost when there's no work.</li></ul>
+<h2>How to tell it worked</h2>
+<p>There's one criterion, and it isn't about answer quality - it's about how fast you can diagnose.</p>
+<p>Take a fresh incorrect answer and time yourself. If within a few minutes, without rerunning the model and without changing it, you can say which level the breakage is on - data, retrieval, prompt, scaffolding, or accounting - your system is observable, and from there it's ordinary engineering work. If instead you start cycling through models and rewriting the prompt at random, you're still fixing the top level, and a year will go into what a year went into for me.</p>
+<p>The second sign, a simpler one: you can name last week's three most expensive line items from memory. Not the total - the line items.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">Get in touch</p>
+  <h3>Let's look at your case</h3>
+  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup, write to me and we'll go through it.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
+  </div>
+</aside>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>Natalia Vegman</span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></span>
+</div></footer>
+<script>
+(function(){
+  function apply(lang){
+    document.querySelectorAll('[data-lang-block]').forEach(function(el){
+      el.classList.toggle('active', el.dataset.langBlock === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang;
+    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
+  }
+  var stored = null;
+  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
+  var nav = (navigator.language||'').toLowerCase();
+  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
+  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
+  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
+  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
+  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
+  apply(initial);
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+  });
+})();
+</script>
+</body>
+</html>

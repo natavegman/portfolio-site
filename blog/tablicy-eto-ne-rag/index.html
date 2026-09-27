@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Таблицы - это не RAG</title>
+<meta name="description" content="Вы выгружаете из системы техобслуживания таблицу: судно, узел, статус, критичность. Отдаете ее ИИ-ассистенту и просите разобраться, что чинить первым. Он отвечает абзацем: «Рекомен...">
+<link rel="canonical" href="https://vegman.dev/blog/tablicy-eto-ne-rag/">
+<meta property="og:title" content="Таблицы - это не RAG">
+<meta property="og:description" content="Вы выгружаете из системы техобслуживания таблицу: судно, узел, статус, критичность. Отдаете ее ИИ-ассистенту и просите разобраться, что чинить первым. Он отвечает абзацем: «Рекомен...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vegman.dev/blog/tablicy-eto-ne-rag/">
+<script>
+(function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
+if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+document.documentElement.dataset.theme=t})();
+function toggleTheme(){var r=document.documentElement,t=r.dataset.theme==='light'?'dark':'light';
+r.dataset.theme=t;try{localStorage.setItem('preferredTheme',t)}catch(e){}}
+</script>
+<meta property="og:image" content="https://vegman.dev/blog/img/tablicy-eto-ne-rag/cover.jpg"><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const els=[...document.querySelectorAll('pre.mermaid')];
+els.forEach(e=>{e.dataset.src=e.textContent;});
+function vars(){const s=getComputedStyle(document.documentElement),g=n=>s.getPropertyValue(n).trim();
+  return {background:g('--surface-hex'),primaryColor:g('--surface-hex'),primaryTextColor:g('--text'),
+  primaryBorderColor:g('--accent'),lineColor:g('--line-hex'),secondaryColor:g('--surface-hex'),
+  tertiaryColor:g('--surface-hex'),clusterBkg:g('--surface-hex'),clusterBorder:g('--line-hex'),
+  edgeLabelBackground:g('--surface-hex'),fontFamily:'Inter,sans-serif'};}
+// Рисуем только видимые схемы: у скрытой языковой версии нет размеров, и mermaid
+// собирал ее схемы в полоску 16 px (было на живом сайте до 27.09.2026).
+// Поэтому перерисовка и при смене темы, и при смене языка.
+async function draw(){
+  mermaid.initialize({startOnLoad:false,theme:'base',securityLevel:'strict',themeVariables:vars()});
+  els.forEach(e=>{e.removeAttribute('data-processed');e.textContent=e.dataset.src;});
+  const vis=els.filter(e=>e.offsetParent);
+  if(vis.length) await mermaid.run({nodes:vis});
+}
+draw();
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme','lang']});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080a;--surface:#0f0d0b;--surface-hex:#14100c;--border:rgba(255,190,130,.10);
+--rule:rgba(255,190,130,.14);--grid:rgba(255,190,130,.045);--accent:#ff9a3c;--accent-2:#ffb45c;
+--on-accent:#140a02;--text:#f1ebe3;--muted:#8d8379;--faint:#5d554e;--line-hex:#6a5a4b;
+--card-bg:rgba(255,160,90,.025);--spot:rgba(255,140,50,.10);--nav-bg:rgba(7,8,10,.82);
+--hover-border:rgba(255,154,60,.55);--hover-shadow:0 0 0 1px rgba(255,154,60,.2),0 14px 44px rgba(255,120,40,.16);
+--motif-bg:radial-gradient(ellipse 60% 70% at 55% 55%,rgba(255,140,50,.10),transparent 70%);
+--arc:rgba(255,180,110,.55);--arc-glow:0 -4px 28px rgba(255,140,50,.28);--paper:none;--m-line:#ffb45c;--m-dim:rgba(255,170,100,.28);--m-node-bg:#0d0a07;--m-glow:url(#glow);--m-halo:#ff9a3c;--m-halo-op:.22;--m-halo-f:url(#halo);--m-blend:normal;--m-muted:#a8927c;--m-accent:#ffc58a;color-scheme:dark}
+:root[data-theme="light"]{--bg:#eeebe3;--surface:#f5f3ee;--surface-hex:#f5f3ee;--border:rgba(30,26,22,.12);
+--rule:rgba(30,26,22,.55);--grid:rgba(30,26,22,.07);--accent:#e2701f;--accent-2:#c25912;
+--on-accent:#fff;--text:#1d1a17;--muted:#6a625a;--faint:#9a9189;--line-hex:#9d9387;
+--card-bg:rgba(255,255,255,.45);--spot:rgba(226,112,31,.11);--nav-bg:rgba(238,235,227,.86);
+--hover-border:rgba(226,112,31,.6);--hover-shadow:0 0 0 1px rgba(226,112,31,.22),0 16px 44px rgba(226,112,31,.2);
+--motif-bg:none;--arc:rgba(30,26,22,.55);--arc-glow:none;
+--paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+--m-line:#2a2622;--m-dim:rgba(42,38,34,.35);--m-node-bg:#f3f1ea;--m-glow:none;--m-halo:#e8732a;--m-halo-op:.78;--m-halo-f:none;--m-blend:multiply;--m-muted:#7a7068;--m-accent:#c85a14;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg) var(--paper);
+color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .35s,color .35s}
+::selection{background:var(--accent);color:var(--on-accent)}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.wrap.wide{max-width:1100px}
+header.top{position:sticky;top:0;z-index:50;background:var(--nav-bg);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;
+gap:16px;height:64px;max-width:1100px}
+.brand{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:15px;color:var(--text)}
+.brand::after{content:'.';color:var(--accent)}
+.brand:hover{text-decoration:none;color:var(--accent-2)}
+nav.top-nav{display:flex;align-items:center;gap:18px;font-size:14px}
+nav.top-nav a{color:var(--muted)}
+nav.top-nav a:hover{color:var(--text);text-decoration:none}
+.lang-switch{display:flex;gap:3px;border:1px solid var(--border);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:0;color:var(--muted);font:500 12px/1 'Inter',sans-serif;
+padding:6px 10px;border-radius:5px;cursor:pointer}
+.lang-btn.active{background:var(--accent);color:var(--on-accent)}
+.theme-btn{width:34px;height:32px;border:1px solid var(--border);border-radius:8px;background:none;
+color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.theme-btn svg{width:16px;height:16px}.theme-btn .sun{display:none}
+:root[data-theme="light"] .theme-btn .sun{display:block}:root[data-theme="light"] .theme-btn .moon{display:none}
+main{padding:56px 0 96px}
+h1{font-size:clamp(30px,5vw,46px);font-weight:500;line-height:1.12;letter-spacing:-.03em;margin:0 0 16px}
+h2{font-size:25px;font-weight:500;letter-spacing:-.02em;margin:44px 0 12px}
+h3{font-weight:500}
+.meta{color:var(--muted);font-size:13px;font-family:'JetBrains Mono',ui-monospace,monospace;
+margin-bottom:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tag{color:var(--accent-2);text-transform:lowercase}
+.post-motif{aspect-ratio:16/9;border:1px solid var(--border);border-radius:18px;background:var(--motif-bg);
+margin:0 0 40px;display:flex;overflow:hidden}
+article figure{margin:32px 0}
+article figure img{width:100%;border-radius:12px;border:1px solid var(--border);display:block}
+article figcaption{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5}
+article p{margin:0 0 20px}
+article ul{margin:0 0 20px;padding-left:22px}
+article li{margin:0 0 8px}
+article li::marker{color:var(--accent)}
+article code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.9em;
+background:var(--card-bg);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+article pre.code-figure{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0;font-size:14px;line-height:1.55}
+article pre.code-figure code{background:none;border:0;padding:0;font-size:inherit}
+article pre.mermaid{background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:20px;margin:0;text-align:center;overflow-x:auto;color:transparent}
+article pre.mermaid[data-processed]{color:inherit}
+.lead{font-size:18px;color:var(--muted)}
+.back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:14px}
+/* Практический хвост статьи: то, что читатель может сделать завтра. Цветной
+   полосы слева нет: это шаблон, по которому текст узнается как машинный. */
+.practice{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:10px 28px 6px;margin:48px 0 0;position:relative}
+.practice .practice-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;display:flex;align-items:center;gap:10px;
+font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:20px 0 0}
+.practice .practice-kicker::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.practice h2{font-size:21px;margin:8px 0 12px}
+.practice h3{font-size:17px;margin:24px 0 8px}
+.cta{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:18px;padding:30px;margin:36px 0 0;background:var(--card-bg)}
+.cta::before{content:'';position:absolute;width:220px;aspect-ratio:1;border-radius:50%;right:-70px;top:-90px;
+background:var(--accent);opacity:.16;filter:blur(2px)}
+:root[data-theme="light"] .cta::before{opacity:.75;mix-blend-mode:multiply;filter:none}
+.cta>*{position:relative}
+.cta .cta-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;
+letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:0 0 10px}
+.cta h3{font-size:24px;letter-spacing:-.02em;margin:0 0 10px}
+.cta p{color:var(--muted);margin:0 0 20px;font-size:15px;max-width:520px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--rule);border-radius:99px;
+padding:11px 20px;font-size:14px;font-weight:500;color:var(--text);transition:.25s}
+.btn:hover{border-color:var(--accent);color:var(--accent-2);text-decoration:none}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn-accent:hover{color:var(--on-accent);box-shadow:var(--hover-shadow);transform:translateY(-2px)}
+@media(max-width:520px){.cta-actions .btn{flex:1 1 100%;text-align:center}}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
+footer a{color:var(--muted)}
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+.empty{color:var(--muted);text-align:center;padding:64px 0}
+
+/* список статей */
+.blog-hero{position:relative;padding:40px 0 120px;text-align:center;overflow:hidden}
+.blog-hero .kicker{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--border);border-radius:99px;
+padding:5px 14px 5px 6px;font-size:13px;color:var(--muted);margin-bottom:28px;background:var(--card-bg)}
+.blog-hero .kicker i{font-style:normal;background:var(--accent);color:var(--on-accent);border-radius:99px;padding:2px 10px;font-weight:500}
+.blog-hero .kicker:hover{text-decoration:none;color:var(--text)}
+.blog-hero h1{font-size:clamp(38px,6vw,64px);line-height:1.06;margin:0 auto 20px;max-width:820px}
+.blog-hero h1 em{font-style:normal;color:var(--accent)}
+.blog-hero .lead{max-width:600px;margin:0 auto}
+.arc{position:absolute;left:50%;bottom:-560px;width:1100px;height:640px;transform:translateX(-50%);border-radius:50%;
+border-top:1px solid var(--arc);box-shadow:var(--arc-glow)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 28px;font-family:'JetBrains Mono',monospace;font-size:13px}
+.filters button{font:inherit;background:none;border:1px solid var(--border);border-radius:99px;padding:6px 15px;color:var(--muted);cursor:pointer;transition:.2s}
+.filters button.on,.filters button:hover{border-color:var(--accent);color:var(--accent-2)}
+.post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;list-style:none;padding:0;margin:0}
+.post-card{border:1px solid var(--border);border-radius:18px;background:var(--card-bg);overflow:hidden;position:relative;
+transition:border-color .25s,box-shadow .25s,transform .25s}
+.post-card:hover{border-color:var(--hover-border);box-shadow:var(--hover-shadow);transform:translateY(-3px)}
+.post-card::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var(--spot),transparent 65%)}
+.post-card:hover::after{opacity:1}
+/* Кликается вся карточка, а не только заголовок: рамка выглядит как кнопка,
+   и промах по ней читается как «сайт сломан». Ссылка - блок вокруг всего. */
+.post-card>a{display:block;color:inherit;text-decoration:none;height:100%}
+.post-card .pic{aspect-ratio:16/9;background:var(--motif-bg);border-bottom:1px solid var(--border);display:flex}
+.post-card .body{padding:22px 24px 26px}
+.post-card .meta{margin:0 0 10px;font-size:12px}
+.post-card .post-title{display:block;color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.post-card .excerpt{color:var(--muted);margin:8px 0 0;font-size:15px;line-height:1.55}
+.post-card.featured{grid-column:1/-1}
+.post-card.featured>a{display:grid;grid-template-columns:1.35fr 1fr}
+.post-card.featured .pic{aspect-ratio:auto;min-height:320px;border-bottom:0;border-right:1px solid var(--border)}
+.post-card.featured .body{display:flex;flex-direction:column;justify-content:center;padding:36px}
+.post-card.featured .post-title{font-size:28px}
+.post-card[hidden]{display:none}
+@media(max-width:760px){.post-grid{grid-template-columns:1fr}.post-card.featured>a{grid-template-columns:1fr}
+.post-card.featured .pic{border-right:0;border-bottom:1px solid var(--border);aspect-ratio:16/9;min-height:0}
+.blog-hero{padding:24px 0 90px}.arc{width:700px;bottom:-600px}}
+@media(max-width:600px){nav.top-nav{gap:10px;font-size:13px}nav.top-nav>a{display:none}main{padding:36px 0 64px}.wrap{padding:0 16px}}
+
+.m-line{fill:none;stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dim{fill:none;stroke:var(--m-dim);stroke-width:1.2;stroke-dasharray:3 6}
+.m-node{fill:var(--m-node-bg);stroke:var(--m-dim);stroke-width:1.2}
+.m-node.on{stroke:var(--m-line);stroke-width:1.6;filter:var(--m-glow)}
+.m-dot{fill:var(--m-dim)} .m-dot.on{fill:var(--m-line)}
+.m-halo{fill:var(--m-halo);opacity:var(--m-halo-op);filter:var(--m-halo-f);mix-blend-mode:var(--m-blend)}
+.m-ring{fill:none;stroke:var(--m-line);stroke-width:1.5;filter:var(--m-glow)}
+.m-label{font-family:'JetBrains Mono',monospace;font-size:15px;fill:var(--m-muted);letter-spacing:.04em}
+.m-label.big{font-size:30px;fill:var(--m-accent)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="glow" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800">
+  <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="halo" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800"><feGaussianBlur stdDeviation="18"/></filter>
+</defs></svg>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://vegman.dev/">vegman.dev</a>
+  <nav class="top-nav">
+    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="ru" type="button">RU</button>
+      <button class="lang-btn" data-lang="en" type="button">EN</button>
+    </div>
+    <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</div></header>
+<main><div class="wrap">
+<div data-lang-block="ru">
+  <a class="back" href="https://vegman.dev/blog/">Все статьи</a>
+  <h1>Таблицы - это не RAG</h1>
+  <div class="meta"><span>2026-02-05</span><span class="tag">кейс</span></div>
+  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle"></text></svg></div>
+  <article><p>Вы выгружаете из системы техобслуживания таблицу: судно, узел, статус, критичность. Отдаете ее ИИ-ассистенту и просите разобраться, что чинить первым. Он отвечает абзацем: «Рекомендуется обратить внимание на узлы с высокой критичностью и приоритизировать их обслуживание». Формально не поспоришь. Отправить механику - нельзя.</p>
+<p>Дальше почти все идут одной дорогой: «значит, нужен RAG». <b>RAG</b> (retrieval-augmented generation) - это схема, в которой модель перед ответом ищет в вашей базе подходящие куски текста и отвечает уже с ними на руках. На регламентах, инструкциях и переписке она работает прекрасно. На таблице - не работает, и дело не в настройках.</p>
+<p>Эта статья про то, как за минуту отличить задачу «найди по смыслу» от задачи «посчитай и сгруппируй», и что строить во втором случае. К концу вы перестанете городить векторный поиск там, где нужны фильтр и группировка.</p>
+<h2>Быстрый тест: агент работает или красиво разговаривает</h2>
+<p>У меня есть личный тест на зрелость агента. <i>Агент</i> здесь - это модель, у которой есть инструменты: она может прочитать файл, выполнить код, записать новый файл. Больше, чем окно чата.</p>
+<p>Тест такой: дать ему не базу знаний, а таблицу. И попросить не поговорить про данные, а сделать документ, который можно отправить в работу.</p>
+<p>Домен я беру учебный, но жизненный: флот, оборудование, техобслуживание. Обычная выгрузка, четыре колонки: судно, узел, статус, критичность. Ничего экзотического - такая таблица есть в любой сервисной службе, просто называется по-разному.</p>
+<p>Сценарий укладывается в 15 минут:</p>
+<ul><li>взять исходный файл <b>только на чтение</b></li><li>найти все со статусами «отказ» и «требует обслуживания»</li><li>сгруппировать по судну</li><li>собрать таблицу в отдельный файл-отчет</li><li>в конце дать короткий вывод: что горит первым по критичности.</li></ul>
+<p>Дальше просто смотрите, что получилось. Если на выходе текст «рекомендуется обратить внимание» - перед вами собеседник. Если на выходе файл, который можно открыть и раздать людям, - исполнитель. Разница не в красноречии модели, а в том, что она вообще делает с данными.</p>
+<figure><pre class="code-figure"><code>Задание агенту (15 минут):
+
+Файл «выгрузка.csv» - открывать ТОЛЬКО на чтение.
+
+1. Отобрать строки, где статус = «отказ» или «требует обслуживания».
+2. Сгруппировать результат по колонке «судно».
+3. Внутри каждой группы отсортировать по критичности.
+4. Записать таблицу в НОВЫЙ файл «отчет.csv». Исходник не изменять.
+5. В конце - короткий вывод: что горит первым по критичности
+   и по какому правилу это решено.
+
+На выходе жду файл, а не ответ.</code></pre><figcaption>Тест на зрелость: задание сформулировано как операция над файлами, а не как вопрос про данные</figcaption></figure>
+<h2>Что происходит, когда на входе таблица</h2>
+<p>Чтобы понять, почему RAG тут мимо, посмотрим на его механику. В основе - <i>векторный поиск</i>: каждый кусочек текста заранее превращают в набор чисел («вектор»), и близкие по смыслу куски оказываются близко друг к другу. Вы спрашиваете - система находит самые похожие фрагменты и отдает их модели.</p>
+<p>Главное слово здесь - <b>похожие</b>. Векторный поиск отвечает ровно на один вопрос: «что похоже на мой запрос». К документам это правильный вопрос.</p>
+<p>А к таблице задают совсем другие вопросы:</p>
+<ul><li>сколько</li><li>у кого больше</li><li>покажи все за период</li><li>сгруппируй вот по этой колонке.</li></ul>
+<p>Похожие строки не складываются в правильную сумму. «Все узлы в отказе» - это не «десять строк, наиболее похожих на слово отказ», это точное совпадение по колонке, все до единой. Поиск по смыслу вернет вам правдоподобную выборку, и вы даже не заметите, чего в ней нет: пропущенная строка не оставляет следа. В документах неполнота - неприятность. В плане работ неполнота - это узел, который никто не поехал чинить.</p>
+<p>Отсюда главный вывод, ради которого все затевалось: <b>когда вход - таблица, агент работает не поисковиком по текстам, а исполнителем маленьких операций над данными</b>. Фильтр. Группировка. Приоритизация. Это не магия и не «понимание» - это отбор и сортировка, которые кто-то должен честно выполнить до последней строки.</p>
+<figure><pre class="mermaid">flowchart LR
+  A[&quot;Исходная выгрузка: судно, узел, статус, критичность&quot;] --&gt;|только чтение| B[&quot;Фильтр: отказ и требует обслуживания&quot;]
+  B --&gt; C[&quot;Группировка по судну&quot;]
+  C --&gt; D[&quot;Сортировка по критичности&quot;]
+  D --&gt; E[&quot;Новый файл-отчет&quot;]
+  E --&gt; F[&quot;Короткий вывод: что горит первым&quot;]</pre><figcaption>Путь данных в таком отчете: чтение, фильтр, группировка, сортировка, новый файл. Векторному поиску тут негде встать</figcaption></figure>
+<h2>Как выглядит правильное решение</h2>
+<p>Когда тест проходит, я вижу три вещи - и они важнее любых слов в ответе.</p>
+<p><b>Первое: агент не отвечает, а делает выборку.</b> Он не пересказывает таблицу словами - он ее обрабатывает и упаковывает результат в отчет. Текст в конце есть, но он вторичен: это подпись под таблицей, а не замена ей.</p>
+<p><b>Второе: исходные данные остаются нетронутыми.</b> Исходник открывается только на чтение, результат пишется в новый файл. Это не формальность и не паранойя. Инструмент, который может молча переписать вашу рабочую выгрузку, не получит доверия никогда - и правильно сделает. Один испорченный исходник закрывает тему автоматизации в отделе надолго.</p>
+<p><b>Третье: на выходе план работ, а не список советов.</b> Разница проверяется одним движением: можно ли переслать этот файл человеку, который будет чинить, и он поймет, что делать. «Рекомендуется усилить контроль» переслать нельзя. Отфильтрованную и отсортированную таблицу «судно - узел - статус - критичность» - можно.</p>
+<h2>Куда это масштабируется дальше</h2>
+<p>Хорошая новость: от такого прототипа до чего-то серьезного нет пропасти. Все расширение - те же самые операции над данными, просто их становится больше.</p>
+<ul><li><b>Правила приоритета.</b> Критично плюс отказ равно красная зона. Правило формулируется одной строкой и дальше применяется ко всем строкам одинаково, без «на мой взгляд».</li><li><b>История и тренды.</b> Когда отчетов накопилось несколько, появляется новый вопрос: что ломается чаще. Это снова группировка, только теперь еще и по времени.</li><li><b>Регулярный запуск и уведомления.</b> Отчет собирается по расписанию, а ответственный получает не общий дайджест, а свой кусок: вот что горит у вас.</li></ul>
+<p>Обратите внимание, чего в этом списке нет. Ни один пункт не требует векторного поиска. Ни один.</p>
+<section class="practice"><p class="practice-kicker">Применить у себя</p>
+<h2>Что проверить на практике</h2>
+<p>Возьмите час и сделайте это на своих данных - на своих, там вся правда.</p>
+<ul><li>Выгрузите настоящую таблицу из своей системы и оставьте несколько колонок: объект, элемент, статус, важность. Названия ваши, смысл тот же.</li><li>Сформулируйте задание как работу с файлами, а не как вопрос. Что прочитать, что отобрать, как сгруппировать, куда записать.</li><li>Явно напишите два условия: исходный файл - только на чтение, результат - в новый файл.</li><li>Попросите короткий вывод в конце и обязательно спросите, по какому правилу он получен.</li><li>Засеките время. Если за 15 минут нет файла, значит, задача сформулирована как беседа, а не как операция над данными.</li><li>Проверьте руками одну-две группы: откройте исходник, отфильтруйте сами, сравните со строками в отчете. Это скучно и это единственный способ узнать правду.</li></ul>
+<h2>Как понять, что получилось</h2>
+<p>Критерий один и он бинарный: получившийся файл можно отправить в работу без переписывания. Не «содержит полезные соображения», а - открыть, прочитать, раздать людям.</p>
+<p>Проверяется тремя вопросами:</p>
+<ul><li>Исходный файл не изменился?</li><li>Ваша ручная выборка совпала с выборкой агента - ни одной лишней строки, ни одной пропущенной?</li><li>Вывод в конце опирается на правило, которое вы можете произнести вслух?</li></ul>
+<p>Если на все три «да» - у вас не чат-бот, а маленький работающий инструмент. И заметьте, чего вы для этого не собрали: ни векторной базы, ни индекса, ни RAG. Просто потому, что таблица - это не про поиск по смыслу. Это про данные.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">На связь со мной</p>
+  <h3>Разберем вашу задачу</h3>
+  <p>Я Наталья Вегман, проектирую ИИ-системы для бизнеса: агентов, интеграции с рабочими системами, поиск по базе знаний и учет их стоимости. Если после статьи осталось «а как это у нас», напишите, посмотрим на вашем примере.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Написать в Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Канал «Заметки на полях кода»</a>
+  </div>
+</aside>
+</div>
+<div data-lang-block="en">
+  <a class="back" href="https://vegman.dev/blog/">All posts</a>
+  <h1>When the Input Is a Table, You Don&#x27;t Need RAG</h1>
+  <div class="meta"><span>2026-02-05</span><span class="tag">case</span></div>
+  <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle"></text></svg></div>
+  <article><p>You export a table from your maintenance system: vessel, unit, status, criticality. You hand it to an AI assistant and ask it to work out what to fix first. It replies with a paragraph: «It is recommended to pay attention to high-criticality units and prioritize their maintenance». Formally, there's nothing to argue with. You can't send it to a mechanic.</p>
+<p>From there almost everyone goes down the same road: «so we need RAG». <b>RAG</b> (retrieval-augmented generation) is a setup where, before answering, the model searches your database for relevant chunks of text and answers with them in hand. On regulations, manuals and correspondence it works beautifully. On a table it doesn't work, and the settings aren't the problem.</p>
+<p>This article is about how to tell, in a minute, a «find by meaning» task from a «count and group» task, and what to build in the second case. By the end you'll stop bolting vector search onto problems that need a filter and a group-by.</p>
+<h2>A quick test: is the agent working, or just talking nicely</h2>
+<p>I have a personal test for agent maturity. <i>Agent</i> here means a model that has tools: it can read a file, run code, write a new file. Not just a chat window.</p>
+<p>The test is this: give it a table, not a knowledge base. And ask it not to talk about the data, but to produce a document you can send into work.</p>
+<p>The domain I use is a teaching one, but true to life: a fleet, equipment, maintenance. An ordinary export, four columns: vessel, unit, status, criticality. Nothing exotic - every service department has this table, it's just called something different.</p>
+<p>The scenario fits into 15 minutes:</p>
+<ul><li>take the source file <b>read-only</b></li><li>find everything with the statuses «failure» and «needs maintenance»</li><li>group it by vessel</li><li>assemble the table into a separate report file</li><li>at the end, give a short conclusion: what's burning first by criticality.</li></ul>
+<p>Then just look at what came out. If the output is the text «it is recommended to pay attention» - what you have in front of you is a conversationalist. If the output is a file you can open and hand out to people - a doer. The difference isn't the model's eloquence, it's what it does with the data at all.</p>
+<figure><pre class="code-figure"><code>Задание агенту (15 минут):
+
+Файл «выгрузка.csv» - открывать ТОЛЬКО на чтение.
+
+1. Отобрать строки, где статус = «отказ» или «требует обслуживания».
+2. Сгруппировать результат по колонке «судно».
+3. Внутри каждой группы отсортировать по критичности.
+4. Записать таблицу в НОВЫЙ файл «отчет.csv». Исходник не изменять.
+5. В конце - короткий вывод: что горит первым по критичности
+   и по какому правилу это решено.
+
+На выходе жду файл, а не ответ.</code></pre><figcaption>Тест на зрелость: задание сформулировано как операция над файлами, а не как вопрос про данные</figcaption></figure>
+<h2>What happens when the input is a table</h2>
+<p>To see why RAG misses here, look at its mechanics. At the core is <i>vector search</i>: each chunk of text is turned in advance into a set of numbers (a «vector»), and chunks close in meaning end up close to each other. You ask a question - the system finds the most similar fragments and hands them to the model.</p>
+<p>The key word is <b>similar</b>. Vector search answers exactly one question: «what resembles my query». That's an excellent question to ask of documents.</p>
+<p>But a table gets asked completely different questions:</p>
+<ul><li>how many</li><li>who has more</li><li>show me everything for the period</li><li>group by this column.</li></ul>
+<p>Similar rows don't add up to the right total. «All units in failure» is not «the ten rows most similar to the word failure», it's an exact match on a column, every last one of them. Semantic search will hand you a plausible selection, and you won't even notice what isn't in it: a missing row leaves no trace. In documents, incompleteness is an annoyance. In a work plan, incompleteness is a unit nobody drove out to fix.</p>
+<p>Hence the main conclusion, the one this was all for: <b>when the input is a table, the agent isn't working as a text search engine, it's working as an executor of small operations on data</b>. Filter. Grouping. Prioritization. This isn't magic and it isn't «understanding» - it's selection and sorting that someone has to carry out honestly, down to the last row.</p>
+<figure><pre class="mermaid">flowchart LR
+  A[&quot;Исходная выгрузка: судно, узел, статус, критичность&quot;] --&gt;|только чтение| B[&quot;Фильтр: отказ и требует обслуживания&quot;]
+  B --&gt; C[&quot;Группировка по судну&quot;]
+  C --&gt; D[&quot;Сортировка по критичности&quot;]
+  D --&gt; E[&quot;Новый файл-отчет&quot;]
+  E --&gt; F[&quot;Короткий вывод: что горит первым&quot;]</pre><figcaption>Путь данных в таком отчете: чтение, фильтр, группировка, сортировка, новый файл. Векторному поиску тут негде встать</figcaption></figure>
+<h2>What a correct solution looks like</h2>
+<p>When the test passes, I see three things - and they matter more than any words in the answer.</p>
+<p><b>First: the agent doesn't reply, it makes a selection.</b> It doesn't retell the table in words - it processes it and packs the result into a report. There's text at the end, but it's secondary: it's a caption under the table, not a substitute for it.</p>
+<p><b>Second: the source data stays untouched.</b> The source is opened read-only, the result is written to a new file. This isn't a formality and it isn't paranoia. A tool that can silently overwrite your working export will never earn trust - and rightly so. One ruined source file closes the subject of automation in a department for a long time.</p>
+<p><b>Third: the output is a work plan, not a list of advice.</b> The difference is checked in one move: can you forward this file to the person who'll be doing the repair, and will they understand what to do. «It is recommended to strengthen monitoring» can't be forwarded. A filtered and sorted «vessel - unit - status - criticality» table can.</p>
+<h2>Where this scales from here</h2>
+<p>The good news: there's no chasm between a prototype like this and something serious. The whole extension is the same operations on data, there are just more of them.</p>
+<ul><li><b>Priority rules.</b> Critical plus failure equals red zone. The rule is stated in one line and from then on applied to every row the same way, without «in my opinion».</li><li><b>History and trends.</b> Once several reports have piled up, a new question appears: what breaks most often. That's grouping again, only now by time as well.</li><li><b>Scheduled runs and notifications.</b> The report is assembled on a schedule, and the person responsible gets not a general digest but their own slice: here's what's burning on your side.</li></ul>
+<p>Notice what isn't on this list. Not one item requires vector search. Not one.</p>
+<section class="practice"><p class="practice-kicker">Put it to work</p>
+<h2>What to check in practice</h2>
+<p>Take an hour and do this on your own data - your own, that's where all the truth is.</p>
+<ul><li>Export a real table from your system and keep a few columns: object, item, status, importance. Your names, the same meaning.</li><li>State the task as work with files, not as a question. What to read, what to select, how to group, where to write it.</li><li>Write out two conditions explicitly: the source file is read-only, the result goes into a new file.</li><li>Ask for a short conclusion at the end, and be sure to ask by what rule it was arrived at.</li><li>Time it. If there's no file after 15 minutes, the task was phrased as a conversation, not as an operation on data.</li><li>Check one or two groups by hand: open the source, filter it yourself, compare with the rows in the report. It's boring and it's the only way to find out the truth.</li></ul>
+<h2>How to know whether it worked</h2>
+<p>There's one criterion and it's binary: the resulting file can be sent into work without rewriting. Not «contains useful considerations», but - open it, read it, hand it out to people.</p>
+<p>It's checked with three questions:</p>
+<ul><li>Is the source file unchanged?</li><li>Did your manual selection match the agent's - not one extra row, not one missing?</li><li>Does the conclusion at the end rest on a rule you can say out loud?</li></ul>
+<p>If all three are «yes», what you have isn't a chatbot, it's a small working tool. And notice what you didn't assemble to get there: no vector database, no index, no RAG. Simply because a table isn't about search by meaning. It's about data.</p></section>
+</article>
+  <aside class="cta">
+  <p class="cta-kicker">Get in touch</p>
+  <h3>Let's look at your case</h3>
+  <p>I'm Natalia Vegman. I design AI systems for business: agents, integrations with the tools a company already runs on, retrieval over internal knowledge, and the cost accounting that keeps them affordable. If this left you wondering how it maps onto your setup, write to me and we'll go through it.</p>
+  <div class="cta-actions">
+    <a class="btn btn-accent" href="https://t.me/natroot">Message me on Telegram</a>
+    <a class="btn" href="https://t.me/codenoteai">Channel: Notes in the Margins of Code</a>
+  </div>
+</aside>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>Natalia Vegman</span>
+  <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></span>
+</div></footer>
+<script>
+(function(){
+  function apply(lang){
+    document.querySelectorAll('[data-lang-block]').forEach(function(el){
+      el.classList.toggle('active', el.dataset.langBlock === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang;
+    try{ localStorage.setItem('preferredLang', lang); }catch(e){}
+  }
+  var stored = null;
+  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
+  var nav = (navigator.language||'').toLowerCase();
+  var initial = (stored === 'ru' || stored === 'en') ? stored : (nav.indexOf('ru')===0 ? 'ru' : 'en');
+  // Проверять наличие версии нужно ИМЕННО в тексте: в шапке есть английские
+  // подписи пунктов меню, и по ним страница считала, что EN-версия статьи есть.
+  // Статья без перевода тогда открывалась пустой (поймано 23.08.2026).
+  if(!document.querySelector('main [data-lang-block="'+initial+'"]')) initial = 'ru';
+  apply(initial);
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.lang); });
+  });
+})();
+</script>
+</body>
+</html>
