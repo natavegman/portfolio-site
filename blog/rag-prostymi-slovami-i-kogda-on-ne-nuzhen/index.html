@@ -212,7 +212,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 </div></header>
 <main><div class="wrap">
 <div data-lang-block="ru">
-  <a class="back" href="https://vegman.dev/blog/">← Все статьи</a>
+  <a class="back" href="https://vegman.dev/blog/">Все статьи</a>
   <h1>RAG простыми словами - и когда он вам не нужен</h1>
   <div class="meta"><span>2026-02-18</span><span class="tag">статья</span></div>
   <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 340 150, 498 150"/><rect class="m-node" x="500.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="520" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 360 300, 518 300"/><circle class="m-halo" cx="556.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="517.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="540" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 340 450, 498 450"/><rect class="m-node" x="500.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="520" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="540" y="372" text-anchor="middle">RAG</text></svg></div>
@@ -235,8 +235,8 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
   PR --&gt; M[&quot;Модель&quot;]
   M --&gt; A[&quot;Ответ&quot;]
   KB[(&quot;База знаний&quot;)] --- S
-  KB -.-&gt;|&quot;модель её&lt;br/&gt;не видит&quot;| M
-  S -.-&gt;|&quot;нашёл мусор&quot;| A2[&quot;Модель уверенно&lt;br/&gt;перескажет мусор&quot;]</pre><figcaption>Модель не знает вашей базы — она читает только то, что поиск положил в запрос прямо сейчас</figcaption></figure>
+  KB -.-&gt;|&quot;модель ее&lt;br/&gt;не видит&quot;| M
+  S -.-&gt;|&quot;нашел мусор&quot;| A2[&quot;Модель уверенно&lt;br/&gt;перескажет мусор&quot;]</pre><figcaption>Модель не знает вашей базы - она читает только то, что поиск положил в запрос прямо сейчас</figcaption></figure>
 <h2>Из чего он собран на самом деле</h2>
 <p>Теперь по деталям - на примере той самой отельной базы знаний.</p>
 <p>Чанки. Документы нельзя искать целиком: инструкция на двадцать страниц не влезет в запрос к модели, да и большая ее часть к вопросу не относится. Поэтому тексты режут на фрагменты - их называют чанками. В нашей базе таких фрагментов около полутора тысяч. Чанк - это и единица поиска, и единица, которую в итоге прочитает модель.</p>
@@ -261,7 +261,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
   C2 --&gt;|&quot;нет&quot;| N2[&quot;Положить текст&lt;br/&gt;прямо в промпт&quot;]
   C2 --&gt;|&quot;да&quot;| C3{&quot;Неизвестно заранее,&lt;br/&gt;где лежит нужное?&quot;}
   C3 --&gt;|&quot;нет&quot;| N3[&quot;Обычный поиск&lt;br/&gt;по разделу&quot;]
-  C3 --&gt;|&quot;да&quot;| YES[&quot;Это случай для RAG&quot;]</pre><figcaption>RAG нужен при трёх условиях сразу; если хоть одно не выполняется, задача решается проще</figcaption></figure>
+  C3 --&gt;|&quot;да&quot;| YES[&quot;Это случай для RAG&quot;]</pre><figcaption>RAG нужен при трех условиях сразу; если хоть одно не выполняется, задача решается проще</figcaption></figure>
 <h2>Когда RAG не нужен</h2>
 <p>Теперь то, ради чего все затевалось. RAG - инструмент для одной конкретной ситуации: ответ содержится в связном тексте, текста много, и заранее неизвестно, в каком именно месте лежит нужное.</p>
 <p>Если хотя бы одно из этих условий не выполняется, вы строите сложную конструкцию там, где хватило бы простой.</p>
@@ -288,7 +288,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 </aside>
 </div>
 <div data-lang-block="en">
-  <a class="back" href="https://vegman.dev/blog/">← All posts</a>
+  <a class="back" href="https://vegman.dev/blog/">All posts</a>
   <h1>RAG in Practice: What It Actually Is, and When You Don&#x27;t Need It</h1>
   <div class="meta"><span>2026-02-18</span><span class="tag">article</span></div>
   <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 L148 300"/><path class="m-dim" d="M192 300 C 330 300, 340 150, 498 150"/><rect class="m-node" x="500.0" y="130.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="520" cy="150" r="2.4"/><path class="m-line" d="M192 300 C 330 300, 360 300, 518 300"/><circle class="m-halo" cx="556.1" cy="288.5" r="48.300000000000004"/><rect class="m-node on" x="517.0" y="277.0" width="46" height="46" rx="12.88"/><circle class="m-dot on" cx="540" cy="300" r="3.2"/><path class="m-dim" d="M192 300 C 330 300, 340 450, 498 450"/><rect class="m-node" x="500.0" y="430.0" width="40" height="40" rx="11.200000000000001"/><circle class="m-dot" cx="520" cy="450" r="2.4"/><rect class="m-node" x="148.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="170" cy="300" r="2.4"/><circle class="m-dot on" cx="300" cy="250" r="2"/><circle class="m-dot on" cx="360" cy="350" r="2"/><circle class="m-dot on" cx="420" cy="200" r="2"/><text class="m-label big" x="540" y="372" text-anchor="middle">RAG</text></svg></div>
@@ -308,8 +308,8 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
   PR --&gt; M[&quot;Модель&quot;]
   M --&gt; A[&quot;Ответ&quot;]
   KB[(&quot;База знаний&quot;)] --- S
-  KB -.-&gt;|&quot;модель её&lt;br/&gt;не видит&quot;| M
-  S -.-&gt;|&quot;нашёл мусор&quot;| A2[&quot;Модель уверенно&lt;br/&gt;перескажет мусор&quot;]</pre><figcaption>Модель не знает вашей базы — она читает только то, что поиск положил в запрос прямо сейчас</figcaption></figure>
+  KB -.-&gt;|&quot;модель ее&lt;br/&gt;не видит&quot;| M
+  S -.-&gt;|&quot;нашел мусор&quot;| A2[&quot;Модель уверенно&lt;br/&gt;перескажет мусор&quot;]</pre><figcaption>Модель не знает вашей базы - она читает только то, что поиск положил в запрос прямо сейчас</figcaption></figure>
 <h2>What it's actually made of</h2>
 <p>Now the details - using that same hotel knowledge base as the example.</p>
 <p><b>Chunks.</b> You can't search over whole documents: a twenty-page instruction won't fit into a prompt, and most of it isn't relevant to the question anyway. So texts get cut into fragments - these are called chunks. Our base has about fifteen hundred of them. A chunk is both the unit of search and the unit the model will ultimately read.</p>
@@ -330,7 +330,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
   C2 --&gt;|&quot;нет&quot;| N2[&quot;Положить текст&lt;br/&gt;прямо в промпт&quot;]
   C2 --&gt;|&quot;да&quot;| C3{&quot;Неизвестно заранее,&lt;br/&gt;где лежит нужное?&quot;}
   C3 --&gt;|&quot;нет&quot;| N3[&quot;Обычный поиск&lt;br/&gt;по разделу&quot;]
-  C3 --&gt;|&quot;да&quot;| YES[&quot;Это случай для RAG&quot;]</pre><figcaption>RAG нужен при трёх условиях сразу; если хоть одно не выполняется, задача решается проще</figcaption></figure>
+  C3 --&gt;|&quot;да&quot;| YES[&quot;Это случай для RAG&quot;]</pre><figcaption>RAG нужен при трех условиях сразу; если хоть одно не выполняется, задача решается проще</figcaption></figure>
 <h2>When you don't need RAG</h2>
 <p>Now for the part all of this was leading up to. RAG is a tool for one specific situation: <b>the answer is contained in connected prose, there's a lot of that prose, and you don't know in advance where exactly the needed part sits</b>. If even one of those conditions doesn't hold, you're building an elaborate construction where something simple would have done.</p>
 <ul><li><b>Tables.</b> This is the most common and most expensive mistake. When the input is a table rather than text, RAG works badly. Questions about tables are "how many," "who has more," "show me everything for this period." Such questions are solved with filters and groupings - small operations over data, not search by meaning. Vector search will find you "similar rows" - but similar rows don't add up to a correct total.</li><li><b>Exact reference data.</b> If an entity has a code, a SKU, or an identifier, look it up directly. An exact match is faster, more reliable, and doesn't need thresholds tuned.</li><li><b>Short regulations.</b> If the entire set of rules is a few pages, you can put all of it into the model's prompt. No vector database, no chunking, no thresholds. Fewer parts means fewer places to break.</li><li><b>One document per question.</b> When the user already knows which instruction holds the answer, you're solving a navigation problem, not a search problem.</li></ul>
@@ -356,7 +356,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 </div>
 </div></main>
 <footer><div class="wrap">
-  <span>© Natalia Vegman</span>
+  <span>Natalia Vegman</span>
   <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></span>
 </div></footer>
 <script>

@@ -212,7 +212,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 </div></header>
 <main><div class="wrap">
 <div data-lang-block="ru">
-  <a class="back" href="https://vegman.dev/blog/">← Все статьи</a>
+  <a class="back" href="https://vegman.dev/blog/">Все статьи</a>
   <h1>45% бюджета уходило на то, что агент спрашивал «нет ли для меня работы»</h1>
   <div class="meta"><span>2026-07-31</span><span class="tag">кейс</span></div>
   <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-dim" d="M0 300 L166 300"/><rect class="m-node" x="166.0" y="276.0" width="48" height="48" rx="13.440000000000001"/><circle class="m-dot" cx="190" cy="300" r="2.4"/><path class="m-line" d="M214 300 C 310 240, 350 240, 444 300"/><circle class="m-halo" cx="488.2" cy="287.0" r="54.6"/><rect class="m-node on" x="444.0" y="274.0" width="52" height="52" rx="14.560000000000002"/><circle class="m-dot on" cx="470" cy="300" r="3.2"/><text class="m-label" x="190" y="372" text-anchor="middle">1007 вызовов</text><text class="m-label big" x="470" y="380" text-anchor="middle">0</text></svg></div>
@@ -230,13 +230,13 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 <p>Мне нужен был другой вопрос: «куда ушло» - разбивка по проектам, моделям, агентам и дням.</p>
 <p>И еще хуже: учет жил в двух слоях, которые не видели друг друга. Разбор был по одному слою, а деньги горели в другом. Пока эти слои не сведены в одну таблицу, любой анализ превращается в уверенное гадание: объясняешь ту часть, которая у тебя под руками, и не подозреваешь, что есть еще одна.</p>
 <figure><pre class="mermaid">flowchart LR
-  A[&quot;Счёт провайдера&quot;] --&gt; D[&quot;Одна таблица:&lt;br/&gt;проект × модель × агент × день&quot;]
+  A[&quot;Счет провайдера&quot;] --&gt; D[&quot;Одна таблица:&lt;br/&gt;проект x модель x агент x день&quot;]
   B[&quot;Логи агентов&quot;] --&gt; D
   C[&quot;Выгрузка по проектам&quot;] --&gt; D
   D --&gt; Q[&quot;Вопрос «какой агент&lt;br/&gt;съел эти деньги»&quot;]
-  A -.-&gt;|&quot;поодиночке&quot;| X[&quot;Объяснима только&lt;br/&gt;часть счёта&quot;]
+  A -.-&gt;|&quot;поодиночке&quot;| X[&quot;Объяснима только&lt;br/&gt;часть счета&quot;]
   B -.-&gt; X
-  C -.-&gt; X</pre><figcaption>Пока слои учёта лежат врозь, каждый отвечает на свой вопрос — и ни один не отвечает на «куда ушло»</figcaption></figure>
+  C -.-&gt; X</pre><figcaption>Пока слои учета лежат врозь, каждый отвечает на свой вопрос - и ни один не отвечает на «куда ушло»</figcaption></figure>
 <h2>Что показал разбор: цена вопроса «мне есть чем заняться?»</h2>
 <p>Когда я наконец свела все в одну таблицу, крупнейшая строка расходов оказалась не работой, а опросом.</p>
 <ul><li>1007 вызовов</li><li>$13.83</li><li>45% всех расходов на модели за все время жизни системы</li></ul>
@@ -260,12 +260,12 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 <p>Практическое следствие: выключение считается выключением только после того, как вы посмотрели в логи или в счет и убедились, что вызовов действительно нет. Проверка по документации - это проверка чужих намерений. А платите вы всегда за поведение.</p>
 <figure><pre class="mermaid">flowchart LR
   subgraph BEFORE[&quot;До разбора&quot;]
-    B1[&quot;Опрос каждые 30 минут,&lt;br/&gt;круглосуточно&quot;] --&gt; B2[&quot;1007 вызовов&quot;] --&gt; B3[&quot;13,83 $ — 45%&lt;br/&gt;всех расходов&quot;]
+    B1[&quot;Опрос каждые 30 минут,&lt;br/&gt;круглосуточно&quot;] --&gt; B2[&quot;1007 вызовов&quot;] --&gt; B3[&quot;13,83 $ - 45%&lt;br/&gt;всех расходов&quot;]
   end
   subgraph AFTER[&quot;После выключения&quot;]
     A1[&quot;Опроса нет&quot;] --&gt; A2[&quot;0 вызовов&quot;] --&gt; A3[&quot;0 $&quot;]
   end
-  BEFORE ==&gt;|&quot;проверено по счёту,&lt;br/&gt;а не по документации&quot;| AFTER</pre><figcaption>45% всех расходов на модели — это опрос «нет ли для меня работы» при пустом списке задач</figcaption></figure>
+  BEFORE ==&gt;|&quot;проверено по счету,&lt;br/&gt;а не по документации&quot;| AFTER</pre><figcaption>45% всех расходов на модели - это опрос «нет ли для меня работы» при пустом списке задач</figcaption></figure>
 <h2>Как считать по-честному: инструмент разбора</h2>
 <p>Чтобы не повторять эти 11 дней вслепую, я написала скрипт, который сводит все слои учета в одну таблицу с разрезами по проекту, модели, агенту и дню.</p>
 <p>Одна плоская таблица, в которой можно спросить: «какой агент, в какой модели и в какой день съел эти деньги?»</p>
@@ -293,7 +293,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 </aside>
 </div>
 <div data-lang-block="en">
-  <a class="back" href="https://vegman.dev/blog/">← All posts</a>
+  <a class="back" href="https://vegman.dev/blog/">All posts</a>
   <h1>45% of My Model Spend Went to One Question the Agent Asked Itself</h1>
   <div class="meta"><span>2026-07-31</span><span class="tag">case</span></div>
   <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-dim" d="M0 300 L166 300"/><rect class="m-node" x="166.0" y="276.0" width="48" height="48" rx="13.440000000000001"/><circle class="m-dot" cx="190" cy="300" r="2.4"/><path class="m-line" d="M214 300 C 310 240, 350 240, 444 300"/><circle class="m-halo" cx="488.2" cy="287.0" r="54.6"/><rect class="m-node on" x="444.0" y="274.0" width="52" height="52" rx="14.560000000000002"/><circle class="m-dot on" cx="470" cy="300" r="3.2"/><text class="m-label" x="190" y="372" text-anchor="middle">1007 calls</text><text class="m-label big" x="470" y="380" text-anchor="middle">0</text></svg></div>
@@ -310,13 +310,13 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 <p>The reason is annoying. My monitoring answered the question "how much is left": remaining limit, spent this period, are we approaching the threshold. That kind of monitoring honestly warns you that the money is running out and says nothing at all about where exactly it's going. What I needed was a different question - "where did it go": a breakdown by project, model, agent, and day.</p>
 <p>The other half of the problem was that accounting lived in two layers that can't see each other. My analysis ran over one layer while the money was burning in the other. Until those layers are pulled into a single table, any analysis turns into guesswork: you confidently explain the part of the spend that happened to land in your hands, and you don't suspect the rest exists. For eleven days I was explaining the smaller half of the bill to myself.</p>
 <figure><pre class="mermaid">flowchart LR
-  A[&quot;Счёт провайдера&quot;] --&gt; D[&quot;Одна таблица:&lt;br/&gt;проект × модель × агент × день&quot;]
+  A[&quot;Счет провайдера&quot;] --&gt; D[&quot;Одна таблица:&lt;br/&gt;проект x модель x агент x день&quot;]
   B[&quot;Логи агентов&quot;] --&gt; D
   C[&quot;Выгрузка по проектам&quot;] --&gt; D
   D --&gt; Q[&quot;Вопрос «какой агент&lt;br/&gt;съел эти деньги»&quot;]
-  A -.-&gt;|&quot;поодиночке&quot;| X[&quot;Объяснима только&lt;br/&gt;часть счёта&quot;]
+  A -.-&gt;|&quot;поодиночке&quot;| X[&quot;Объяснима только&lt;br/&gt;часть счета&quot;]
   B -.-&gt; X
-  C -.-&gt; X</pre><figcaption>Пока слои учёта лежат врозь, каждый отвечает на свой вопрос — и ни один не отвечает на «куда ушло»</figcaption></figure>
+  C -.-&gt; X</pre><figcaption>Пока слои учета лежат врозь, каждый отвечает на свой вопрос - и ни один не отвечает на «куда ушло»</figcaption></figure>
 <h2>What the analysis showed: the price of "do I have anything to do?"</h2>
 <p>When I finally pulled everything into one table, the largest cost line turned out to be not work but polling. 1007 calls, $13.83-45% of all model spend over the entire life of the system.</p>
 <p>The mechanics are simple. The poll ran every 30 minutes, around the clock, against an empty task list. Forty-eight times a day the system woke the agent and asked whether there was any work for it. There never was.</p>
@@ -333,12 +333,12 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 <p>The practical implication for you: turning something off counts as turned off only after you've looked at the logs or the bill and confirmed the calls really aren't happening. Checking against the documentation is checking someone else's intentions - and what you pay for is behavior.</p>
 <figure><pre class="mermaid">flowchart LR
   subgraph BEFORE[&quot;До разбора&quot;]
-    B1[&quot;Опрос каждые 30 минут,&lt;br/&gt;круглосуточно&quot;] --&gt; B2[&quot;1007 вызовов&quot;] --&gt; B3[&quot;13,83 $ — 45%&lt;br/&gt;всех расходов&quot;]
+    B1[&quot;Опрос каждые 30 минут,&lt;br/&gt;круглосуточно&quot;] --&gt; B2[&quot;1007 вызовов&quot;] --&gt; B3[&quot;13,83 $ - 45%&lt;br/&gt;всех расходов&quot;]
   end
   subgraph AFTER[&quot;После выключения&quot;]
     A1[&quot;Опроса нет&quot;] --&gt; A2[&quot;0 вызовов&quot;] --&gt; A3[&quot;0 $&quot;]
   end
-  BEFORE ==&gt;|&quot;проверено по счёту,&lt;br/&gt;а не по документации&quot;| AFTER</pre><figcaption>45% всех расходов на модели — это опрос «нет ли для меня работы» при пустом списке задач</figcaption></figure>
+  BEFORE ==&gt;|&quot;проверено по счету,&lt;br/&gt;а не по документации&quot;| AFTER</pre><figcaption>45% всех расходов на модели - это опрос «нет ли для меня работы» при пустом списке задач</figcaption></figure>
 <h2>How to count honestly: the analysis tool</h2>
 <p>To avoid repeating eleven days of blindness, I wrote a script that pulls every accounting layer into one table: project by model by agent by day. One flat table you can query with "which agent, in which model, on which day ate this money."</p>
 <p>The characteristics that are essential for a tool like this:</p>
@@ -368,7 +368,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 </div>
 </div></main>
 <footer><div class="wrap">
-  <span>© Natalia Vegman</span>
+  <span>Natalia Vegman</span>
   <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></span>
 </div></footer>
 <script>

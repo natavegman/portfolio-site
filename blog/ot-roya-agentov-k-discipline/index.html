@@ -212,7 +212,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 </div></header>
 <main><div class="wrap">
 <div data-lang-block="ru">
-  <a class="back" href="https://vegman.dev/blog/">← Все статьи</a>
+  <a class="back" href="https://vegman.dev/blog/">Все статьи</a>
   <h1>От роя к дисциплине: 129 вызовов, которые научили меня считать</h1>
   <div class="meta"><span>2026-07-20</span><span class="tag">кейс</span></div>
   <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle">5 вызовов</text></svg></div>
@@ -230,12 +230,12 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 <p>Вывод я записала себе большими буквами: детерминированная проверка - это скрипт, а не агент. Если условие выражается как «если A, то B», языковая модель в этом месте не нужна. Она не добавляет ума, она добавляет расход и разброс. Модель нужна там, где вход неструктурирован и заранее неизвестно, какие шаги понадобятся. Проверка состояния по расписанию - не тот случай.</p>
 <p>И отдельный урок про предел. У агента на расписании нет естественного конца: человек закрывает ноутбук, а цикл - нет. Все, что работает без человека в контуре, должно иметь границу, заданную снаружи, а не надежду на то, что оно само остановится.</p>
 <figure><pre class="mermaid">flowchart LR
-  subgraph BEFORE[&quot;Было — агент на расписании&quot;]
+  subgraph BEFORE[&quot;Было - агент на расписании&quot;]
     A1[&quot;Пробуждение каждые 30 минут&quot;] --&gt; A2[&quot;Внутренний цикл рассуждений&quot;]
     A2 --&gt; A3[&quot;129 вызовов за ~14 часов&quot;]
-    A3 --&gt; A4[&quot;Баланс обнулён&quot;]
+    A3 --&gt; A4[&quot;Баланс обнулен&quot;]
   end
-  subgraph AFTER[&quot;Стало — скрипт плюс бюджет&quot;]
+  subgraph AFTER[&quot;Стало - скрипт плюс бюджет&quot;]
     B1[&quot;Проверка условия скриптом&quot;] --&gt; B2[&quot;0 вызовов модели&quot;]
     B2 --&gt; B3[&quot;Модель только там, где вход неструктурирован&quot;]
     B3 --&gt; B4[&quot;Не более 5 вызовов на задачу&quot;]
@@ -250,8 +250,8 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
   Q --&gt; S{&quot;Стоп-критерий сформулирован?&quot;}
   S -- &quot;нет&quot; --&gt; X[&quot;Не начинаем&quot;]
   S -- &quot;да&quot; --&gt; B[&quot;Бюджет: не более 5 вызовов&quot;]
-  B --&gt; E[&quot;Исполнитель — один, без роя&quot;]
-  E --&gt; K[&quot;Скептик — один проход, ищет отказ&quot;]
+  B --&gt; E[&quot;Исполнитель - один, без роя&quot;]
+  E --&gt; K[&quot;Скептик - один проход, ищет отказ&quot;]
   K -- &quot;не годится&quot; --&gt; E
   K -- &quot;годится&quot; --&gt; R[&quot;Обязательное ретро&quot;]
   R --&gt; M[&quot;Память под контролем версий&quot;]
@@ -296,7 +296,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 </aside>
 </div>
 <div data-lang-block="en">
-  <a class="back" href="https://vegman.dev/blog/">← All posts</a>
+  <a class="back" href="https://vegman.dev/blog/">All posts</a>
   <h1>Five Rules Cost Less Than Five Agents</h1>
   <div class="meta"><span>2026-07-20</span><span class="tag">case</span></div>
   <div class="post-motif" aria-hidden="true"><svg class="motif" viewBox="60 110 540 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><path class="m-line" d="M0 300 C 60 300, 90 300, 128 300"/><path class="m-dim" d="M172 300 L248 300"/><path class="m-dim" d="M292 300 L368 300"/><path class="m-line" d="M412 300 L488 300"/><rect class="m-node" x="128.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="150" cy="300" r="2.4"/><rect class="m-node" x="248.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="270" cy="300" r="2.4"/><rect class="m-node" x="368.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot" cx="390" cy="300" r="2.4"/><circle class="m-halo" cx="525.4" cy="289.0" r="46.2"/><rect class="m-node on" x="488.0" y="278.0" width="44" height="44" rx="12.32"/><circle class="m-dot on" cx="510" cy="300" r="3.2"/><text class="m-label big" x="510" y="372" text-anchor="middle">5 calls</text></svg></div>
@@ -313,12 +313,12 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 <p>I wrote the conclusion down for myself in capital letters: <b>a deterministic check is a script, not an agent</b>. If the condition can be expressed as "if A, then B," you don't need a language model there. It doesn't add intelligence, it adds cost and variance. You need a model where the input is unstructured and it isn't known in advance which steps will be required. A scheduled state check is not that case.</p>
 <p>And a separate lesson about limits. A scheduled agent has no natural end: a human closes the laptop, a loop doesn't. Anything that runs without a human in the loop needs a boundary set from the outside, not a hope that it will stop on its own.</p>
 <figure><pre class="mermaid">flowchart LR
-  subgraph BEFORE[&quot;Было — агент на расписании&quot;]
+  subgraph BEFORE[&quot;Было - агент на расписании&quot;]
     A1[&quot;Пробуждение каждые 30 минут&quot;] --&gt; A2[&quot;Внутренний цикл рассуждений&quot;]
     A2 --&gt; A3[&quot;129 вызовов за ~14 часов&quot;]
-    A3 --&gt; A4[&quot;Баланс обнулён&quot;]
+    A3 --&gt; A4[&quot;Баланс обнулен&quot;]
   end
-  subgraph AFTER[&quot;Стало — скрипт плюс бюджет&quot;]
+  subgraph AFTER[&quot;Стало - скрипт плюс бюджет&quot;]
     B1[&quot;Проверка условия скриптом&quot;] --&gt; B2[&quot;0 вызовов модели&quot;]
     B2 --&gt; B3[&quot;Модель только там, где вход неструктурирован&quot;]
     B3 --&gt; B4[&quot;Не более 5 вызовов на задачу&quot;]
@@ -333,8 +333,8 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
   Q --&gt; S{&quot;Стоп-критерий сформулирован?&quot;}
   S -- &quot;нет&quot; --&gt; X[&quot;Не начинаем&quot;]
   S -- &quot;да&quot; --&gt; B[&quot;Бюджет: не более 5 вызовов&quot;]
-  B --&gt; E[&quot;Исполнитель — один, без роя&quot;]
-  E --&gt; K[&quot;Скептик — один проход, ищет отказ&quot;]
+  B --&gt; E[&quot;Исполнитель - один, без роя&quot;]
+  E --&gt; K[&quot;Скептик - один проход, ищет отказ&quot;]
   K -- &quot;не годится&quot; --&gt; E
   K -- &quot;годится&quot; --&gt; R[&quot;Обязательное ретро&quot;]
   R --&gt; M[&quot;Память под контролем версий&quot;]
@@ -377,7 +377,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 </div>
 </div></main>
 <footer><div class="wrap">
-  <span>© Natalia Vegman</span>
+  <span>Natalia Vegman</span>
   <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a></span>
 </div></footer>
 <script>
