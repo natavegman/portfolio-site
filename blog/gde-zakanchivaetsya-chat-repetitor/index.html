@@ -194,9 +194,9 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+<filter id="glow" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800">
   <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<filter id="halo" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="18"/></filter>
+<filter id="halo" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800"><feGaussianBlur stdDeviation="18"/></filter>
 </defs></svg>
 <header class="top"><div class="wrap">
   <a class="brand" href="https://vegman.dev/">vegman.dev</a>
