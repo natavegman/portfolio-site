@@ -11,6 +11,7 @@ translations=json.loads(subprocess.check_output([node,'-e','process.stdout.write
 source=source.replace("localStorage.setItem('preferredLang', lang);","try { localStorage.setItem('preferredLang', lang); } catch(e) {}")
 source=re.sub(r'  function detectLang\(\) \{.*?\n  \}',"  function detectLang() { return document.documentElement.lang; }",source,flags=re.S)
 source=source.replace("btn.addEventListener('click', () => applyLang(btn.dataset.lang));","btn.addEventListener('click', () => { try { localStorage.setItem('preferredLang', btn.dataset.lang); } catch(e) {} });")
+source=source.replace('href="Natalia_CV.pdf"','href="/Natalia_CV.pdf"')
 source=source.replace('href="theme.css"','href="/theme.css"').replace('src="heroart.js"','src="/heroart.js"')
 if '<noscript><style>.reveal' not in source:
  source=source.replace('</head>','<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>\n</head>')

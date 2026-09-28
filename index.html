@@ -110,7 +110,7 @@
   <div class="hero-cta">
     <a href="#featured" class="btn btn-primary"  data-i18n="heroCta1">See my work</a>
     <a href="#contact"  class="btn btn-outline"  data-i18n="heroCta2">Get in touch</a>
-    <a href="Natalia_CV.pdf" class="btn btn-outline lang-en-only" download data-i18n="heroCta3">Download CV</a>
+    <a href="/Natalia_CV.pdf" class="btn btn-outline lang-en-only" download data-i18n="heroCta3">Download CV</a>
   </div>
 
   <div class="stats">
@@ -855,7 +855,7 @@
       if (v !== undefined) el.placeholder = v;
     });
     document.documentElement.lang = lang;
-    try { localStorage.setItem('preferredLang', lang); } catch(e) {}
+    try { try { localStorage.setItem('preferredLang', lang); } catch(e) {} } catch(e) {}
     window.__currentLang = lang;
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
@@ -865,16 +865,7 @@
     });
   }
 
-  function detectLang() { return document.documentElement.lang; }
-
-  // Init language
-  window.__currentLang = detectLang();
-  applyLang(window.__currentLang);
-
-  // Switcher buttons
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => { try { localStorage.setItem('preferredLang', btn.dataset.lang); } catch(e) {} });
-  });
+  function detectLang() { return document.documentElement.lang; });
 
   /* ── Custom cursor ─────────────────────────────────────────── */
   const cursor = document.getElementById('cursor');
