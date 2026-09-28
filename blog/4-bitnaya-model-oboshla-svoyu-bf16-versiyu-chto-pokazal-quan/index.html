@@ -3,24 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>4-битная модель обошла свою bf16-версию: что показал Quantization-Aware Healing | Наталья Вегман</title>
+<title>4-битная модель обошла свою bf16-версию: что показал Quantization-Aware Healing | Ната Вегман</title>
 <meta name="description" content="Если вы когда-нибудь квантизировали LLM в 4 бита, вы знаете боль: модель становится дешевой в инференсе, но «умнеет» не всегда. В статье Multiverse Computing (Hugging Face) ребята ...">
-<meta name="author" content="Наталья Вегман">
+<meta name="author" content="Ната Вегман">
 <link rel="canonical" href="https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/">
 <link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/">
 <link rel="alternate" hreflang="x-default" href="https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/">
-<link rel="alternate" type="application/rss+xml" title="Блог: Наталья Вегман" href="https://vegman.dev/blog/feed.xml">
-<meta property="og:title" content="4-битная модель обошла свою bf16-версию: что показал Quantization-Aware Healing | Наталья Вегман">
+<link rel="alternate" type="application/rss+xml" title="Блог: Ната Вегман" href="https://vegman.dev/blog/feed.xml">
+<meta property="og:title" content="4-битная модель обошла свою bf16-версию: что показал Quantization-Aware Healing | Ната Вегман">
 <meta property="og:description" content="Если вы когда-нибудь квантизировали LLM в 4 бита, вы знаете боль: модель становится дешевой в инференсе, но «умнеет» не всегда. В статье Multiverse Computing (Hugging Face) ребята ...">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="vegman.dev">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="4-битная модель обошла свою bf16-версию: что показал Quantization-Aware Healing | Наталья Вегман">
+<meta name="twitter:title" content="4-битная модель обошла свою bf16-версию: что показал Quantization-Aware Healing | Ната Вегман">
 <meta name="twitter:description" content="Если вы когда-нибудь квантизировали LLM в 4 бита, вы знаете боль: модель становится дешевой в инференсе, но «умнеет» не всегда. В статье Multiverse Computing (Hugging Face) ребята ...">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "4-битная модель обошла свою bf16-версию: что показал Quantization-Aware Healing", "description": "Если вы когда-нибудь квантизировали LLM в 4 бита, вы знаете боль: модель становится дешевой в инференсе, но «умнеет» не всегда. В статье Multiverse Computing (Hugging Face) ребята ...", "datePublished": "2026-09-02", "dateModified": "2026-09-02", "inLanguage": "ru", "url": "https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/", "mainEntityOfPage": "https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/", "author": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "publisher": {"@type": "Person", "name": "Natalia Vegman", "alternateName": "Наталья Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "articleSection": "Новости", "image": "https://vegman.dev/blog/img/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/cover.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "4-битная модель обошла свою bf16-версию: что показал Quantization-Aware Healing", "description": "Если вы когда-нибудь квантизировали LLM в 4 бита, вы знаете боль: модель становится дешевой в инференсе, но «умнеет» не всегда. В статье Multiverse Computing (Hugging Face) ребята ...", "datePublished": "2026-09-02", "dateModified": "2026-09-28T08:59:46.194458+00:00", "inLanguage": "ru", "url": "https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/", "mainEntityOfPage": "https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/", "author": {"@type": "Person", "name": "Nata Vegman", "alternateName": "Ната Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "publisher": {"@type": "Person", "name": "Nata Vegman", "alternateName": "Ната Вегман", "url": "https://vegman.dev/", "sameAs": ["https://t.me/natroot", "https://t.me/codenoteai"]}, "articleSection": "Новости", "image": "https://vegman.dev/blog/img/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/cover.jpg"}</script>
 <script>
 (function(){var t;try{t=localStorage.getItem('preferredTheme')}catch(e){}
 if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
@@ -129,7 +132,7 @@ footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1100px}
 footer a{color:var(--muted)}
 [data-lang-block]{display:none}
-[data-lang-block].active{display:block}
+[data-lang-block].active,html[lang="ru"] [data-lang-block="ru"],html[lang="en"] [data-lang-block="en"]{display:block}
 .empty{color:var(--muted);text-align:center;padding:64px 0}
 
 /* список статей */
@@ -190,13 +193,13 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 <filter id="halo" filterUnits="userSpaceOnUse" x="-100" y="-100" width="900" height="800"><feGaussianBlur stdDeviation="18"/></filter>
 </defs></svg>
 <header class="top"><div class="wrap">
-  <a class="brand" href="https://vegman.dev/">vegman.dev</a>
+  <a class="brand" href="https://vegman.dev/ru/">vegman.dev</a>
   <nav class="top-nav">
-    <a href="https://vegman.dev/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
+    <a href="https://vegman.dev/ru/"><span data-lang-block="ru">Портфолио</span><span data-lang-block="en">Portfolio</span></a>
     <a href="https://vegman.dev/blog/"><span data-lang-block="ru">Блог</span><span data-lang-block="en">Blog</span></a>
     <div class="lang-switch">
-      <button class="lang-btn" data-lang="ru" data-href="https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/" type="button">RU</button>
-      <button class="lang-btn" data-lang="en" data-href="https://vegman.dev/en/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/" type="button">EN</button>
+      <a class="lang-btn" data-lang="ru" href="https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/" hreflang="ru">RU</a>
+      <a class="lang-btn" data-lang="en" href="https://vegman.dev/en/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/" hreflang="en">EN</a>
     </div>
     <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   </nav>
@@ -216,7 +219,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
   <aside class="cta">
   <p class="cta-kicker">На связь со мной</p>
   <h3>Разберем вашу задачу</h3>
-  <p>Я Наталья Вегман, проектирую ИИ-системы для бизнеса: агентов, интеграции с рабочими системами, поиск по базе знаний и учет их стоимости. Если после статьи осталось «а как это у нас», напишите, посмотрим на вашем примере.</p>
+  <p>Я Ната Вегман, проектирую ИИ-системы для бизнеса: агентов, интеграции с рабочими системами, поиск по базе знаний и учет их стоимости. Если после статьи осталось «а как это у нас», напишите, посмотрим на вашем примере.</p>
   <div class="cta-actions">
     <a class="btn btn-accent" href="https://t.me/natroot">Написать в Telegram</a>
     <a class="btn" href="https://t.me/codenoteai">Канал «Заметки на полях кода»</a>
@@ -225,7 +228,7 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
 </div>
 </div></main>
 <footer><div class="wrap">
-  <span>Natalia Vegman</span>
+  <span>Nata Vegman</span>
   <span><a href="https://t.me/codenoteai">@codenoteai</a>, <a href="mailto:nata@vegman.dev">nata@vegman.dev</a>, <a href="https://vegman.dev/blog/feed.xml">RSS</a></span>
 </div></footer>
 <script>
@@ -234,17 +237,12 @@ background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),var
   document.querySelectorAll('[data-lang-block]').forEach(function(el){
     el.classList.toggle('active', el.dataset.langBlock === cur);
   });
-  var stored = null;
-  try{ stored = localStorage.getItem('preferredLang'); }catch(e){}
   document.querySelectorAll('.lang-btn').forEach(function(b){
     b.classList.toggle('active', b.dataset.lang === cur);
     b.addEventListener('click', function(){
       try{ localStorage.setItem('preferredLang', b.dataset.lang); }catch(e){}
-      if(b.dataset.lang !== cur && b.dataset.href) location.href = b.dataset.href;
     });
   });
-  var other = stored && stored !== cur && document.querySelector('.lang-btn[data-lang="'+stored+'"]');
-  if(other && other.dataset.href) location.replace(other.dataset.href);
 })();
 </script>
 </body>

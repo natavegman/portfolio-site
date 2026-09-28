@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://vegman.dev/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/ru/"/>
+  </url>
+  <url>
+    <loc>https://vegman.dev/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/ru/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/</loc>
@@ -15,493 +22,493 @@
   </url>
   <url>
     <loc>https://vegman.dev/blog/openai-agents-api-autonomous-pipelines/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/openai-agents-api-autonomous-pipelines/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/openai-agents-api-autonomous-pipelines/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/openai-agents-api-autonomous-pipelines/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/openai-agents-api-autonomous-pipelines/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/openai-agents-api-autonomous-pipelines/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/gpt-6-astra-novaya-realnost-dlya-biznes-zadach/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/gpt-6-astra-novaya-realnost-dlya-biznes-zadach/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/gpt-6-astra-novaya-realnost-dlya-biznes-zadach/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/gpt-6-astra-novaya-realnost-dlya-biznes-zadach/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/gpt-6-astra-novaya-realnost-dlya-biznes-zadach/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/gpt-6-astra-novaya-realnost-dlya-biznes-zadach/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/roy-agentov-pustaya-trata-tokenov/</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/roy-agentov-pustaya-trata-tokenov/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/roy-agentov-pustaya-trata-tokenov/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/roy-agentov-pustaya-trata-tokenov/</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/roy-agentov-pustaya-trata-tokenov/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/roy-agentov-pustaya-trata-tokenov/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/whatsapp-business-ai-agents/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/whatsapp-business-ai-agents/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/whatsapp-business-ai-agents/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/whatsapp-business-ai-agents/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/whatsapp-business-ai-agents/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/whatsapp-business-ai-agents/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/gemini-ponimaet-video-v-rezhime-agenta-do-88-menshe-tokenov/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/gemini-ponimaet-video-v-rezhime-agenta-do-88-menshe-tokenov/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/gemini-ponimaet-video-v-rezhime-agenta-do-88-menshe-tokenov/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/gemini-ponimaet-video-v-rezhime-agenta-do-88-menshe-tokenov/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/gemini-ponimaet-video-v-rezhime-agenta-do-88-menshe-tokenov/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/gemini-ponimaet-video-v-rezhime-agenta-do-88-menshe-tokenov/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/chatgpt-work-zametki-s-poley-boya/</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/chatgpt-work-zametki-s-poley-boya/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/chatgpt-work-zametki-s-poley-boya/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/chatgpt-work-zametki-s-poley-boya/</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/chatgpt-work-zametki-s-poley-boya/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/chatgpt-work-zametki-s-poley-boya/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/kak-slomali-avtorezhim-claude-code-opus-5-uroki-dlya-bezopas/</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/kak-slomali-avtorezhim-claude-code-opus-5-uroki-dlya-bezopas/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/kak-slomali-avtorezhim-claude-code-opus-5-uroki-dlya-bezopas/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/kak-slomali-avtorezhim-claude-code-opus-5-uroki-dlya-bezopas/</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/kak-slomali-avtorezhim-claude-code-opus-5-uroki-dlya-bezopas/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/kak-slomali-avtorezhim-claude-code-opus-5-uroki-dlya-bezopas/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/ii-agenty-vashi-novye-klienty-pochemu-markdown-vazhnee-html/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/ii-agenty-vashi-novye-klienty-pochemu-markdown-vazhnee-html/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/ii-agenty-vashi-novye-klienty-pochemu-markdown-vazhnee-html/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/ii-agenty-vashi-novye-klienty-pochemu-markdown-vazhnee-html/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/ii-agenty-vashi-novye-klienty-pochemu-markdown-vazhnee-html/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/ii-agenty-vashi-novye-klienty-pochemu-markdown-vazhnee-html/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/ibm-granite-4-2-llm-architecture/</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/ibm-granite-4-2-llm-architecture/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/ibm-granite-4-2-llm-architecture/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/ibm-granite-4-2-llm-architecture/</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/ibm-granite-4-2-llm-architecture/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/ibm-granite-4-2-llm-architecture/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/jalapeno-openai-protiv-nvidia/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/jalapeno-openai-protiv-nvidia/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/jalapeno-openai-protiv-nvidia/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/jalapeno-openai-protiv-nvidia/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/jalapeno-openai-protiv-nvidia/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/jalapeno-openai-protiv-nvidia/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/alabama-protiv-openai-sbezhavshiy-agent-podsvechivaet-riski/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/alabama-protiv-openai-sbezhavshiy-agent-podsvechivaet-riski/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/alabama-protiv-openai-sbezhavshiy-agent-podsvechivaet-riski/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/alabama-protiv-openai-sbezhavshiy-agent-podsvechivaet-riski/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/alabama-protiv-openai-sbezhavshiy-agent-podsvechivaet-riski/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/alabama-protiv-openai-sbezhavshiy-agent-podsvechivaet-riski/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/openai-presekla-rossiyskuyu-kampaniyu-vliyaniya-s-ispolzovan/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/openai-presekla-rossiyskuyu-kampaniyu-vliyaniya-s-ispolzovan/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/openai-presekla-rossiyskuyu-kampaniyu-vliyaniya-s-ispolzovan/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/openai-presekla-rossiyskuyu-kampaniyu-vliyaniya-s-ispolzovan/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/openai-presekla-rossiyskuyu-kampaniyu-vliyaniya-s-ispolzovan/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/openai-presekla-rossiyskuyu-kampaniyu-vliyaniya-s-ispolzovan/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/thomson-reuters-potratila-40-mln-na-sobstvennyy-ii-build-vs/</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/thomson-reuters-potratila-40-mln-na-sobstvennyy-ii-build-vs/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/thomson-reuters-potratila-40-mln-na-sobstvennyy-ii-build-vs/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/thomson-reuters-potratila-40-mln-na-sobstvennyy-ii-build-vs/</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/thomson-reuters-potratila-40-mln-na-sobstvennyy-ii-build-vs/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/thomson-reuters-potratila-40-mln-na-sobstvennyy-ii-build-vs/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/ii-agent-pytalsya-obmanom-protaschit-malvar-v-opensorsnyy-pr/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/ii-agent-pytalsya-obmanom-protaschit-malvar-v-opensorsnyy-pr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/ii-agent-pytalsya-obmanom-protaschit-malvar-v-opensorsnyy-pr/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/ii-agent-pytalsya-obmanom-protaschit-malvar-v-opensorsnyy-pr/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/ii-agent-pytalsya-obmanom-protaschit-malvar-v-opensorsnyy-pr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/ii-agent-pytalsya-obmanom-protaschit-malvar-v-opensorsnyy-pr/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/model-na-trilliony-parametrov-na-odnom-cpu-i-8-gb-ram-chto-e/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/model-na-trilliony-parametrov-na-odnom-cpu-i-8-gb-ram-chto-e/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/model-na-trilliony-parametrov-na-odnom-cpu-i-8-gb-ram-chto-e/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/model-na-trilliony-parametrov-na-odnom-cpu-i-8-gb-ram-chto-e/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/model-na-trilliony-parametrov-na-odnom-cpu-i-8-gb-ram-chto-e/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/model-na-trilliony-parametrov-na-odnom-cpu-i-8-gb-ram-chto-e/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/gde-zakanchivaetsya-chat-repetitor/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/gde-zakanchivaetsya-chat-repetitor/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/gde-zakanchivaetsya-chat-repetitor/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/gde-zakanchivaetsya-chat-repetitor/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/gde-zakanchivaetsya-chat-repetitor/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/gde-zakanchivaetsya-chat-repetitor/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/6811-zvezd-za-11-dney-kak-otlichit-hayp-ot-zrelosti-v-kode/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/6811-zvezd-za-11-dney-kak-otlichit-hayp-ot-zrelosti-v-kode/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/6811-zvezd-za-11-dney-kak-otlichit-hayp-ot-zrelosti-v-kode/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/6811-zvezd-za-11-dney-kak-otlichit-hayp-ot-zrelosti-v-kode/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/6811-zvezd-za-11-dney-kak-otlichit-hayp-ot-zrelosti-v-kode/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/6811-zvezd-za-11-dney-kak-otlichit-hayp-ot-zrelosti-v-kode/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/snizhenie-tsen-na-openai-api-chto-eto-znachit-dlya-vashego-b/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/snizhenie-tsen-na-openai-api-chto-eto-znachit-dlya-vashego-b/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/snizhenie-tsen-na-openai-api-chto-eto-znachit-dlya-vashego-b/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/snizhenie-tsen-na-openai-api-chto-eto-znachit-dlya-vashego-b/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/snizhenie-tsen-na-openai-api-chto-eto-znachit-dlya-vashego-b/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/snizhenie-tsen-na-openai-api-chto-eto-znachit-dlya-vashego-b/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/filtr-kotoryy-otsekal-luchshee-keys-otbora-zakazov-na-fl-ru/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/filtr-kotoryy-otsekal-luchshee-keys-otbora-zakazov-na-fl-ru/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/filtr-kotoryy-otsekal-luchshee-keys-otbora-zakazov-na-fl-ru/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/filtr-kotoryy-otsekal-luchshee-keys-otbora-zakazov-na-fl-ru/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/filtr-kotoryy-otsekal-luchshee-keys-otbora-zakazov-na-fl-ru/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/filtr-kotoryy-otsekal-luchshee-keys-otbora-zakazov-na-fl-ru/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/openworker-ii-sotrudnik-na-vashem-zheleze/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/openworker-ii-sotrudnik-na-vashem-zheleze/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/openworker-ii-sotrudnik-na-vashem-zheleze/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/openworker-ii-sotrudnik-na-vashem-zheleze/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/openworker-ii-sotrudnik-na-vashem-zheleze/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/openworker-ii-sotrudnik-na-vashem-zheleze/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/oshibki-pervogo-goda-s-llm/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/oshibki-pervogo-goda-s-llm/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/oshibki-pervogo-goda-s-llm/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/oshibki-pervogo-goda-s-llm/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/oshibki-pervogo-goda-s-llm/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/oshibki-pervogo-goda-s-llm/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/45-protsentov-byudzheta-na-holostoy-hod-agenta/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/ot-roya-agentov-k-discipline/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/ot-roya-agentov-k-discipline/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/ot-roya-agentov-k-discipline/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/ot-roya-agentov-k-discipline/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/ot-roya-agentov-k-discipline/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/ot-roya-agentov-k-discipline/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/dvuyazychnyy-blog-na-statike/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/dvuyazychnyy-blog-na-statike/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/dvuyazychnyy-blog-na-statike/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/dvuyazychnyy-blog-na-statike/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/dvuyazychnyy-blog-na-statike/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/dvuyazychnyy-blog-na-statike/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/notion-kak-baza-dlya-kontent-konveyera/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/notion-kak-baza-dlya-kontent-konveyera/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/notion-kak-baza-dlya-kontent-konveyera/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/notion-kak-baza-dlya-kontent-konveyera/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/notion-kak-baza-dlya-kontent-konveyera/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/notion-kak-baza-dlya-kontent-konveyera/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/sekrety-v-payplayne/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/sekrety-v-payplayne/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/sekrety-v-payplayne/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/sekrety-v-payplayne/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/sekrety-v-payplayne/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/sekrety-v-payplayne/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/raspisaniya-i-votchdogi/</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/raspisaniya-i-votchdogi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/raspisaniya-i-votchdogi/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/raspisaniya-i-votchdogi/</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/raspisaniya-i-votchdogi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/raspisaniya-i-votchdogi/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/geyt-kachestva-mehanicheskie-proverki/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/geyt-kachestva-mehanicheskie-proverki/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/geyt-kachestva-mehanicheskie-proverki/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/geyt-kachestva-mehanicheskie-proverki/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/deploy-kotoryy-ne-lomaet-bota/</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/deploy-kotoryy-ne-lomaet-bota/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/deploy-kotoryy-ne-lomaet-bota/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/deploy-kotoryy-ne-lomaet-bota/</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/deploy-kotoryy-ne-lomaet-bota/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/deploy-kotoryy-ne-lomaet-bota/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/kak-ne-dat-modeli-vrat-ciframi/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/kak-ne-dat-modeli-vrat-ciframi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/kak-ne-dat-modeli-vrat-ciframi/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/kak-ne-dat-modeli-vrat-ciframi/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/kak-ne-dat-modeli-vrat-ciframi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/kak-ne-dat-modeli-vrat-ciframi/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/kak-vybrat-model-pod-zadachu/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/kak-vybrat-model-pod-zadachu/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/kak-vybrat-model-pod-zadachu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/kak-vybrat-model-pod-zadachu/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/dva-processa-odna-baza/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/dva-processa-odna-baza/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/dva-processa-odna-baza/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/dva-processa-odna-baza/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/dva-processa-odna-baza/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/dva-processa-odna-baza/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/kogda-llm-ne-nuzhna-skript-delaet-model-dumaet/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/chem-agent-otlichaetsya-ot-chat-bota/</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/chem-agent-otlichaetsya-ot-chat-bota/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/chem-agent-otlichaetsya-ot-chat-bota/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/chem-agent-otlichaetsya-ot-chat-bota/</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/chem-agent-otlichaetsya-ot-chat-bota/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/chem-agent-otlichaetsya-ot-chat-bota/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/rag-prostymi-slovami-i-kogda-on-ne-nuzhen/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/tablicy-eto-ne-rag/</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/tablicy-eto-ne-rag/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/tablicy-eto-ne-rag/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/tablicy-eto-ne-rag/</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/tablicy-eto-ne-rag/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/tablicy-eto-ne-rag/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/pochemu-demo-rabotaet-a-v-prode-lomaetsya/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/pochemu-demo-rabotaet-a-v-prode-lomaetsya/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/pochemu-demo-rabotaet-a-v-prode-lomaetsya/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/pochemu-demo-rabotaet-a-v-prode-lomaetsya/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/pochemu-demo-rabotaet-a-v-prode-lomaetsya/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/pochemu-demo-rabotaet-a-v-prode-lomaetsya/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/ot-koda-k-arhitekture-ii-sistem/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/ot-koda-k-arhitekture-ii-sistem/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/ot-koda-k-arhitekture-ii-sistem/"/>
   </url>
   <url>
     <loc>https://vegman.dev/en/blog/ot-koda-k-arhitekture-ii-sistem/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-09-28T08:59:46.194458+00:00</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/ot-koda-k-arhitekture-ii-sistem/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/ot-koda-k-arhitekture-ii-sistem/"/>
   </url>
