@@ -8,8 +8,9 @@ assert match
 node=shutil.which('node')
 assert node, 'Node.js is required to read the existing translation dictionary'
 translations=json.loads(subprocess.check_output([node,'-e','process.stdout.write(JSON.stringify('+match[1]+'))'],text=True))
-source=source.replace("localStorage.setItem('preferredLang', lang);","try { localStorage.setItem('preferredLang', lang); } catch(e) {}")
-source=re.sub(r'  function detectLang\(\) \{.*?\n  \}',"  function detectLang() { return document.documentElement.lang; }",source,flags=re.S)
+# Idempotent: the script rewrites index.html in place, so every edit must be safe to reapply.
+source=re.sub(r"(?:try \{ )*localStorage\.setItem\('preferredLang', lang\);(?: \} catch\(e\) \{\})*","try { localStorage.setItem('preferredLang', lang); } catch(e) {}",source)
+source=re.sub(r'  function detectLang\(\) \{\n.*?\n  \}',"  function detectLang() { return document.documentElement.lang; }",source,flags=re.S)
 source=source.replace("btn.addEventListener('click', () => applyLang(btn.dataset.lang));","btn.addEventListener('click', () => { try { localStorage.setItem('preferredLang', btn.dataset.lang); } catch(e) {} });")
 source=source.replace('href="Natalia_CV.pdf"','href="/Natalia_CV.pdf"')
 source=source.replace('href="theme.css"','href="/theme.css"').replace('src="heroart.js"','src="/heroart.js"')

@@ -855,7 +855,7 @@
       if (v !== undefined) el.placeholder = v;
     });
     document.documentElement.lang = lang;
-    try { try { localStorage.setItem('preferredLang', lang); } catch(e) {} } catch(e) {}
+    try { localStorage.setItem('preferredLang', lang); } catch(e) {}
     window.__currentLang = lang;
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
@@ -865,7 +865,16 @@
     });
   }
 
-  function detectLang() { return document.documentElement.lang; });
+  function detectLang() { return document.documentElement.lang; }
+
+  // Init language
+  window.__currentLang = detectLang();
+  applyLang(window.__currentLang);
+
+  // Switcher buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => { try { localStorage.setItem('preferredLang', btn.dataset.lang); } catch(e) {} });
+  });
 
   /* ── Custom cursor ─────────────────────────────────────────── */
   const cursor = document.getElementById('cursor');
