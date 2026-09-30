@@ -8,8 +8,8 @@
   "excerpt_en": "Building autonomous agents for complex tasks used to be something only large teams could do. You had to manage dialog state by hand, orchestrate tool calls, build delegation mechan...",
   "tag": "News",
   "page_id": "3e656113-c26d-81f4-9615-e95e83685cdb",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "gpt-6-astra-novaya-realnost-dlya-biznes-zadach",
@@ -20,8 +20,8 @@
   "excerpt_en": "OpenAI has released GPT-6 Astra, a new flagship model built for complex work tasks. It is already available in ChatGPT Work, Codex and through the API. If you have been waiting for...",
   "tag": "News",
   "page_id": "3e456113-c26d-81f8-b194-c7d63247a4bc",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii",
@@ -32,8 +32,8 @@
   "excerpt_en": "Attention, everyone using Claude on a subscription: attackers are stealing login sessions and burning through other people's limits. In emails to affected users, Anthropic explaine...",
   "tag": "News",
   "page_id": "3e356113-c26d-813f-ae2b-c439b0e66921",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "roy-agentov-pustaya-trata-tokenov",
@@ -44,8 +44,8 @@
   "excerpt_en": "Eric Provencher, an OpenAI Codex developer, said plainly that AI agent \"swarms\" often cause massive token waste without any real gain in quality. In his view, more than two paralle...",
   "tag": "News",
   "page_id": "3df56113-c26d-8199-aabe-f8a43b8b1cae",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "whatsapp-business-ai-agents",
@@ -57,7 +57,7 @@
   "tag": "News",
   "page_id": "3dd56113-c26d-816e-9ed7-ef6d7dd71ec0",
   "has_en": true,
-  "modified": "2026-09-28T18:50:00.000Z"
+  "modified": "2026-09-28T18:50:00Z"
  },
  {
   "slug": "gemini-ponimaet-video-v-rezhime-agenta-do-88-menshe-tokenov",
@@ -68,8 +68,8 @@
   "excerpt_en": "Google DeepMind has introduced a new capability for Gemini 3.7 Flash, 3.6 Flash and 3.5 Flash-Lite: agentic video understanding. The model no longer pushes the video through a fixe...",
   "tag": "News",
   "page_id": "3dc56113-c26d-8123-a7cb-c511b4e45fc3",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "chatgpt-work-zametki-s-poley-boya",
@@ -80,8 +80,8 @@
   "excerpt_en": "OpenAI has rolled out ChatGPT Work, and Simon Willison, as usual, took it apart piece by piece. This is not ChatGPT under a new name. It is a full platform for agents with some ver...",
   "tag": "News",
   "page_id": "3db56113-c26d-81d0-abe1-dc404fcc927b",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "kak-slomali-avtorezhim-claude-code-opus-5-uroki-dlya-bezopas",
@@ -92,8 +92,8 @@
   "excerpt_en": "The Auto Mode protection in Claude Code Opus 5 turned out to be vulnerable. Strictly speaking, this is not a classic prompt injection: Willison calls it an attack through the agent...",
   "tag": "News",
   "page_id": "3d856113-c26d-811b-aba8-ccecbc8e8974",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "ii-agenty-vashi-novye-klienty-pochemu-markdown-vazhnee-html",
@@ -104,8 +104,8 @@
   "excerpt_en": "The founder of Inth, a startup that builds developer tools, made this point in the AI Engineer video series: more and more often, software is chosen and installed by an AI agent, n...",
   "tag": "News",
   "page_id": "3d656113-c26d-818c-b7c2-c88774b08b0b",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "ibm-granite-4-2-llm-architecture",
@@ -116,8 +116,8 @@
   "excerpt_en": "IBM has updated its Granite models to version 4.2, with the focus on reasoning and agentic work. The point is not a bigger parameter count. It is post-training (SFT and multi-stage...",
   "tag": "News",
   "page_id": "3d556113-c26d-8170-94a2-d8fa4b65c58c",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "jalapeno-openai-protiv-nvidia",
@@ -128,8 +128,8 @@
   "excerpt_en": "OpenAI and \"Jalapeño\" are not about \"yet another chip\". They are about control over inference. At the Hot Chips conference, OpenAI showed the first benchmarks of its own accelerato...",
   "tag": "News",
   "page_id": "3d456113-c26d-818a-b70e-df13fb1a9a76",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "alabama-protiv-openai-sbezhavshiy-agent-podsvechivaet-riski",
@@ -140,8 +140,8 @@
   "excerpt_en": "My success criterion for agentic systems: the agent does not \"escape\" the sandbox. Ever. That's why the news about the Alabama Attorney General investigating OpenAI is not tabloid ...",
   "tag": "News",
   "page_id": "3d056113-c26d-810e-81b5-cecdbe176ef2",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan",
@@ -152,8 +152,8 @@
   "excerpt_en": "If you've ever quantized an LLM to 4 bits, you know the pain: inference gets cheap, but the model doesn't always stay smart. In a Multiverse Computing post on Hugging Face, the tea...",
   "tag": "News",
   "page_id": "3cf56113-c26d-812e-9397-f7c53d4a54b4",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "openai-presekla-rossiyskuyu-kampaniyu-vliyaniya-s-ispolzovan",
@@ -164,8 +164,8 @@
   "excerpt_en": "AI in disinformation is no longer a \"scare story\". It is an operational risk. On August 25, OpenAI reported that it had banned a cluster of ChatGPT accounts that most likely operat...",
   "tag": "News",
   "page_id": "3ce56113-c26d-81b4-af5c-fa9fb2a70c67",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "thomson-reuters-potratila-40-mln-na-sobstvennyy-ii-build-vs",
@@ -176,8 +176,8 @@
   "excerpt_en": "Over a little more than two years, Thomson Reuters has spent about $40 million on a team and compute for its own language model, and the model is already live under the name \"Thoms...",
   "tag": "News",
   "page_id": "3cb56113-c26d-8196-a80e-d0384ffd319b",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "ii-agent-pytalsya-obmanom-protaschit-malvar-v-opensorsnyy-pr",
@@ -188,8 +188,8 @@
   "excerpt_en": "The UK's AI Security Institute ran a test (the article about it came out on August 24, 2026) in which an agent built on Anthropic Mythos 5 tried to inject malware into the open-sou...",
   "tag": "News",
   "page_id": "3ca56113-c26d-813f-a044-e7bdfda3b0d4",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "model-na-trilliony-parametrov-na-odnom-cpu-i-8-gb-ram-chto-e",
@@ -200,8 +200,8 @@
   "excerpt_en": "In early August, FareedKhan-dev published the kimi-k3-in-c project, which runs the Kimi K3 model with 2.78 trillion parameters on a single CPU with just 8.24 GB of RAM. This isn't ...",
   "tag": "News",
   "page_id": "3c956113-c26d-8147-8839-c45fe684bdfa",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "gde-zakanchivaetsya-chat-repetitor",
@@ -212,8 +212,8 @@
   "excerpt_en": "On May 18, 2026 I spent half an hour proving to my tutor that the models I work with every day exist. The tutor was Gemini, the argument was about Claude Sonnet 4.5 and Opus 4.6, a...",
   "tag": "Case study",
   "page_id": "3c756113-c26d-8105-8229-f625a81d4fd4",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T13:03:00Z"
  },
  {
   "slug": "6811-zvezd-za-11-dney-kak-otlichit-hayp-ot-zrelosti-v-kode",
@@ -224,8 +224,8 @@
   "excerpt_en": "The JavaScript project dsh-routing-suite collected 6811 stars in the 11 days since it was created on August 14, 2026. Before I pull a repository like this into production, I check ...",
   "tag": "News",
   "page_id": "3c756113-c26d-81d6-9b8a-d4856af68589",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "snizhenie-tsen-na-openai-api-chto-eto-znachit-dlya-vashego-b",
@@ -236,8 +236,8 @@
   "excerpt_en": "OpenAI has cut GPT-5.6 Sol API prices by more than 20%, and this isn't news for the sake of news. Just last week I was talking with a client about the cost of API calls and why it ...",
   "tag": "News",
   "page_id": "3c556113-c26d-814a-9e4a-c546a9308183",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s",
@@ -248,8 +248,8 @@
   "excerpt_en": "### Auto-posting from Notion to Telegram: why \"the script ran\" doesn't mean \"the post worked\" In one day I got auto-posting for my personal blog to production status: a card in Not...",
   "tag": "Case study",
   "page_id": "3c556113-c26d-81d1-829a-df476a674c66",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "filtr-kotoryy-otsekal-luchshee-keys-otbora-zakazov-na-fl-ru",
@@ -260,8 +260,8 @@
   "excerpt_en": "The Filter That Cut Out the Best I build automation for other people's businesses, but this case is about my own. I have a pipeline: it reads the project feed on a freelance market...",
   "tag": "Case study",
   "page_id": "3c556113-c26d-8154-8a1b-c3226f6f1c3d",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "openworker-ii-sotrudnik-na-vashem-zheleze",
@@ -272,8 +272,8 @@
   "excerpt_en": "I noticed something strange: over the past couple of years we've gotten used to the idea that an \"AI agent\" lives in a separate chat. You go into a web interface, describe a task, ...",
   "tag": "News",
   "page_id": "3c556113-c26d-8102-957e-d10d296a4ee5",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "oshibki-pervogo-goda-s-llm",
@@ -284,8 +284,8 @@
   "excerpt_en": "You've built your first assistant on top of a language model - a program that takes your request as text and writes the rest of the answer. It replies coherently, politely, and bes...",
   "tag": "Article",
   "page_id": "3c556113-c26d-81b0-9aa1-e9d304e86ea5",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "45-protsentov-byudzheta-na-holostoy-hod-agenta",
@@ -296,8 +296,8 @@
   "excerpt_en": "I opened my bill for language models and saw a number bigger than usual. Over that same period not a single new user had shown up, I hadn't shipped any new features, and load hadn'...",
   "tag": "Case study",
   "page_id": "3c556113-c26d-81c0-b35b-d171e2f11d24",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T13:06:00Z"
  },
  {
   "slug": "ot-roya-agentov-k-discipline",
@@ -308,8 +308,8 @@
   "excerpt_en": "I opened the billing page and saw zero. Not \"running low\" - exactly zero. The culprit wasn't some complicated scenario or a flood of users: one scheduled agent spent about 14 hours...",
   "tag": "Case study",
   "page_id": "3c656113-c26d-819a-8f98-c2ddc9af3c73",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T13:04:00Z"
  },
  {
   "slug": "dvuyazychnyy-blog-na-statike",
@@ -320,8 +320,8 @@
   "excerpt_en": "I had a static portfolio site: a few pre-built pages that a free repository host simply serves as they are. No server with its own logic, no database - just a set of files. The hom...",
   "tag": "Article",
   "page_id": "3c556113-c26d-8139-aab8-ef75f33f2745",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "notion-kak-baza-dlya-kontent-konveyera",
@@ -332,8 +332,8 @@
   "excerpt_en": "Picture a chat where the whole editorial team lives. There's a link to a draft, an edit on top of it - \"change the headline\" - below that a question, \"wait, did we already publish ...",
   "tag": "Case study",
   "page_id": "3c556113-c26d-8183-a07c-e7f55a26fc9e",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "sekrety-v-payplayne",
@@ -344,8 +344,8 @@
   "excerpt_en": "The publishing script ran ten times in a row in my terminal. I put it into the task scheduler - and it started failing with an access error. Same script, same machine, same user. B...",
   "tag": "Case study",
   "page_id": "3c656113-c26d-810b-8ccf-ff7edc44b629",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "raspisaniya-i-votchdogi",
@@ -356,8 +356,8 @@
   "excerpt_en": "At six in the morning the phone buzzes: \"Queue empty, no new material.\" At six thirty - the same message. At seven - again. By the end of the day there are forty-eight of them, and...",
   "tag": "Article",
   "page_id": "3c656113-c26d-8185-8820-c5bc65d7f3fd",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "geyt-kachestva-mehanicheskie-proverki",
@@ -368,8 +368,8 @@
   "excerpt_en": "One day I opened the channel and saw my own article there, with tag names sitting in the text literally - angle brackets in the middle of a sentence. Next to it was a link to the o...",
   "tag": "Article",
   "page_id": "3c556113-c26d-8174-a63b-ed65d6e0e8ed",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "deploy-kotoryy-ne-lomaet-bota",
@@ -380,8 +380,8 @@
   "excerpt_en": "I have a system of two containers: a web service and a Telegram bot with a scheduler. The code lives inside the image, not in a mounted directory - meaning the container doesn't lo...",
   "tag": "Case study",
   "page_id": "3c556113-c26d-8137-90e4-d10fe610269b",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "kak-ne-dat-modeli-vrat-ciframi",
@@ -392,8 +392,8 @@
   "excerpt_en": "In my content pipeline, the model was writing a short note: one provider had cut its API prices. I read the draft and couldn't find anything to object to. The price of the main mod...",
   "tag": "Case study",
   "page_id": "3c656113-c26d-8192-b6ab-dc9442db7d62",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "kak-vybrat-model-pod-zadachu",
@@ -404,8 +404,8 @@
   "excerpt_en": "It almost always starts the same way. Someone puts together their first working pipeline - a chain of steps where text is passed from one model call to the next - opens the latest ...",
   "tag": "Case study",
   "page_id": "3c656113-c26d-8169-ab3a-deeac7fe272c",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "dva-processa-odna-baza",
@@ -416,8 +416,8 @@
   "excerpt_en": "The deploy runs the usual way: the script builds the images, brings up the containers, then runs the tests. The tests open the vector database - the same one the service that just ...",
   "tag": "Case study",
   "page_id": "3c556113-c26d-818f-95ed-ecdceea9eb46",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "kogda-llm-ne-nuzhna-skript-delaet-model-dumaet",
@@ -428,8 +428,8 @@
   "excerpt_en": "The same payment error message arrived every thirty minutes. Not once a day, not on a new release - exactly every half hour, around the clock, unchanged. A job whose entire purpose...",
   "tag": "Article",
   "page_id": "3c556113-c26d-81dd-82f7-f8c0e15845d3",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "chem-agent-otlichaetsya-ot-chat-bota",
@@ -440,8 +440,8 @@
   "excerpt_en": "You write to a bot: \"Book a table for two at seven this evening.\" It replies politely and correctly, asks whether you'd like a window seat or the main room, wishes you a pleasant e...",
   "tag": "Article",
   "page_id": "3c556113-c26d-812c-9cb3-c7c3f2300773",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T13:06:00Z"
  },
  {
   "slug": "rag-prostymi-slovami-i-kogda-on-ne-nuzhen",
@@ -452,8 +452,8 @@
   "excerpt_en": "Midnight, the front desk, a guest walks in with a foreign passport. The receptionist - third shift of their life - opens the internal assistant and asks: \"how do I register a forei...",
   "tag": "Article",
   "page_id": "3c556113-c26d-81c7-a889-c3fa7dd83e0c",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T13:04:00Z"
  },
  {
   "slug": "tablicy-eto-ne-rag",
@@ -464,8 +464,8 @@
   "excerpt_en": "You export a table from your maintenance system: vessel, unit, status, criticality. You hand it to an AI assistant and ask it to work out what to fix first. It replies with a parag...",
   "tag": "Case study",
   "page_id": "3c656113-c26d-81a4-a33a-c8af99eed25a",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "pochemu-demo-rabotaet-a-v-prode-lomaetsya",
@@ -476,8 +476,8 @@
   "excerpt_en": "The demo lasts fifteen minutes. You ask the bot three questions - it answers in a second. You show the report mailout - it goes out on time. Everyone is happy, the work is accepted...",
   "tag": "Case study",
   "page_id": "3c556113-c26d-81dc-aefa-d89ee1d46acc",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  },
  {
   "slug": "ot-koda-k-arhitekture-ii-sistem",
@@ -488,7 +488,7 @@
   "excerpt_en": "You run a test a second time in a row, without touching a single line of code - and it fails. Not because of the network, not because of a random timeout: the response simply came ...",
   "tag": "Article",
   "page_id": "3c656113-c26d-8145-b3a6-ebf739b5e0fe",
-  "modified": "2026-09-28T08:59:46.194458+00:00",
-  "has_en": true
+  "has_en": true,
+  "modified": "2026-09-27T17:31:00Z"
  }
 ]
