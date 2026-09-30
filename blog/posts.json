@@ -9,7 +9,8 @@
   "tag": "News",
   "page_id": "3e656113-c26d-81f4-9615-e95e83685cdb",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "4c1a9016ab9b9867"
  },
  {
   "slug": "gpt-6-astra-novaya-realnost-dlya-biznes-zadach",
@@ -21,7 +22,8 @@
   "tag": "News",
   "page_id": "3e456113-c26d-81f8-b194-c7d63247a4bc",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "0ddf5d4e6df6e068"
  },
  {
   "slug": "hakery-voruyut-limity-claude-kak-zaschitit-svoi-sessii",
@@ -33,7 +35,8 @@
   "tag": "News",
   "page_id": "3e356113-c26d-813f-ae2b-c439b0e66921",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "c20c33a840b53878"
  },
  {
   "slug": "roy-agentov-pustaya-trata-tokenov",
@@ -45,7 +48,8 @@
   "tag": "News",
   "page_id": "3df56113-c26d-8199-aabe-f8a43b8b1cae",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "7ffdefce14f26364"
  },
  {
   "slug": "whatsapp-business-ai-agents",
@@ -57,7 +61,8 @@
   "tag": "News",
   "page_id": "3dd56113-c26d-816e-9ed7-ef6d7dd71ec0",
   "has_en": true,
-  "modified": "2026-09-28T18:50:00Z"
+  "modified": "2026-09-28T18:50:50Z",
+  "text_hash": "acbc6554551ea34a"
  },
  {
   "slug": "gemini-ponimaet-video-v-rezhime-agenta-do-88-menshe-tokenov",
@@ -69,7 +74,8 @@
   "tag": "News",
   "page_id": "3dc56113-c26d-8123-a7cb-c511b4e45fc3",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "46abf0a149354dac"
  },
  {
   "slug": "chatgpt-work-zametki-s-poley-boya",
@@ -81,7 +87,8 @@
   "tag": "News",
   "page_id": "3db56113-c26d-81d0-abe1-dc404fcc927b",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "623244dc95a45a0e"
  },
  {
   "slug": "kak-slomali-avtorezhim-claude-code-opus-5-uroki-dlya-bezopas",
@@ -93,7 +100,8 @@
   "tag": "News",
   "page_id": "3d856113-c26d-811b-aba8-ccecbc8e8974",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "d931831f0ef21df2"
  },
  {
   "slug": "ii-agenty-vashi-novye-klienty-pochemu-markdown-vazhnee-html",
@@ -105,7 +113,8 @@
   "tag": "News",
   "page_id": "3d656113-c26d-818c-b7c2-c88774b08b0b",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "a7eaf69be1317a58"
  },
  {
   "slug": "ibm-granite-4-2-llm-architecture",
@@ -117,7 +126,8 @@
   "tag": "News",
   "page_id": "3d556113-c26d-8170-94a2-d8fa4b65c58c",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "bc52e282cbcc8fcc"
  },
  {
   "slug": "jalapeno-openai-protiv-nvidia",
@@ -129,7 +139,8 @@
   "tag": "News",
   "page_id": "3d456113-c26d-818a-b70e-df13fb1a9a76",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "e5e3dac509bbd570"
  },
  {
   "slug": "alabama-protiv-openai-sbezhavshiy-agent-podsvechivaet-riski",
@@ -141,7 +152,8 @@
   "tag": "News",
   "page_id": "3d056113-c26d-810e-81b5-cecdbe176ef2",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "d45386ab6306c157"
  },
  {
   "slug": "4-bitnaya-model-oboshla-svoyu-bf16-versiyu-chto-pokazal-quan",
@@ -153,7 +165,8 @@
   "tag": "News",
   "page_id": "3cf56113-c26d-812e-9397-f7c53d4a54b4",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "5c61b82c61d87de3"
  },
  {
   "slug": "openai-presekla-rossiyskuyu-kampaniyu-vliyaniya-s-ispolzovan",
@@ -165,7 +178,8 @@
   "tag": "News",
   "page_id": "3ce56113-c26d-81b4-af5c-fa9fb2a70c67",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "bb4a7d3df95f3385"
  },
  {
   "slug": "thomson-reuters-potratila-40-mln-na-sobstvennyy-ii-build-vs",
@@ -177,7 +191,8 @@
   "tag": "News",
   "page_id": "3cb56113-c26d-8196-a80e-d0384ffd319b",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "fb136c303179dfde"
  },
  {
   "slug": "ii-agent-pytalsya-obmanom-protaschit-malvar-v-opensorsnyy-pr",
@@ -189,7 +204,8 @@
   "tag": "News",
   "page_id": "3ca56113-c26d-813f-a044-e7bdfda3b0d4",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "0dc305a2be69aef5"
  },
  {
   "slug": "model-na-trilliony-parametrov-na-odnom-cpu-i-8-gb-ram-chto-e",
@@ -201,7 +217,8 @@
   "tag": "News",
   "page_id": "3c956113-c26d-8147-8839-c45fe684bdfa",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "8c3289d1edce00ff"
  },
  {
   "slug": "gde-zakanchivaetsya-chat-repetitor",
@@ -213,7 +230,8 @@
   "tag": "Case study",
   "page_id": "3c756113-c26d-8105-8229-f625a81d4fd4",
   "has_en": true,
-  "modified": "2026-09-27T13:03:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "0d869e3c05e95882"
  },
  {
   "slug": "6811-zvezd-za-11-dney-kak-otlichit-hayp-ot-zrelosti-v-kode",
@@ -225,7 +243,8 @@
   "tag": "News",
   "page_id": "3c756113-c26d-81d6-9b8a-d4856af68589",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "0f692d2f4a308df3"
  },
  {
   "slug": "snizhenie-tsen-na-openai-api-chto-eto-znachit-dlya-vashego-b",
@@ -237,7 +256,8 @@
   "tag": "News",
   "page_id": "3c556113-c26d-814a-9e4a-c546a9308183",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "e0cb6a3eb386efa8"
  },
  {
   "slug": "avtoposting-bloga-iz-notion-v-telegram-chto-vylezlo-mezhdu-s",
@@ -249,7 +269,8 @@
   "tag": "Case study",
   "page_id": "3c556113-c26d-81d1-829a-df476a674c66",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "c80329adacbe3161"
  },
  {
   "slug": "filtr-kotoryy-otsekal-luchshee-keys-otbora-zakazov-na-fl-ru",
@@ -261,7 +282,8 @@
   "tag": "Case study",
   "page_id": "3c556113-c26d-8154-8a1b-c3226f6f1c3d",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "faf928030d5ee60b"
  },
  {
   "slug": "openworker-ii-sotrudnik-na-vashem-zheleze",
@@ -273,7 +295,8 @@
   "tag": "News",
   "page_id": "3c556113-c26d-8102-957e-d10d296a4ee5",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "1567311f9732558e"
  },
  {
   "slug": "oshibki-pervogo-goda-s-llm",
@@ -285,7 +308,8 @@
   "tag": "Article",
   "page_id": "3c556113-c26d-81b0-9aa1-e9d304e86ea5",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "4b6394604d3af531"
  },
  {
   "slug": "45-protsentov-byudzheta-na-holostoy-hod-agenta",
@@ -297,7 +321,8 @@
   "tag": "Case study",
   "page_id": "3c556113-c26d-81c0-b35b-d171e2f11d24",
   "has_en": true,
-  "modified": "2026-09-27T13:06:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "89e2bbd225ab8bc4"
  },
  {
   "slug": "ot-roya-agentov-k-discipline",
@@ -309,7 +334,8 @@
   "tag": "Case study",
   "page_id": "3c656113-c26d-819a-8f98-c2ddc9af3c73",
   "has_en": true,
-  "modified": "2026-09-27T13:04:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "b385ead8d6944164"
  },
  {
   "slug": "dvuyazychnyy-blog-na-statike",
@@ -321,7 +347,8 @@
   "tag": "Article",
   "page_id": "3c556113-c26d-8139-aab8-ef75f33f2745",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "124c7eea22fc1a25"
  },
  {
   "slug": "notion-kak-baza-dlya-kontent-konveyera",
@@ -333,7 +360,8 @@
   "tag": "Case study",
   "page_id": "3c556113-c26d-8183-a07c-e7f55a26fc9e",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "1cbe05478af4db3b"
  },
  {
   "slug": "sekrety-v-payplayne",
@@ -345,7 +373,8 @@
   "tag": "Case study",
   "page_id": "3c656113-c26d-810b-8ccf-ff7edc44b629",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "202f61fcf6707349"
  },
  {
   "slug": "raspisaniya-i-votchdogi",
@@ -357,7 +386,8 @@
   "tag": "Article",
   "page_id": "3c656113-c26d-8185-8820-c5bc65d7f3fd",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "e0e2638ee9dc4201"
  },
  {
   "slug": "geyt-kachestva-mehanicheskie-proverki",
@@ -369,7 +399,8 @@
   "tag": "Article",
   "page_id": "3c556113-c26d-8174-a63b-ed65d6e0e8ed",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "31a8f68e69e1a633"
  },
  {
   "slug": "deploy-kotoryy-ne-lomaet-bota",
@@ -381,7 +412,8 @@
   "tag": "Case study",
   "page_id": "3c556113-c26d-8137-90e4-d10fe610269b",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "ff8b0a192d53f0b1"
  },
  {
   "slug": "kak-ne-dat-modeli-vrat-ciframi",
@@ -393,7 +425,8 @@
   "tag": "Case study",
   "page_id": "3c656113-c26d-8192-b6ab-dc9442db7d62",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "ed3f80173d57b9f9"
  },
  {
   "slug": "kak-vybrat-model-pod-zadachu",
@@ -405,7 +438,8 @@
   "tag": "Case study",
   "page_id": "3c656113-c26d-8169-ab3a-deeac7fe272c",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "9b19b8390bf2aadb"
  },
  {
   "slug": "dva-processa-odna-baza",
@@ -417,7 +451,8 @@
   "tag": "Case study",
   "page_id": "3c556113-c26d-818f-95ed-ecdceea9eb46",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "b31330c539dfc0bf"
  },
  {
   "slug": "kogda-llm-ne-nuzhna-skript-delaet-model-dumaet",
@@ -429,7 +464,8 @@
   "tag": "Article",
   "page_id": "3c556113-c26d-81dd-82f7-f8c0e15845d3",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "ea6c8e4ba71f59c1"
  },
  {
   "slug": "chem-agent-otlichaetsya-ot-chat-bota",
@@ -441,7 +477,8 @@
   "tag": "Article",
   "page_id": "3c556113-c26d-812c-9cb3-c7c3f2300773",
   "has_en": true,
-  "modified": "2026-09-27T13:06:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "45bc06c794b2f0d6"
  },
  {
   "slug": "rag-prostymi-slovami-i-kogda-on-ne-nuzhen",
@@ -453,7 +490,8 @@
   "tag": "Article",
   "page_id": "3c556113-c26d-81c7-a889-c3fa7dd83e0c",
   "has_en": true,
-  "modified": "2026-09-27T13:04:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "0581a4a19cdfec88"
  },
  {
   "slug": "tablicy-eto-ne-rag",
@@ -465,7 +503,8 @@
   "tag": "Case study",
   "page_id": "3c656113-c26d-81a4-a33a-c8af99eed25a",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "f615d069d35c15c3"
  },
  {
   "slug": "pochemu-demo-rabotaet-a-v-prode-lomaetsya",
@@ -477,7 +516,8 @@
   "tag": "Case study",
   "page_id": "3c556113-c26d-81dc-aefa-d89ee1d46acc",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "4e81d4711e0e19b8"
  },
  {
   "slug": "ot-koda-k-arhitekture-ii-sistem",
@@ -489,6 +529,7 @@
   "tag": "Article",
   "page_id": "3c656113-c26d-8145-b3a6-ebf739b5e0fe",
   "has_en": true,
-  "modified": "2026-09-27T17:31:00Z"
+  "modified": "2026-09-27T17:37:15Z",
+  "text_hash": "a712ff526fa4ef7d"
  }
 ]
