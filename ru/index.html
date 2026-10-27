@@ -376,36 +376,20 @@
 <span class="stack-tag" data-i18n="p9Tag">VK</span>
 </div>
 </div>
-<div class="project-card reveal reveal-delay-2">
-<div class="project-header">
-<div class="project-icon"></div>
-<span class="project-type" data-i18n="p8Type">Web / Творческое</span>
-</div>
-<div class="project-name" data-i18n="p8Name">Фотоальбом к юбилею</div>
-<div class="project-desc" data-i18n="p8Desc">Интерактивный веб-фотоальбом к 70-летию - пять глав жизни (от детства до сегодняшнего дня), анимированные портреты, фоновая музыка и ~200 фото, автоматически импортированных из iCloud и сжатых Python-скриптом. Чистый vanilla JS, без фреймворков.</div>
-<div class="project-stack">
-<span class="stack-tag">Vanilla JS</span>
-<span class="stack-tag">Python</span>
-<span class="stack-tag">iCloud</span>
-<span class="stack-tag">GitHub Pages</span>
-</div>
-<a class="project-link" href="https://svetlana70.myfamilytre.es/" rel="noopener" target="_blank">↗ Live site</a>
-<a class="project-link" href="https://github.com/natavegman/svetlana70-album" rel="noopener" target="_blank">↗ GitHub</a>
-</div>
 <div class="project-card reveal reveal-delay-4">
 <div class="project-header">
 <div class="project-icon"></div>
 <span class="project-type" data-i18n="p10Type">Генеалогия / AI</span>
 </div>
-<div class="project-name" data-i18n="p10Name">Доказательное семейное древо</div>
-<div class="project-desc" data-i18n="p10Desc">Семейное древо, где каждый факт привязан к документу. Импорт GEDCOM на 2 415 человек, OCR метрических книг XIX-XX веков через Yandex Vision, расшифровки архивных дел, реестр из 312 онлайн-источников и черновики запросов в российские и зарубежные архивы. Следующий шаг - KinOS: сервис для живой семейной истории, где AI находит пробелы в древе, но ничего не меняет без подтверждения человека.</div>
+<div class="project-name" data-i18n="p10Name">Семейная история: поиск по архивам</div>
+<div class="project-desc" data-i18n="p10Desc">Поиск по архивам России и Европы, где ИИ берет на себя рутину, а каждый факт привязан к документу. Метрические книги и ревизские сказки в архивах Петербурга, Рязани и Пензы, запросы в федеральные архивы, Arolsen Archives и немецкие книги ЗАГС по угнанным в Германию, документы из эстонских архивов и еврейских баз, включая Yad Vashem. Инструменты: OCR рукописных метрических книг, реестр из 300+ онлайн-источников и древо на 2 400+ человек со слоем доказательств: источник, цитата, утверждение, персона.</div>
 <div class="project-stack">
-<span class="stack-tag">FastAPI</span>
-<span class="stack-tag">PostgreSQL</span>
-<span class="stack-tag">GEDCOM</span>
+<span class="stack-tag">Python</span>
+<span class="stack-tag">Playwright</span>
 <span class="stack-tag">Yandex Vision OCR</span>
+<span class="stack-tag">GEDCOM</span>
 <span class="stack-tag">Notion API</span>
-<span class="stack-tag">Docker</span>
+<span class="stack-tag">Claude Code</span>
 </div>
 </div>
 </div>
@@ -628,12 +612,10 @@
       p6Desc: 'This very site - bilingual AI portfolio with a FastAPI RAG backend, FAISS vector search, and a GPT-4o chat widget that answers questions about Natalia in EN or RU based on the visitor\'s language. Static frontend on GitHub Pages, API on a custom VPS.',
       p7Type: 'AI / Fashion', p7Name: 'Smart Style Bot',
       p7Desc: 'Telegram AI-stylist: analyzes your wardrobe via Gemini Vision, picks outfits for any occasion, and applies Virtual Try-On (Fashn / fal.ai) to show how clothes look on your photo. Recommends purchases from Russian marketplaces.',
-      p8Type: 'Web / Creative', p8Name: 'Birthday Photo Album',
-      p8Desc: 'Interactive web photo album for a 70th-birthday celebration - five life chapters (from Childhood to Today), animated portrait cards, background music, and ~200 photos auto-imported from iCloud and compressed with Python. Pure vanilla JS, zero frameworks.',
       p9Type: 'AI / Content', p9Name: 'Instagram* Post Generator',
       p9Desc: 'Flask web app that generates branded Instagram* posts for an expert blog. GigaChat keeps a strict Tone of Voice, scrapes reference content from URLs, and saves editorial favorites.',
-      p10Type: "Genealogy / AI", p10Name: "Evidence-Based Family Tree",
-      p10Desc: "A family tree where every fact is tied to a document. GEDCOM import of 2,415 people, OCR of 19th and 20th century parish registers with Yandex Vision, transcribed archive files, a registry of 312 online sources and drafted requests to Russian and foreign archives. Next step is KinOS, a service for living family history where AI finds gaps in the tree but changes nothing without a human's confirmation.",
+      p10Type: "Genealogy / AI", p10Name: "Family History Research",
+      p10Desc: "Archival research across Russia and Europe, where AI takes over the routine and every fact stays tied to a document. Parish registers and revision lists from the St Petersburg, Ryazan and Penza archives, requests to federal archives, the Arolsen Archives and German civil registers for people deported to Germany, records from Estonian archives and Jewish databases including Yad Vashem. Tooling: OCR of handwritten registers, a registry of 300+ online sources and a tree of 2,400+ people with an evidence layer: source, quote, claim, person.",
       showAll: "Show all projects",
       p15Type: "AI / Video", p15Name: "Animated Kids Channel Pipeline",
       p15Desc: "A Spanish-language series for children aged 2 to 5 is built by a pipeline: character canon, stills, animation, voice, music, editing, QA and upload via the YouTube Data API. Voice and music are separate stems, so a new language is a re-dub without re-rendering the video. Each episode's cost is estimated before launch, and the QA gate refuses to upload an episode with placeholders. Status: character canon is done, the channel is in preparation.",
@@ -719,12 +701,10 @@
       p6Desc: 'Этот сайт - двуязычное AI-портфолио с FastAPI RAG-бэкендом, FAISS-поиском и GPT-4o чат-виджетом, отвечающим на EN или RU в зависимости от языка посетителя. Статический фронтенд на GitHub Pages, API на собственном VPS.',
       p7Type: 'AI / Мода', p7Name: 'Smart Style Bot',
       p7Desc: 'Telegram AI-стилист: анализирует гардероб через Gemini Vision, подбирает образы под любой повод и применяет Virtual Try-On (Fashn / fal.ai) - показывает вещи на твоем фото. Рекомендует покупки с российских маркетплейсов.',
-      p8Type: 'Web / Творческое', p8Name: 'Фотоальбом к юбилею',
-      p8Desc: 'Интерактивный веб-фотоальбом к 70-летию - пять глав жизни (от детства до сегодняшнего дня), анимированные портреты, фоновая музыка и ~200 фото, автоматически импортированных из iCloud и сжатых Python-скриптом. Чистый vanilla JS, без фреймворков.',
       p9Type: 'AI / Контент', p9Name: 'Генератор постов ВКонтакте',
       p9Desc: 'Flask-приложение генерирует брендированные посты для экспертного блога во ВКонтакте. GigaChat держит строгий Tone of Voice, парсит референсы по ссылкам и сохраняет избранное редактора.',
-      p10Type: "Генеалогия / AI", p10Name: "Доказательное семейное древо",
-      p10Desc: "Семейное древо, где каждый факт привязан к документу. Импорт GEDCOM на 2 415 человек, OCR метрических книг XIX-XX веков через Yandex Vision, расшифровки архивных дел, реестр из 312 онлайн-источников и черновики запросов в российские и зарубежные архивы. Следующий шаг - KinOS: сервис для живой семейной истории, где AI находит пробелы в древе, но ничего не меняет без подтверждения человека.",
+      p10Type: "Генеалогия / AI", p10Name: "Семейная история: поиск по архивам",
+      p10Desc: "Поиск по архивам России и Европы, где ИИ берет на себя рутину, а каждый факт привязан к документу. Метрические книги и ревизские сказки в архивах Петербурга, Рязани и Пензы, запросы в федеральные архивы, Arolsen Archives и немецкие книги ЗАГС по угнанным в Германию, документы из эстонских архивов и еврейских баз, включая Yad Vashem. Инструменты: OCR рукописных метрических книг, реестр из 300+ онлайн-источников и древо на 2 400+ человек со слоем доказательств: источник, цитата, утверждение, персона.",
       showAll: "Все проекты",
       p15Type: "AI / Видео", p15Name: "Конвейер детского анимационного канала",
       p15Desc: "Сериал на испанском для детей 2-5 лет собирает конвейер: канон героев, кадры, анимация, озвучка, музыка, монтаж, QA и загрузка через YouTube Data API. Голос и музыка лежат отдельными дорожками, поэтому новый язык - это переозвучка без перерендера видео. Смета серии считается до запуска, QA-гейт не дает залить серию с заглушками. Статус: канон героев готов, канал в подготовке.",

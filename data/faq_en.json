@@ -36,8 +36,8 @@
     "answer": "This very site is one of my projects. It's a bilingual (EN/RU) AI portfolio with a FastAPI RAG backend, FAISS vector search over my CV and FAQ documents, and a GPT-4o chat widget. The language is auto-detected from the visitor's browser and passed to the backend, which switches both the system prompt (HR agent persona) and the FAISS retrieval filter. The static frontend is hosted on GitHub Pages at vegman.dev, the API runs on a VPS behind nginx + Let's Encrypt. Source: github.com/natavegman/portfolio-site"
   },
   {
-    "question": "What is the MyFamilyTree project?",
-    "answer": "MyFamilyTree is a personal side project born from a genuine interest in genealogy and family history research. It's a FastAPI backend that imports GEDCOM family-tree files, parses person and family records into a PostgreSQL database via SQLAlchemy, and exposes REST endpoints for searching relatives and attaching archival documents (birth certificates, photos, emigration papers) to individual records. Docker Compose for local development. Source: github.com/natavegman/MyFamilyTree"
+    "question": "What do you do in genealogy? What is MyFamilyTree?",
+    "answer": "Genealogy is Natalia's second professional field, and MyFamilyTree is the name of this work. She researches families in the archives of St Petersburg, Ryazan and Penza, sends requests to federal archives, searches the Arolsen Archives and German civil registers for people deported to Germany during WWII, and has worked with Estonian archives and Jewish databases including Yad Vashem. For this she builds AI tooling: OCR of handwritten parish registers, a registry of 300+ online sources and a tree of 2,400+ people where every fact carries a source, a verbatim quote and a proof status. AI proposes, a human confirms."
   },
   {
     "question": "What is your educational background?",
