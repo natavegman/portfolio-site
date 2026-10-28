@@ -5,13 +5,6 @@
   <description>An architect&#x27;s notes on putting AI into business processes: architecture, agents, integrations, and the cost of each decision.</description>
   <language>en</language>
   <item>
-    <title>The Agent Said: &#x27;Done&#x27;. The Database Disagreed.</title>
-    <link>https://vegman.dev/en/blog/agent-said-done-db-disagreed/</link>
-    <guid>https://vegman.dev/en/blog/agent-said-done-db-disagreed/</guid>
-    <pubDate>Wed, 28 Oct 2026 09:00:00 +0000</pubDate>
-    <description>The agent reports that the task is complete. The database shows otherwise. Microsoft described in a Hugging Face blog the ThinkingBox system: it evaluates agents not by their respo...</description>
-  </item>
-  <item>
     <title>Meta Muse Wonder Full: A Powerful Player, But at a Price</title>
     <link>https://vegman.dev/en/blog/meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy/</link>
     <guid>https://vegman.dev/en/blog/meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy/</guid>
@@ -38,6 +31,13 @@
     <guid>https://vegman.dev/en/blog/reflection-beam-open-model/</guid>
     <pubDate>Tue, 06 Oct 2026 09:00:00 +0000</pubDate>
     <description>When it comes to open models, people now ask about quality and inference cost at the same time. Reflection AI introduced Beam - an open-weight model for reasoning, coding and agent...</description>
+  </item>
+  <item>
+    <title>The Agent Said: &#x27;Done&#x27;. The Database Disagreed.</title>
+    <link>https://vegman.dev/en/blog/agent-said-done-db-disagreed/</link>
+    <guid>https://vegman.dev/en/blog/agent-said-done-db-disagreed/</guid>
+    <pubDate>Mon, 05 Oct 2026 09:00:00 +0000</pubDate>
+    <description>The agent reports that the task is complete. The database shows otherwise. Microsoft described in a Hugging Face blog the ThinkingBox system: it evaluates agents not by their respo...</description>
   </item>
   <item>
     <title>OpenAI Agents API: Autonomous Agents in the Cloud and a New Era for Pipelines</title>

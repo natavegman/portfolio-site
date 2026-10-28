@@ -5,13 +5,6 @@
   <description>Инженерные заметки о внедрении ИИ в бизнес-процессы: архитектура, агенты, интеграции, стоимость решений.</description>
   <language>ru</language>
   <item>
-    <title>Агент сказал: «Готово». База данных не согласилась.</title>
-    <link>https://vegman.dev/blog/agent-said-done-db-disagreed/</link>
-    <guid>https://vegman.dev/blog/agent-said-done-db-disagreed/</guid>
-    <pubDate>Wed, 28 Oct 2026 09:00:00 +0000</pubDate>
-    <description>Агент сообщает, что задача выполнена. База данных показывает другое. Microsoft описала в блоге Hugging Face систему ThinkingBox: она оценивает агентов не по ответам, а по тому, что...</description>
-  </item>
-  <item>
     <title>Meta Muse Wonder Full: мощный игрок, но с ценой</title>
     <link>https://vegman.dev/blog/meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy/</link>
     <guid>https://vegman.dev/blog/meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy/</guid>
@@ -38,6 +31,13 @@
     <guid>https://vegman.dev/blog/reflection-beam-open-model/</guid>
     <pubDate>Tue, 06 Oct 2026 09:00:00 +0000</pubDate>
     <description>Об открытой модели теперь спрашивают про качество и про стоимость инференса одновременно. Reflection AI представила Beam - open-weight модель для reasoning, coding и agentic-задач....</description>
+  </item>
+  <item>
+    <title>Агент сказал: «Готово». База данных не согласилась.</title>
+    <link>https://vegman.dev/blog/agent-said-done-db-disagreed/</link>
+    <guid>https://vegman.dev/blog/agent-said-done-db-disagreed/</guid>
+    <pubDate>Mon, 05 Oct 2026 09:00:00 +0000</pubDate>
+    <description>Агент сообщает, что задача выполнена. База данных показывает другое. Microsoft описала в блоге Hugging Face систему ThinkingBox: она оценивает агентов не по ответам, а по тому, что...</description>
   </item>
   <item>
     <title>OpenAI Agents API: Автономные агенты в облаке - новая эра пайплайнов</title>

@@ -1,18 +1,5 @@
 [
  {
-  "slug": "agent-said-done-db-disagreed",
-  "date": "2026-10-28",
-  "title_ru": "Агент сказал: «Готово». База данных не согласилась.",
-  "title_en": "The Agent Said: 'Done'. The Database Disagreed.",
-  "excerpt_ru": "Агент сообщает, что задача выполнена. База данных показывает другое. Microsoft описала в блоге Hugging Face систему ThinkingBox: она оценивает агентов не по ответам, а по тому, что...",
-  "excerpt_en": "The agent reports that the task is complete. The database shows otherwise. Microsoft described in a Hugging Face blog the ThinkingBox system: it evaluates agents not by their respo...",
-  "tag": "Case study",
-  "page_id": "3f056113-c26d-8127-83e2-d0b5d5f6b764",
-  "has_en": true,
-  "modified": "2026-10-28T13:28:45Z",
-  "text_hash": "11082fc509ebe070"
- },
- {
   "slug": "meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy",
   "date": "2026-10-13",
   "title_ru": "Meta Muse Wonder Full: мощный игрок, но с ценой",
@@ -63,6 +50,19 @@
   "has_en": true,
   "modified": "2026-10-28T13:28:51Z",
   "text_hash": "3fdb568a7c4d4ba9"
+ },
+ {
+  "slug": "agent-said-done-db-disagreed",
+  "date": "2026-10-05",
+  "title_ru": "Агент сказал: «Готово». База данных не согласилась.",
+  "title_en": "The Agent Said: 'Done'. The Database Disagreed.",
+  "excerpt_ru": "Агент сообщает, что задача выполнена. База данных показывает другое. Microsoft описала в блоге Hugging Face систему ThinkingBox: она оценивает агентов не по ответам, а по тому, что...",
+  "excerpt_en": "The agent reports that the task is complete. The database shows otherwise. Microsoft described in a Hugging Face blog the ThinkingBox system: it evaluates agents not by their respo...",
+  "tag": "Case study",
+  "page_id": "3f056113-c26d-8127-83e2-d0b5d5f6b764",
+  "has_en": true,
+  "modified": "2026-10-28T13:31:55Z",
+  "text_hash": "11082fc509ebe070"
  },
  {
   "slug": "openai-agents-api-autonomous-pipelines",

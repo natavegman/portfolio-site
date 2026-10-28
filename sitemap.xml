@@ -21,18 +21,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/"/>
   </url>
   <url>
-    <loc>https://vegman.dev/blog/agent-said-done-db-disagreed/</loc>
-    <lastmod>2026-10-28T13:28:45Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/agent-said-done-db-disagreed/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/agent-said-done-db-disagreed/"/>
-  </url>
-  <url>
-    <loc>https://vegman.dev/en/blog/agent-said-done-db-disagreed/</loc>
-    <lastmod>2026-10-28T13:28:45Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/agent-said-done-db-disagreed/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/agent-said-done-db-disagreed/"/>
-  </url>
-  <url>
     <loc>https://vegman.dev/blog/meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy/</loc>
     <lastmod>2026-10-28T13:28:46Z</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy/"/>
@@ -79,6 +67,18 @@
     <lastmod>2026-10-28T13:28:51Z</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/reflection-beam-open-model/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/reflection-beam-open-model/"/>
+  </url>
+  <url>
+    <loc>https://vegman.dev/blog/agent-said-done-db-disagreed/</loc>
+    <lastmod>2026-10-28T13:31:55Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/agent-said-done-db-disagreed/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/agent-said-done-db-disagreed/"/>
+  </url>
+  <url>
+    <loc>https://vegman.dev/en/blog/agent-said-done-db-disagreed/</loc>
+    <lastmod>2026-10-28T13:31:55Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/agent-said-done-db-disagreed/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/agent-said-done-db-disagreed/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/openai-agents-api-autonomous-pipelines/</loc>
