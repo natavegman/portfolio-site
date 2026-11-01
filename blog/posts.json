@@ -1,5 +1,18 @@
 [
  {
+  "slug": "deepmind-genie-4-world-simulation",
+  "date": "2026-11-01",
+  "title_ru": "Genie 4: что меняется, когда тестовую среду можно создать на лету",
+  "title_en": "",
+  "excerpt_ru": "Робот должен подойти к столу, найти предмет и взять его. В лаборатории все получилось. Потом предмет оказался с другой стороны, между роботом и столом поставили коробку, а освещени...",
+  "excerpt_en": "",
+  "tag": "Article",
+  "page_id": "40756113-c26d-8182-9c30-c9f2bd149d90",
+  "has_en": false,
+  "modified": "2026-11-01T00:29:01Z",
+  "text_hash": "7a1312b8227642c2"
+ },
+ {
   "slug": "meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy",
   "date": "2026-10-13",
   "title_ru": "Meta Muse Wonder Full: мощный игрок, но с ценой",
