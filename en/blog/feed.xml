@@ -5,6 +5,13 @@
   <description>An architect&#x27;s notes on putting AI into business processes: architecture, agents, integrations, and the cost of each decision.</description>
   <language>en</language>
   <item>
+    <title>Genie 4: What Changes When a Test Environment Can Be Created on the Fly</title>
+    <link>https://vegman.dev/en/blog/deepmind-genie-4-world-simulation/</link>
+    <guid>https://vegman.dev/en/blog/deepmind-genie-4-world-simulation/</guid>
+    <pubDate>Sun, 01 Nov 2026 09:00:00 +0000</pubDate>
+    <description>A robot has to approach a table, find an object and pick it up. It works in the lab. Then the object is moved to the other side, a box is placed between the robot and the table, an...</description>
+  </item>
+  <item>
     <title>Meta Muse Wonder Full: A Powerful Player, But at a Price</title>
     <link>https://vegman.dev/en/blog/meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy/</link>
     <guid>https://vegman.dev/en/blog/meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy/</guid>

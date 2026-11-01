@@ -3,14 +3,14 @@
   "slug": "deepmind-genie-4-world-simulation",
   "date": "2026-11-01",
   "title_ru": "Genie 4: что меняется, когда тестовую среду можно создать на лету",
-  "title_en": "",
+  "title_en": "Genie 4: What Changes When a Test Environment Can Be Created on the Fly",
   "excerpt_ru": "Робот должен подойти к столу, найти предмет и взять его. В лаборатории все получилось. Потом предмет оказался с другой стороны, между роботом и столом поставили коробку, а освещени...",
-  "excerpt_en": "",
+  "excerpt_en": "A robot has to approach a table, find an object and pick it up. It works in the lab. Then the object is moved to the other side, a box is placed between the robot and the table, an...",
   "tag": "Article",
   "page_id": "40756113-c26d-8182-9c30-c9f2bd149d90",
-  "has_en": false,
-  "modified": "2026-11-01T00:29:01Z",
-  "text_hash": "7a1312b8227642c2"
+  "has_en": true,
+  "modified": "2026-11-01T08:10:11Z",
+  "text_hash": "33cd4ba4bebe1d50"
  },
  {
   "slug": "meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy",

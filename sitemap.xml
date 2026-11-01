@@ -22,7 +22,15 @@
   </url>
   <url>
     <loc>https://vegman.dev/blog/deepmind-genie-4-world-simulation/</loc>
-    <lastmod>2026-11-01T00:29:01Z</lastmod>
+    <lastmod>2026-11-01T08:10:11Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/deepmind-genie-4-world-simulation/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/deepmind-genie-4-world-simulation/"/>
+  </url>
+  <url>
+    <loc>https://vegman.dev/en/blog/deepmind-genie-4-world-simulation/</loc>
+    <lastmod>2026-11-01T08:10:11Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/deepmind-genie-4-world-simulation/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/deepmind-genie-4-world-simulation/"/>
   </url>
   <url>
     <loc>https://vegman.dev/blog/meta-muse-wonder-full-moschnyy-igrok-no-s-tsenoy/</loc>
