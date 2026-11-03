@@ -208,6 +208,22 @@
     <div class="project-card reveal">
       <div class="project-header">
         <div class="project-icon"></div>
+        <span class="project-type" data-i18n="voiceType">AI / Voice</span>
+      </div>
+      <div class="project-name" data-i18n="voiceName">International Voice Assistant</div>
+      <div class="project-desc" data-i18n="voiceDesc">A personal voice assistant places task-based phone calls through Telnyx and OpenAI Realtime. It shows a live transcript, streams both sides to the browser without using the microphone, and requires approval of an estimated cost for each call. Tested on a real call; later conversation-flow fixes were tested in simulation. Prototype.</div>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">OpenAI Realtime</span>
+        <span class="stack-tag">Telnyx</span>
+        <span class="stack-tag">WebSocket</span>
+        <span class="stack-tag">SQLite</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon"></div>
         <span class="project-type" data-i18n="p5Type">AI / Multi-Agent</span>
       </div>
       <div class="project-name" data-i18n="p5Name">AI Company of Agents</div>
@@ -697,6 +713,8 @@
       s5i1: 'Hermes (Python agent framework)', s5i2: 'OpenClaw (Node.js gateway)',
       s5i3: 'MCP (Model Context Protocol)', s5i4: 'Task triage, call budget, retros',
       s5i5: 'systemd services, hot-swap',
+      voiceType: "AI / Voice", voiceName: "International Voice Assistant",
+      voiceDesc: "A personal voice assistant places task-based phone calls through Telnyx and OpenAI Realtime. It shows a live transcript, streams both sides to the browser without using the microphone, and requires approval of an estimated cost for each call. Tested on a real call; later conversation-flow fixes were tested in simulation. Prototype.",
       p5Type: "AI / Multi-Agent", p5Name: "AI Company of Agents",
       p5Desc: "An orchestrator and three specialists (researcher, developer, designer) work as a company rather than a swarm. Every task goes through triage by level, a budget of at most five model calls, a stop criterion and a mandatory retro. The organization's memory (constitution, roles, knowledge base) lives in git and syncs to Notion daily by a script with no LLM in the loop.",
       aboutLabel: 'Background', aboutTitle: 'About me',
@@ -786,6 +804,8 @@
       s5i1: 'Hermes (Python agent framework)', s5i2: 'OpenClaw (Node.js gateway)',
       s5i3: 'MCP (Model Context Protocol)', s5i4: 'Триаж задач, бюджет вызовов, ретро',
       s5i5: 'systemd services, hot-swap',
+      voiceType: "ИИ / Голос", voiceName: "Голосовой помощник для звонков",
+      voiceDesc: "Персональный голосовой помощник выполняет задания по телефону через Telnyx и OpenAI Realtime. Показывает транскрипт, даёт слушать обе стороны без микрофона и запрашивает согласие на оценку стоимости каждого звонка. Проверен в реальном звонке; последующие исправления поведения — на имитации. Прототип.",
       p5Type: "AI / Мультиагентность", p5Name: "ИИ-компания из агентов",
       p5Desc: "Оркестратор и три специалиста (исследователь, разработчик, дизайнер) работают как компания, а не как рой. У каждой задачи триаж по уровню сложности, бюджет не больше пяти вызовов модели, стоп-критерий и обязательное ретро. Память организации (конституция, роли, база знаний) живет в git и раз в сутки уходит в Notion скриптом без LLM.",
       aboutLabel: 'О себе', aboutTitle: 'Обо мне',
@@ -1063,3 +1083,4 @@
 <script src="/heroart.js"></script>
 </body>
 </html>
+
