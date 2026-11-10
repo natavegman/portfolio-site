@@ -21,6 +21,10 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://vegman.dev/en/blog/"/>
   </url>
   <url>
+    <loc>https://vegman.dev/blog/cloudopsbench-ai-agents-bottleneck/</loc>
+    <lastmod>2026-11-10T07:14:25Z</lastmod>
+  </url>
+  <url>
     <loc>https://vegman.dev/blog/deepmind-genie-4-world-simulation/</loc>
     <lastmod>2026-11-01T08:10:11Z</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://vegman.dev/blog/deepmind-genie-4-world-simulation/"/>

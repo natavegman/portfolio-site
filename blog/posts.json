@@ -1,5 +1,19 @@
 [
  {
+  "slug": "cloudopsbench-ai-agents-bottleneck",
+  "date": "2026-11-10",
+  "title_ru": "Как CloudOpsBench выявил главное узкое место AI-агентов в облачных операциях",
+  "title_en": "",
+  "excerpt_ru": "Я привыкла смотреть на AI-агентов не по тому, насколько уверенно они отвечают, а по тому, что происходит после нажатия кнопки «выполнить». В облачной инфраструктуре это особенно ва...",
+  "excerpt_en": "",
+  "tag": "Article",
+  "page_id": "40f56113-c26d-81cf-973a-ca52cb521cc2",
+  "has_en": false,
+  "modified": "2026-11-10T07:14:25Z",
+  "text_hash": "6305ebee5e41329b",
+  "approval_version": "a04eb5009d76d4d42ecd68c5844b185d47d0c6754acc1f03336420b721a3a97b"
+ },
+ {
   "slug": "deepmind-genie-4-world-simulation",
   "date": "2026-11-01",
   "title_ru": "Genie 4: что меняется, когда тестовую среду можно создать на лету",

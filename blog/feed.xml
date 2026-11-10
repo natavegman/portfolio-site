@@ -5,6 +5,13 @@
   <description>Инженерные заметки о внедрении ИИ в бизнес-процессы: архитектура, агенты, интеграции, стоимость решений.</description>
   <language>ru</language>
   <item>
+    <title>Как CloudOpsBench выявил главное узкое место AI-агентов в облачных операциях</title>
+    <link>https://vegman.dev/blog/cloudopsbench-ai-agents-bottleneck/</link>
+    <guid>https://vegman.dev/blog/cloudopsbench-ai-agents-bottleneck/</guid>
+    <pubDate>Tue, 10 Nov 2026 09:00:00 +0000</pubDate>
+    <description>Я привыкла смотреть на AI-агентов не по тому, насколько уверенно они отвечают, а по тому, что происходит после нажатия кнопки «выполнить». В облачной инфраструктуре это особенно ва...</description>
+  </item>
+  <item>
     <title>Genie 4: что меняется, когда тестовую среду можно создать на лету</title>
     <link>https://vegman.dev/blog/deepmind-genie-4-world-simulation/</link>
     <guid>https://vegman.dev/blog/deepmind-genie-4-world-simulation/</guid>
