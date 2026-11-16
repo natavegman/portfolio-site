@@ -1,5 +1,19 @@
 [
  {
+  "slug": "myfamilytree-document-evidence",
+  "date": "2026-11-16",
+  "title_ru": "MyFamilyTree: найденный документ еще нужно проверить",
+  "title_en": "",
+  "excerpt_ru": "Совпавшее имя еще не доказательство. Особенно когда два документа рассказывают о человеке по-разному. В одном семейном деле на лагерной карточке указана точная дата смерти. В после...",
+  "excerpt_en": "",
+  "tag": "Case study",
+  "page_id": "41756113-c26d-8173-aa5f-f8ca3c4c1f4d",
+  "has_en": false,
+  "modified": "2026-11-16T15:15:12Z",
+  "text_hash": "ad96afec0fc02f64",
+  "approval_version": "0427698faec7608091e65a197d7a579e1c60b0346a63885137409ea6ba84ae74"
+ },
+ {
   "slug": "cloudopsbench-ai-agents-bottleneck",
   "date": "2026-11-10",
   "title_ru": "Как CloudOpsBench выявил главное узкое место AI-агентов в облачных операциях",

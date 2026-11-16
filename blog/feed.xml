@@ -5,6 +5,13 @@
   <description>Инженерные заметки о внедрении ИИ в бизнес-процессы: архитектура, агенты, интеграции, стоимость решений.</description>
   <language>ru</language>
   <item>
+    <title>MyFamilyTree: найденный документ еще нужно проверить</title>
+    <link>https://vegman.dev/blog/myfamilytree-document-evidence/</link>
+    <guid>https://vegman.dev/blog/myfamilytree-document-evidence/</guid>
+    <pubDate>Mon, 16 Nov 2026 09:00:00 +0000</pubDate>
+    <description>Совпавшее имя еще не доказательство. Особенно когда два документа рассказывают о человеке по-разному. В одном семейном деле на лагерной карточке указана точная дата смерти. В после...</description>
+  </item>
+  <item>
     <title>Как CloudOpsBench выявил главное узкое место AI-агентов в облачных операциях</title>
     <link>https://vegman.dev/blog/cloudopsbench-ai-agents-bottleneck/</link>
     <guid>https://vegman.dev/blog/cloudopsbench-ai-agents-bottleneck/</guid>
